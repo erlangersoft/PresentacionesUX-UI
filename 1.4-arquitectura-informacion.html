@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>1.4. Arquitectura de la Información</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .tiny-text {
+				font-size: 0.7em;
+			}
+			.reveal .analogy {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 10px;
+				border-left: 5px solid #42affa;
+			}
+			.reveal .pillar-card {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 20px;
+				border-radius: 10px;
+				margin: 15px 0;
+			}
+			.reveal .example-box {
+				background: rgba(255, 255, 255, 0.08);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+			}
+			.reveal .warning-box {
+				background: rgba(255, 152, 0, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 5px solid #ff9800;
+			}
+			.reveal .success-box {
+				background: rgba(76, 175, 80, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 5px solid #4caf50;
+			}
+			.reveal .principle-box {
+				background: rgba(156, 39, 176, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 5px solid #ab47bc;
+			}
+			.reveal .grid-2 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+			}
+			.reveal .grid-4 {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- Portada -->
+				<section data-background-gradient="linear-gradient(to bottom, #311b92, #4527a0)">
+					<h1>1.4. Arquitectura de la Información</h1>
+					<p>Organizando el caos en estructuras con sentido</p>
+					<p class="small-text" style="margin-top: 40px;">De los datos a la claridad</p>
+				</section>
+
+				<!-- Introducción -->
+				<section data-background-gradient="linear-gradient(to bottom, #4527a0, #512da8)">
+					<h2>🏛️ La Biblioteca Perfecta</h2>
+					<div class="grid-2" style="font-size: 0.8em; margin-top: 30px;">
+						<div class="fragment" style="background: rgba(244, 67, 54, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #f44336;">❌ Biblioteca Caótica</h4>
+							<p class="small-text">100,000 libros apilados al azar</p>
+							<ul style="text-align: left; font-size: 0.8em;">
+								<li>Sin sistema de organización</li>
+								<li>Tardarías días en encontrar un libro</li>
+								<li>O simplemente te rindes frustrado</li>
+							</ul>
+						</div>
+						<div class="fragment" style="background: rgba(76, 175, 80, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #4caf50;">✓ Biblioteca Organizada</h4>
+							<p class="small-text">Sistema lógico (ej: Dewey Decimal)</p>
+							<ul style="text-align: left; font-size: 0.8em;">
+								<li>Categorías temáticas claras</li>
+								<li>Señalización que te guía</li>
+								<li>Encuentras tu libro en minutos</li>
+							</ul>
+						</div>
+					</div>
+					<p class="fragment" style="margin-top: 30px; color: #42affa; font-size: 1.1em;">
+						<strong>Mismo contenido, experiencia radicalmente diferente</strong>
+					</p>
+				</section>
+
+				<section>
+					<h3>🎯 ¿Qué es la Arquitectura de Información?</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 1em; color: #42affa; font-weight: bold;">
+							Crear estructura, organización y sistemas de navegación que permiten a los usuarios encontrar lo que necesitan <span class="highlight">intuitivamente</span>
+						</p>
+						<div class="fragment" style="margin-top: 30px; font-size: 0.85em;">
+							<p><strong style="color: #4caf50;">✨ AI excelente:</strong> Invisible, todo está donde esperarías</p>
+							<p><strong style="color: #f44336;">❌ AI pobre:</strong> Búsqueda frustrante del tesoro en cada interacción</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.4.1: Fundamentos de AI -->
+				<section data-background-gradient="linear-gradient(to bottom, #512da8, #5e35b1)">
+					<h2>1.4.1. Fundamentos de AI</h2>
+					<p class="small-text">Los 4 pilares que crean experiencias navegables</p>
+				</section>
+
+				<section>
+					<h3>🏛️ Los 4 Pilares Fundamentales</h3>
+					<div class="grid-4" style="font-size: 0.75em; margin-top: 30px;">
+						<div class="fragment pillar-card">
+							<h4 style="color: #42affa;">1️⃣ Organización</h4>
+							<p class="tiny-text">Cómo agrupas y estructuras contenido</p>
+						</div>
+						<div class="fragment pillar-card">
+							<h4 style="color: #ff9800;">2️⃣ Navegación</h4>
+							<p class="tiny-text">Caminos y señalización para moverse</p>
+						</div>
+						<div class="fragment pillar-card">
+							<h4 style="color: #4caf50;">3️⃣ Rotulado</h4>
+							<p class="tiny-text">Las palabras que usas para comunicar</p>
+						</div>
+						<div class="fragment pillar-card">
+							<h4 style="color: #ab47bc;">4️⃣ Búsqueda</h4>
+							<p class="tiny-text">Red de seguridad cuando la navegación falla</p>
+						</div>
+					</div>
+					<p class="fragment" style="margin-top: 30px; color: #42affa;">
+						<strong>Trabajan juntos armoniosamente para crear claridad</strong>
+					</p>
+				</section>
+
+				<!-- Pilar 1: Organización -->
+				<section data-background="#5e35b1">
+					<h3>1️⃣ Organización: Creando Estructura</h3>
+					<div class="analogy">
+						<p style="font-size: 0.9em;"><strong style="color: #42affa;">Verdad crucial:</strong> No existe UNA forma "correcta" de organizar información</p>
+						<p class="fragment small-text" style="margin-top: 20px;">La misma información puede organizarse de múltiples formas legítimas</p>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50; font-weight: bold;">
+							Cuál funciona mejor depende de cómo piensan TUS usuarios
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>👕 Ejemplo: Tienda de Ropa</h3>
+					<div style="font-size: 0.7em;">
+						<p class="small-text">Miles de productos... ¿Cómo los organizas?</p>
+						<div class="grid-2" style="margin-top: 20px; gap: 15px;">
+							<div class="fragment example-box">
+								<strong style="color: #42affa;">Por tipo de prenda</strong>
+								<p class="tiny-text">Camisas, pantalones, vestidos, zapatos</p>
+								<p class="tiny-text" style="color: #4caf50;">→ Para quien sabe "necesito una camisa"</p>
+							</div>
+							<div class="fragment example-box">
+								<strong style="color: #ff9800;">Por ocasión</strong>
+								<p class="tiny-text">Casual, trabajo, deportiva, formal</p>
+								<p class="tiny-text" style="color: #4caf50;">→ Para quien piensa "necesito algo para boda"</p>
+							</div>
+							<div class="fragment example-box">
+								<strong style="color: #ab47bc;">Por estilo</strong>
+								<p class="tiny-text">Minimalista, bohemio, vintage, tendencias</p>
+								<p class="tiny-text" style="color: #4caf50;">→ Para quien tiene identidad estética clara</p>
+							</div>
+							<div class="fragment example-box">
+								<strong style="color: #e91e63;">Por demografía</strong>
+								<p class="tiny-text">Mujer, hombre, infantil, plus size</p>
+								<p class="tiny-text" style="color: #4caf50;">→ Esquema tradicional (pero limitante)</p>
+							</div>
+						</div>
+						<div class="fragment success-box" style="margin-top: 20px;">
+							<strong>Solución:</strong> Soportar múltiples rutas simultáneamente
+							<p class="tiny-text">Diferentes usuarios piensan diferente → Ofrece múltiples caminos</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📊 Esquemas de Organización</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment example-box" style="margin: 15px 0;">
+							<strong style="color: #42affa;">Esquemas Exactos</strong>
+							<p class="tiny-text">Respuesta objetiva sobre dónde va algo</p>
+							<ul class="tiny-text" style="text-align: left;">
+								<li>Alfabético (A-Z)</li>
+								<li>Cronológico (por fecha/tiempo)</li>
+								<li>Geográfico (por ubicación)</li>
+							</ul>
+							<p class="tiny-text" style="color: #4caf50;">✓ Sin ambigüedad: Alemania va antes que Brasil</p>
+						</div>
+						<div class="fragment example-box" style="margin: 15px 0;">
+							<strong style="color: #ff9800;">Esquemas Ambiguos</strong>
+							<p class="tiny-text">Basados en juicios subjetivos</p>
+							<ul class="tiny-text" style="text-align: left;">
+								<li>Por tema o categoría</li>
+								<li>Por audiencia objetivo</li>
+								<li>Por tarea o propósito</li>
+							</ul>
+							<p class="tiny-text" style="color: #ff9800;">⚠️ Requieren entender profundamente cómo piensa tu audiencia</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>💡 Clave para Elegir Organización</h3>
+					<div class="principle-box">
+						<p style="font-size: 0.9em;"><strong>Vuelve siempre a tu investigación de usuarios:</strong></p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">¿Cómo hablan sobre el dominio?</li>
+							<li class="fragment">¿Qué categorías usan naturalmente?</li>
+							<li class="fragment">¿Qué preguntas hacen?</li>
+							<li class="fragment">¿Cómo agruparían el contenido?</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; color: #ab47bc; font-size: 1.1em;">
+							<strong>Card Sorting deja que usuarios te muestren cómo agrupar</strong>
+						</p>
+					</div>
+				</section>
+
+				<!-- Pilar 2: Navegación -->
+				<section data-background="#5e35b1">
+					<h3>2️⃣ Navegación: Moverse Intencionalmente</h3>
+					<div style="font-size: 0.85em;">
+						<p>Sistema de <strong style="color: #42affa;">caminos y señalización</strong> que permite moverse a través de tu estructura</p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p><strong>Organización</strong> = Estructura subyacente (invisible)</p>
+							<p><strong>Navegación</strong> = Manifestación visible que usuarios tocan</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🗺️ Tipos de Navegación</h3>
+					<div style="font-size: 0.7em;">
+						<div class="fragment pillar-card" style="margin: 10px 0;">
+							<strong style="color: #42affa;">Navegación Global</strong>
+							<p class="tiny-text">Presente en todas partes, acceso a secciones principales</p>
+							<p class="tiny-text">Ej: Menú de encabezado, barra de pestañas inferior</p>
+							<p class="tiny-text" style="color: #ff9800;">⚠️ Solo 5-7 items máximo, más = abrumador</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 10px 0;">
+							<strong style="color: #4caf50;">Navegación Local</strong>
+							<p class="tiny-text">Específica al contexto donde estás</p>
+							<p class="tiny-text">Ej: Estás en Deportes → ves Fútbol, Basketball, Tenis</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 10px 0;">
+							<strong style="color: #ab47bc;">Navegación Contextual</strong>
+							<p class="tiny-text">Te lleva a contenido relacionado o asociado</p>
+							<p class="tiny-text">Ej: Enlaces en artículos, "Si te gustó esto..."</p>
+							<p class="tiny-text" style="color: #4caf50;">✓ Crea descubrimiento serendípico</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 10px 0;">
+							<strong style="color: #ff9800;">Navegación de Utilidad</strong>
+							<p class="tiny-text">Funciones importantes fuera de jerarquía principal</p>
+							<p class="tiny-text">Ej: Login, Mi cuenta, Carrito, Ayuda, Configuración</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 10px 0;">
+							<strong style="color: #e91e63;">Breadcrumbs (Migas de pan)</strong>
+							<p class="tiny-text">Inicio > Electrónicos > Computadoras > Laptops > Gaming</p>
+							<p class="tiny-text" style="color: #4caf50;">✓ Previene que usuarios se sientan perdidos en jerarquías profundas</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>✨ Principios de Buena Navegación</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<div class="fragment success-box" style="margin: 12px 0;">
+							<strong>1. Consistencia</strong>
+							<p class="tiny-text">Navegación global en mismo lugar, mismo look, mismo comportamiento en todas partes</p>
+						</div>
+						<div class="fragment success-box" style="margin: 12px 0;">
+							<strong>2. Claridad de ubicación</strong>
+							<p class="tiny-text">Indicadores visuales claros de dónde estás (color, subrayado, destacado)</p>
+						</div>
+						<div class="fragment success-box" style="margin: 12px 0;">
+							<strong>3. Múltiples rutas</strong>
+							<p class="tiny-text">Usuarios no todos piensan igual: navegación jerárquica + búsqueda + filtros</p>
+						</div>
+						<div class="fragment warning-box" style="margin: 15px 0;">
+							<strong>⚠️ Romper consistencia = confusión y frustración</strong>
+							<p class="tiny-text">Usuarios desarrollan modelos mentales desde primeras interacciones</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Pilar 3: Rotulado -->
+				<section data-background="#5e35b1">
+					<h3>3️⃣ Rotulado: El Lenguaje de tu Interfaz</h3>
+					<div class="analogy">
+						<p>Las <strong style="color: #42affa;">palabras específicas</strong> que usas para categorías, enlaces, botones, navegación</p>
+						<p class="fragment" style="margin-top: 20px; color: #f44336; font-weight: bold;">
+							Parece simple, "solo son palabras"...
+						</p>
+						<p class="fragment" style="margin-top: 20px;">
+							Pero elegir las palabras correctas es una de las decisiones más <strong style="color: #ff9800;">críticas y difíciles</strong> en AI
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>⚠️ El Problema Fundamental del Rotulado</h3>
+					<div style="font-size: 0.8em;">
+						<div class="warning-box fragment">
+							<strong>Las palabras significan cosas DIFERENTES para personas diferentes</strong>
+							<p class="small-text">Lo obvio para ti = opaco para tus usuarios</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(244, 67, 54, 0.2); border-radius: 10px;">
+							<p class="small-text"><strong>Caso real: Universidad</strong></p>
+							<p class="tiny-text">Menú tenía "Futuros Estudiantes" para potenciales aplicantes</p>
+							<p class="tiny-text" style="margin-top: 10px;"><strong style="color: #f44336;">Resultado:</strong> Estudiantes ACTUALES hacían clic constantemente</p>
+							<p class="tiny-text" style="margin-top: 10px;">"Soy estudiante y estoy planificando mi futuro, pensé que era para mí"</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa; font-size: 1.1em;">
+							<strong>Un rotulado ambiguo = confusión masiva</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>✅ Características de Buenos Rótulos</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<ol>
+							<li class="fragment" style="margin: 10px 0;">
+								<strong style="color: #42affa;">Comprensibles sin explicación adicional</strong>
+								<p class="tiny-text">No necesitas tooltips para aclarar qué significa</p>
+							</li>
+							<li class="fragment" style="margin: 10px 0;">
+								<strong style="color: #42affa;">Específicos y descriptivos, no vagos</strong>
+								<p class="tiny-text">"Recursos" o "Soluciones" son peligrosamente vagos</p>
+							</li>
+							<li class="fragment" style="margin: 10px 0;">
+								<strong style="color: #42affa;">Distintos entre sí sin solapamiento</strong>
+								<p class="tiny-text">"Servicios" y "Productos" pueden ser confusamente similares</p>
+							</li>
+							<li class="fragment" style="margin: 10px 0;">
+								<strong style="color: #42affa;">Lenguaje de usuarios, no jerga interna</strong>
+								<p class="tiny-text">"Atención Ambulatoria Integrada" → "Consultas y Chequeos"</p>
+							</li>
+							<li class="fragment" style="margin: 10px 0;">
+								<strong style="color: #42affa;">Concisos sin sacrificar claridad</strong>
+								<p class="tiny-text">Espacio limitado, pero claridad primero</p>
+							</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Validando Rotulado</h3>
+					<div style="font-size: 0.8em;">
+						<div class="success-box fragment">
+							<strong>Técnica simple pero poderosa:</strong>
+							<p class="small-text">Muestra tus rótulos a usuarios y pregunta:</p>
+							<p class="small-text" style="color: #42affa;">"¿Qué esperarías encontrar bajo cada uno?"</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(255, 152, 0, 0.2); border-radius: 10px;">
+							<p class="small-text">Si sus expectativas NO coinciden con lo que realmente está ahí...</p>
+							<p style="color: #f44336; font-weight: bold;">→ Tienes un problema de rotulado que necesitas solucionar</p>
+						</div>
+						<div class="fragment principle-box" style="margin-top: 20px;">
+							<strong>Convenciones vs. Innovación</strong>
+							<p class="tiny-text">A veces usa estándares conocidos ("Carrito", "Checkout")</p>
+							<p class="tiny-text">Otras veces, tu contenido es único → inventa rótulos claros mediante pruebas</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Pilar 4: Búsqueda -->
+				<section data-background="#5e35b1">
+					<h3>4️⃣ Búsqueda: La Red de Seguridad</h3>
+					<div style="font-size: 0.85em;">
+						<p>Ruta directa cuando los usuarios saben específicamente qué quieren</p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p class="small-text"><strong style="color: #f44336;">❌ Mito 1:</strong> "Si búsqueda es excelente, no necesitas navegación"</p>
+							<p class="small-text"><strong style="color: #f44336;">❌ Mito 2:</strong> "Si navegación es perfecta, no necesitas búsqueda"</p>
+							<p class="fragment" style="margin-top: 15px; color: #4caf50; font-weight: bold;">✅ Verdad: Necesitas AMBOS</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎭 Dos Tipos de Usuarios</h3>
+					<div class="grid-2" style="font-size: 0.8em; margin-top: 30px;">
+						<div class="fragment" style="background: rgba(66, 175, 250, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #42affa;">🔍 Exploradores</h4>
+							<p class="small-text">Prefieren navegar categorías</p>
+							<p class="small-text">Descubren qué hay disponible</p>
+							<p class="small-text">Investigan opciones</p>
+						</div>
+						<div class="fragment" style="background: rgba(255, 152, 0, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #ff9800;">🎯 Cazadores</h4>
+							<p class="small-text">Saben exactamente qué quieren</p>
+							<p class="small-text">Quieren llegar directamente</p>
+							<p class="small-text">Usan búsqueda</p>
+						</div>
+					</div>
+					<p class="fragment" style="margin-top: 30px; color: #4caf50;">
+						<strong>El mismo usuario puede ser AMBOS en diferentes momentos</strong>
+					</p>
+				</section>
+
+				<section>
+					<h3>🔧 Componentes de Búsqueda Efectiva</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<div class="fragment pillar-card" style="margin: 8px 0;">
+							<strong style="color: #42affa;">Cuadro de búsqueda</strong>
+							<p class="tiny-text">Prominente, accesible (esquina superior derecha), suficientemente grande</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 8px 0;">
+							<strong style="color: #4caf50;">Algoritmo inteligente</strong>
+							<p class="tiny-text">Tolera errores de tipeo, variaciones de palabras, sinónimos, rankea por relevancia</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 8px 0;">
+							<strong style="color: #ff9800;">Resultados útiles</strong>
+							<p class="tiny-text">Título, descripción/extracto, metadata relevante (categoría, fecha)</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 8px 0;">
+							<strong style="color: #ab47bc;">Zero results (sin resultados)</strong>
+							<p class="tiny-text">NUNCA solo "No se encontraron resultados" → Sugerencias, alternativas, contenido popular</p>
+						</div>
+						<div class="fragment pillar-card" style="margin: 8px 0;">
+							<strong style="color: #e91e63;">Funcionalidades avanzadas</strong>
+							<p class="tiny-text">Autocompletado, filtros, búsqueda facetada (mostrar cantidad por categoría)</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📊 Búsqueda = Datos Valiosos</h3>
+					<div style="font-size: 0.75em;">
+						<div class="success-box fragment" style="margin: 12px 0;">
+							<strong>Qué buscan más frecuentemente</strong>
+							<p class="tiny-text">→ Te dice qué contenido es más demandado</p>
+						</div>
+						<div class="success-box fragment" style="margin: 12px 0;">
+							<strong>Búsquedas que resultan en zero results</strong>
+							<p class="tiny-text">→ Revelan vacíos de contenido o desalineación de terminología</p>
+						</div>
+						<div class="success-box fragment" style="margin: 12px 0;">
+							<strong>Usuarios hacen clic en 3er o 4to resultado</strong>
+							<p class="tiny-text">→ Tu ranking no está priorizando correctamente</p>
+						</div>
+						<div class="fragment principle-box" style="margin-top: 20px;">
+							<strong>Analiza datos de búsqueda constantemente para mejorar</strong>
+						</div>
+					</div>
+				</section>
+
+				<!-- Los 4 pilares trabajando juntos -->
+				<section data-background="#512da8">
+					<h3>🎼 Los 4 Pilares en Armonía</h3>
+					<div style="font-size: 0.8em;">
+						<div style="padding: 25px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+							<p class="fragment"><strong style="color: #42affa;">Organización</strong> → Estructura subyacente lógica</p>
+							<p class="fragment"><strong style="color: #ff9800;">Navegación</strong> → Hace estructura visible y navegable</p>
+							<p class="fragment"><strong style="color: #4caf50;">Rotulado</strong> → Comunica claramente qué es cada parte</p>
+							<p class="fragment"><strong style="color: #ab47bc;">Búsqueda</strong> → Acceso directo que complementa exploración</p>
+						</div>
+						<div class="fragment warning-box" style="margin-top: 30px;">
+							<strong>Cuando están desalineados, la experiencia se ROMPE</strong>
+							<p class="tiny-text">Organización perfecta + navegación confusa = frustración<br>
+							Navegación clara + rótulos vagos = confusión<br>
+							Todo bien + búsqueda que no encuentra nada = fracaso</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50; font-size: 1.1em;">
+							<strong>AI requiere pensamiento holístico</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>💡 Cuando Todo Funciona Bien</h3>
+					<div class="success-box" style="font-size: 0.9em;">
+						<p style="font-size: 1.1em; color: #4caf50; font-weight: bold;">
+							Los usuarios sienten que el sitio "simplemente tiene sentido"
+						</p>
+						<ul style="font-size: 0.85em; text-align: left; margin-top: 20px;">
+							<li class="fragment">Nunca se pierden</li>
+							<li class="fragment">Encuentran lo que necesitan sin frustración</li>
+							<li class="fragment">La navegación se vuelve invisible</li>
+							<li class="fragment">Todo está donde esperarían que estuviera</li>
+						</ul>
+						<p class="fragment" style="margin-top: 30px; color: #42affa; font-size: 1.1em;">
+							<strong>Eso es la magia de la excelente Arquitectura de Información</strong>
+						</p>
+					</div>
+				</section>
+
+				<!-- Resumen visual de fundamentos -->
+				<section data-background="#5e35b1">
+					<h3>🎯 Resumen: Fundamentos de AI</h3>
+					<div style="font-size: 0.7em;">
+						<div class="grid-2" style="gap: 15px;">
+							<div class="pillar-card">
+								<strong style="color: #42affa;">Organización</strong>
+								<ul class="tiny-text" style="text-align: left;">
+									<li>No hay una forma "correcta"</li>
+									<li>Depende de cómo piensan usuarios</li>
+									<li>Soporta múltiples rutas</li>
+									<li>Exactos vs. ambiguos</li>
+								</ul>
+							</div>
+							<div class="pillar-card">
+								<strong style="color: #ff9800;">Navegación</strong>
+								<ul class="tiny-text" style="text-align: left;">
+									<li>Global, local, contextual, utilidad</li>
+									<li>Consistencia es crítica</li>
+									<li>Claridad de ubicación</li>
+									<li>Múltiples rutas hacia contenido</li>
+								</ul>
+							</div>
+							<div class="pillar-card">
+								<strong style="color: #4caf50;">Rotulado</strong>
+								<ul class="tiny-text" style="text-align: left;">
+									<li>Decisión crítica y difícil</li>
+									<li>Comprensibles sin explicación</li>
+									<li>Lenguaje de usuarios, no jerga</li>
+									<li>Valida con usuarios reales</li>
+								</ul>
+							</div>
+							<div class="pillar-card">
+								<strong style="color: #ab47bc;">Búsqueda</strong>
+								<ul class="tiny-text" style="text-align: left;">
+									<li>Para exploradores Y cazadores</li>
+									<li>Algoritmo inteligente</li>
+									<li>Zero results bien manejados</li>
+									<li>Genera datos valiosos</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Conclusión -->
+				<section data-background-gradient="linear-gradient(to bottom, #5e35b1, #311b92)">
+					<h2>🎯 Conclusiones de Arquitectura de Información</h2>
+					<div style="font-size: 0.85em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">1.</strong> AI transforma conocimiento de usuarios en estructura navegable
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">2.</strong> Los 4 pilares (organización, navegación, rotulado, búsqueda) trabajan juntos
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">3.</strong> No hay una forma "correcta" universal - depende de TUS usuarios
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">4.</strong> Rotulado parece simple pero es crítico - valida con usuarios
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">5.</strong> AI excelente es invisible - todo está donde esperarías
+						</div>
+						<div class="fragment" style="margin: 30px 0; padding: 20px; background: rgba(76, 175, 80, 0.2); border-radius: 10px; text-align: center;">
+							<p style="color: #4caf50; font-size: 1.1em; font-weight: bold;">
+								Cuando AI funciona bien, los usuarios nunca se pierden
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cierre -->
+				<section data-background-gradient="linear-gradient(to bottom, #311b92, #4527a0)">
+					<h1>¡Gracias!</h1>
+					<p>Próximo tema: Técnicas de AI (Card Sorting, Tree Testing, etc.)</p>
+					<p class="small-text" style="margin-top: 40px;">La arquitectura de información es la columna vertebral del buen UX</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display presentation control arrows
+				controls: true,
+
+				// Help the user learn the controls by providing hints
+				controlsTutorial: true,
+
+				// Determines where controls appear
+				controlsLayout: 'bottom-right',
+
+				// Visibility rule for backwards navigation arrows
+				controlsBackArrows: 'faded',
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Can be used to limit the contexts in which the slide number appears
+				showSlideNumber: 'all',
+
+				// Add the current slide number to the URL hash
+				hash: true,
+
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+			});
+		</script>
+	</body>
+</html>

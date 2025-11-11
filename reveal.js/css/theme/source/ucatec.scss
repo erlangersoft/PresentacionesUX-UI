@@ -1,0 +1,509 @@
+/**
+ * Tema UCATEC para reveal.js
+ * Universidad Privada de Ciencias Administrativas y Tecnológicas
+ * Programa de Postgrado: Fundamentos del Diseño Web y UX/UI
+ */
+
+// Colores UCATEC
+$ucatecBlue: #0047AB;
+$ucatecLightBlue: #3A7BD5;
+$ucatecDarkBlue: #002855;
+$ucatecAccent: #00A9E0;
+$backgroundColor: #ffffff;
+$mainColor: #2C3E50;
+$headingColor: $ucatecDarkBlue;
+$linkColor: $ucatecAccent;
+$linkColorHover: #0088cc;
+$selectionBackgroundColor: rgba($ucatecLightBlue, 0.75);
+
+// Tipografía
+$mainFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$headingFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$codeFont: 'Courier New', Consolas, Monaco, monospace;
+
+// Tamaños de fuente
+$mainFontSize: 32px;
+$heading1Size: 2em;
+$heading2Size: 1.5em;
+$heading3Size: 1.2em;
+$heading4Size: 1em;
+
+// IMPORTS
+@import "../template/mixins";
+@import "../template/settings";
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Estilos personalizados UCATEC
+.reveal {
+  
+  // Logo en todas las diapositivas
+  .slide-background::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 60px;
+    background: url('../../../img/logo_ucatec.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  // Estilos de encabezados
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.2;
+    letter-spacing: normal;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    color: $ucatecDarkBlue !important;
+    text-shadow: none;
+    font-size: 1.8em !important;
+    font-weight: 800 !important;
+  }
+
+  h2 {
+    color: $ucatecDarkBlue !important;
+    border-bottom: 3px solid $ucatecAccent;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.3em !important;
+    font-weight: 700 !important;
+  }
+
+  h3 {
+    color: $ucatecBlue !important;
+    font-size: 1.1em !important;
+    margin-top: 15px;
+    font-weight: 700 !important;
+  }
+  
+  h4 {
+    color: $ucatecLightBlue !important;
+    font-size: 1em !important;
+    font-weight: 600 !important;
+  }
+  
+  // Títulos en slides con fondo oscuro - ALTA LEGIBILIDAD
+  section[data-background-gradient] h1,
+  section[data-background-gradient] h2,
+  section[data-background-gradient] h3,
+  section[data-background-gradient] h4,
+  section[data-background-gradient] p,
+  section[data-background-color="#000000"] h1,
+  section[data-background-color="#000000"] h2,
+  section[data-background-color="#000000"] h3 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    border-bottom-color: rgba(255,255,255,0.8) !important;
+  }
+  
+  p {
+    margin: 0.8em 0;
+    line-height: 1.6;
+  }
+
+  // Portada especial
+  .portada {
+    text-align: center;
+    padding: 20px !important;
+    
+    .logo-grande {
+      max-width: 200px;
+      margin: 0 auto 30px auto;
+      display: block;
+    }
+    
+    .titulo-principal {
+      font-size: 1.8em !important;
+      color: white !important;
+      margin: 20px 0 15px 0;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .subtitulo {
+      font-size: 1.3em !important;
+      color: rgba(255,255,255,0.95) !important;
+      margin: 10px 0 30px 0;
+      font-weight: 600;
+    }
+
+    .info-institucion {
+      font-size: 0.65em !important;
+      color: white !important;
+      margin-top: 30px;
+      line-height: 1.4;
+      
+      .universidad {
+        font-weight: 600;
+        color: white !important;
+        margin: 5px 0;
+      }
+      
+      .programa {
+        font-style: italic;
+        color: rgba(255,255,255,0.9) !important;
+        margin: 5px 0;
+      }
+      
+      .docente {
+        margin-top: 15px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.95) !important;
+      }
+    }
+  }
+
+  // Listas
+  ul, ol {
+    margin: 20px 0;
+    
+    li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    
+    li::before {
+      content: "▸";
+      color: $ucatecAccent;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+
+  // Fragmentos con animación
+  .fragment {
+    &.fade-in-then-semi-out {
+      opacity: 0;
+      &.visible {
+        opacity: 1;
+        &.current-fragment {
+          opacity: 1;
+        }
+        &:not(.current-fragment) {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  // Tablas - MEJOR LEGIBILIDAD
+  table {
+    margin: 15px auto;
+    border-collapse: collapse;
+    font-size: 0.65em !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 100%;
+    
+    thead {
+      background: linear-gradient(135deg, $ucatecBlue 0%, $ucatecLightBlue 100%);
+      color: white !important;
+      
+      th {
+        padding: 12px 10px !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        font-size: 1em !important;
+        line-height: 1.3;
+        color: white !important;
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+    }
+    
+    tbody {
+      background: white;
+      
+      tr {
+        border-bottom: 2px solid #e0e0e0;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          background-color: rgba($ucatecAccent, 0.08);
+        }
+        
+        &:nth-child(even) {
+          background-color: #f8f9fa;
+        }
+      }
+      
+      td {
+        padding: 10px 10px !important;
+        text-align: left !important;
+        line-height: 1.4;
+        font-size: 0.95em !important;
+        color: #2C3E50 !important;
+        font-weight: 500 !important;
+        border: 1px solid #e0e0e0;
+        
+        strong {
+          color: $ucatecDarkBlue !important;
+          font-weight: 700 !important;
+        }
+      }
+    }
+  }
+
+  // Cajas de énfasis - MEJOR CONTRASTE
+  .caja-enfasis {
+    background: linear-gradient(135deg, rgba($ucatecBlue, 0.08) 0%, rgba($ucatecLightBlue, 0.08) 100%);
+    border-left: 6px solid $ucatecAccent;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba($ucatecAccent, 0.2);
+    
+    h3, h4 {
+      margin-top: 0 !important;
+    }
+  }
+
+  .caja-importante {
+    background: linear-gradient(135deg, rgba(#e74c3c, 0.08) 0%, rgba(#c0392b, 0.08) 100%);
+    border-left: 6px solid #e74c3c;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(#e74c3c, 0.2);
+    
+    h3, h4 {
+      margin-top: 0 !important;
+      color: #c0392b !important;
+    }
+  }
+
+  .caja-ejemplo {
+    background: linear-gradient(135deg, rgba(#27ae60, 0.08) 0%, rgba(#229954, 0.08) 100%);
+    border-left: 6px solid #27ae60;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(#27ae60, 0.2);
+    
+    h3, h4 {
+      margin-top: 0 !important;
+      color: #229954 !important;
+    }
+  }
+
+  // Columnas
+  .columnas {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    
+    .columna {
+      flex: 1;
+    }
+  }
+
+  // Badges/Etiquetas
+  .badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin: 5px;
+    
+    &.badge-primary {
+      background: $ucatecBlue;
+      color: white;
+    }
+    
+    &.badge-secondary {
+      background: $ucatecLightBlue;
+      color: white;
+    }
+    
+    &.badge-accent {
+      background: $ucatecAccent;
+      color: white;
+    }
+  }
+
+  // Código
+  code {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: $codeFont;
+    color: #e74c3c;
+  }
+
+  pre {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    code {
+      background: #2C3E50;
+      border: none;
+      color: #ecf0f1;
+      padding: 20px;
+      max-height: 500px;
+    }
+  }
+
+  // Diagramas Mermaid - MAYOR CONTRASTE
+  .mermaid {
+    background: #f8f9fa !important;
+    padding: 25px !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    margin: 20px auto !important;
+    border: 2px solid #e0e0e0 !important;
+    
+    svg {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+      margin: 0 auto;
+      filter: contrast(1.1) brightness(1.05);
+    }
+  }
+  
+  // Asegurar que los diagramas sean visibles
+  pre.mermaid {
+    background: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // Slides de sección
+  .slide-seccion {
+    background: linear-gradient(135deg, $ucatecBlue 0%, $ucatecLightBlue 100%);
+    
+    h2 {
+      color: white;
+      border-bottom: 3px solid white;
+      font-size: 2.5em;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2em;
+    }
+  }
+
+  // Footer personalizado
+  .footer-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.6em;
+    color: $mainColor;
+    opacity: 0.7;
+  }
+
+  // Enlaces
+  a {
+    color: $linkColor;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $linkColorHover;
+      border-bottom-color: $linkColorHover;
+    }
+  }
+
+  // Énfasis
+  strong, b {
+    color: $ucatecBlue;
+    font-weight: 700;
+  }
+
+  em, i {
+    color: $ucatecLightBlue;
+  }
+
+  // Blockquotes
+  blockquote {
+    background: rgba($ucatecBlue, 0.05);
+    border-left: 5px solid $ucatecAccent;
+    padding: 20px;
+    font-style: italic;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    &::before {
+      content: '"';
+      font-size: 3em;
+      color: $ucatecAccent;
+      opacity: 0.3;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+  }
+
+  // Controles de navegación
+  .controls {
+    color: $ucatecAccent;
+  }
+
+  // Barra de progreso
+  .progress {
+    background: rgba(0, 0, 0, 0.1);
+    
+    span {
+      background: linear-gradient(90deg, $ucatecBlue 0%, $ucatecAccent 100%);
+    }
+  }
+
+  // Numeración de slides
+  .slide-number {
+    color: $ucatecBlue;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  // Ajustes adicionales de espaciado y legibilidad
+  .slides section {
+    padding: 20px !important;
+    box-sizing: border-box;
+  }
+  
+  // Mejorar spacing de elementos
+  p, ul, ol, table, .caja-enfasis, .caja-importante, .caja-ejemplo {
+    margin: 10px 0 !important;
+  }
+  
+  // Asegurar legibilidad en badges
+  .badge {
+    font-size: 0.6em !important;
+    padding: 4px 10px !important;
+  }
+}
+
+// Ajustes responsivos
+@media screen and (max-width: 768px) {
+  .reveal {
+    .columnas {
+      flex-direction: column;
+    }
+    
+    table {
+      font-size: 0.5em !important;
+    }
+  }
+}

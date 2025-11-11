@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos del Diseño Web y UX/UI - Universidad UCATEC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 3rem 2rem;
+        }
+
+        .module {
+            margin-bottom: 3rem;
+        }
+
+        .module-title {
+            color: #2a5298;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .topic-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-link {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .topic-link:hover {
+            color: #667eea;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                max-width: 200px;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/logo_ucatec.png" alt="Universidad UCATEC" class="logo">
+            <h1>Fundamentos del Diseño Web y UX/UI</h1>
+            <p class="subtitle">Navegación de Presentaciones del Curso</p>
+        </header>
+
+        <main>
+            <section class="module">
+                <h2 class="module-title">1. Fundamentos de UX (La Estrategia)</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-number">1.1</div>
+                        <a href="1.1-introduccion-ux-design.html" class="topic-link">Introducción al UX Design</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">1.2</div>
+                        <a href="1.2-diseno-centrado-usuario.html" class="topic-link">Diseño Centrado en el Usuario (DCU)</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">1.3</div>
+                        <a href="1.3-investigacion-usuarios.html" class="topic-link">Investigación de Usuarios</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">1.4</div>
+                        <a href="1.4-arquitectura-informacion.html" class="topic-link">Arquitectura de la Información</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="module">
+                <h2 class="module-title">2. Fundamentos de UI (Lo Visual)</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-number">2.1</div>
+                        <a href="2.1-principios-diseno-visual.html" class="topic-link">Principios del Diseño Visual</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.2</div>
+                        <a href="2.2-tipografia-legibilidad.html" class="topic-link">Tipografía y Legibilidad</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.3</div>
+                        <a href="2.3-sistemas-diseno.html" class="topic-link">Sistemas de Diseño</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.4</div>
+                        <a href="2.4-accesibilidad-inclusion.html" class="topic-link">Accesibilidad e Inclusión</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="module">
+                <h2 class="module-title">3. Fundamentos del Diseño Web (La Estructura)</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-number">3.1</div>
+                        <a href="3.1-diseno-web-maquetacion.html" class="topic-link">Diseño Web y Maquetación</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">3.2</div>
+                        <a href="3.2-usabilidad-navegacion.html" class="topic-link">Usabilidad y Navegación</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">3.3</div>
+                        <a href="3.3-responsive-web-design.html" class="topic-link">Responsive Web Design</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">3.4</div>
+                        <a href="3.4-performance-experiencia-tecnica.html" class="topic-link">Performance y Experiencia Técnica</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="module">
+                <h2 class="module-title">4. Aplicaciones Prácticas</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-number">4.1</div>
+                        <a href="4.1-integracion-ux-ui.html" class="topic-link">Integración UX + UI</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">4.2</div>
+                        <a href="4.2-herramientas-profesionales.html" class="topic-link">Herramientas Profesionales</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">4.3</div>
+                        <a href="4.3-testing-usabilidad.html" class="topic-link">Testing de Usabilidad</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Universidad UCATEC - Fundamentos del Diseño Web y UX/UI</p>
+        </footer>
+    </div>
+</body>
+</html>

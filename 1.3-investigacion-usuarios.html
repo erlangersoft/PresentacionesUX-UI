@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>1.3. Investigación de Usuarios</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .tiny-text {
+				font-size: 0.7em;
+			}
+			.reveal .analogy {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 10px;
+				border-left: 5px solid #42affa;
+			}
+			.reveal .method-card {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 20px;
+				border-radius: 10px;
+				margin: 15px 0;
+			}
+			.reveal .comparison-box {
+				background: rgba(255, 255, 255, 0.08);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+			}
+			.reveal .warning-box {
+				background: rgba(255, 152, 0, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 5px solid #ff9800;
+			}
+			.reveal .success-box {
+				background: rgba(76, 175, 80, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 5px solid #4caf50;
+			}
+			.reveal .grid-2 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- Portada -->
+				<section data-background-gradient="linear-gradient(to bottom, #2350cd33, #3061e833)">
+					<h1>1.3. Investigación de Usuarios</h1>
+					<p>El corazón pulsante del UX</p>
+					<p class="small-text" style="margin-top: 40px;">De la intuición a la evidencia</p>
+				</section>
+
+				<!-- Introducción -->
+				<section data-background-gradient="linear-gradient(to bottom, #2350cd33, #3061e833)">
+					<h2>La Ciencia y el Arte del UX</h2>
+					<div class="fragment" style="margin-top: 50px; padding: 30px; background: #2350cd33; border-radius: 15px;">
+						<p style="font-size: 1.1em; color: #42affa;">
+							La investigación de usuarios es donde pasamos de <strong>intuiciones y suposiciones</strong> a <strong>conocimiento sólido basado en evidencia</strong>
+						</p>
+					</div>
+					<div class="fragment" style="margin-top: 30px; font-size: 0.85em;">
+						<p>🔬 <strong>Ciencia:</strong> Métodos rigurosos y repetibles</p>
+						<p>🎨 <strong>Arte:</strong> Sensibilidad para interpretar y conectar puntos</p>
+					</div>
+				</section>
+
+				<!-- Sección 1.3.1: Métodos cualitativos vs cuantitativos -->
+				<section data-background-gradient="linear-gradient(to bottom, #2350cd33, #3061e833)">
+					<h2>1.3.1. Métodos Cualitativos vs. Cuantitativos</h2>
+					<p class="small-text">Dos formas complementarias de entender a las personas</p>
+				</section>
+
+				<section>
+					<h3>📊 La Gran Distinción</h3>
+					<div class="grid-2" style="font-size: 0.8em; margin-top: 30px;">
+						<div class="fragment comparison-box">
+							<h4 style="color: #42affa;">Cualitativo</h4>
+							<p style="font-size: 0.9em;">Palabra clave: <strong>COMPRENDER</strong></p>
+							<ul style="text-align: left; font-size: 0.85em;">
+								<li>El QUÉ, CÓMO y POR QUÉ</li>
+								<li>Palabras, historias, observaciones</li>
+								<li>Profundidad sobre amplitud</li>
+								<li>10-20 personas en detalle</li>
+							</ul>
+						</div>
+						<div class="fragment comparison-box">
+							<h4 style="color: #ff9800;">Cuantitativo</h4>
+							<p style="font-size: 0.9em;">Palabra clave: <strong>MEDIR</strong></p>
+							<ul style="text-align: left; font-size: 0.85em;">
+								<li>El CUÁNTO y CUÁNTOS</li>
+								<li>Números, estadísticas, patrones</li>
+								<li>Amplitud sobre profundidad</li>
+								<li>Cientos o miles de datos</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📱 Ejemplo: App de Meditación</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong style="color: #42affa;">Cualitativo:</strong> Entrevistas con 10 usuarios
+							<p class="tiny-text">"Intenté meditar 3 días, pero mi mente divagaba y pensaba 'no soy bueno para esto'. Me sentía cada vez más ansioso por no poder concentrarme..."</p>
+							<p style="color: #4caf50; margin-top: 10px;">💡 Insight: El problema NO es el producto, son las expectativas poco realistas</p>
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong style="color: #ff9800;">Cuantitativo:</strong> Análisis de 5,000 usuarios
+							<p class="tiny-text">• 62% abandonan en la primera semana<br>• 80% de ellos nunca completaron más de 2 sesiones<br>• Los que completan 5+ sesiones tienen 75% retención a 3 meses</p>
+							<p style="color: #4caf50; margin-top: 10px;">💡 Insight: Hay un punto crítico en las primeras 5 sesiones</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Cuándo Usar Cada Método</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong style="color: #42affa;">Usa Cualitativo cuando:</strong>
+							<ul style="font-size: 0.9em;">
+								<li>Estás explorando territorio desconocido</li>
+								<li>Necesitas entender motivaciones profundas</li>
+								<li>Quieres explicar el "por qué" detrás de los números</li>
+								<li>Diseñas algo completamente nuevo</li>
+							</ul>
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong style="color: #ff9800;">Usa Cuantitativo cuando:</strong><br>
+							<ul style="font-size: 0.9em;">
+								<li>Necesitas validar con muestras grandes</li>
+								<li>Quieres medir el impacto de cambios</li>
+								<li>Debes priorizar problemas por magnitud</li>
+								<li>Necesitas convencer con datos duros</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#00897b">
+					<h3>✨ La Verdad Fundamental</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 1.2em; color: #42affa; font-weight: bold;">
+							No es UNO u OTRO<br>Es AMBOS juntos
+						</p>
+						<div class="fragment" style="margin-top: 30px; font-size: 0.85em;">
+							<p><strong>Cualitativo:</strong> Profundidad sin amplitud</p>
+							<p><strong>Cuantitativo:</strong> Amplitud sin profundidad</p>
+							<p style="margin-top: 20px; color: #4caf50; font-size: 1.1em;"><strong>JUNTOS:</strong> Imagen completa</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>⚠️ Las Trampas de Cada Método</h3>
+					<div style="font-size: 0.7em;">
+						<div class="warning-box fragment">
+							<strong>Cualitativo - Sesgos del investigador</strong>
+							<p class="tiny-text">Tus creencias pueden influenciar interpretaciones. 12 entrevistas NO significan que el 92% piensa así.</p>
+						</div>
+						<div class="warning-box fragment">
+							<strong>Cuantitativo - Ilusión de objetividad</strong>
+							<p class="tiny-text">"No todo lo que cuenta puede ser contado, y no todo lo que puede ser contado, cuenta."</p>
+						</div>
+						<div class="warning-box fragment">
+							<strong>Ambos - Correlación ≠ Causación</strong>
+							<p class="tiny-text">Que dos cosas ocurran juntas no significa que una cause la otra.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.3.2: Mapas de empatía y User Personas -->
+				<section data-background-gradient="linear-gradient(to bottom, #00897b, #26a69a)">
+					<h2>1.3.2. Mapas de Empatía y User Personas</h2>
+					<p class="small-text">Transformando datos en artefactos útiles</p>
+				</section>
+
+				<section>
+					<h3>🗺️ El Mapa de Empatía</h3>
+					<div class="analogy">
+						<p>Herramienta visual que sintetiza la <strong style="color: #42affa;">experiencia interna</strong> del usuario</p>
+						<p class="fragment small-text" style="margin-top: 20px;">
+							Después de semanas de investigación, tienes montañas de datos...<br>
+							¿Cómo compartes todo eso de forma memorable y accionable?
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>📋 Anatomía del Mapa de Empatía</h3>
+					<div style="font-size: 0.7em; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+						<div class="fragment method-card">
+							<strong style="color: #42affa;">💭 Piensa y Siente</strong>
+							<p class="tiny-text">Pensamientos internos y emociones que quizás no expresan</p>
+						</div>
+						<div class="fragment method-card">
+							<strong style="color: #42affa;">👀 Ve</strong>
+							<p class="tiny-text">Estímulos visuales del entorno, información que consumen</p>
+						</div>
+						<div class="fragment method-card">
+							<strong style="color: #42affa;">👂 Escucha</strong>
+							<p class="tiny-text">Voces, mensajes, consejos (solicitados o no)</p>
+						</div>
+						<div class="fragment method-card">
+							<strong style="color: #42affa;">💬 Dice y Hace</strong>
+							<p class="tiny-text">Comportamientos observables (a veces contrasta con lo interno)</p>
+						</div>
+						<div class="fragment method-card">
+							<strong style="color: #f44336;">😓 Dolores</strong>
+							<p class="tiny-text">Frustraciones, obstáculos, miedos y desafíos</p>
+						</div>
+						<div class="fragment method-card">
+							<strong style="color: #4caf50;">✨ Ganancias</strong>
+							<p class="tiny-text">Objetivos, deseos, necesidades y éxito</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>👥 Ejemplo: Padres Primerizos</h3>
+					<div style="font-size: 0.65em; text-align: left;">
+						<p><strong style="color: #42affa;">Piensa/Siente:</strong> "¿Lo estoy haciendo bien? Cada llanto me hace dudar..."</p>
+						<p><strong style="color: #42affa;">Ve:</strong> Publicaciones perfectas en redes, artículos contradictorios</p>
+						<p><strong style="color: #42affa;">Escucha:</strong> Consejos de la suegra vs. el pediatra, llanto por horas</p>
+						<p><strong style="color: #42affa;">Dice/Hace:</strong> Públicamente "todo bien", privadamente buscan en Google a las 3AM</p>
+						<div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+							<div style="background: rgba(244, 67, 54, 0.2); padding: 10px; border-radius: 5px;">
+								<strong style="color: #f44336;">Dolores:</strong> Privación de sueño, información abrumadora, ansiedad constante
+							</div>
+							<div style="background: rgba(76, 175, 80, 0.2); padding: 10px; border-radius: 5px;">
+								<strong style="color: #4caf50;">Ganancias:</strong> Sentirse confiados, bebé saludable, no ser juzgados
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎭 User Personas</h3>
+					<div style="font-size: 0.85em;">
+						<p>Personaje <strong style="color: #42affa;">semificticio</strong> que representa un segmento de usuarios</p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p class="small-text"><strong>Semi-ficticio = </strong>Basado en investigación REAL, pero presentado como individuo específico</p>
+							<p class="fragment small-text" style="margin-top: 15px;">Sintetizas patrones de 20 entrevistas → Los encapsula en una persona representativa</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🧠 Por Qué las Personas Son Poderosas</h3>
+					<div style="font-size: 0.8em;">
+						<div class="comparison-box fragment">
+							<p style="color: #888;">❌ "Nuestros usuarios son adultos de 25-40 años interesados en fitness"</p>
+							<p class="tiny-text">→ Abstracto, sin emoción</p>
+						</div>
+						<div class="success-box fragment" style="margin-top: 20px;">
+							<p style="color: #fff;">✅ <strong>"Marcela, 32 años, gerente de marketing</strong> que trabaja 60 horas semanales y quiere mantenerse en forma pero constantemente cancela sus clases de yoga porque surgen emergencias laborales..."</p>
+							<p class="tiny-text">→ Concreto, puedes visualizarla, generas empatía</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa;">
+							Las discusiones cambian de "¿los usuarios querrán esto?" a "¿Marcela encontraría esto útil?"
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>📝 Componentes de una Persona Sólida</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<ul>
+							<li class="fragment"><strong style="color: #42affa;">Nombre y foto:</strong> Marcela Rodríguez, 32 años</li>
+							<li class="fragment"><strong style="color: #42affa;">Demografía relevante:</strong> Gerente de Marketing Digital, CDMX, soltera</li>
+							<li class="fragment"><strong style="color: #42affa;">Contexto de vida:</strong> Se despierta a las 6:30, revisa emails, llega tarde al ejercicio...</li>
+							<li class="fragment"><strong style="color: #42affa;">Objetivos:</strong> Sentirse saludable, correr un maratón, desconectar del estrés</li>
+							<li class="fragment"><strong style="color: #42affa;">Frustraciones:</strong> No tiene tiempo, gimnasios lejos, apps abrumadoras</li>
+							<li class="fragment"><strong style="color: #42affa;">Comportamiento tech:</strong> Usa smartphone constantemente, valora diseño limpio</li>
+							<li class="fragment"><strong style="color: #42affa;">Cita:</strong> "Sé que el ejercicio me haría sentir mejor, pero ¿dónde encuentro el tiempo?"</li>
+							<li class="fragment"><strong style="color: #42affa;">Escenario de uso:</strong> Martes 8PM, llega cansada, quiere algo rápido...</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔢 ¿Cuántas Personas Necesitas?</h3>
+					<div style="font-size: 0.85em;">
+						<p class="fragment">Depende de qué tan diversos son tus segmentos</p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p><strong style="color: #42affa;">Lo ideal: 2-4 personas principales</strong></p>
+							<p class="small-text">Representando tus segmentos más importantes</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; font-size: 0.8em;">
+							<p><strong>Ejemplo fitness:</strong></p>
+							<p class="small-text">• Marcela (profesional ocupada, 30s)</p>
+							<p class="small-text">• Roberto (padre de familia, 40s, quiere retomar)</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.3.3: Proto-personas vs Personas validadas -->
+				<section data-background-gradient="linear-gradient(to bottom, #26a69a, #4db6ac)">
+					<h2>1.3.3. Proto-personas vs. Personas Validadas</h2>
+					<p class="small-text">La diferencia entre especulación y evidencia</p>
+				</section>
+
+				<section>
+					<h3>⚠️ El Peligro Oculto</h3>
+					<div class="analogy">
+						<p class="fragment">Creas a "Carlos, dueño de ferretería que no sabe de tecnología"</p>
+						<p class="fragment" style="margin-top: 20px;">Le pones nombre, foto, historia...</p>
+						<p class="fragment" style="margin-top: 20px; color: #f44336; font-weight: bold;">Carlos empieza a sentirse REAL</p>
+						<p class="fragment" style="margin-top: 20px;">Tomas decisiones basándote en lo que "Carlos necesitaría"</p>
+						<div class="fragment warning-box" style="margin-top: 30px;">
+							<strong>Pero... Carlos es FICCIÓN</strong>
+							<p class="tiny-text">No se basa en investigación real, sino en tus suposiciones y sesgos</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🆚 Proto vs. Validada</h3>
+					<div class="grid-2" style="font-size: 0.75em;">
+						<div class="fragment" style="background: rgba(255, 152, 0, 0.2); padding: 15px; border-radius: 8px;">
+							<h4 style="color: #ff9800;">Proto-Persona</h4>
+							<ul style="text-align: left; font-size: 0.85em;">
+								<li>Creada ANTES de investigación</li>
+								<li>Basada en suposiciones</li>
+								<li>Punto de partida temporal</li>
+								<li>Útil para alineación inicial</li>
+								<li><strong style="color: #f44336;">PELIGRO:</strong> Tratarla como verdad</li>
+							</ul>
+						</div>
+						<div class="fragment" style="background: rgba(76, 175, 80, 0.2); padding: 15px; border-radius: 8px;">
+							<h4 style="color: #4caf50;">Persona Validada</h4>
+							<ul style="text-align: left; font-size: 0.85em;">
+								<li>Creada DESPUÉS de investigación</li>
+								<li>Basada en datos reales</li>
+								<li>25+ entrevistas, análisis</li>
+								<li>Sintetiza patrones genuinos</li>
+								<li><strong style="color: #4caf50;">PODER:</strong> Confianza en decisiones</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>💸 El Costo Real de Proto-Personas</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> Asumes que Carlos "no sabe de tecnología"
+							<p class="tiny-text">→ Diseñas algo ultra-simple, casi infantil<br>
+							→ Lanzas y descubres que dueños de negocios pequeños SON tech-savvy<br>
+							→ Tu producto los insulta, necesitaban algo robusto<br>
+							→ Meses de trabajo en dirección equivocada</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa; font-size: 1.1em;">
+							<strong>Una suposición incorrecta codificada en proto-persona = producto equivocado</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>✅ Cuándo Usar Proto-Personas</h3>
+					<div style="font-size: 0.8em; text-align: left;">
+						<p class="fragment">Son útiles en contextos MUY específicos:</p>
+						<ul class="fragment" style="font-size: 0.9em;">
+							<li>Alineación inicial cuando el equipo está disperso</li>
+							<li>Punto de partida para planear investigación</li>
+							<li>Startups tempranas sin acceso a usuarios todavía</li>
+						</ul>
+						<div class="warning-box fragment" style="margin-top: 30px;">
+							<strong>LA REGLA DE ORO:</strong>
+							<p class="tiny-text">1. Etiquétalas "PROTO-PERSONA - NO VALIDADA" en rojo<br>
+							2. Establece fecha de caducidad<br>
+							3. Está dispuesto a DESECHARLAS cuando la investigación real las contradiga</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#4db6ac">
+					<h3>🎯 Cómo Identificar Personas Validadas</h3>
+					<div style="font-size: 0.75em;">
+						<div class="success-box fragment">
+							<strong>✓ Cada característica rastrea a evidencia específica</strong>
+							<p class="tiny-text">Puedes señalar transcripciones, datos, encuestas</p>
+						</div>
+						<div class="success-box fragment">
+							<strong>✓ Incluye citas directas de usuarios reales</strong>
+							<p class="tiny-text">No inventadas para "sonar auténticas"</p>
+						</div>
+						<div class="success-box fragment">
+							<strong>✓ Tiene detalles sorprendentes o contraintuitivos</strong>
+							<p class="tiny-text">Cosas que NO hubieras inventado desde estereotipos</p>
+						</div>
+						<div class="success-box fragment">
+							<strong>✓ Especifica tamaño del segmento</strong>
+							<p class="tiny-text">"Roberto representa ~40% de usuarios, negocios establecidos 15+ años"</p>
+						</div>
+						<div class="success-box fragment">
+							<strong>✓ Evoluciona con nueva investigación</strong>
+							<p class="tiny-text">Es un documento vivo, no estático</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.3.4: Jobs to be Done -->
+				<section data-background-gradient="linear-gradient(to bottom, #4db6ac, #80cbc4)">
+					<h2>1.3.4. Jobs to be Done (JTBD)</h2>
+					<p class="small-text">Entender usuarios por lo que intentan lograr, no por quiénes son</p>
+				</section>
+
+				<section>
+					<h3>💡 La Gran Revelación</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 1.1em; color: #42affa; font-weight: bold;">
+							Cuando entiendes qué TRABAJO está tratando de hacer tu usuario, diseñas productos muchísimo mejores
+						</p>
+						<p class="fragment" style="margin-top: 30px; font-size: 0.85em;">
+							No importa QUIÉN es el usuario<br>
+							Importa QUÉ está tratando de lograr
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🤔 El Problema con Solo Demografía</h3>
+					<div style="font-size: 0.7em;">
+						<p class="fragment"><strong>Dos mujeres idénticas demográficamente:</strong></p>
+						<p class="tiny-text fragment">Ambas 35 años, gerentes, misma ciudad, mismos ingresos...</p>
+						<div class="grid-2" style="margin-top: 20px; gap: 15px;">
+							<div class="fragment" style="background: rgba(66, 175, 250, 0.2); padding: 15px; border-radius: 8px;">
+								<strong style="color: #42affa;">Mujer 1</strong>
+								<p class="tiny-text">Acaba de mudarse, no conoce a nadie</p>
+								<p class="tiny-text"><strong>Trabajo:</strong> Conocer personas con intereses similares y construir red social</p>
+								<p class="tiny-text">→ App de eventos = CONEXIÓN HUMANA</p>
+							</div>
+							<div class="fragment" style="background: rgba(255, 152, 0, 0.2); padding: 15px; border-radius: 8px;">
+								<strong style="color: #ff9800;">Mujer 2</strong>
+								<p class="tiny-text">Vive aquí toda su vida, muchos amigos</p>
+								<p class="tiny-text"><strong>Trabajo:</strong> Descubrir experiencias nuevas e interesantes</p>
+								<p class="tiny-text">→ App de eventos = NOVEDAD Y DESCUBRIMIENTO</p>
+							</div>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50;">
+							<strong>Misma demografía, trabajos COMPLETAMENTE diferentes</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔨 ¿Qué es un "Trabajo"?</h3>
+					<div class="analogy">
+						<p style="font-size: 0.9em;">El <strong style="color: #42affa;">progreso</strong> que una persona está tratando de lograr en una <strong style="color: #42affa;">circunstancia particular</strong></p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+							<p class="small-text"><strong>Clayton Christensen:</strong> "Los clientes no compran productos, CONTRATAN productos para hacer un trabajo"</p>
+						</div>
+						<p class="fragment" style="margin-top: 30px; font-size: 0.85em;">
+							No quieres el taladro → Quieres el agujero<br>
+							No quieres el agujero → Quieres que tu casa se sienta como HOGAR
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>📋 Anatomía de un Trabajo</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p class="fragment"><strong style="color: #42affa;">1. Situación/Circunstancia</strong> que desencadena el trabajo</p>
+						<p class="fragment"><strong style="color: #42affa;">2. Resultado funcional</strong> deseado (lo concreto)</p>
+						<p class="fragment"><strong style="color: #42affa;">3. Dimensiones emocionales y sociales</strong> (lo poderoso)</p>
+						<p class="fragment"><strong style="color: #42affa;">4. Restricciones y consideraciones</strong> prácticas</p>
+						<div class="fragment success-box" style="margin-top: 20px; font-size: 0.9em;">
+							<strong>Formato:</strong> "Cuando [situación], necesito [motivación], para que [resultado esperado]"
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🥤 Caso Famoso: Batidos en Fast Food</h3>
+					<div style="font-size: 0.7em;">
+						<div class="fragment" style="margin: 10px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong style="color: #f44336;">❌ Preguntaron: "¿Qué características quieren?"</strong>
+							<p class="tiny-text">Respuestas: Más espeso, más sabores, más barato, más grande<br>
+							→ Implementaron todo → Ventas apenas mejoraron</p>
+						</div>
+						<div class="fragment" style="margin: 10px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px;">
+							<strong style="color: #4caf50;">✅ Observaron: "¿Cuándo y por qué compran?"</strong>
+							<p class="tiny-text">Descubrieron: Viajes largos de mañana (40+ min)<br>
+							<strong>Trabajo:</strong> Algo que me mantenga saciado Y me entretenga durante el viaje aburrido<br>
+							Batido perfecto: Toma mucho tiempo succionarlo, no hace migajas</p>
+						</div>
+						<div class="fragment warning-box" style="margin-top: 15px;">
+							<strong>Solución real:</strong> Hacerlo MÁS viscoso (no menos), agregar trocitos sorpresa
+							<p class="tiny-text">→ Nadie lo hubiera pedido, pero resuelve el trabajo perfectamente</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Trabajos: Funcional, Emocional, Social</h3>
+					<div style="font-size: 0.7em;">
+						<p><strong>Ejemplo: Café de Starbucks ($4)</strong></p>
+						<div style="margin-top: 20px;">
+							<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+								<strong style="color: #42affa;">Funcional:</strong> Obtener cafeína
+								<p class="tiny-text">→ Cualquier café serviría, pero pagas $4...</p>
+							</div>
+							<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(156, 39, 176, 0.2); border-radius: 8px;">
+								<strong style="color: #ab47bc;">Emocional:</strong> Pequeño lujo diario, ritual que marca transición
+								<p class="tiny-text">→ Te estás cuidando a ti mismo</p>
+							</div>
+							<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+								<strong style="color: #ff9800;">Social:</strong> Vaso de Starbucks como señal
+								<p class="tiny-text">→ Comunica estilo de vida, sofisticación, pertenencia</p>
+							</div>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50;">
+							<strong>Diseñan para las 3 dimensiones, no solo cafeína</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎲 Competencia No Obvia</h3>
+					<div style="font-size: 0.8em;">
+						<p class="fragment"><strong style="color: #42affa;">Tu competencia NO es quien crees</strong></p>
+						<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p class="small-text"><strong>Ejemplo: App de juegos educativos para niños</strong></p>
+							<p class="tiny-text">Piensas: Tu competencia son otras apps de juegos</p>
+							<p class="tiny-text" style="margin-top: 10px;"><strong>Trabajo real:</strong> "Mantener niños entretenidos en viajes sin pantallas"</p>
+							<p class="tiny-text" style="margin-top: 10px; color: #ff9800;"><strong>Competencia real:</strong> Libros de actividades, juegos de palabras, audiolibros, podcasts, técnicas de paternidad...</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50;">
+							Entender esto abre innovación radical
+						</p>
+					</div>
+				</section>
+
+				<section data-background="#80cbc4">
+					<h3>🔧 Aplicando JTBD en Diseño</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<ol>
+							<li class="fragment">Durante investigación, pregunta sobre <strong>situaciones específicas</strong> reales</li>
+							<li class="fragment">Busca patrones en circunstancias, resultados deseados y barreras</li>
+							<li class="fragment">Articula cada trabajo: "Cuando [X], necesito [Y], para que [Z]"</li>
+							<li class="fragment">Mapea todas las soluciones que usuarios actualmente usan</li>
+							<li class="fragment">Diseña para el TRABAJO, no para usuario genérico</li>
+							<li class="fragment">Reconoce que podrías necesitar diseños diferentes para trabajos diferentes</li>
+							<li class="fragment">Mide éxito por qué tan bien ayudas a completar trabajos específicos</li>
+						</ol>
+						<div class="fragment success-box" style="margin-top: 20px;">
+							<strong>JTBD + Personas = Poder combinado</strong>
+							<p class="tiny-text">Personas dan el "quién" con empatía, JTBD da el "por qué" con claridad</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.3.5: Análisis competitivo -->
+				<section data-background-gradient="linear-gradient(to bottom, #80cbc4, #004d40)">
+					<h2>1.3.5. Análisis Competitivo y Benchmarking</h2>
+					<p class="small-text">Aprender del paisaje donde vivirá tu producto</p>
+				</section>
+
+				<section>
+					<h3>🗺️ Nunca Diseñas en el Vacío</h3>
+					<div class="analogy">
+						<p>Tu producto entrará a un mundo donde:</p>
+						<ul style="font-size: 0.85em; text-align: left;">
+							<li class="fragment">Ya existen soluciones</li>
+							<li class="fragment">Usuarios tienen hábitos establecidos</li>
+							<li class="fragment">Expectativas formadas por experiencias previas</li>
+						</ul>
+						<p class="fragment" style="margin-top: 30px; color: #42affa; font-size: 1.1em;">
+							<strong>Ignorar ese contexto = diseñar con los ojos vendados</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>💎 Por Qué Importa el Análisis Competitivo</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<div class="fragment success-box" style="margin: 10px 0;">
+							<strong>1. Ahorra tiempo y errores</strong>
+							<p class="tiny-text">Otros ya gastaron millones probando qué funciona. ¿Por qué ignorar ese conocimiento?</p>
+						</div>
+						<div class="fragment success-box" style="margin: 10px 0;">
+							<strong>2. Revela oportunidades sin explotar</strong>
+							<p class="tiny-text">Encuentras necesidades que nadie satisface, segmentos ignorados, frustraciones comunes</p>
+						</div>
+						<div class="fragment success-box" style="margin: 10px 0;">
+							<strong>3. Establece expectativas realistas</strong>
+							<p class="tiny-text">El estándar de mercado define el listón mínimo para ser competitivo</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Identificando Tu Competencia Real</h3>
+					<div style="font-size: 0.7em;">
+						<div class="method-card fragment">
+							<strong style="color: #42affa;">Competidores Directos</strong>
+							<p class="tiny-text">Productos casi idénticos, mismo segmento, mismo problema</p>
+						</div>
+						<div class="method-card fragment">
+							<strong style="color: #ff9800;">Competidores Indirectos</strong>
+							<p class="tiny-text">Resuelven el mismo trabajo pero diferente (ej: apps de bienestar general vs. meditación dedicada)</p>
+						</div>
+						<div class="method-card fragment">
+							<strong style="color: #ab47bc;">Competidores Sustitutos</strong>
+							<p class="tiny-text">Satisfacen necesidades similares subyacentes (ej: ejercicio, hobbies vs. meditación para estrés)</p>
+						</div>
+						<div class="method-card fragment">
+							<strong style="color: #f44336;">No Consumo</strong>
+							<p class="tiny-text">El competidor más poderoso: personas que no hacen NADA al respecto</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔍 Qué Analizar en Cada Competidor</h3>
+					<div style="font-size: 0.65em; text-align: left;">
+						<ul>
+							<li class="fragment"><strong>Experiencia de usuario:</strong> Usa el producto realmente, completa tareas principales</li>
+							<li class="fragment"><strong>Onboarding:</strong> Desde descarga hasta uso activo, cuántos pasos, qué piden</li>
+							<li class="fragment"><strong>Arquitectura de información:</strong> Organización, navegación, cuántos taps para tareas</li>
+							<li class="fragment"><strong>Diseño visual:</strong> Colores, tipografía, espacio, personalidad de marca</li>
+							<li class="fragment"><strong>Patrones de interacción:</strong> Gestos, animaciones, feedback, errores</li>
+							<li class="fragment"><strong>Contenido y tono:</strong> Formal/casual, técnico/accesible</li>
+							<li class="fragment"><strong>Modelo de negocio:</strong> Gratis, freemium, suscripción, precios</li>
+							<li class="fragment"><strong>Retención:</strong> Notificaciones, gamificación, componentes sociales</li>
+							<li class="fragment"><strong>Reseñas de usuarios:</strong> Qué aman, qué odian, qué piden (¡MINA DE ORO!)</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>📊 Matriz de Comparación</h3>
+					<div style="font-size: 0.75em;">
+						<p>Herramienta para organizar hallazgos y ver patrones</p>
+						<div class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<p class="small-text"><strong>Estructura:</strong> Filas = Competidores | Columnas = Aspectos evaluados</p>
+						</div>
+						<div class="fragment" style="margin-top: 15px; font-size: 0.85em; text-align: left;">
+							<p><strong>Dimensiones clave:</strong></p>
+							<ul class="tiny-text">
+								<li>Características principales (marcar sí/no)</li>
+								<li>Diferencias de implementación (búsqueda básica vs. avanzada)</li>
+								<li>Modelo de negocio y precios</li>
+								<li>Evaluaciones cualitativas (facilidad, diseño, velocidad)</li>
+								<li>Audiencia objetivo y posicionamiento</li>
+								<li>Fortalezas distintivas y debilidades críticas</li>
+								<li><strong style="color: #4caf50;">Tu producto propuesto (última columna)</strong></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🏆 Benchmarking: Buscando Excelencia</h3>
+					<div style="font-size: 0.8em;">
+						<div class="comparison-box fragment">
+							<strong style="color: #42affa;">Análisis Competitivo</strong>
+							<p class="tiny-text">Mira ampliamente a tus competidores directos e indirectos</p>
+						</div>
+						<div class="comparison-box fragment">
+							<strong style="color: #ff9800;">Benchmarking</strong>
+							<p class="tiny-text">Identifica las MEJORES prácticas, sin importar de dónde vengan</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(76, 175, 80, 0.2); border-radius: 10px;">
+							<p class="small-text"><strong>Ejemplo:</strong> Diseñas checkout de e-commerce</p>
+							<p class="tiny-text">No solo miras competidores directos → Estudias Amazon (checkout 1-clic), Shopify (móvil fluido)</p>
+							<p class="tiny-text" style="margin-top: 10px;">La excelencia en un dominio puede informar excelencia en otro</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Análisis de Vacíos: Tu Ventaja</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<p><strong style="color: #42affa;">Tipos de vacíos que buscas:</strong></p>
+						<ul class="tiny-text">
+							<li class="fragment"><strong>Vacíos de características:</strong> Funcionalidad que usuarios piden pero nadie ofrece</li>
+							<li class="fragment"><strong>Vacíos de experiencia:</strong> Funcionalidad existe pero UX es tan pobre que es inutilizable</li>
+							<li class="fragment"><strong>Vacíos de segmento:</strong> Grupos específicos que nadie sirve bien (ej: adolescentes en meditación)</li>
+							<li class="fragment"><strong>Vacíos de modelo de negocio:</strong> Todos cobran suscripciones caras → oportunidad para modelo diferente</li>
+							<li class="fragment"><strong>Vacíos de plataforma:</strong> Mercado saturado en móvil pero débil en web</li>
+							<li class="fragment"><strong>Vacíos geográficos/culturales:</strong> Maduro en US, inmaduro en LATAM</li>
+						</ul>
+						<div class="fragment success-box" style="margin-top: 20px;">
+							<strong>No cualquier vacío → Vacío que importa + que puedes llenar bien</strong>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📚 Aprendiendo de Errores Ajenos</h3>
+					<div style="font-size: 0.8em;">
+						<div class="warning-box fragment">
+							<strong>Valor subestimado: Ver qué NO hacer</strong>
+							<p class="tiny-text">Reseñas negativas = advertencias gratuitas sin cometer el error tú mismo</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<p class="small-text"><strong>Busca:</strong></p>
+							<ul class="tiny-text">
+								<li>Patrones de quejas recurrentes</li>
+								<li>Competidores que fracasaron (postmortems)</li>
+								<li>Errores estratégicos (no solo técnicos)</li>
+							</ul>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #4caf50;">
+							<strong>Los errores enseñan más que los éxitos, pero son dolorosos cuando los cometes tú</strong>
+						</p>
+					</div>
+				</section>
+
+				<section data-background="#004d40">
+					<h3>🔄 Mantén el Análisis Actualizado</h3>
+					<div style="font-size: 0.8em;">
+						<div class="warning-box">
+							<strong>ERROR COMÚN:</strong> Hacerlo una vez al inicio y nunca revisitarlo
+						</div>
+						<div class="fragment" style="margin-top: 20px;">
+							<p>Los mercados son dinámicos:</p>
+							<ul class="small-text">
+								<li>Competidores lanzan features constantemente</li>
+								<li>Nuevos jugadores entran</li>
+								<li>Modelos de negocio evolucionan</li>
+							</ul>
+						</div>
+						<div class="fragment success-box" style="margin-top: 20px;">
+							<strong>Refresca trimestral o semestralmente</strong>
+							<p class="tiny-text">Asigna a alguien responsabilidad de monitoreo continuo</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Conclusión -->
+				<section data-background-gradient="linear-gradient(to bottom, #004d40, #1b5e20)">
+					<h2>🎯 Conclusiones de Investigación de Usuarios</h2>
+					<div style="font-size: 0.8em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">1.</strong> Combina cualitativo (profundidad) + cuantitativo (amplitud) = imagen completa
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">2.</strong> Mapas de empatía + Personas validadas dan vida a la investigación
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">3.</strong> Proto-personas son útiles SOLO como punto de partida temporal, NUNCA como verdad
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">4.</strong> Jobs to be Done te lleva de "quién es" a "qué está tratando de lograr"
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #42affa;">5.</strong> Análisis competitivo te posiciona inteligentemente y revela oportunidades
+						</div>
+						<div class="fragment" style="margin: 30px 0; padding: 20px; background: rgba(76, 175, 80, 0.2); border-radius: 10px; text-align: center;">
+							<p style="color: #4caf50; font-size: 1.1em; font-weight: bold;">
+								La investigación convierte suposiciones en conocimiento sólido
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cierre -->
+				<section data-background-gradient="linear-gradient(to bottom, #1b5e20, #004d40)">
+					<h1>¡Gracias!</h1>
+					<p>Próximo tema: Arquitectura de la Información</p>
+					<p class="small-text" style="margin-top: 40px;">La investigación es la base de todo gran diseño</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display presentation control arrows
+				controls: true,
+
+				// Help the user learn the controls by providing hints
+				controlsTutorial: true,
+
+				// Determines where controls appear
+				controlsLayout: 'bottom-right',
+
+				// Visibility rule for backwards navigation arrows
+				controlsBackArrows: 'faded',
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Can be used to limit the contexts in which the slide number appears
+				showSlideNumber: 'all',
+
+				// Add the current slide number to the URL hash
+				hash: true,
+
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+			});
+		</script>
+	</body>
+</html>

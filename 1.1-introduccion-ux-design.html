@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>1.1. Introducción al UX Design</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .analogy {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 10px;
+				border-left: 5px solid #42affa;
+			}
+			.reveal .roles-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+				margin-top: 20px;
+			}
+			.reveal .role-card {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 15px;
+				border-radius: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- Portada -->
+				<section data-background-gradient="linear-gradient(to bottom, #1a237e, #0d47a1)">
+					<h1>1.1. Introducción al UX Design</h1>
+					<p>Fundamentos de Diseño de Experiencia de Usuario</p>
+				</section>
+
+				<!-- Sección 1.1.1: Concepto y evolución -->
+				<section data-background-gradient="linear-gradient(to bottom, #0d47a1, #01579b)">
+					<h2>1.1.1. Concepto y Evolución del UX</h2>
+					<p class="small-text">Del mundo físico al digital</p>
+				</section>
+
+				<section>
+					<h3>¿Qué es exactamente el UX?</h3>
+					<p><span class="highlight">UX = User Experience</span> (Experiencia de Usuario)</p>
+					<div class="fragment">
+						<p class="small-text">Todo lo que una persona experimenta cuando interactúa con un producto o servicio digital</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">Cómo se siente usarlo</li>
+							<li class="fragment">Qué tan fácil es lograr objetivos</li>
+							<li class="fragment">Las emociones que genera</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Analogía de la Tienda</h3>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+						<div class="fragment" style="background: rgba(76, 175, 80, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #4caf50;">✓ Buena Experiencia</h4>
+							<ul style="font-size: 0.7em; text-align: left;">
+								<li>Todo bien organizado</li>
+								<li>Letreros claros</li>
+								<li>Personal amable</li>
+								<li>Encuentras lo que buscas</li>
+							</ul>
+						</div>
+						<div class="fragment" style="background: rgba(244, 67, 54, 0.2); padding: 20px; border-radius: 10px;">
+							<h4 style="color: #f44336;">✗ Mala Experiencia</h4>
+							<ul style="font-size: 0.7em; text-align: left;">
+								<li>Caos y desorganización</li>
+								<li>Sin señalización</li>
+								<li>Nadie te ayuda</li>
+								<li>Frustración total</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>La Evolución del UX</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment" style="margin-bottom: 20px;">
+							<h4 style="color: #42affa;">1940-1950: Ergonomía</h4>
+							<p>Diseño de herramientas adaptadas al cuerpo humano</p>
+							<p class="small-text">Ejemplo: Controles de aviones para pilotos</p>
+						</div>
+						<div class="fragment" style="margin-bottom: 20px;">
+							<h4 style="color: #42affa;">1960s-1970s: Ingeniería de Factores Humanos</h4>
+							<p>Cómo las personas procesan información</p>
+							<p class="small-text">Ejemplo: Semáforos con colores universales</p>
+						</div>
+						<div class="fragment">
+							<h4 style="color: #42affa;">1990s: Don Norman & Apple</h4>
+							<p>Popularización del término "User Experience"</p>
+							<p class="small-text">La experiencia abarca todo el ciclo de vida del producto</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Del Mundo Físico al Digital</h3>
+					<div class="fragment">
+						<p>🌐 <span class="highlight">Años 1990-2000:</span> Sitios web</p>
+					</div>
+					<div class="fragment">
+						<p>📱 <span class="highlight">Años 2000-2010:</span> Aplicaciones móviles</p>
+					</div>
+					<div class="fragment">
+						<p>🎙️ <span class="highlight">Actualidad:</span> Asistentes de voz, smartwatches, VR</p>
+					</div>
+					<div class="fragment" style="margin-top: 40px; padding: 20px; background: rgba(66, 175, 250, 0.1); border-radius: 10px;">
+						<p class="small-text">Los principios fundamentales siguen siendo los mismos:</p>
+						<p style="color: #42affa;">Entender al usuario → Facilitar objetivos → Eliminar frustraciones</p>
+					</div>
+				</section>
+
+				<section data-background="#1a237e">
+					<h3>💭 Reflexión</h3>
+					<div class="analogy">
+						<p class="small-text"><strong>Piensa en:</strong></p>
+						<p class="small-text">Una experiencia digital frustrante que hayas tenido...</p>
+						<p class="small-text">vs.</p>
+						<p class="small-text">Una experiencia digital que te encantó</p>
+						<p style="color: #42affa; margin-top: 20px;">¿Qué diferencias concretas notas?</p>
+					</div>
+				</section>
+
+				<!-- Sección 1.1.2: Diferencias UX, UI, IxD -->
+				<section data-background-gradient="linear-gradient(to bottom, #01579b, #006064)">
+					<h2>1.1.2. Diferencias entre UX, UI e IxD</h2>
+					<p class="small-text">Tres conceptos, tres enfoques</p>
+				</section>
+
+				<section>
+					<h3>🏠 Analogía de la Casa</h3>
+					<p class="small-text">Imagina que diseñamos una casa completa...</p>
+				</section>
+
+				<section>
+					<h3>UX - La Experiencia Completa</h3>
+					<div class="analogy">
+						<p style="color: #42affa; font-weight: bold;">El Arquitecto y Planificador</p>
+						<ul style="font-size: 0.75em; text-align: left;">
+							<li class="fragment">¿Para quién es esta casa?</li>
+							<li class="fragment">¿Cuántas habitaciones necesitan?</li>
+							<li class="fragment">¿Cómo fluyen las personas entre espacios?</li>
+							<li class="fragment">¿La cocina está cerca del comedor?</li>
+							<li class="fragment">¿El baño es accesible?</li>
+						</ul>
+					</div>
+					<p class="fragment" style="margin-top: 20px; font-size: 0.8em;">
+						<strong>En digital:</strong> Investiga usuarios, define funcionalidades, organiza información, diseña flujos
+					</p>
+				</section>
+
+				<section>
+					<h3>UI - La Interfaz Visual</h3>
+					<div class="analogy">
+						<p style="color: #42affa; font-weight: bold;">El Diseñador de Interiores</p>
+						<ul style="font-size: 0.75em; text-align: left;">
+							<li class="fragment">¿De qué color pintamos las paredes?</li>
+							<li class="fragment">¿Qué estilo tienen los muebles?</li>
+							<li class="fragment">¿Qué tipo de iluminación usamos?</li>
+							<li class="fragment">¿Las manijas son modernas o clásicas?</li>
+						</ul>
+					</div>
+					<p class="fragment" style="margin-top: 20px; font-size: 0.8em;">
+						<strong>En digital:</strong> Colores, tipografías, botones, iconos, espaciado, animaciones visuales
+					</p>
+				</section>
+
+				<section>
+					<h3>IxD - Diseño de Interacciones</h3>
+					<div class="analogy">
+						<p style="color: #42affa; font-weight: bold;">Cómo Funcionan las Cosas</p>
+						<ul style="font-size: 0.75em; text-align: left;">
+							<li class="fragment">¿Las puertas se abren hacia dentro o fuera?</li>
+							<li class="fragment">¿Los interruptores están junto a la entrada?</li>
+							<li class="fragment">¿La llave del agua es palanca o perilla?</li>
+							<li class="fragment">¿Hay sensores de movimiento?</li>
+						</ul>
+					</div>
+					<p class="fragment" style="margin-top: 20px; font-size: 0.8em;">
+						<strong>En digital:</strong> Animaciones, transiciones, feedback, microinteracciones, estados
+					</p>
+				</section>
+
+				<section>
+					<h3>Ejemplo: App de Delivery</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<div class="fragment" style="margin-bottom: 20px; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong style="color: #ff9800;">🔍 UX Designer:</strong>
+							<p>Investiga usuarios → Define necesidad de búsqueda rápida, filtros, seguimiento en tiempo real, guardado de direcciones</p>
+						</div>
+						<div class="fragment" style="margin-bottom: 20px; padding: 15px; background: rgba(233, 30, 99, 0.2); border-radius: 8px;">
+							<strong style="color: #e91e63;">🎨 UI Designer:</strong>
+							<p>Elige colores cálidos (naranjas/rojos), fotos grandes de comida, iconos claros, botón "Pedir Ahora" prominente</p>
+						</div>
+						<div class="fragment" style="padding: 15px; background: rgba(156, 39, 176, 0.2); border-radius: 8px;">
+							<strong style="color: #9c27b0;">⚡ Interaction Designer:</strong>
+							<p>Animación al tocar restaurante, checkmark verde + vibración al agregar al carrito, mapa animado del repartidor</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#006064">
+					<h3>🍰 La Clave para Recordar</h3>
+					<div style="font-size: 0.8em;">
+						<p class="fragment"><span class="highlight">UX</span> = La receta completa (ingredientes + proceso)</p>
+						<p class="fragment"><span class="highlight">UI</span> = La decoración (glaseado + colores)</p>
+						<p class="fragment"><span class="highlight">IxD</span> = La textura (cómo se siente al comerlo)</p>
+						<p class="fragment" style="margin-top: 30px; color: #42affa;">Todos trabajan juntos para crear un producto exitoso</p>
+					</div>
+				</section>
+
+
+				<!-- Sección 1.1.3: Importancia del UX -->
+				<section data-background-gradient="linear-gradient(to bottom, #006064, #004d40)">
+					<h2>1.1.3. Importancia del UX en Productos Digitales</h2>
+					<p class="small-text">¿Por qué invertir en UX?</p>
+				</section>
+
+				<section>
+					<h3>La Era de la Experiencia</h3>
+					<div class="fragment">
+						<p class="small-text">🎵 Música: Spotify, Apple Music, YouTube Music, Amazon Music...</p>
+					</div>
+					<div class="fragment">
+						<p class="small-text">🚗 Transporte: Uber, Lyft, Didi, Cabify...</p>
+					</div>
+					<div class="fragment" style="margin-top: 40px; padding: 25px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+						<p style="color: #42affa; font-size: 1.1em; font-weight: bold;">Cuando todos ofrecen lo mismo...</p>
+						<p style="font-size: 0.9em;">La EXPERIENCIA es el diferenciador</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>💸 El Costo de una Mala Experiencia</h3>
+					<div style="font-size: 0.8em;">
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(244, 67, 54, 0.2); border-radius: 10px;">
+							<p><strong>~70% de carritos abandonados</strong></p>
+							<p class="small-text">Proceso de pago confuso = Dinero perdido</p>
+						</div>
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(244, 67, 54, 0.2); border-radius: 10px;">
+							<p><strong>Desinstalación inmediata</strong></p>
+							<p class="small-text">App confusa = Reseñas negativas de 1 estrella</p>
+						</div>
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(244, 67, 54, 0.2); border-radius: 10px;">
+							<p><strong>Usuarios frustrados no regresan</strong></p>
+							<p class="small-text">Una mala experiencia = Cliente perdido para siempre</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>✨ El Poder de una Buena Experiencia</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment" style="margin: 20px 0;">
+							<h4 style="color: #4caf50;">🏠 Airbnb</h4>
+							<p class="small-text">Convirtió algo aterrador (rentar de extraños) en algo emocionante</p>
+							<p class="small-text">Fotos profesionales + reseñas + perfiles + pago seguro = Confianza</p>
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							<h4 style="color: #4caf50;">🦉 Duolingo</h4>
+							<p class="small-text">Transformó aprender idiomas (tedioso) en un juego adictivo</p>
+							<p class="small-text">Lecciones cortas + rachas + recompensas = 500M+ usuarios</p>
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							<h4 style="color: #4caf50;">📸 Instagram (2010)</h4>
+							<p class="small-text">Simplicidad brillante: Foto → Filtro → Compartir</p>
+							<p class="small-text">1M usuarios en 2 meses → Comprada por Facebook en $1B</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📊 Valor del UX para Empresas</h3>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7em;">
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">💰 Mayor Conversión</h4>
+							<p>Sitio fácil de usar = Más ventas completadas</p>
+						</div>
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">📉 Menos Soporte</h4>
+							<p>App intuitiva = Menos tickets de ayuda</p>
+						</div>
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">🔄 Retención</h4>
+							<p>Experiencia excelente = Usuarios leales</p>
+						</div>
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">🏆 Ventaja Competitiva</h4>
+							<p>Mejor UX = Diferenciador clave</p>
+						</div>
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">⭐ Reputación</h4>
+							<p>Usuarios felices = Recomendaciones orgánicas</p>
+						</div>
+						<div class="fragment role-card">
+							<h4 style="color: #42affa;">💪 Lealtad de Marca</h4>
+							<p>Gran UX = Evangelistas del producto</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#004d40">
+					<h3>🎯 La Lección Fundamental</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+						<p style="font-size: 1.1em; color: #42affa; font-weight: bold;">El UX no es un lujo</p>
+						<p style="font-size: 1.1em; color: #42affa; font-weight: bold;">Es el CORAZÓN del producto</p>
+						<p class="fragment" style="margin-top: 30px;">La mejor tecnología sin buena experiencia = Fracaso</p>
+						<p class="fragment">Tecnología modesta con experiencia excepcional = Éxito</p>
+						<p class="fragment" style="margin-top: 30px; font-size: 1.2em; color: #fff;">
+							<strong>La experiencia ES tu producto</strong>
+						</p>
+					</div>
+				</section>
+
+
+				<!-- Sección 1.1.4: Roles en equipos UX -->
+				<section data-background-gradient="linear-gradient(to bottom, #004d40, #1b5e20)">
+					<h2>1.1.4. Roles en Equipos de Diseño UX</h2>
+					<p class="small-text">La orquesta del diseño</p>
+				</section>
+
+				<section>
+					<h3>🎭 El Equipo UX como una Orquesta</h3>
+					<div class="analogy">
+						<p class="small-text">Al igual que construir una casa necesita arquitectos, ingenieros, electricistas, plomeros...</p>
+						<p style="color: #42affa; margin-top: 20px;">El diseño de experiencias necesita múltiples especialistas trabajando juntos</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔍 UX Researcher</h3>
+					<p style="color: #42affa;">El Detective del Equipo</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Descubrir quiénes son los usuarios reales</li>
+							<li class="fragment">Identificar necesidades y problemas</li>
+							<li class="fragment">Conducir entrevistas y observaciones</li>
+							<li class="fragment">Crear personas y mapas de empatía</li>
+							<li class="fragment">Validar con evidencia, no asume nada</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> Descubre que usuarios no necesitan más rutinas de ejercicio, necesitan motivación para ser constantes
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎨 UX Designer</h3>
+					<p style="color: #42affa;">El Estratega y Arquitecto</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Transforma insights en soluciones de diseño</li>
+							<li class="fragment">Define qué debe hacer el producto</li>
+							<li class="fragment">Crea wireframes y flujos de usuario</li>
+							<li class="fragment">Diseña arquitectura de información</li>
+							<li class="fragment">Resuelve problemas constantemente</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> Decide que la app necesita metas personalizables, recordatorios inteligentes, comunidad y celebraciones
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🖌️ UI Designer</h3>
+					<p style="color: #42affa;">El Artista Visual</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Transforma wireframes en interfaces hermosas</li>
+							<li class="fragment">Define colores, tipografías, iconos</li>
+							<li class="fragment">Crea sistemas de diseño y componentes</li>
+							<li class="fragment">Asegura consistencia visual</li>
+							<li class="fragment">Balancea estética con funcionalidad</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> Elige colores energéticos (naranjas/verdes), iconos claros, animaciones de celebración con confeti
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>⚡ Interaction Designer</h3>
+					<p style="color: #42affa;">El Maestro del Movimiento</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Define cómo responde el producto</li>
+							<li class="fragment">Diseña microinteracciones y animaciones</li>
+							<li class="fragment">Crea transiciones fluidas</li>
+							<li class="fragment">Diseña feedback y estados del sistema</li>
+							<li class="fragment">Hace que la interfaz se sienta deliciosa</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> Animación de confeti + vibración háptica + sonido al completar rutina
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>✍️ UX Writer / Content Designer</h3>
+					<p style="color: #42affa;">El Comunicador</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Escribe todos los textos de la interfaz</li>
+							<li class="fragment">Hace mensajes claros, concisos y útiles</li>
+							<li class="fragment">Define el tono de voz de la marca</li>
+							<li class="fragment">Reduce ansiedad con palabras correctas</li>
+							<li class="fragment">Humaniza la experiencia</li>
+						</ul>
+						<p class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px;">
+							<strong>Ejemplo:</strong> En vez de "¿Estás seguro?" → "¡Ya casi lo logras! ¿Quieres terminar estos últimos 3 minutos?"
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🚀 Product Designer</h3>
+					<p style="color: #42affa;">El Generalista</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Características:</strong></p>
+						<ul>
+							<li class="fragment">Combina UX + UI + IxD + Research</li>
+							<li class="fragment">Común en startups y equipos pequeños</li>
+							<li class="fragment">Maneja todo el proceso de diseño</li>
+							<li class="fragment">Ventaja: velocidad y coherencia</li>
+							<li class="fragment">Desventaja: menos especialización profunda</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>👥 UX Lead / Design Manager</h3>
+					<p style="color: #42affa;">El Director de Orquesta</p>
+					<div style="font-size: 0.75em; text-align: left;">
+						<p><strong>Responsabilidades:</strong></p>
+						<ul>
+							<li class="fragment">Coordina y supervisa al equipo</li>
+							<li class="fragment">Asegura alineación entre todos</li>
+							<li class="fragment">Resuelve conflictos y toma decisiones</li>
+							<li class="fragment">Hace mentoría a diseñadores junior</li>
+							<li class="fragment">Representa al diseño ante otros departamentos</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔄 ¿Cómo Trabajan Juntos?</h3>
+					<div style="font-size: 0.65em; text-align: left;">
+						<ol>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UX Researcher</strong> investiga el problema y usuarios
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UX Designer</strong> define la solución, crea wireframes y flujos
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UX Writer</strong> asegura textos correctos en cada pantalla
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UI Designer</strong> transforma en diseños visuales hermosos
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">Interaction Designer</strong> define animaciones y comportamientos
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								Colaboración con <strong style="color: #42affa;">Desarrolladores</strong> para implementación
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UX Researcher</strong> valida con pruebas de usabilidad
+							</li>
+							<li class="fragment" style="margin: 15px 0;">
+								<strong style="color: #42affa;">UX Lead</strong> coordina todo el proceso
+							</li>
+						</ol>
+					</div>
+				</section>
+
+				<section data-background="#1b5e20">
+					<h3>💼 La Realidad en Diferentes Contextos</h3>
+					<div style="font-size: 0.8em;">
+						<p class="fragment">🌱 <strong>Startup pequeña:</strong> 1 Product Designer haciendo todo</p>
+						<p class="fragment">🏢 <strong>Empresa mediana:</strong> 2-3 diseñadores con roles combinados</p>
+						<p class="fragment">🏗️ <strong>Gigante tech:</strong> Equipos completos para cada rol con varios niveles de seniority</p>
+						<p class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<strong>Lo importante:</strong> Que alguien esté haciendo todas estas funciones críticas
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎓 Tu Camino en UX</h3>
+					<div class="analogy">
+						<p class="small-text">Comienza como <strong style="color: #42affa;">generalista</strong>, aprende un poco de todo</p>
+						<p class="small-text fragment">Con el tiempo, descubre tu <strong style="color: #42affa;">pasión</strong> y especialízate</p>
+						<div class="fragment" style="margin-top: 20px;">
+							<p class="small-text">¿Te fascina hablar con usuarios? → <strong style="color: #4caf50;">Research</strong></p>
+							<p class="small-text">¿Amas lo visual y sistemas? → <strong style="color: #e91e63;">UI Design</strong></p>
+							<p class="small-text">¿Disfrutas resolver acertijos lógicos? → <strong style="color: #ff9800;">UX Strategy</strong></p>
+							<p class="small-text">¿Te encantan las animaciones? → <strong style="color: #9c27b0;">Interaction Design</strong></p>
+						</div>
+					</div>
+				</section>
+
+
+				<!-- Conclusión -->
+				<section data-background-gradient="linear-gradient(to bottom, #1b5e20, #1a237e)">
+					<h2>🎯 Conclusiones</h2>
+					<div style="font-size: 0.85em; text-align: left;">
+						<div class="fragment" style="margin: 20px 0;">
+							✓ El <strong style="color: #42affa;">UX</strong> es la experiencia completa del usuario
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ <strong style="color: #42affa;">UX ≠ UI ≠ IxD</strong>, pero trabajan juntos
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ El buen UX es <strong style="color: #42affa;">diferenciador competitivo</strong> clave
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ Equipos UX son <strong style="color: #42affa;">multidisciplinarios</strong> y colaborativos
+						</div>
+						<div class="fragment" style="margin: 30px 0; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px; text-align: center;">
+							<strong style="font-size: 1.2em;">La experiencia del usuario ES tu producto</strong>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cierre -->
+				<section data-background-gradient="linear-gradient(to bottom, #1a237e, #0d47a1)">
+					<h1>¡Gracias!</h1>
+					<p>Próximo tema: Diseño Centrado en el Usuario</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display presentation control arrows
+				controls: true,
+
+				// Help the user learn the controls by providing hints
+				controlsTutorial: true,
+
+				// Determines where controls appear
+				controlsLayout: 'bottom-right',
+
+				// Visibility rule for backwards navigation arrows
+				controlsBackArrows: 'faded',
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Can be used to limit the contexts in which the slide number appears
+				showSlideNumber: 'all',
+
+				// Add the current slide number to the URL hash
+				hash: true,
+
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+			});
+		</script>
+	</body>
+</html>

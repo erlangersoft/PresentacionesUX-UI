@@ -1,0 +1,728 @@
+@charset "UTF-8";
+/**
+ * Tema UCATEC para reveal.js
+ * Universidad Privada de Ciencias Administrativas y Tecnológicas
+ * Programa de Postgrado: Fundamentos del Diseño Web y UX/UI
+ */
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --r-background-color: #2b2b2b;
+  --r-main-font: Lato, sans-serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #eee;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: League Gothic, Impact, sans-serif;
+  --r-heading-color: #eee;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: normal;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 3.77em;
+  --r-heading2-size: 2.11em;
+  --r-heading3-size: 1.55em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #13DAEC;
+  --r-link-color-dark: rgb(16.15, 185.3, 200.6);
+  --r-link-color-hover: rgb(66.2, 225.4, 239.8);
+  --r-selection-background-color: #FF5E99;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 240, 240, 240;
+  --r-overlay-element-fg-color: 0, 0, 0;
+}
+
+.reveal-viewport {
+  background: #2b2b2b;
+  background-color: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: normal;
+  color: var(--r-main-color);
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+  font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+  font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+  font-size: var(--r-heading4-size);
+}
+
+.reveal h1 {
+  text-shadow: var(--r-heading1-text-shadow);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.3;
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal img {
+  margin: var(--r-block-margin) 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid var(--r-main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+.reveal .slide-background::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 60px;
+  background: url("../../../img/logo_ucatec.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.9;
+  z-index: 1;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1.2;
+  letter-spacing: normal;
+  margin-bottom: 0.5em;
+}
+.reveal h1 {
+  color: #002855 !important;
+  text-shadow: none;
+  font-size: 1.8em !important;
+  font-weight: 800 !important;
+}
+.reveal h2 {
+  color: #002855 !important;
+  border-bottom: 3px solid #00A9E0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.3em !important;
+  font-weight: 700 !important;
+}
+.reveal h3 {
+  color: #0047AB !important;
+  font-size: 1.1em !important;
+  margin-top: 15px;
+  font-weight: 700 !important;
+}
+.reveal h4 {
+  color: #3A7BD5 !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+}
+.reveal section[data-background-gradient] h1,
+.reveal section[data-background-gradient] h2,
+.reveal section[data-background-gradient] h3,
+.reveal section[data-background-gradient] h4,
+.reveal section[data-background-gradient] p,
+.reveal section[data-background-color="#000000"] h1,
+.reveal section[data-background-color="#000000"] h2,
+.reveal section[data-background-color="#000000"] h3 {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.8) !important;
+}
+.reveal p {
+  margin: 0.8em 0;
+  line-height: 1.6;
+}
+.reveal .portada {
+  text-align: center;
+  padding: 20px !important;
+}
+.reveal .portada .logo-grande {
+  max-width: 200px;
+  margin: 0 auto 30px auto;
+  display: block;
+}
+.reveal .portada .titulo-principal {
+  font-size: 1.8em !important;
+  color: white !important;
+  margin: 20px 0 15px 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.reveal .portada .subtitulo {
+  font-size: 1.3em !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  margin: 10px 0 30px 0;
+  font-weight: 600;
+}
+.reveal .portada .info-institucion {
+  font-size: 0.65em !important;
+  color: white !important;
+  margin-top: 30px;
+  line-height: 1.4;
+}
+.reveal .portada .info-institucion .universidad {
+  font-weight: 600;
+  color: white !important;
+  margin: 5px 0;
+}
+.reveal .portada .info-institucion .programa {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 5px 0;
+}
+.reveal .portada .info-institucion .docente {
+  margin-top: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.reveal ul, .reveal ol {
+  margin: 20px 0;
+}
+.reveal ul li, .reveal ol li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.reveal ul {
+  list-style-type: none;
+}
+.reveal ul li::before {
+  content: "▸";
+  color: #00A9E0;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.reveal .fragment.fade-in-then-semi-out {
+  opacity: 0;
+}
+.reveal .fragment.fade-in-then-semi-out.visible {
+  opacity: 1;
+}
+.reveal .fragment.fade-in-then-semi-out.visible.current-fragment {
+  opacity: 1;
+}
+.reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) {
+  opacity: 0.5;
+}
+.reveal table {
+  margin: 15px auto;
+  border-collapse: collapse;
+  font-size: 0.65em !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 100%;
+}
+.reveal table thead {
+  background: linear-gradient(135deg, #0047AB 0%, #3A7BD5 100%);
+  color: white !important;
+}
+.reveal table thead th {
+  padding: 12px 10px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  font-size: 1em !important;
+  line-height: 1.3;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.reveal table tbody {
+  background: white;
+}
+.reveal table tbody tr {
+  border-bottom: 2px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+.reveal table tbody tr:hover {
+  background-color: rgba(0, 169, 224, 0.08);
+}
+.reveal table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+.reveal table tbody td {
+  padding: 10px 10px !important;
+  text-align: left !important;
+  line-height: 1.4;
+  font-size: 0.95em !important;
+  color: #2C3E50 !important;
+  font-weight: 500 !important;
+  border: 1px solid #e0e0e0;
+}
+.reveal table tbody td strong {
+  color: #002855 !important;
+  font-weight: 700 !important;
+}
+.reveal .caja-enfasis {
+  background: linear-gradient(135deg, rgba(0, 71, 171, 0.08) 0%, rgba(58, 123, 213, 0.08) 100%);
+  border-left: 6px solid #00A9E0;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 169, 224, 0.2);
+}
+.reveal .caja-enfasis h3, .reveal .caja-enfasis h4 {
+  margin-top: 0 !important;
+}
+.reveal .caja-importante {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.08) 0%, rgba(192, 57, 43, 0.08) 100%);
+  border-left: 6px solid #e74c3c;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+.reveal .caja-importante h3, .reveal .caja-importante h4 {
+  margin-top: 0 !important;
+  color: #c0392b !important;
+}
+.reveal .caja-ejemplo {
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.08) 0%, rgba(34, 153, 84, 0.08) 100%);
+  border-left: 6px solid #27ae60;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(39, 174, 96, 0.2);
+}
+.reveal .caja-ejemplo h3, .reveal .caja-ejemplo h4 {
+  margin-top: 0 !important;
+  color: #229954 !important;
+}
+.reveal .columnas {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.reveal .columnas .columna {
+  flex: 1;
+}
+.reveal .badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7em;
+  font-weight: 600;
+  margin: 5px;
+}
+.reveal .badge.badge-primary {
+  background: #0047AB;
+  color: white;
+}
+.reveal .badge.badge-secondary {
+  background: #3A7BD5;
+  color: white;
+}
+.reveal .badge.badge-accent {
+  background: #00A9E0;
+  color: white;
+}
+.reveal code {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-family: monospace;
+  color: #e74c3c;
+}
+.reveal pre {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.reveal pre code {
+  background: #2C3E50;
+  border: none;
+  color: #ecf0f1;
+  padding: 20px;
+  max-height: 500px;
+}
+.reveal .mermaid {
+  background: #f8f9fa !important;
+  padding: 25px !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  margin: 20px auto !important;
+  border: 2px solid #e0e0e0 !important;
+}
+.reveal .mermaid svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  filter: contrast(1.1) brightness(1.05);
+}
+.reveal pre.mermaid {
+  background: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.reveal .slide-seccion {
+  background: linear-gradient(135deg, #0047AB 0%, #3A7BD5 100%);
+}
+.reveal .slide-seccion h2 {
+  color: white;
+  border-bottom: 3px solid white;
+  font-size: 2.5em;
+}
+.reveal .slide-seccion p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2em;
+}
+.reveal .footer-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.6em;
+  color: #eee;
+  opacity: 0.7;
+}
+.reveal a {
+  color: #13DAEC;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.reveal a:hover {
+  color: rgb(66.2, 225.4, 239.8);
+  border-bottom-color: rgb(66.2, 225.4, 239.8);
+}
+.reveal strong, .reveal b {
+  color: #0047AB;
+  font-weight: 700;
+}
+.reveal em, .reveal i {
+  color: #3A7BD5;
+}
+.reveal blockquote {
+  background: rgba(0, 71, 171, 0.05);
+  border-left: 5px solid #00A9E0;
+  padding: 20px;
+  font-style: italic;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.reveal blockquote::before {
+  content: '"';
+  font-size: 3em;
+  color: #00A9E0;
+  opacity: 0.3;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.reveal .controls {
+  color: #00A9E0;
+}
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.1);
+}
+.reveal .progress span {
+  background: linear-gradient(90deg, #0047AB 0%, #00A9E0 100%);
+}
+.reveal .slide-number {
+  color: #0047AB;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.reveal .slides section {
+  padding: 20px !important;
+  box-sizing: border-box;
+}
+.reveal p, .reveal ul, .reveal ol, .reveal table, .reveal .caja-enfasis, .reveal .caja-importante, .reveal .caja-ejemplo {
+  margin: 10px 0 !important;
+}
+.reveal .badge {
+  font-size: 0.6em !important;
+  padding: 4px 10px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .reveal .columnas {
+    flex-direction: column;
+  }
+  .reveal table {
+    font-size: 0.5em !important;
+  }
+}

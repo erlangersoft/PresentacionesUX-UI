@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>1.2. Diseño Centrado en el Usuario (DCU)</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .analogy {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 10px;
+				border-left: 5px solid #42affa;
+			}
+			.reveal .phase-card {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 20px;
+				border-radius: 10px;
+				margin: 15px 0;
+			}
+			.reveal .principle-box {
+				background: rgba(76, 175, 80, 0.2);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+			}
+			.reveal .cycle-diagram {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				margin: 30px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- Portada -->
+				<section data-background-gradient="linear-gradient(to bottom, #283593, #1a237e)">
+					<h1>1.2. Diseño Centrado en el Usuario</h1>
+					<p>El corazón filosófico del UX</p>
+					<p class="small-text" style="margin-top: 40px;">DCU - User-Centered Design</p>
+				</section>
+
+				<!-- Introducción -->
+				<section data-background-gradient="linear-gradient(to bottom, #1a237e, #0d47a1)">
+					<h2>La Filosofía del Buen Diseño</h2>
+					<div class="fragment" style="margin-top: 50px; padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 1.3em; color: #42affa; font-weight: bold;">
+							No diseñes para ti,<br>diseña para quien usará tu producto
+						</p>
+					</div>
+					<p class="fragment small-text" style="margin-top: 30px;">
+						Parece obvio... pero es extraordinariamente fácil olvidarlo
+					</p>
+				</section>
+
+				<section>
+					<h3>⚠️ El Problema de la Proyección</h3>
+					<div style="font-size: 0.8em;">
+						<p class="fragment">Asumimos que otros:</p>
+						<ul style="text-align: left;">
+							<li class="fragment">Piensan como nosotros</li>
+							<li class="fragment">Tienen nuestros conocimientos</li>
+							<li class="fragment">Comparten nuestras preferencias</li>
+							<li class="fragment">Enfrentan nuestros mismos problemas</li>
+						</ul>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(244, 67, 54, 0.2); border-radius: 10px;">
+							<p style="color: #f44336; font-weight: bold;">Lo que es obvio para ti puede ser completamente oscuro para otra persona</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📱 Caso: App para Adultos Mayores</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong>El diseñador (30 años):</strong>
+							<p>Menús complejos, gestos de deslizamiento, iconos sin texto, botón hamburguesa...</p>
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>Los usuarios reales (70-80 años):</strong>
+							<p>❌ No reconocen iconos<br>❌ No saben que pueden deslizar<br>❌ Buscan instrucciones que no existen</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; text-align: center; color: #42affa;">
+							<strong>El producto fracasa no por la tecnología, sino por falta de empatía</strong>
+						</p>
+					</div>
+				</section>
+
+				<!-- Sección 1.2.1: Principios y Fases -->
+				<section data-background-gradient="linear-gradient(to bottom, #0d47a1, #01579b)">
+					<h2>1.2.1. Principios y Fases del DCU</h2>
+					<p class="small-text">Un enfoque sistemático para entender usuarios</p>
+				</section>
+
+				<section>
+					<h3>🎯 Los 4 Principios Fundamentales</h3>
+				</section>
+
+				<section>
+					<h3>1️⃣ Involucra a los Usuarios Siempre</h3>
+					<div class="principle-box">
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">Desde el inicio y durante todo el proceso</li>
+							<li class="fragment">No esperes hasta el final</li>
+							<li class="fragment">Habla con ellos antes de diseñar</li>
+							<li class="fragment">Muéstrales borradores tempranos</li>
+							<li class="fragment">Prueba prototipos antes de construir</li>
+						</ul>
+					</div>
+					<p class="fragment small-text" style="margin-top: 20px; color: #42affa;">
+						Los usuarios son tus socios, no una molestia
+					</p>
+				</section>
+
+				<section>
+					<h3>2️⃣ Enfócate en Objetivos del Usuario</h3>
+					<div class="principle-box">
+						<p style="font-size: 0.85em; text-align: left;">
+							<strong>No te enamores de funcionalidades.</strong> Pregúntate siempre:
+						</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">¿Qué está tratando de lograr el usuario?</li>
+							<li class="fragment">¿Esta función realmente ayuda?</li>
+							<li class="fragment">¿O solo añade complejidad innecesaria?</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(66, 175, 250, 0.2); border-radius: 8px; font-size: 0.8em;">
+						<strong>Ejemplo:</strong> Banca móvil con 20 filtros vs. ver saldo y transferir rápido
+					</div>
+				</section>
+
+				<section>
+					<h3>3️⃣ Diseña para el Contexto Real</h3>
+					<div class="principle-box" style="font-size: 0.8em;">
+						<p>Las personas NO usan productos en condiciones ideales:</p>
+						<ul style="text-align: left;">
+							<li class="fragment">🚶 Caminando por la calle</li>
+							<li class="fragment">🚌 En buses ruidosos</li>
+							<li class="fragment">🔋 Con poca batería</li>
+							<li class="fragment">😰 Bajo estrés emocional</li>
+							<li class="fragment">⏱️ Con prisa</li>
+							<li class="fragment">🤹 Haciendo malabares con otras tareas</li>
+						</ul>
+					</div>
+					<p class="fragment small-text" style="margin-top: 20px; color: #42affa;">
+						El contexto importa tanto como la funcionalidad
+					</p>
+				</section>
+
+				<section>
+					<h3>4️⃣ Itera Basándote en Retroalimentación</h3>
+					<div class="principle-box">
+						<p style="font-size: 0.85em;">El DCU no es lineal, es un <strong style="color: #42affa;">ciclo continuo</strong>:</p>
+						<div style="margin: 20px 0; font-size: 0.9em;">
+							<p class="fragment">Diseñar → Probar → Aprender → Mejorar → Repetir</p>
+						</div>
+						<p class="fragment small-text">Tus primeras ideas casi nunca son las mejores</p>
+					</div>
+					<p class="fragment" style="margin-top: 20px; font-size: 0.85em;">
+						Requiere <strong style="color: #42affa;">humildad</strong>: ver críticas como oportunidades, no fracasos
+					</p>
+				</section>
+
+				<section data-background="#01579b">
+					<h3>🔄 Las 5 Fases del DCU</h3>
+					<p class="small-text">Un ciclo que se repite continuamente</p>
+					<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 30px; font-size: 0.7em;">
+						<div class="fragment" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px;">
+							<p style="font-size: 2em;">💙</p>
+							<p><strong>Empatizar</strong></p>
+						</div>
+						<div class="fragment" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px;">
+							<p style="font-size: 2em;">🎯</p>
+							<p><strong>Definir</strong></p>
+						</div>
+						<div class="fragment" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px;">
+							<p style="font-size: 2em;">💡</p>
+							<p><strong>Idear</strong></p>
+						</div>
+						<div class="fragment" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px;">
+							<p style="font-size: 2em;">🔧</p>
+							<p><strong>Prototipar</strong></p>
+						</div>
+						<div class="fragment" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px;">
+							<p style="font-size: 2em;">✅</p>
+							<p><strong>Evaluar</strong></p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>💙 Fase 1: Empatizar</h3>
+					<div class="phase-card">
+						<p style="color: #42affa; font-weight: bold;">Comprensión profunda de los usuarios</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">Conduces investigación cualitativa</li>
+							<li class="fragment">Entrevistas a usuarios potenciales</li>
+							<li class="fragment">Los observas en su entorno natural</li>
+							<li class="fragment">Escuchas sus historias</li>
+							<li class="fragment">Entiendes motivaciones, frustraciones, necesidades</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px; font-size: 0.75em;">
+						<strong>Ejemplo:</strong> App de freelancers → Descubres que el problema NO es encontrar trabajos, es lidiar con clientes que no pagan a tiempo
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Fase 2: Definir</h3>
+					<div class="phase-card">
+						<p style="color: #42affa; font-weight: bold;">Sintetiza hallazgos en problemas accionables</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">Creas personas (usuarios típicos basados en datos)</li>
+							<li class="fragment">Defines claramente el problema a resolver</li>
+							<li class="fragment">Encuentras patrones en la investigación</li>
+							<li class="fragment">Identificas necesidades subyacentes</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px; font-size: 0.75em;">
+						<strong>Problema bien definido:</strong><br>
+						"Los freelancers necesitan asegurar pagos puntuales y protegerse de cambios de alcance no compensados porque esto afecta su sustento y genera estrés financiero constante"
+					</div>
+				</section>
+
+				<section>
+					<h3>💡 Fase 3: Idear</h3>
+					<div class="phase-card">
+						<p style="color: #42affa; font-weight: bold;">Genera múltiples soluciones posibles</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">Cantidad antes que calidad al inicio</li>
+							<li class="fragment">Sesiones de brainstorming</li>
+							<li class="fragment">Explora ideas locas o imposibles</li>
+							<li class="fragment">Bocetos rápidos de conceptos</li>
+							<li class="fragment">Luego evalúas: viabilidad, impacto, rapidez</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top: 20px; padding: 15px; background: rgba(156, 39, 176, 0.2); border-radius: 8px; font-size: 0.7em;">
+						<strong>Ideas para freelancers:</strong> Pagos en escrow, contratos inteligentes, sistema de reputación, mediación automática, seguros...
+					</div>
+				</section>
+
+				<section>
+					<h3>🔧 Fase 4: Prototipar</h3>
+					<div class="phase-card" style="font-size: 0.85em;">
+						<p style="color: #42affa; font-weight: bold;">Versión simplificada para probar</p>
+						<p class="small-text">Lo suficientemente real para feedback, lo suficientemente rápido para iterar</p>
+					</div>
+					<div style="font-size: 0.7em; margin-top: 20px;">
+						<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+							<strong>Baja fidelidad:</strong> Papel, wireframes simples
+						</div>
+						<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(255, 255, 255, 0.08); border-radius: 8px;">
+							<strong>Media fidelidad:</strong> Wireframes clicables digitales
+						</div>
+						<div class="fragment" style="margin: 10px 0; padding: 12px; background: rgba(255, 255, 255, 0.11); border-radius: 8px;">
+							<strong>Alta fidelidad:</strong> Diseño visual completo + animaciones
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>✅ Fase 5: Evaluar</h3>
+					<div class="phase-card">
+						<p style="color: #42affa; font-weight: bold;">Pruebas con usuarios reales</p>
+						<ul style="font-size: 0.8em; text-align: left;">
+							<li class="fragment">NO explicas cómo usarlo</li>
+							<li class="fragment">Les das una tarea</li>
+							<li class="fragment">Observas dónde luchan</li>
+							<li class="fragment">Identificas confusiones</li>
+							<li class="fragment">Cada problema = oportunidad de mejorar</li>
+						</ul>
+					</div>
+					<div class="fragment" style="margin-top: 20px; padding: 20px; background: rgba(76, 175, 80, 0.2); border-radius: 10px; font-size: 0.75em;">
+						<strong>Las pruebas son:</strong><br>
+						😳 Humillantes (muchas cosas "obvias" no lo son)<br>
+						✨ Maravillosas (descubres problemas antes de construir)
+					</div>
+				</section>
+
+				<section data-background="#0d47a1">
+					<h3>♻️ El Ciclo Continúa</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 0.9em;">Después de evaluar, <strong style="color: #42affa;">regresas al inicio</strong></p>
+						<p class="fragment" style="margin-top: 20px;">Tomas lo que aprendiste para:</p>
+						<ul style="font-size: 0.85em; text-align: left;">
+							<li class="fragment">Empatizar más profundamente</li>
+							<li class="fragment">Redefinir el problema si es necesario</li>
+							<li class="fragment">Generar nuevas ideas</li>
+							<li class="fragment">Crear prototipos mejorados</li>
+							<li class="fragment">Evaluar de nuevo</li>
+						</ul>
+						<p class="fragment" style="margin-top: 30px; color: #fff; font-size: 1.1em;">
+							<strong>Los mejores productos nunca dejan de evolucionar</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🎯 Por Qué Funciona el DCU</h3>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.75em;">
+						<div class="fragment phase-card">
+							<h4 style="color: #4caf50;">📉 Reduce Riesgo</h4>
+							<p>Evita construir lo que nadie quiere o puede usar</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #2196f3;">⚡ Acelera Desarrollo</h4>
+							<p>Pruebas rápidas evitan meses en dirección equivocada</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #ff9800;">🤝 Alinea Equipos</h4>
+							<p>Todos diseñan para los mismos usuarios</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #e91e63;">💡 Genera Innovación</h4>
+							<p>Descubres oportunidades que nadie más ha visto</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #9c27b0;">❤️ Crea Productos Amados</h4>
+							<p>Usuarios sienten que el producto los entiende</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #00bcd4;">🌟 Defensores Leales</h4>
+							<p>Usuarios recomiendan orgánicamente</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Sección 1.2.2: El Rol del Investigador UX -->
+				<section data-background-gradient="linear-gradient(to bottom, #01579b, #006064)">
+					<h2>1.2.2. El Rol del Investigador UX</h2>
+					<p class="small-text">El detective que descubre verdades sobre usuarios</p>
+				</section>
+
+				<section>
+					<h3>🌉 Puente entre Usuarios y Diseño</h3>
+					<div class="analogy" style="font-size: 0.85em;">
+						<p><strong>El escenario típico:</strong></p>
+						<p class="fragment">🗣️ Equipo debatiendo acaloradamente...</p>
+						<p class="fragment">🤔 Todos con opiniones fuertes...</p>
+						<p class="fragment">📊 Nadie con datos concretos...</p>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(76, 175, 80, 0.3); border-radius: 10px;">
+							<p><strong style="color: #4caf50;">Entra el Investigador UX:</strong></p>
+							<p>"Déjenme mostrarles lo que descubrí con 20 usuarios reales..."</p>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa;">
+							<strong>El debate cambia: de opiniones a evidencia</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🦸 El Superpoder del Investigador</h3>
+					<div style="padding: 30px; background: rgba(66, 175, 250, 0.2); border-radius: 15px;">
+						<p style="font-size: 1.1em; color: #42affa; font-weight: bold;">
+							Trae la voz del usuario a las decisiones
+						</p>
+						<div style="margin-top: 30px; font-size: 0.85em;">
+							<p class="fragment"><strong>Sin investigación:</strong> Diseño basado en suposiciones y sesgos</p>
+							<p class="fragment"><strong>Con investigación:</strong> Diseño basado en necesidades y comportamientos reales</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔍 ¿Qué Hace un Investigador UX?</h3>
+				</section>
+
+				<section>
+					<h3>1. Descubrimiento de Problemas</h3>
+					<div style="font-size: 0.8em; text-align: left;">
+						<p class="fragment">Al inicio del proyecto, <strong style="color: #42affa;">antes de diseñar nada</strong></p>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>❌ Pregunta superficial:</strong><br>
+							"¿Qué características quieres en una app?"
+						</div>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px;">
+							<strong>✓ Preguntas profundas:</strong><br>
+							• "Cuéntame sobre un día típico en tu vida..."<br>
+							• "¿Qué es lo más difícil de...?"<br>
+							• "¿Qué herramientas usas actualmente?"<br>
+							• "¿Qué te funciona y qué no?"
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>💡 Ejemplo: App de Diabetes</h3>
+					<div style="font-size: 0.75em;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px; text-align: left;">
+							<strong>Lo que el equipo asumía:</strong><br>
+							"Necesitan recordar tomar medicamentos"
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px; text-align: left;">
+							<strong>Lo que la investigación descubrió:</strong><br>
+							"El verdadero problema es el estrés emocional y sentimiento de aislamiento de vivir con una condición crónica que nadie alrededor entiende"
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa; text-align: center;">
+							<strong>Este insight cambia completamente qué debería hacer el producto</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>2. Validación de Suposiciones</h3>
+					<div style="font-size: 0.8em;">
+						<p>Los equipos siempre tienen hipótesis sobre usuarios</p>
+						<p class="fragment" style="color: #42affa;"><strong>El investigador las pone a prueba</strong></p>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; text-align: left;">
+							<strong>Hipótesis:</strong> "Los millennials odian leer, quieren solo iconos"
+						</div>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; text-align: left;">
+							<strong>Prueba:</strong> Crea 2 versiones (solo iconos vs. iconos + texto)
+						</div>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px; text-align: left;">
+							<strong>Resultado:</strong> Prefieren texto corto porque iconos solos son ambiguos
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>3. Evaluación de Diseños</h3>
+					<div style="font-size: 0.8em;">
+						<p>Cuando ya tienes un producto, evalúa continuamente</p>
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p><strong>Pruebas de Usabilidad:</strong></p>
+							<ul style="text-align: left;">
+								<li>Usuario recibe una tarea específica</li>
+								<li>Investigador observa sin ayudar</li>
+								<li>Nota cada confusión, error, comentario</li>
+								<li>Identifica patrones de problemas</li>
+							</ul>
+						</div>
+						<p class="fragment" style="color: #42affa;">
+							<strong>Cada problema descubierto = oportunidad antes de escalar</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🛒 Ejemplo: E-commerce</h3>
+					<div style="font-size: 0.75em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>Problema:</strong> Muchos abandonan carritos de compra
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong>Observación en pruebas:</strong><br>
+							Usuarios se detienen al crear cuenta obligatoria:<br>
+							"¿Por qué tengo que crear cuenta solo para comprar? Es molesto"
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px;">
+							<strong>Solución:</strong> Implementar compra como invitado<br>
+							<strong>Resultado:</strong> ⬆️ Aumento significativo en conversiones
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>4. Segmentación de Audiencias</h3>
+					<div style="font-size: 0.75em;">
+						<p>No todos los usuarios son iguales</p>
+						<div class="fragment" style="margin: 20px 0; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+							<strong>Ejemplo: Software de Contabilidad</strong>
+							<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 15px;">
+								<div style="background: rgba(255, 152, 0, 0.2); padding: 12px; border-radius: 8px;">
+									<strong>Pequeños negocios</strong><br>
+									<p class="small-text">Necesitan simplicidad</p>
+								</div>
+								<div style="background: rgba(156, 39, 176, 0.2); padding: 12px; border-radius: 8px;">
+									<strong>Contadores pro</strong><br>
+									<p class="small-text">Necesitan funciones avanzadas</p>
+								</div>
+								<div style="background: rgba(33, 150, 243, 0.2); padding: 12px; border-radius: 8px;">
+									<strong>Empresas medianas</strong><br>
+									<p class="small-text">Necesitan colaboración</p>
+								</div>
+							</div>
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa;">
+							El investigador ayuda a priorizar o crear experiencias adaptativas
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>5. Comunicación de Hallazgos</h3>
+					<div style="font-size: 0.8em;">
+						<p>Encontrar insights no sirve si no los comunicas efectivamente</p>
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px; text-align: left;">
+							<strong>El investigador es también un storyteller:</strong>
+							<ul>
+								<li>Presentaciones memorables</li>
+								<li>Videos de usuarios</li>
+								<li>Personas que den vida a datos</li>
+								<li>Mapas de viaje</li>
+								<li>Adapta mensaje a la audiencia</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📢 Comunicación Efectiva</h3>
+					<div style="font-size: 0.7em; text-align: left;">
+						<div style="margin: 15px 0; padding: 12px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>❌ Comunicación débil:</strong><br>
+							"Encontramos que los usuarios están confundidos"
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 12px; background: rgba(76, 175, 80, 0.2); border-radius: 8px;">
+							<strong>✓ Comunicación poderosa:</strong><br>
+							"El 70% no pudo transferir dinero porque el menú muestra números de cuenta en vez de nombres descriptivos. Esto nos cuesta $100K mensuales en soporte. Les muestro un video de María, usuaria típica, luchando 3 minutos antes de rendirse frustrada."
+						</div>
+						<p class="fragment" style="margin-top: 20px; text-align: center; color: #42affa;">
+							<strong>Genera empatía inmediata y urgencia por resolver</strong>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>💎 Cualidades de un Gran Investigador</h3>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.7em;">
+						<div class="fragment phase-card">
+							<h4 style="color: #42affa;">🤔 Curiosidad Genuina</h4>
+							<p>Disfruta hablar con personas y escuchar historias</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #42affa;">🔬 Rigor Metodológico</h4>
+							<p>Minimiza sesgos, analiza sistemáticamente</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #42affa;">🧠 Pensamiento Crítico</h4>
+							<p>Encuentra patrones y sintetiza insights accionables</p>
+						</div>
+						<div class="fragment phase-card">
+							<h4 style="color: #42affa;">💙 Empatía Balanceada</h4>
+							<p>Se conecta emocionalmente pero mantiene objetividad</p>
+						</div>
+						<div class="fragment phase-card" style="grid-column: 1 / -1;">
+							<h4 style="color: #42affa;">🎤 Comunicación Persuasiva</h4>
+							<p>Presenta insights de manera que inspire acción en equipos y stakeholders</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#006064">
+					<h3>🚀 Impacto Transformador</h3>
+					<div style="font-size: 0.8em;">
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #4caf50;">📉 Reduce Riesgo:</strong> Evita construir lo que nadie necesita
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #2196f3;">⚡ Acelera Desarrollo:</strong> Pruebas rápidas vs. meses equivocados
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #ff9800;">🤝 Alinea Equipos:</strong> Todos diseñan para mismos usuarios
+						</div>
+						<div class="fragment" style="margin: 15px 0;">
+							<strong style="color: #e91e63;">❤️ Cultura de Empatía:</strong> Humaniza a los usuarios en toda la organización
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>⚠️ Desafíos del Rol</h3>
+					<div style="font-size: 0.8em; text-align: left;">
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px;">
+							<strong>Resistencia de stakeholders</strong><br>
+							"Ya sabemos lo que los usuarios necesitan"
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(255, 152, 0, 0.2); border-radius: 8px;">
+							<strong>Presión por velocidad</strong><br>
+							"La investigación nos ralentiza"
+						</div>
+						<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(156, 39, 176, 0.2); border-radius: 8px;">
+							<strong>Traducir investigación en acción</strong><br>
+							Reportes brillantes que nadie lee
+						</div>
+						<p class="fragment" style="margin-top: 20px; color: #42affa; text-align: center;">
+							<strong>Los mejores investigadores se vuelven socios estratégicos, no consultores externos</strong>
+						</p>
+					</div>
+				</section>
+
+				<!-- Sección 1.2.3: Técnicas de Empatía -->
+				<section data-background-gradient="linear-gradient(to bottom, #006064, #004d40)">
+					<h2>1.2.3. Técnicas de Empatía</h2>
+					<p class="small-text">Entrevistas, Encuestas, Observación Etnográfica</p>
+				</section>
+
+				<section>
+					<h3>🎯 La Verdadera Empatía en UX</h3>
+					<div class="analogy">
+						<p class="fragment">No es solo "ponerte en los zapatos de otro"</p>
+						<p class="fragment" style="margin-top: 20px; color: #42affa; font-size: 1.1em;">
+							<strong>Requiere método, disciplina y técnicas específicas</strong>
+						</p>
+						<p class="fragment small-text" style="margin-top: 20px;">
+							Comprender no solo lo que dicen, sino lo que hacen, sienten, y necesitan (incluso cuando no lo pueden articular)
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔧 Las 3 Técnicas Fundamentales</h3>
+					<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; font-size: 0.75em; margin-top: 30px;">
+						<div class="fragment" style="padding: 20px; background: rgba(33, 150, 243, 0.2); border-radius: 10px;">
+							<p style="font-size: 2.5em;">💬</p>
+							<h4 style="color: #2196f3;">Entrevistas</h4>
+							<p class="small-text">Conversaciones con propósito</p>
+						</div>
+						<div class="fragment" style="padding: 20px; background: rgba(156, 39, 176, 0.2); border-radius: 10px;">
+							<p style="font-size: 2.5em;">📊</p>
+							<h4 style="color: #9c27b0;">Encuestas</h4>
+							<p class="small-text">Datos a escala</p>
+						</div>
+						<div class="fragment" style="padding: 20px; background: rgba(255, 152, 0, 0.2); border-radius: 10px;">
+							<p style="font-size: 2.5em;">👀</p>
+							<h4 style="color: #ff9800;">Observación</h4>
+							<p class="small-text">Comportamiento natural</p>
+						</div>
+					</div>
+					<p class="fragment" style="margin-top: 30px; color: #42affa;">
+						Juntas te dan una comprensión <strong>tridimensional</strong> de tus usuarios
+					</p>
+				</section>
+
+				<section>
+					<h3>💬 Entrevistas: La Técnica Más Poderosa</h3>
+					<div style="font-size: 0.85em;">
+						<p>Conversaciones uno a uno para comprender profundamente:</p>
+						<ul style="text-align: left; font-size: 0.9em;">
+							<li class="fragment">Experiencias</li>
+							<li class="fragment">Motivaciones</li>
+							<li class="fragment">Comportamientos</li>
+							<li class="fragment">Necesidades</li>
+						</ul>
+						<div class="fragment" style="margin-top: 30px; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<strong>No es:</strong> Conversación casual ❌<br>
+							<strong>No es:</strong> Interrogatorio ❌<br>
+							<strong>Es:</strong> Conversación con propósito y estructura que se siente natural ✓
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📊 Encuestas: Validación a Escala</h3>
+					<div style="font-size: 0.8em;">
+						<p>Recolecta datos cuantitativos de muchas personas</p>
+						<div style="margin-top: 20px;">
+							<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px; text-align: left;">
+								<strong>✓ Úsalas para:</strong><br>
+								• Validar hallazgos de entrevistas<br>
+								• Medir preferencias o prioridades<br>
+								• Identificar tendencias generales
+							</div>
+							<div class="fragment" style="margin: 15px 0; padding: 15px; background: rgba(244, 67, 54, 0.2); border-radius: 8px; text-align: left;">
+								<strong>❌ No son buenas para:</strong><br>
+								• Entender el "por qué" profundo<br>
+								• Descubrir problemas nuevos<br>
+								• Capturar contexto emocional
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>👀 Observación Etnográfica</h3>
+					<div style="font-size: 0.8em;">
+						<p>Observar usuarios en su entorno natural</p>
+						<div class="fragment" style="margin: 20px 0; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px;">
+							<p><strong style="color: #42affa;">El poder de la observación:</strong></p>
+							<p class="small-text">Lo que la gente dice ≠ Lo que la gente hace</p>
+						</div>
+						<div class="fragment" style="margin-top: 20px; text-align: left;">
+							<strong>Técnicas:</strong>
+							<ul style="font-size: 0.9em;">
+								<li>Shadowing (seguir al usuario)</li>
+								<li>Análisis de tareas</li>
+								<li>Estudios de diario</li>
+								<li>Visitas al contexto</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#004d40">
+					<h3>🎭 Combinando las Tres</h3>
+					<div style="font-size: 0.75em;">
+						<div style="padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+							<div class="fragment" style="margin: 15px 0;">
+								<strong style="color: #2196f3;">Entrevistas</strong> → Descubren el "por qué"
+							</div>
+							<div class="fragment" style="margin: 15px 0;">
+								<strong style="color: #9c27b0;">Encuestas</strong> → Validan a escala
+							</div>
+							<div class="fragment" style="margin: 15px 0;">
+								<strong style="color: #ff9800;">Observación</strong> → Revelan comportamientos reales
+							</div>
+							<p class="fragment" style="margin-top: 30px; color: #4caf50; font-size: 1.2em;">
+								<strong>Juntas = Comprensión profunda y completa</strong>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Conclusión -->
+				<section data-background-gradient="linear-gradient(to bottom, #004d40, #1b5e20)">
+					<h2>🎯 Conclusiones DCU</h2>
+					<div style="font-size: 0.85em; text-align: left;">
+						<div class="fragment" style="margin: 20px 0;">
+							✓ El <strong style="color: #42affa;">DCU</strong> te obliga a diseñar para usuarios reales, no para ti
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ Son <strong style="color: #42affa;">5 fases</strong> en ciclo continuo: Empatizar, Definir, Idear, Prototipar, Evaluar
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ El <strong style="color: #42affa;">Investigador UX</strong> es el puente entre usuarios y diseño
+						</div>
+						<div class="fragment" style="margin: 20px 0;">
+							✓ <strong style="color: #42affa;">Técnicas de empatía</strong> revelan verdades que transforman productos
+						</div>
+						<div class="fragment" style="margin: 30px 0; padding: 20px; background: rgba(66, 175, 250, 0.2); border-radius: 10px; text-align: center;">
+							<strong style="font-size: 1.2em;">La iteración continua es la clave del éxito</strong>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cierre -->
+				<section data-background-gradient="linear-gradient(to bottom, #1b5e20, #283593)">
+					<h1>¡Gracias!</h1>
+					<p>Próximo tema: Investigación de Usuarios</p>
+					<p class="small-text" style="margin-top: 40px;">El DCU es el corazón de todo gran diseño</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display presentation control arrows
+				controls: true,
+
+				// Help the user learn the controls by providing hints
+				controlsTutorial: true,
+
+				// Determines where controls appear
+				controlsLayout: 'bottom-right',
+
+				// Visibility rule for backwards navigation arrows
+				controlsBackArrows: 'faded',
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Can be used to limit the contexts in which the slide number appears
+				showSlideNumber: 'all',
+
+				// Add the current slide number to the URL hash
+				hash: true,
+
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+			});
+		</script>
+	</body>
+</html>
