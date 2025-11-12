@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1. Fundamentos del Diseño Visual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <style>
+        :root {
+            --primary-color: #d84315;
+            --secondary-color: #ff6f00;
+            --accent-color: #ff9800;
+            --text-color: #ffffff;
+            --light-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #d84315 0%, #ff6f00 100%);
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .reveal h2 {
+            font-size: 1.6em;
+            margin-bottom: 0.3em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .reveal h3 {
+            font-size: 1.2em;
+            color: #ffcc80;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .reveal section {
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .reveal .title-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .reveal .slides section.title-slide h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .gestalt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5em;
+            margin-top: 0.8em;
+        }
+
+        .gestalt-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.2em;
+            border-radius: 8px;
+            border-left: 5px solid #ffb74d;
+        }
+
+        .gestalt-item h4 {
+            color: #ffcc80;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .gestalt-item p {
+            margin: 0;
+            font-size: 0.8em;
+            line-height: 1.4;
+        }
+
+        .principle-box {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 1.5em;
+            border-radius: 10px;
+            margin: 0.8em 0;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .visual-example {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5em;
+            margin: 0.8em 0;
+            border-radius: 8px;
+            text-align: center;
+            color: #2C3E50;
+        }
+
+        .hierarchy-scale {
+            margin: 1em 0;
+        }
+
+        .hierarchy-scale div {
+            margin: 0.4em 0;
+            padding: 0.4em;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .level-1 {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ffcc80;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .level-2 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #ffb74d;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .level-3 {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .level-4 {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .spacing-demo {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
+
+        .spacing-box {
+            background: #ffb74d;
+            color: #2C3E50;
+            padding: 1em;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .contrast-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 1em 0;
+        }
+
+        .contrast-good {
+            background: #1a1a1a;
+            color: white;
+            padding: 2em;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contrast-bad {
+            background: #666666;
+            color: #888888;
+            padding: 2em;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #ffb74d;
+            font-weight: 600;
+        }
+
+        .quote-box {
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid #ffb74d;
+            padding: 1.2em;
+            margin: 0.8em 0;
+            font-style: italic;
+        }
+
+        .grid-8pt {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin: 0.8em 0;
+        }
+
+        .grid-item {
+            background: #ffb74d;
+            height: 40px;
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+
+        .case-study {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 1.5em;
+            border-radius: 10px;
+            margin: 0.8em 0;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .case-study h3 {
+            color: #ffcc80;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .case-study ul {
+            font-size: 0.9em;
+            margin: 0.5em 0;
+        }
+
+        ul.key-points {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.key-points li:before {
+            content: "✓ ";
+            color: #ffb74d;
+            font-weight: bold;
+            margin-right: 0.5em;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5em;
+        }
+
+        .rhythm-demo {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+
+        .rhythm-bar {
+            background: #ffb74d;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .small-text {
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Ajustes para evitar corte de contenido */
+        .reveal .slides>section {
+            padding: 20px 40px;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .reveal p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Portada -->
+            <section class="title-slide">
+                <h1>2.1. FUNDAMENTOS DEL<br>DISEÑO VISUAL</h1>
+                <h3 style="color: #ffcc80; font-size: 1.4em; margin-top: 1em;">Fundamentos de UI (Lo Visual)</h3>
+                <p style="margin-top: 2em; color: rgba(255, 255, 255, 0.8); font-size: 1.1em;">Diseño Web UX/UI</p>
+            </section>
+
+            <!-- Slide 2: Introducción -->
+            <section>
+                <h2>Introducción</h2>
+                <div class="quote-box">
+                    "El diseño visual constituye el lenguaje mediante el cual las interfaces digitales comunican
+                    información, establecen jerarquías y guían la atención del usuario."
+                </div>
+                <ul class="key-points">
+                    <li>Más allá de la estética superficial</li>
+                    <li>Sustentado en principios psicológicos y perceptuales</li>
+                    <li>Reducción de carga cognitiva</li>
+                    <li>Facilitación de objetivos de usuario y negocio</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3: Principios de Gestalt -->
+            <section>
+                <h2>2.1.1. Principios de Gestalt</h2>
+                <div class="principle-box">
+                    <h3 style="color: #ffcc80; margin-top: 0; font-size: 1.3em;">Premisa Fundamental</h3>
+                    <p style="font-size: 1.15em; margin: 0.5em 0; font-weight: 600;">"El todo es mayor que la suma de
+                        sus partes"</p>
+                    <p class="small-text" style="color: rgba(255,255,255,0.9); margin-top: 1em; font-size: 0.85em;">
+                        El cerebro humano tiende a percibir patrones completos en lugar de elementos individuales
+                        aislados.
+                    </p>
+                </div>
+                <p style="margin-top: 0.8em; font-size: 0.9em;">
+                    <strong style="color: #ffcc80;">Origen:</strong> Psicólogos alemanes del siglo XX<br>
+                    <em style="color: rgba(255, 255, 255, 0.85);">Max Wertheimer, Kurt Koffka, Wolfgang Köhler</em>
+                </p>
+            </section>
+
+            <!-- Slide 4: Ley de Proximidad -->
+            <section>
+                <h2>Ley de Proximidad</h2>
+                <p><strong>Principio:</strong> Los elementos cercanos entre sí son percibidos como relacionados o
+                    pertenecientes al mismo grupo funcional.</p>
+
+                <div class="two-column">
+                    <div>
+                        <h4>Aplicación en UI:</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li>Agrupación de campos de formulario</li>
+                            <li>Espaciado entre secciones</li>
+                            <li>Relación etiquetas-inputs</li>
+                            <li>Organización de tarjetas</li>
+                        </ul>
+                    </div>
+                    <div class="visual-example">
+                        <div style="text-align: left;">
+                            <div style="margin-bottom: 8px;">Nombre: <input type="text"
+                                    style="border: 1px solid #ccc; padding: 4px;"></div>
+                            <div style="margin-bottom: 24px;">Email: <input type="text"
+                                    style="border: 1px solid #ccc; padding: 4px;"></div>
+                            <div style="border-top: 2px solid #ccc; padding-top: 16px;">
+                                <div>Dirección: <input type="text" style="border: 1px solid #ccc; padding: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Ley de Similitud -->
+            <section>
+                <h2>Ley de Similitud</h2>
+                <p><strong>Principio:</strong> Los elementos que comparten características visuales similares son
+                    percibidos como relacionados.</p>
+
+                <div class="visual-example">
+                    <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap;">
+                        <button
+                            style="background: #2ECC71; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 800;">Acción
+                            Primaria</button>
+                        <button
+                            style="background: #2ECC71; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 800;">Otra
+                            Acción</button>
+                        <button
+                            style="background: white; color: #2C3E50; border: 2px solid #2C3E50; padding: 12px 24px; border-radius: 6px;">Secundaria</button>
+                    </div>
+                </div>
+
+                <ul class="key-points" style="margin-top: 1em;">
+                    <li>Consistencia en botones de acción primaria (mismo color)</li>
+                    <li>Iconografía uniforme para acciones similares</li>
+                    <li>Estilos tipográficos coherentes para niveles jerárquicos</li>
+                    <li>Tratamiento visual consistente para estados de elementos</li>
+                </ul>
+            </section>
+
+            <!-- Slide 6: Ley de Continuidad -->
+            <section>
+                <h2>Ley de Continuidad</h2>
+                <p><strong>Principio:</strong> El ojo humano tiende a seguir líneas, curvas o secuencias, incluso cuando
+                    son interrumpidas.</p>
+
+                <div class="visual-example">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1em;">
+                        <div
+                            style="background: #2ECC71; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                            Paso 1</div>
+                        <div style="color: #2ECC71; font-size: 2em;">→</div>
+                        <div
+                            style="background: #2ECC71; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                            Paso 2</div>
+                        <div style="color: #3498DB; font-size: 2em;">→</div>
+                        <div
+                            style="background: #3498DB; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                            Paso 3</div>
+                        <div style="color: #95A5A6; font-size: 2em;">→</div>
+                        <div
+                            style="background: #ECF0F1; color: #7F8C8D; padding: 1em; border-radius: 8px; font-weight: 600;">
+                            Paso 4</div>
+                    </div>
+                </div>
+
+                <ul class="key-points" style="margin-top: 1em;">
+                    <li>Diseño de flujos de usuario lineales</li>
+                    <li>Líneas de tiempo y procesos secuenciales</li>
+                    <li>Barras de progreso y indicadores de paso</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7: Ley del Cierre -->
+            <section>
+                <h2>Ley del Cierre</h2>
+                <p><strong>Principio:</strong> El cerebro tiende a completar figuras incompletas o cerrar espacios
+                    abiertos para crear formas reconocibles.</p>
+
+                <div class="visual-example">
+                    <div style="display: flex; gap: 3em; justify-content: center; align-items: center;">
+                        <div style="font-size: 4em; color: #2C3E50;">☰</div>
+                        <div style="font-size: 4em; color: #2C3E50;">⚙</div>
+                        <div style="font-size: 4em; color: #2C3E50;">⊕</div>
+                    </div>
+                    <p class="small-text" style="margin-top: 1em;">Menú • Configuración • Agregar</p>
+                </div>
+
+                <ul class="key-points" style="margin-top: 1em;">
+                    <li>Diseño de iconografía minimalista</li>
+                    <li>Uso de contornos parciales en elementos gráficos</li>
+                    <li>Indicadores de carga con formas incompletas</li>
+                </ul>
+            </section>
+
+            <!-- Slide 8: Ley Figura-Fondo -->
+            <section>
+                <h2>Ley de la Figura-Fondo</h2>
+                <p><strong>Principio:</strong> La capacidad de distinguir un objeto (figura) de su entorno (fondo).</p>
+
+                <div class="two-column">
+                    <div class="visual-example" style="background: rgba(0,0,0,0.8); color: white; padding: 3em;">
+                        <div
+                            style="background: white; color: #2C3E50; padding: 2em; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                            <h4 style="margin-top: 0;">Modal Dialog</h4>
+                            <p>Contenido importante destacado</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Aplicación en UI:</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li>Modales con fondos oscurecidos</li>
+                            <li>Tarjetas elevadas sobre fondos planos</li>
+                            <li>Menús desplegables</li>
+                            <li>Estados de enfoque</li>
+                        </ul>
+                        <p
+                            style="margin-top: 1em; padding: 1em; background: #FFF3CD; border-radius: 6px; font-size: 0.85em;">
+                            <strong>⚠️ Contraste WCAG:</strong><br>
+                            Mínimo 4.5:1 para texto normal
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Ley de Región Común -->
+            <section>
+                <h2>Ley de la Región Común</h2>
+                <p><strong>Principio:</strong> Los elementos contenidos dentro de un mismo límite o región son
+                    percibidos como un grupo cohesivo.</p>
+
+                <div class="visual-example">
+                    <div
+                        style="border: 2px solid #3498DB; border-radius: 8px; padding: 1.5em; text-align: left; max-width: 400px; margin: 0 auto;">
+                        <h4 style="color: #3498DB; margin-top: 0;">INFORMACIÓN DEL PRODUCTO</h4>
+                        <p style="margin: 0.5em 0;"><strong>Nombre:</strong> Laptop Pro X</p>
+                        <p style="margin: 0.5em 0;"><strong>Precio:</strong> $1,299</p>
+                        <p style="margin: 0.5em 0;"><strong>Stock:</strong> Disponible</p>
+                        <button
+                            style="background: #2ECC71; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-top: 1em; width: 100%;">Agregar
+                            al carrito</button>
+                    </div>
+                </div>
+
+                <ul class="key-points" style="margin-top: 1em;">
+                    <li>Tarjetas de contenido (cards)</li>
+                    <li>Paneles laterales y sidebars</li>
+                    <li>Módulos de información agrupada</li>
+                </ul>
+            </section>
+
+            <!-- Slide 10: Jerarquía Visual -->
+            <section>
+                <h2>2.1.2. Jerarquía Visual y Peso Gráfico</h2>
+                <div class="quote-box">
+                    "La jerarquía visual es la organización y presentación de elementos en orden de importancia,
+                    influyendo en la secuencia en que el usuario procesa la información."
+                    <p class="small-text" style="margin-top: 0.5em;">— Edward Tufte</p>
+                </div>
+                <p><strong>Peso gráfico:</strong> Determina cuánta atención visual atrae cada elemento basándose en sus
+                    propiedades visuales.</p>
+            </section>
+
+            <!-- Slide 11: Factores de Peso Visual -->
+            <section>
+                <h2>Factores que Determinan el Peso Visual</h2>
+                <div class="gestalt-grid">
+                    <div class="gestalt-item">
+                        <h4>1. TAMAÑO</h4>
+                        <p>Los elementos más grandes atraen más atención visual.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>2. COLOR Y CONTRASTE</h4>
+                        <p>Colores brillantes y alto contraste = Mayor peso visual.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>3. POSICIÓN</h4>
+                        <p>Superior izquierda recibe mayor atención inicial (patrón F).</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>4. ESPACIADO</h4>
+                        <p>Elementos rodeados de espacio ganan prominencia.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>5. ESTILO TIPOGRÁFICO</h4>
+                        <p>Bold > Semibold > Regular > Light.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>6. COMPLEJIDAD</h4>
+                        <p>Mayor detalle atrae más atención (usar con moderación).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: Escala Jerárquica -->
+            <section>
+                <h2>Escala Jerárquica Tipográfica</h2>
+                <div class="hierarchy-scale">
+                    <div class="level-1">Título Principal (H1): 48-60px</div>
+                    <div class="level-2">Subtítulo (H2): 36-42px</div>
+                    <div class="level-3">Subtítulo Secundario (H3): 24-30px</div>
+                    <div class="level-4">Cuerpo de Texto: 16-18px</div>
+                    <div style="font-size: 0.875em; color: #95A5A6;">Texto Secundario: 14px</div>
+                </div>
+                <p style="margin-top: 1em;"><strong>Ratio recomendado:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Entre H1 y H2: 1.414 (√2)</li>
+                    <li>Entre H2 y H3: 1.333 (razón áurea aproximada)</li>
+                    <li>Entre H3 y cuerpo: 1.250</li>
+                </ul>
+            </section>
+
+            <!-- Slide 13: Balance Visual -->
+            <section>
+                <h2>2.1.3. Balance, Contraste y Énfasis</h2>
+                <h3>Balance Visual</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Balance Simétrico</h4>
+                        <div class="visual-example" style="padding: 1em;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div style="width: 45%; background: #3498DB; height: 80px; border-radius: 6px;"></div>
+                                <div style="width: 45%; background: #3498DB; height: 80px; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <p class="small-text">✓ Estabilidad<br>✓ Formalidad<br>✓ Confianza</p>
+                    </div>
+                    <div>
+                        <h4>Balance Asimétrico</h4>
+                        <div class="visual-example" style="padding: 1em;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="width: 65%; background: #95A5A6; height: 80px; border-radius: 6px;"></div>
+                                <div style="width: 25%; background: #E74C3C; height: 50px; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <p class="small-text">✓ Dinamismo<br>✓ Creatividad<br>✓ Interés visual</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Contraste -->
+            <section>
+                <h2>Contraste</h2>
+                <p><strong>Definición:</strong> Diferencia visual entre elementos para crear jerarquía, legibilidad y
+                    puntos focales.</p>
+
+                <div class="contrast-demo">
+                    <div class="contrast-good">
+                        <h4 style="color: white; margin-top: 0;">✓ Contraste Alto</h4>
+                        <p style="margin: 0;">Texto legible sobre fondo oscuro</p>
+                        <p class="small-text" style="color: rgba(255,255,255,0.8); margin-top: 1em;">Ratio: 12.6:1 (AAA)
+                        </p>
+                    </div>
+                    <div class="contrast-bad">
+                        <h4 style="margin-top: 0;">✗ Contraste Bajo</h4>
+                        <p style="margin: 0;">Texto difícil de leer</p>
+                        <p class="small-text" style="margin-top: 1em;">Ratio: 2.1:1 (Falla)</p>
+                    </div>
+                </div>
+
+                <div style="background: #FFF3CD; padding: 1em; border-radius: 6px; margin-top: 1em;">
+                    <strong>Estándares WCAG 2.1:</strong>
+                    <ul style="font-size: 0.9em; margin: 0.5em 0;">
+                        <li><strong>Nivel AA:</strong> 4.5:1 texto normal, 3:1 texto grande</li>
+                        <li><strong>Nivel AAA:</strong> 7:1 texto normal, 4.5:1 texto grande</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 15: Técnicas de Énfasis -->
+            <section>
+                <h2>Técnicas de Énfasis</h2>
+                <div class="gestalt-grid">
+                    <div class="gestalt-item">
+                        <h4>1. AISLAMIENTO</h4>
+                        <p>Rodear elementos de espacio en blanco.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>2. COLOR DE ACENTO</h4>
+                        <p>Regla 60-30-10 para distribución cromática.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>3. PROFUNDIDAD</h4>
+                        <p>Uso de sombras para crear elevación.</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>4. MOVIMIENTO</h4>
+                        <p>Animaciones estratégicas (usar con moderación).</p>
+                    </div>
+                </div>
+                <div
+                    style="background: rgba(255, 255, 255, 0.15); padding: 1.2em; border-radius: 8px; margin-top: 1em; text-align: center; border: 2px solid #ffb74d;">
+                    <p style="font-size: 1em; margin: 0; font-weight: 600;"><strong>⚠️ Advertencia:</strong> El exceso
+                        de énfasis equivale a la ausencia de énfasis.</p>
+                </div>
+            </section>
+
+            <!-- Slide 16: Espaciado -->
+            <section>
+                <h2>2.1.4. Espaciado, Proporción y Ritmo</h2>
+                <h3>Sistema de Espaciado 8pt</h3>
+                <div class="grid-8pt">
+                    <div class="grid-item" style="grid-column: span 1;" title="8px"></div>
+                    <div class="grid-item" style="grid-column: span 2;" title="16px"></div>
+                    <div class="grid-item" style="grid-column: span 3;" title="24px"></div>
+                    <div class="grid-item" style="grid-column: span 4; opacity: 0.5;" title="32px"></div>
+                    <div class="grid-item" style="grid-column: span 6; opacity: 0.3;" title="48px"></div>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 0.8em; color: #7F8C8D; margin-top: 0.5em;">
+                    <span>8px</span>
+                    <span>16px</span>
+                    <span>24px</span>
+                    <span>32px</span>
+                    <span>48px</span>
+                    <span>64px</span>
+                </div>
+                <ul class="key-points" style="margin-top: 1.5em;">
+                    <li>Micro-espaciado: 8px, 16px (entre elementos relacionados)</li>
+                    <li>Macro-espaciado: 32px, 48px, 64px (entre secciones)</li>
+                    <li>Consistencia en padding: 12px vertical, 24px horizontal (botones)</li>
+                </ul>
+            </section>
+
+            <!-- Slide 17: Proporción Áurea -->
+            <section>
+                <h2>Proporción Áurea (φ = 1.618)</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="visual-example">
+                            <div style="display: flex; gap: 8px;">
+                                <div
+                                    style="flex: 1; background: #3498DB; height: 120px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                    1</div>
+                                <div
+                                    style="flex: 1.618; background: #2ECC71; height: 120px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                    1.618</div>
+                            </div>
+                        </div>
+                        <h4 style="margin-top: 1em;">Aplicaciones:</h4>
+                        <ul style="font-size: 0.85em;">
+                            <li>Dimensiones de contenedores</li>
+                            <li>Relación entre espacios</li>
+                            <li>Escalas tipográficas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Secuencia de Fibonacci</h4>
+                        <p style="font-size: 0.9em;">0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...</p>
+                        <div class="visual-example">
+                            <div style="display: flex; gap: 4px; align-items: flex-end;">
+                                <div style="width: 30px; height: 40px; background: #9B59B6;"></div>
+                                <div style="width: 30px; height: 65px; background: #9B59B6;"></div>
+                                <div style="width: 30px; height: 105px; background: #9B59B6;"></div>
+                                <div style="width: 30px; height: 170px; background: #9B59B6;"></div>
+                            </div>
+                        </div>
+                        <p class="small-text" style="margin-top: 1em;">Progresión natural y armónica</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 18: Ritmo Visual -->
+            <section>
+                <h2>Ritmo Visual</h2>
+                <p><strong>Definición:</strong> Repetición y variación de elementos visuales que crea sensación de
+                    movimiento y flujo.</p>
+
+                <div class="gestalt-grid">
+                    <div class="gestalt-item">
+                        <h4>Ritmo Regular</h4>
+                        <div class="rhythm-demo" style="margin-top: 1em;">
+                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                        </div>
+                        <p class="small-text">Predecible y ordenado</p>
+                    </div>
+                    <div class="gestalt-item">
+                        <h4>Ritmo Progresivo</h4>
+                        <div class="rhythm-demo" style="margin-top: 1em;">
+                            <div class="rhythm-bar" style="width: 30px; height: 30px;"></div>
+                            <div class="rhythm-bar" style="width: 35px; height: 45px;"></div>
+                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                            <div class="rhythm-bar" style="width: 45px; height: 75px;"></div>
+                        </div>
+                        <p class="small-text">Guía el flujo visual</p>
+                    </div>
+                </div>
+
+                <div style="background: #E8F5E9; padding: 1.5em; border-radius: 8px; margin-top: 1em;">
+                    <strong>Técnica 80/20:</strong>
+                    <p style="margin: 0.5em 0 0 0; font-size: 0.9em;">80% consistencia y repetición + 20% variación e
+                        innovación</p>
+                </div>
+            </section>
+
+            <!-- Slide 19: Caso Práctico EduConnect -->
+            <section>
+                <h2>Caso Práctico: EduConnect</h2>
+                <div class="case-study">
+                    <h3>Problema Identificado</h3>
+                    <p>Sobrecarga visual en dashboard principal que causa:</p>
+                    <ul style="font-size: 0.9em;">
+                        <li>Ausencia de jerarquía clara</li>
+                        <li>Elementos compitiendo por atención</li>
+                        <li>Espaciado inconsistente</li>
+                        <li>Falta de agrupación visual</li>
+                    </ul>
+                    <p style="margin-top: 1em;"><strong>Resultado:</strong> 66% de usuarios abandonan en el primer mes
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 20: Solución EduConnect -->
+            <section>
+                <h2>Solución Aplicando Fundamentos Visuales</h2>
+                <div class="two-column">
+                    <div>
+                        <h4 style="color: #ffcc80; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Aplicación de Gestalt
+                        </h4>
+                        <ul style="font-size: 0.85em;">
+                            <li><strong style="color: #ffcc80;">Proximidad:</strong> Reagrupación en zonas funcionales
+                            </li>
+                            <li><strong style="color: #ffcc80;">Región común:</strong> Cards para contenido relacionado
+                            </li>
+                            <li><strong style="color: #ffcc80;">Similitud:</strong> Consistencia en botones CTA</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #ffcc80; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Jerarquía Estratégica
+                        </h4>
+                        <ul style="font-size: 0.85em;">
+                            <li><strong style="color: #ffcc80;">Nivel 1:</strong> Curso actual (H2 32px, verde brand)
+                            </li>
+                            <li><strong style="color: #ffcc80;">Nivel 2:</strong> Recomendaciones (H3 24px)</li>
+                            <li><strong style="color: #ffcc80;">Nivel 3:</strong> Actividad reciente (16px)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    style="background: rgba(255, 255, 255, 0.15); padding: 1.2em; border-radius: 8px; margin-top: 1em; border: 2px solid #ffb74d;">
+                    <strong style="color: #ffcc80; font-size: 1em;">Métricas Esperadas:</strong>
+                    <ul style="font-size: 0.85em; margin: 0.5em 0; line-height: 1.6;">
+                        <li>Tiempo hasta primera acción: <strong>-40%</strong> (4.2min → 2.5min)</li>
+                        <li>Tasa de inicio primer curso: <strong>+47%</strong> (34% → 50%)</li>
+                        <li>Satisfacción visual: <strong>+24%</strong> (3.4/5 → 4.2/5)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 21: Conclusiones -->
+            <section>
+                <h2>Conclusiones Clave</h2>
+                <ul class="key-points">
+                    <li>Los principios Gestalt son fundamentales para crear interfaces intuitivas</li>
+                    <li>La jerarquía visual guía efectivamente la atención del usuario</li>
+                    <li>El balance y contraste crean armonía y legibilidad</li>
+                    <li>El espaciado es tan importante como los elementos mismos</li>
+                    <li>La proporción áurea y sistemas modulares crean armonía natural</li>
+                    <li>El ritmo visual mantiene engagement sin monotonía</li>
+                </ul>
+                <div class="quote-box" style="margin-top: 1.5em;">
+                    "El diseño efectivo es transparente, permitiendo al contenido comunicar directamente."
+                    <p class="small-text" style="margin-top: 0.5em;">— Edward Tufte</p>
+                </div>
+            </section>
+
+            <!-- Slide 22: Próximos Pasos -->
+            <section class="title-slide">
+                <h2>Próxima Sección</h2>
+                <h3>2.2. Teoría del Color</h3>
+                <p style="margin-top: 2em; font-size: 0.9em;">
+                    Exploraremos la paleta cromática para EduConnect,<br>
+                    considerando psicología del color y necesidades<br>
+                    emocionales de nuestros usuarios.
+                </p>
+                <div style="margin-top: 3em; color: #7F8C8D;">
+                    <p>¿Preguntas?</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: false,
+            width: 1280,
+            height: 720,
+            margin: 0.08,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+
+</html>
