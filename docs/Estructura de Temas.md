@@ -1,6 +1,6 @@
 # **Fundamentos del Diseño Web y UX/UI**
 
-## **MÓDULO 1: FUNDAMENTOS DE UX (LA ESTRATEGIA)**
+## **UNUDAD 1: FUNDAMENTOS DE UX (LA ESTRATEGIA)**
 
 ### **1.1. Introducción al UX Design**
 
@@ -66,7 +66,7 @@
 
 #### **1.6.4. Herramientas de validación y retroalimentación**
 
-## **MÓDULO 2: FUNDAMENTOS DE UI (LO VISUAL)**
+## **UNIDAD 2: FUNDAMENTOS DE UI (LO VISUAL)**
 
 ### **2.1. Fundamentos del Diseño Visual**
 
@@ -148,7 +148,7 @@
 
 ### **2.7.5. Herramientas de evaluación de accesibilidad**
 
-## **MÓDULO 3: FUNDAMENTOS DEL DISEÑO WEB (LA ESTRUCTURA)**
+## **UNIDAD 3: FUNDAMENTOS DEL DISEÑO WEB (LA ESTRUCTURA)**
 
 ### **3.1. Prototipado y Wireframing**
 
@@ -220,7 +220,7 @@
 
 #### **3.6.5. Colaboración UI/Front-end (handoff y design tokens)**
 
-## **MÓDULO 4: APLICACIONES PRÁCTICAS E INTEGRACIÓN**
+## **UNIDAD 4: APLICACIONES PRÁCTICAS E INTEGRACIÓN**
 
 ### **4.1. Integración UX + UI**
 
