@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>3.3. Usabilidad y Navegación</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .law-formula {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 10px;
+				font-family: 'Courier New', monospace;
+				font-size: 1.2em;
+			}
+			.reveal .nav-pattern {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>3.3. Usabilidad y Navegación</h1>
+					<h3>Fundamentos del Diseño Web</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>Usabilidad: El Corazón de UX</h2>
+					<blockquote class="fragment">
+						"Si el usuario no puede usarlo, no existe" - Steve Krug
+					</blockquote>
+					<p class="fragment">Usabilidad = <span class="highlight">Facilidad de uso</span></p>
+					<p class="fragment">Un producto usable es:</p>
+					<ul>
+						<li class="fragment">Fácil de aprender</li>
+						<li class="fragment">Eficiente de usar</li>
+						<li class="fragment">Fácil de recordar</li>
+						<li class="fragment">Previene errores</li>
+						<li class="fragment">Satisfactorio</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3: Patrones de Navegación -->
+				<section>
+					<section>
+						<h2>Patrones de Navegación</h2>
+						<p>Estructuras comunes que usuarios <strong>ya conocen</strong></p>
+						<p class="fragment highlight">No reinventes la rueda: usa patrones familiares</p>
+					</section>
+					<section>
+						<h3>1. Navegación Horizontal (Top Nav)</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0;">
+┌───────────────────────────────┐
+│ Logo  Home About Services ▼  │
+└───────────────────────────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Desktop, 5-7 items máximo</p>
+						<p class="fragment small-text"><strong>Ventajas:</strong> Siempre visible, familiaridad alta</p>
+					</section>
+					<section>
+						<h3>2. Hamburger Menu</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0;">
+┌─────────────┐
+│ ☰  Logo  🔍 │
+└─────────────┘
+
+Al tocar ☰:
+┌─────────────┐
+│ ✕           │
+│ Home        │
+│ About       │
+│ Services    │
+│ Contact     │
+└─────────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Mobile, muchas opciones</p>
+						<p class="fragment small-text"><strong>Desventajas:</strong> Oculta navegación, menos descubribilidad</p>
+					</section>
+					<section>
+						<h3>3. Tab Bar (Mobile Bottom)</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0;">
+┌─────────────┐
+│  Contenido  │
+│             │
+├─────────────┤
+│🏠 🔍 📚 👤  │
+└─────────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Apps móviles, 3-5 destinos principales</p>
+						<p class="fragment small-text"><strong>Ventajas:</strong> Siempre accesible, fácil alcanzar con pulgar</p>
+					</section>
+					<section>
+						<h3>4. Sidebar (Vertical)</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0; font-size: 0.8em;">
+┌────────┬──────────────┐
+│ Logo   │              │
+│        │              │
+│ Home   │  Contenido   │
+│ About  │              │
+│ Blog   │              │
+│        │              │
+└────────┴──────────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Dashboards, aplicaciones complejas</p>
+						<p class="fragment small-text"><strong>Ventajas:</strong> Muchas opciones, jerarquía clara</p>
+					</section>
+					<section>
+						<h3>5. Mega Menu</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0; font-size: 0.7em;">
+┌─────────────────────────────────┐
+│ Logo  Products▼  Solutions  About│
+│       ┌─────────────────────┐   │
+│       │ Cat 1   Cat 2  Cat 3│   │
+│       │ Item 1  Item 4 Item │   │
+│       │ Item 2  Item 5 Item │   │
+│       │ Item 3  Item 6 Item │   │
+│       └─────────────────────┘   │
+└─────────────────────────────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> E-commerce, sitios con muchas categorías</p>
+						<p class="fragment small-text"><strong>Ventajas:</strong> Muestra todo, reduce clics</p>
+					</section>
+				</section>
+
+				<!-- Slide 4: Leyes de UX -->
+				<section>
+					<section>
+						<h2>Leyes de UX</h2>
+						<p>Principios respaldados por ciencia</p>
+						<p class="fragment">Guían decisiones de diseño</p>
+					</section>
+					<section>
+						<h3>Ley de Fitts</h3>
+						<div class="law-formula">
+							T = a + b × log₂(D/W + 1)
+						</div>
+						<p class="fragment"><strong>Traducción:</strong> Tiempo para alcanzar un target depende de:</p>
+						<ul>
+							<li class="fragment">Distancia (D) - Más lejos = más tiempo</li>
+							<li class="fragment">Tamaño (W) - Más pequeño = más tiempo</li>
+						</ul>
+						<p class="fragment highlight">Targets importantes: más grandes y más cerca</p>
+					</section>
+					<section>
+						<h3>Aplicación de Fitts</h3>
+						<ul>
+							<li class="fragment">✅ Botones grandes (min 44×44px en mobile)</li>
+							<li class="fragment">✅ CTAs prominentes en posición accesible</li>
+							<li class="fragment">✅ Menú en esquinas (fácil alcanzar)</li>
+							<li class="fragment">❌ Botones pequeños separados por mucha distancia</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ley de Hick</h3>
+						<p>Tiempo de decisión aumenta <strong>logarítmicamente</strong> con el número de opciones</p>
+						<div class="law-formula">
+							T = b × log₂(n + 1)
+						</div>
+						<p class="fragment highlight">Más opciones = Usuario tarda más en decidir</p>
+					</section>
+					<section>
+						<h3>Aplicación de Hick</h3>
+						<ul>
+							<li class="fragment">✅ Limitar opciones de menú (5-7 items)</li>
+							<li class="fragment">✅ Dividir formularios largos en pasos</li>
+							<li class="fragment">✅ Filtros para reducir opciones progresivamente</li>
+							<li class="fragment">❌ 20 botones sin jerarquía</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ley de Miller (7±2)</h3>
+						<p>Memoria de trabajo retiene <span class="highlight">7 ± 2 items</span></p>
+						<p class="fragment">Chunking: agrupar información en pedazos</p>
+						<ul class="fragment">
+							<li>Número de teléfono: 555-123-4567 (3 chunks)</li>
+							<li>Menú: Categorías con subcategorías</li>
+							<li>Wizard: 4 pasos en vez de 15 campos</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ley de Jakob</h3>
+						<blockquote>
+							"Los usuarios pasan la mayor parte de su tiempo en otros sitios"
+						</blockquote>
+						<p class="fragment">Expectativas formadas por experiencias previas</p>
+						<p class="fragment highlight">Sigue convenciones: logo arriba-izquierda, menú arriba, etc.</p>
+					</section>
+				</section>
+
+				<!-- Slide 5: Patrones de Interacción -->
+				<section>
+					<section>
+						<h2>Patrones de Interacción</h2>
+						<p>Componentes que usuarios esperan funcionen de cierta manera</p>
+					</section>
+					<section>
+						<h3>Botones: Estados Esenciales</h3>
+						<ul class="small-text">
+							<li class="fragment"><strong>Default:</strong> Estado base</li>
+							<li class="fragment"><strong>Hover:</strong> Mouse encima (solo desktop)</li>
+							<li class="fragment"><strong>Active:</strong> Click/tap en curso</li>
+							<li class="fragment"><strong>Focus:</strong> Seleccionado con teclado</li>
+							<li class="fragment"><strong>Disabled:</strong> No interactuable</li>
+							<li class="fragment"><strong>Loading:</strong> Acción en progreso</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Formularios: Mejores Prácticas</h3>
+						<ul class="small-text">
+							<li class="fragment">✅ Labels visibles (no solo placeholder)</li>
+							<li class="fragment">✅ Validación inline (tiempo real)</li>
+							<li class="fragment">✅ Mensajes de error claros</li>
+							<li class="fragment">✅ Estados de focus obvios</li>
+							<li class="fragment">✅ Autocompletar cuando apropiado</li>
+							<li class="fragment">✅ Un submit button claro</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Modals/Diálogos</h3>
+						<p>Interrupciones focalizadas</p>
+						<ul class="small-text">
+							<li class="fragment"><strong>Cuándo usar:</strong> Confirmaciones, formularios cortos, alertas</li>
+							<li class="fragment"><strong>No abusar:</strong> Interrumpe flujo del usuario</li>
+							<li class="fragment"><strong>Siempre incluir:</strong> Forma clara de cerrar (X, Esc, clic fuera)</li>
+							<li class="fragment"><strong>Backdrop:</strong> Oscurecer fondo para foco</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Tooltips</h3>
+						<p>Información adicional sin ocupar espacio</p>
+						<ul class="small-text">
+							<li class="fragment"><strong>Trigger:</strong> Hover (desktop) o tap (mobile)</li>
+							<li class="fragment"><strong>Posición:</strong> Top por defecto, ajustar si no cabe</li>
+							<li class="fragment"><strong>Contenido:</strong> Breve (1-2 líneas)</li>
+							<li class="fragment"><strong>No para info crítica:</strong> Fácil de perder</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Accordions (Acordeones)</h3>
+						<p>Progressive disclosure de contenido</p>
+						<div class="nav-pattern fragment">
+							<pre style="margin: 0; font-size: 0.8em;">
+▼ ¿Cuánto dura el curso?
+  El curso tiene una duración de...
+
+▶ ¿Tiene certificado?
+
+▶ ¿Cuál es el precio?
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Beneficios:</strong> Reduce scroll, organiza mucha info</p>
+					</section>
+				</section>
+
+				<!-- Slide 6: Breadcrumbs -->
+				<section>
+					<h2>Breadcrumbs (Migas de pan)</h2>
+					<p>Orientación de ubicación</p>
+					<div class="nav-pattern">
+						<pre style="margin: 0;">
+Home > Cursos > Diseño > UX Design
+						</pre>
+					</div>
+					<p class="fragment"><strong>Cuándo usar:</strong> Sitios con jerarquía profunda</p>
+					<p class="fragment"><strong>Ventajas:</strong> Usuario sabe dónde está, navegación rápida a niveles superiores</p>
+				</section>
+
+				<!-- Slide 7: Búsqueda -->
+				<section>
+					<section>
+						<h2>Búsqueda</h2>
+						<p>Crítica cuando mucho contenido</p>
+					</section>
+					<section>
+						<h3>Tipos de Búsqueda</h3>
+						<ul>
+							<li class="fragment"><strong>Simple:</strong> Solo barra (Google)</li>
+							<li class="fragment"><strong>Con filtros:</strong> Categorías, precio, fecha (E-commerce)</li>
+							<li class="fragment"><strong>Autocomplete:</strong> Sugerencias mientras escribes</li>
+							<li class="fragment"><strong>Búsqueda avanzada:</strong> Múltiples criterios (profesional)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Mejores Prácticas</h3>
+						<ul class="small-text">
+							<li class="fragment">✅ Siempre visible o fácil de encontrar (🔍 icono)</li>
+							<li class="fragment">✅ Placeholder descriptivo: "Buscar cursos..."</li>
+							<li class="fragment">✅ Autocomplete para ayudar</li>
+							<li class="fragment">✅ Mostrar resultados recientes o populares</li>
+							<li class="fragment">✅ Página de resultados con filtros</li>
+							<li class="fragment">✅ Manejar "sin resultados" con sugerencias</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 8: Paginación vs Infinite Scroll -->
+				<section>
+					<section>
+						<h2>Paginación vs Infinite Scroll</h2>
+						<p>Dos enfoques para mostrar muchos resultados</p>
+					</section>
+					<section>
+						<h3>Paginación</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0;">
+← 1 2 3 ... 10 →
+							</pre>
+						</div>
+						<p class="fragment"><strong>Ventajas:</strong></p>
+						<ul class="fragment small-text">
+							<li>Control de navegación</li>
+							<li>Footer siempre accesible</li>
+							<li>Mejor para búsqueda por objetivo</li>
+						</ul>
+						<p class="fragment"><strong>Desventajas:</strong></p>
+						<ul class="fragment small-text">
+							<li>Más clics</li>
+							<li>Interrumpe flujo</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Infinite Scroll</h3>
+						<p>Carga automática al llegar al final</p>
+						<p class="fragment"><strong>Ventajas:</strong></p>
+						<ul class="fragment small-text">
+							<li>Flujo continuo (perfecto para mobile)</li>
+							<li>Engagement mayor</li>
+							<li>Descubrimiento por exploración</li>
+						</ul>
+						<p class="fragment"><strong>Desventajas:</strong></p>
+						<ul class="fragment small-text">
+							<li>Footer inaccesible</li>
+							<li>Difícil volver a contenido anterior</li>
+							<li>Desorientación</li>
+						</ul>
+					</section>
+					<section>
+						<h3>¿Cuándo usar qué?</h3>
+						<ul>
+							<li class="fragment"><strong>Paginación:</strong> E-commerce, resultados de búsqueda, cuando usuario busca algo específico</li>
+							<li class="fragment"><strong>Infinite Scroll:</strong> Redes sociales, feeds de noticias, cuando usuario explora</li>
+							<li class="fragment"><strong>Híbrido:</strong> "Load more" button (mejor de ambos mundos)</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 9: Accesibilidad en Navegación -->
+				<section>
+					<section>
+						<h2>Accesibilidad en Navegación</h2>
+						<p>Navegación debe ser usable por <strong>todos</strong></p>
+					</section>
+					<section>
+						<h3>Navegación por Teclado</h3>
+						<ul>
+							<li class="fragment"><strong>Tab:</strong> Navegar entre elementos interactivos</li>
+							<li class="fragment"><strong>Enter/Space:</strong> Activar botones/links</li>
+							<li class="fragment"><strong>Esc:</strong> Cerrar modals/dropdowns</li>
+							<li class="fragment"><strong>Arrow keys:</strong> Dentro de menús</li>
+						</ul>
+						<p class="fragment highlight">Todos los elementos deben ser accesibles sin mouse</p>
+					</section>
+					<section>
+						<h3>ARIA Attributes</h3>
+						<pre><code data-trim data-noescape class="language-html">
+<!-- Navegación -->
+<nav aria-label="Main navigation">
+  ...
+</nav>
+
+<!-- Dropdown -->
+<button 
+  aria-haspopup="true" 
+  aria-expanded="false"
+>
+  Menu
+</button>
+
+<!-- Modal -->
+<div role="dialog" aria-modal="true">
+  ...
+</div>
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 10: Caso EduConnect -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Sistema de navegación completo</p>
+					</section>
+					<section>
+						<h3>Desktop: Top Navigation</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0; font-size: 0.8em;">
+┌────────────────────────────────────┐
+│ EduConnect  Cursos▼ Categorías     │
+│             Instructores  👤Perfil  │
+└────────────────────────────────────┘
+							</pre>
+						</div>
+						<ul class="small-text fragment">
+							<li>Logo: Link a homepage</li>
+							<li>Cursos: Mega menu con categorías</li>
+							<li>Búsqueda: Siempre visible</li>
+							<li>Perfil: Dropdown con opciones</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Mobile: Hamburger + Bottom Tabs</h3>
+						<div class="nav-pattern">
+							<pre style="margin: 0; font-size: 0.7em;">
+Top:
+┌─────────────┐
+│ ☰  Edu  🔍  │
+└─────────────┘
+
+Bottom:
+┌─────────────┐
+│🏠 🔍 📚 👤  │
+└─────────────┘
+							</pre>
+						</div>
+						<ul class="small-text fragment">
+							<li>Hamburger: Navegación completa</li>
+							<li>Bottom tabs: 4 destinos principales</li>
+							<li>Siempre accesibles con pulgar</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 11: Errores Comunes -->
+				<section>
+					<h2>Errores Comunes en Navegación</h2>
+					<ul>
+						<li class="fragment">❌ Menú oculto sin razón (abuso de hamburger en desktop)</li>
+						<li class="fragment">❌ Links que no parecen clickeables</li>
+						<li class="fragment">❌ Navegación inconsistente entre páginas</li>
+						<li class="fragment">❌ Dropdowns que se cierran antes de hacer clic</li>
+						<li class="fragment">❌ Breadcrumbs mal implementados (sin links)</li>
+						<li class="fragment">❌ Sin indicador de página activa</li>
+					</ul>
+				</section>
+
+				<!-- Slide 12: Mejores Prácticas -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul>
+						<li class="fragment">✅ Navegación consistente en todo el sitio</li>
+						<li class="fragment">✅ Indicador claro de ubicación actual</li>
+						<li class="fragment">✅ Links/botones con estados obvios</li>
+						<li class="fragment">✅ Accesible por teclado y screen readers</li>
+						<li class="fragment">✅ Mobile first para navegación</li>
+						<li class="fragment">✅ Testear con usuarios reales</li>
+						<li class="fragment">✅ Seguir convenciones (Ley de Jakob)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 13: Testing de Usabilidad -->
+				<section>
+					<h2>Testing de Navegación</h2>
+					<p>Validar que usuarios encuentran lo que buscan</p>
+					<ul class="fragment">
+						<li><strong>Tree Testing:</strong> Evaluar jerarquía de información</li>
+						<li><strong>Card Sorting:</strong> Cómo usuarios agrupan contenido</li>
+						<li><strong>First Click Test:</strong> ¿Primera acción es correcta?</li>
+						<li><strong>5 Second Test:</strong> ¿Usuarios entienden el sitio?</li>
+					</ul>
+				</section>
+
+				<!-- Slide 14: Conclusiones -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🧭 <strong>Navegación clara</strong> = Usuarios felices</li>
+						<li class="fragment">🎯 <strong>Leyes de UX</strong> guían decisiones (Fitts, Hick, Miller)</li>
+						<li class="fragment">📱 <strong>Patrones conocidos</strong> reducen curva de aprendizaje</li>
+						<li class="fragment">♿ <strong>Accesibilidad</strong> no es opcional</li>
+						<li class="fragment">🧪 <strong>Testear con usuarios</strong> siempre</li>
+						<li class="fragment">📐 <strong>Ley de Jakob:</strong> Sigue convenciones</li>
+					</ul>
+				</section>
+
+				<!-- Slide 15: Recursos -->
+				<section>
+					<h2>Recursos y Referencias</h2>
+					<ul class="small-text">
+						<li><strong>"Don't Make Me Think"</strong> - Steve Krug</li>
+						<li><strong>"Laws of UX"</strong> - Jon Yablonski (lawsofux.com)</li>
+						<li><strong>Nielsen Norman Group</strong> - Artículos sobre navegación</li>
+						<li><strong>UI Patterns</strong> - ui-patterns.com</li>
+						<li><strong>WCAG Guidelines</strong> - Accesibilidad web</li>
+					</ul>
+				</section>
+
+				<!-- Slide 16: Cierre -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Usabilidad y Navegación</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

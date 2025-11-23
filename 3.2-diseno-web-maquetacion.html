@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>3.2. Diseño Web y Maquetación</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .grid-demo {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				font-family: monospace;
+			}
+			.reveal .pattern-visual {
+				background: #ffffff;
+				color: #000000;
+				padding: 30px;
+				border-radius: 8px;
+			}
+			.reveal .comparison-table {
+				font-size: 0.8em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>3.2. Diseño Web y Maquetación</h1>
+					<h3>Fundamentos del Diseño Web</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>¿Qué es la Maquetación Web?</h2>
+					<p class="fragment">El arte de <span class="highlight">organizar elementos</span> en una página web</p>
+					<p class="fragment">Combina:</p>
+					<ul>
+						<li class="fragment"><strong>Estructura:</strong> Cómo se organizan los elementos</li>
+						<li class="fragment"><strong>Jerarquía:</strong> Qué es más importante</li>
+						<li class="fragment"><strong>Flujo:</strong> Cómo el usuario navega visualmente</li>
+						<li class="fragment"><strong>Balance:</strong> Distribución armónica del espacio</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3: Patrones de Lectura -->
+				<section>
+					<section>
+						<h2>Patrones de Lectura</h2>
+						<p>Los usuarios <strong>no leen</strong>, escanean</p>
+						<p class="fragment">Eye-tracking studies revelan patrones consistentes</p>
+					</section>
+					<section>
+						<h3>Patrón F</h3>
+						<div class="pattern-visual">
+							<pre style="margin: 0; text-align: left;">
+F-Pattern (Contenido denso)
+
+═══════════════════════
+                       
+═══════════════        
+                       
+═══════════            
+                       
+═══════                
+
+Común en: Blogs, artículos, listas
+							</pre>
+						</div>
+						<p class="fragment small-text">Usuarios leen horizontalmente, luego escanean verticalmente a la izquierda</p>
+					</section>
+					<section>
+						<h3>Patrón Z</h3>
+						<div class="pattern-visual">
+							<pre style="margin: 0; text-align: left;">
+Z-Pattern (Contenido simple)
+
+═══════════════════════
+    ╲                  
+      ╲                
+        ╲              
+          ╲            
+═══════════════════════
+
+Común en: Landing pages, páginas simples
+							</pre>
+						</div>
+						<p class="fragment small-text">Mirada va de izquierda a derecha, diagonal, luego izquierda a derecha</p>
+					</section>
+					<section>
+						<h3>Patrón Layer Cake</h3>
+						<div class="pattern-visual">
+							<pre style="margin: 0; text-align: left;">
+Layer Cake (Headings + contenido)
+
+══════════ H2 ══════════
+texto texto texto texto
+
+══════════ H2 ══════════
+texto texto texto texto
+
+══════════ H2 ══════════
+
+Común en: Documentación, FAQs
+							</pre>
+						</div>
+						<p class="fragment small-text">Usuarios escanean encabezados, solo leen contenido si es relevante</p>
+					</section>
+				</section>
+
+				<!-- Slide 4: Sistema de Grillas -->
+				<section>
+					<section>
+						<h2>Sistema de Grillas</h2>
+						<p>Base de toda maquetación web moderna</p>
+						<p class="fragment"><span class="highlight">Grilla de 12 columnas</span> - Estándar de la industria</p>
+					</section>
+					<section>
+						<h3>¿Por qué 12 columnas?</h3>
+						<p>12 es divisible por:</p>
+						<ul>
+							<li class="fragment">2 (layouts de 2 columnas)</li>
+							<li class="fragment">3 (layouts de 3 columnas)</li>
+							<li class="fragment">4 (layouts de 4 columnas)</li>
+							<li class="fragment">6 (layouts de 6 columnas)</li>
+						</ul>
+						<p class="fragment">= <strong>Máxima flexibilidad</strong></p>
+					</section>
+					<section>
+						<h3>Anatomía de una Grilla</h3>
+						<div class="grid-demo">
+							<pre style="margin: 0; font-size: 0.7em;">
+┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
+│1│2│3│4│5│6│7│8│9│A│B│C│  ← 12 columnas
+└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
+↑ ↑                   ↑ ↑
+│ └─ Gutter (24px)    │ │
+└─ Margin (auto)      └─┘
+							</pre>
+						</div>
+						<p class="fragment small-text"><strong>Columna:</strong> Área de contenido | <strong>Gutter:</strong> Espacio entre columnas | <strong>Margin:</strong> Espacio lateral</p>
+					</section>
+					<section>
+						<h3>Layouts Comunes con 12 Columnas</h3>
+						<div class="grid-demo">
+							<pre style="margin: 0; font-size: 0.6em;">
+Full Width (12 col)
+┌────────────────────────┐
+│      Contenido         │
+└────────────────────────┘
+
+2 Columnas (6 + 6)
+┌───────────┬───────────┐
+│ Columna 1 │ Columna 2 │
+└───────────┴───────────┘
+
+3 Columnas (4 + 4 + 4)
+┌───────┬───────┬───────┐
+│  Col  │  Col  │  Col  │
+└───────┴───────┴───────┘
+
+Sidebar (8 + 4)
+┌─────────────────┬─────┐
+│    Principal    │ Bar │
+└─────────────────┴─────┘
+							</pre>
+						</div>
+					</section>
+				</section>
+
+				<!-- Slide 5: CSS Grid -->
+				<section>
+					<section>
+						<h2>CSS Grid</h2>
+						<p>Sistema de layout bidimensional</p>
+						<p class="fragment"><span class="highlight">Filas y columnas simultáneas</span></p>
+					</section>
+					<section>
+						<h3>Grid Básico de 12 Columnas</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item-full {
+  grid-column: 1 / 13;  /* span 12 columnas */
+}
+
+.item-half {
+  grid-column: span 6;  /* span 6 columnas */
+}
+
+.item-third {
+  grid-column: span 4;  /* span 4 columnas */
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Grid Areas (nombradas)</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  grid-template-columns: 250px 1fr 1fr;
+  gap: 24px;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 6: Flexbox -->
+				<section>
+					<section>
+						<h2>Flexbox</h2>
+						<p>Sistema de layout unidimensional</p>
+						<p class="fragment"><span class="highlight">Una fila o una columna a la vez</span></p>
+					</section>
+					<section>
+						<h3>Propiedades Principales</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.flex-container {
+  display: flex;
+  justify-content: space-between;  /* Eje principal */
+  align-items: center;             /* Eje cruzado */
+  gap: 16px;                       /* Espacio entre items */
+  flex-wrap: wrap;                 /* Permitir salto de línea */
+}
+
+.flex-item {
+  flex: 1;                         /* Crecer y encogerse */
+}
+
+.flex-item-fixed {
+  flex: 0 0 200px;                 /* Ancho fijo de 200px */
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Casos de Uso Ideales</h3>
+						<ul>
+							<li class="fragment"><strong>Navegación horizontal</strong> - Menús y botones</li>
+							<li class="fragment"><strong>Cards en una fila</strong> - Productos, cursos</li>
+							<li class="fragment"><strong>Centrado perfecto</strong> - Vertical y horizontal</li>
+							<li class="fragment"><strong>Footer sticky</strong> - Pegar al fondo</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 7: Grid vs Flexbox -->
+				<section>
+					<h2>¿Cuándo usar qué?</h2>
+					<table class="comparison-table">
+						<thead>
+							<tr>
+								<th>Aspecto</th>
+								<th>CSS Grid</th>
+								<th>Flexbox</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="fragment">
+								<td><strong>Dimensión</strong></td>
+								<td>2D (filas + columnas)</td>
+								<td>1D (fila o columna)</td>
+							</tr>
+							<tr class="fragment">
+								<td><strong>Mejor para</strong></td>
+								<td>Layouts generales de página</td>
+								<td>Componentes, alineación</td>
+							</tr>
+							<tr class="fragment">
+								<td><strong>Control</strong></td>
+								<td>Del contenedor sobre hijos</td>
+								<td>De hijos sobre sí mismos</td>
+							</tr>
+							<tr class="fragment">
+								<td><strong>Ejemplo</strong></td>
+								<td>Sistema de grilla 12 col</td>
+								<td>Navbar, card horizontal</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="fragment small-text highlight">Regla: <strong>Grid para macro-layout, Flexbox para micro-layout</strong></p>
+				</section>
+
+				<!-- Slide 8: 8pt Grid System -->
+				<section>
+					<section>
+						<h2>8pt Grid System</h2>
+						<p>Sistema de espaciado consistente</p>
+						<p class="fragment">Todos los espacios, márgenes y paddings son <span class="highlight">múltiplos de 8</span></p>
+					</section>
+					<section>
+						<h3>¿Por qué 8?</h3>
+						<ul>
+							<li class="fragment">📱 La mayoría de pantallas son múltiplos de 8px</li>
+							<li class="fragment">➗ Fácil dividir (8, 16, 24, 32, 40, 48...)</li>
+							<li class="fragment">🎯 Mantiene consistencia visual</li>
+							<li class="fragment">🧠 Reduce decisiones (menos cognitive load)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Escala de Espaciado</h3>
+						<pre><code data-trim data-noescape class="language-css">
+:root {
+  --space-1: 8px;    /* Espacios mínimos */
+  --space-2: 16px;   /* Espacios pequeños */
+  --space-3: 24px;   /* Espacios normales */
+  --space-4: 32px;   /* Espacios medianos */
+  --space-6: 48px;   /* Espacios grandes */
+  --space-8: 64px;   /* Espacios muy grandes */
+  --space-12: 96px;  /* Secciones */
+  --space-16: 128px; /* Hero sections */
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Aplicación Práctica</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.button {
+  padding: var(--space-2) var(--space-4);  /* 16px 32px */
+}
+
+.card {
+  padding: var(--space-3);                 /* 24px */
+  margin-bottom: var(--space-4);           /* 32px */
+}
+
+.section {
+  padding: var(--space-12) 0;              /* 96px vertical */
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 9: Composición y Balance -->
+				<section>
+					<section>
+						<h2>Composición y Balance</h2>
+						<p>Cómo distribuir elementos de forma armónica</p>
+					</section>
+					<section>
+						<h3>Regla de los Tercios</h3>
+						<div class="pattern-visual">
+							<pre style="margin: 0;">
+┌───────┬───────┬───────┐
+│       │       │       │
+│       │   ●   │       │  ← Puntos de interés
+│       │       │       │
+├───────┼───────┼───────┤
+│       │       │       │
+│   ●   │       │   ●   │
+│       │       │       │
+├───────┼───────┼───────┤
+│       │       │       │
+│       │   ●   │       │
+│       │       │       │
+└───────┴───────┴───────┘
+							</pre>
+						</div>
+						<p class="fragment small-text">Colocar elementos importantes en las intersecciones</p>
+					</section>
+					<section>
+						<h3>Golden Ratio (1:1.618)</h3>
+						<p>Proporción "perfecta" encontrada en la naturaleza</p>
+						<div class="grid-demo">
+							<pre style="margin: 0;">
+┌─────────────────┬──────────┐
+│                 │          │
+│   Sidebar       │   Main   │
+│   (38%)         │   (62%)  │
+│                 │          │
+└─────────────────┴──────────┘
+							</pre>
+						</div>
+						<p class="fragment small-text">Ratio 1:1.618 = 38%:62%</p>
+					</section>
+				</section>
+
+				<!-- Slide 10: Whitespace -->
+				<section>
+					<section>
+						<h2>Whitespace (Espacio Negativo)</h2>
+						<p>El espacio vacío es <span class="highlight">tan importante</span> como el contenido</p>
+					</section>
+					<section>
+						<h3>Beneficios del Whitespace</h3>
+						<ul>
+							<li class="fragment">👁️ <strong>Legibilidad:</strong> Más fácil de leer</li>
+							<li class="fragment">🎯 <strong>Foco:</strong> Dirige atención</li>
+							<li class="fragment">💎 <strong>Elegancia:</strong> Percepción de calidad</li>
+							<li class="fragment">🧘 <strong>Calma:</strong> Reduce cognitive load</li>
+						</ul>
+						<p class="fragment highlight">No tener miedo al espacio vacío</p>
+					</section>
+					<section>
+						<h3>Macro vs Micro Whitespace</h3>
+						<ul>
+							<li class="fragment"><strong>Macro:</strong> Entre secciones grandes (96px, 128px)</li>
+							<li class="fragment"><strong>Micro:</strong> Entre elementos relacionados (8px, 16px, 24px)</li>
+						</ul>
+						<p class="fragment small-text">💡 Más whitespace macro = Elegante. Más micro = Denso.</p>
+					</section>
+				</section>
+
+				<!-- Slide 11: Caso EduConnect -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Maquetación de Homepage</p>
+					</section>
+					<section>
+						<h3>Estructura de Homepage</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.homepage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+/* Hero: Full width */
+.hero {
+  grid-column: 1 / 13;
+  padding: var(--space-12) 0;
+}
+
+/* Grid de cursos: 3 columnas */
+.course-grid {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Card de Curso (Flexbox)</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.course-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.card-content {
+  padding: var(--space-3);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card-footer {
+  padding: var(--space-3);
+  border-top: 1px solid #e0e0e0;
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 12: Responsive Grid -->
+				<section>
+					<section>
+						<h2>Grilla Responsiva</h2>
+						<p>Adaptar columnas según viewport</p>
+					</section>
+					<section>
+						<h3>Enfoque Mobile First</h3>
+						<pre><code data-trim data-noescape class="language-css">
+/* Mobile: 1 columna */
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Desktop: 3 columnas */
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Auto-Responsive con auto-fit</h3>
+						<pre><code data-trim data-noescape class="language-css">
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit, 
+    minmax(300px, 1fr)
+  );
+  gap: 24px;
+}
+						</code></pre>
+						<p class="fragment small-text">Crea automáticamente columnas cuando caben mínimo 300px</p>
+						<p class="fragment small-text highlight">Sin media queries! 🤯</p>
+					</section>
+				</section>
+
+				<!-- Slide 13: Errores Comunes -->
+				<section>
+					<h2>Errores Comunes en Maquetación</h2>
+					<ul>
+						<li class="fragment">❌ Usar píxeles fijos en vez de sistema flexible</li>
+						<li class="fragment">❌ Inconsistencia en espaciado</li>
+						<li class="fragment">❌ Demasiado contenido sin whitespace</li>
+						<li class="fragment">❌ No considerar diferentes tamaños de contenido</li>
+						<li class="fragment">❌ Grillas que no se adaptan a mobile</li>
+						<li class="fragment">❌ Usar float para layouts (obsoleto)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 14: Mejores Prácticas -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul>
+						<li class="fragment">✅ Usar sistema de grilla de 12 columnas</li>
+						<li class="fragment">✅ Aplicar 8pt grid para espaciado</li>
+						<li class="fragment">✅ CSS Grid para macro-layout</li>
+						<li class="fragment">✅ Flexbox para micro-layout</li>
+						<li class="fragment">✅ Generoso con whitespace</li>
+						<li class="fragment">✅ Mobile first siempre</li>
+						<li class="fragment">✅ Testear con contenido real (no lorem ipsum)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 15: Herramientas -->
+				<section>
+					<h2>Herramientas Útiles</h2>
+					<ul>
+						<li class="fragment"><strong>CSS Grid Generator</strong> - cssgrid-generator.netlify.app</li>
+						<li class="fragment"><strong>Flexbox Froggy</strong> - flexboxfroggy.com (aprender jugando)</li>
+						<li class="fragment"><strong>Grid Garden</strong> - cssgridgarden.com (aprender grid)</li>
+						<li class="fragment"><strong>Figma Auto Layout</strong> - Para prototipos con grillas</li>
+						<li class="fragment"><strong>Chrome DevTools</strong> - Inspector de Grid/Flexbox</li>
+					</ul>
+				</section>
+
+				<!-- Slide 16: Conclusiones -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">📐 <strong>Grilla de 12 columnas</strong> - Base de layouts</li>
+						<li class="fragment">🎯 <strong>8pt grid</strong> - Espaciado consistente</li>
+						<li class="fragment">🔲 <strong>CSS Grid</strong> - Layouts generales de página</li>
+						<li class="fragment">📦 <strong>Flexbox</strong> - Componentes y alineación</li>
+						<li class="fragment">⚪ <strong>Whitespace</strong> - Tan importante como el contenido</li>
+						<li class="fragment">👁️ <strong>Patrones de lectura</strong> - F, Z, Layer Cake</li>
+					</ul>
+				</section>
+
+				<!-- Slide 17: Recursos -->
+				<section>
+					<h2>Recursos y Referencias</h2>
+					<ul class="small-text">
+						<li><strong>"Grid Systems in Graphic Design"</strong> - Josef Müller-Brockmann</li>
+						<li><strong>CSS Tricks Guide to Grid</strong> - css-tricks.com/snippets/css/complete-guide-grid</li>
+						<li><strong>CSS Tricks Guide to Flexbox</strong> - css-tricks.com/snippets/css/a-guide-to-flexbox</li>
+						<li><strong>Material Design Layout</strong> - material.io/design/layout</li>
+						<li><strong>Every Layout</strong> - every-layout.dev</li>
+					</ul>
+				</section>
+
+				<!-- Slide 18: Cierre -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Diseño Web y Maquetación</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

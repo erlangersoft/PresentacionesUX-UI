@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>3.5. Responsive Web Design</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .device-demo {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 20px;
+				border-radius: 8px;
+				font-family: monospace;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>3.5. Responsive Web Design</h1>
+					<h3>Fundamentos del Diseño Web</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>¿Qué es Responsive Web Design?</h2>
+					<p class="fragment">Diseño que <span class="highlight">se adapta</span> a diferentes tamaños de pantalla</p>
+					<blockquote class="fragment">
+						"El diseño responsivo es el enfoque que hace que las páginas web se vean bien en todos los dispositivos" - Ethan Marcotte (2010)
+					</blockquote>
+				</section>
+
+				<!-- Slide 3: Por qué es crítico -->
+				<section>
+					<h2>¿Por qué es Crítico?</h2>
+					<ul>
+						<li class="fragment">📱 <strong>60%+ del tráfico</strong> es móvil</li>
+						<li class="fragment">🔍 <strong>Google mobile-first indexing</strong></li>
+						<li class="fragment">💰 <strong>Menor costo</strong> que apps nativas</li>
+						<li class="fragment">🎯 <strong>Mejor UX</strong> en todos los dispositivos</li>
+						<li class="fragment">📈 <strong>Mayor conversión</strong></li>
+					</ul>
+				</section>
+
+				<!-- Slide 4: 3 Pilares de RWD -->
+				<section>
+					<section>
+						<h2>Los 3 Pilares de RWD</h2>
+						<p class="small-text">Ethan Marcotte, 2010</p>
+					</section>
+					<section>
+						<h3>1. Grillas Fluidas</h3>
+						<p>Usar porcentajes en vez de píxeles fijos</p>
+						<pre><code data-trim data-noescape class="language-css">
+/* ❌ Fijo */
+.container {
+  width: 1200px;
+}
+
+/* ✅ Fluido */
+.container {
+  width: 90%;
+  max-width: 1200px;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>2. Imágenes Flexibles</h3>
+						<p>Imágenes que se adaptan al contenedor</p>
+						<pre><code data-trim data-noescape class="language-css">
+img {
+  max-width: 100%;
+  height: auto;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>3. Media Queries</h3>
+						<p>Aplicar estilos según tamaño de viewport</p>
+						<pre><code data-trim data-noescape class="language-css">
+/* Mobile */
+.grid { grid-template-columns: 1fr; }
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 5: Adaptive vs Responsive -->
+				<section>
+					<section>
+						<h2>Adaptive vs Responsive</h2>
+					</section>
+					<section>
+						<h3>Responsive (Responsivo)</h3>
+						<p>Se adapta <strong>continuamente</strong></p>
+						<ul class="small-text">
+							<li class="fragment">Layout fluido que cambia gradualmente</li>
+							<li class="fragment">Un solo código base</li>
+							<li class="fragment">Se adapta a cualquier tamaño</li>
+						</ul>
+						<p class="fragment highlight">Recomendado para mayoría de casos</p>
+					</section>
+					<section>
+						<h3>Adaptive (Adaptable)</h3>
+						<p>"Salta" entre layouts <strong>específicos</strong></p>
+						<ul class="small-text">
+							<li class="fragment">Layouts fijos para cada breakpoint</li>
+							<li class="fragment">Más control, más código</li>
+							<li class="fragment">Transiciones visibles entre tamaños</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 6: Mobile First vs Desktop First -->
+				<section>
+					<section>
+						<h2>Mobile First vs Desktop First</h2>
+					</section>
+					<section>
+						<h3>Mobile First ✅</h3>
+						<p>Diseñar primero para mobile, luego expandir</p>
+						<pre><code data-trim data-noescape class="language-css">
+/* Base: Mobile (sin media query) */
+.grid {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet y más grande */
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Ventajas de Mobile First</h3>
+						<ul>
+							<li class="fragment">🎯 <strong>Prioriza contenido esencial</strong></li>
+							<li class="fragment">⚡ <strong>Mejor performance</strong> en móvil</li>
+							<li class="fragment">🔍 <strong>Alineado con Google</strong></li>
+							<li class="fragment">📈 <strong>Progressive enhancement</strong></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Desktop First (menos recomendado)</h3>
+						<pre><code data-trim data-noescape class="language-css">
+/* Base: Desktop */
+.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablet y más pequeño */
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 7: Breakpoints -->
+				<section>
+					<section>
+						<h2>Breakpoints Estratégicos</h2>
+						<p>Puntos donde el layout cambia</p>
+					</section>
+					<section>
+						<h3>Breakpoints Comunes</h3>
+						<pre><code data-trim data-noescape class="language-css">
+/* Extra Small - Mobile portrait */
+@media (min-width: 320px) { }
+
+/* Small - Mobile landscape */
+@media (min-width: 576px) { }
+
+/* Medium - Tablet portrait */
+@media (min-width: 768px) { }
+
+/* Large - Tablet landscape / Laptop */
+@media (min-width: 1024px) { }
+
+/* Extra Large - Desktop */
+@media (min-width: 1280px) { }
+
+/* 2XL - Large monitors */
+@media (min-width: 1536px) { }
+						</code></pre>
+					</section>
+					<section>
+						<h3>Content-Based Breakpoints</h3>
+						<p>Basar en contenido, no dispositivos</p>
+						<pre><code data-trim data-noescape class="language-css">
+/* Auto-responsive sin media queries */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  gap: 24px;
+}
+						</code></pre>
+						<p class="fragment small-text">Crea columnas automáticamente cuando caben 300px</p>
+					</section>
+				</section>
+
+				<!-- Slide 8: Media Queries Avanzadas -->
+				<section>
+					<section>
+						<h2>Media Queries Avanzadas</h2>
+					</section>
+					<section>
+						<h3>Orientation</h3>
+						<pre><code data-trim data-noescape class="language-css">
+@media (orientation: portrait) {
+  /* Dispositivo vertical */
+  .hero { aspect-ratio: 3 / 4; }
+}
+
+@media (orientation: landscape) {
+  /* Dispositivo horizontal */
+  .hero { aspect-ratio: 16 / 9; }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Hover Capability</h3>
+						<pre><code data-trim data-noescape class="language-css">
+/* Dispositivo con mouse */
+@media (hover: hover) {
+  .button:hover {
+    background: var(--primary-dark);
+  }
+}
+
+/* Touch device */
+@media (hover: none) {
+  .button:active {
+    background: var(--primary-dark);
+  }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Prefer Color Scheme</h3>
+						<pre><code data-trim data-noescape class="language-css">
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --text: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 9: Imágenes Responsivas -->
+				<section>
+					<section>
+						<h2>Imágenes Responsivas</h2>
+					</section>
+					<section>
+						<h3>Picture Element</h3>
+						<p>Diferentes imágenes según viewport</p>
+						<pre><code data-trim data-noescape class="language-html">
+<picture>
+  <!-- Mobile: Imagen cuadrada -->
+  <source 
+    media="(max-width: 767px)"
+    srcset="hero-mobile.jpg"
+  >
+  
+  <!-- Tablet: Imagen 4:3 -->
+  <source 
+    media="(max-width: 1023px)"
+    srcset="hero-tablet.jpg"
+  >
+  
+  <!-- Desktop: Imagen 16:9 -->
+  <img src="hero-desktop.jpg" alt="Hero">
+</picture>
+						</code></pre>
+					</section>
+					<section>
+						<h3>Srcset y Sizes</h3>
+						<p>Resolución apropiada según pantalla</p>
+						<pre><code data-trim data-noescape class="language-html">
+<img
+  src="course-400.jpg"
+  srcset="
+    course-400.jpg 400w,
+    course-800.jpg 800w,
+    course-1200.jpg 1200w
+  "
+  sizes="
+    (max-width: 767px) 100vw,
+    (max-width: 1023px) 50vw,
+    400px
+  "
+  alt="Curso"
+>
+						</code></pre>
+					</section>
+					<section>
+						<h3>Loading Lazy</h3>
+						<pre><code data-trim data-noescape class="language-html">
+<!-- No carga hasta estar cerca del viewport -->
+<img 
+  src="course.jpg" 
+  alt="Curso"
+  loading="lazy"
+>
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 10: Touch vs Mouse -->
+				<section>
+					<section>
+						<h2>Touch vs Mouse</h2>
+						<p>Diseñar para diferentes métodos de entrada</p>
+					</section>
+					<section>
+						<h3>Touch Targets</h3>
+						<p>Mínimo <span class="highlight">44×44px</span> (WCAG 2.5.5)</p>
+						<pre><code data-trim data-noescape class="language-css">
+/* Touch devices: targets más grandes */
+@media (pointer: coarse) {
+  .button {
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+  
+  .link {
+    padding: 8px 0;
+  }
+}
+
+/* Mouse: puede ser más preciso */
+@media (pointer: fine) {
+  .button {
+    min-height: 36px;
+    padding: 8px 16px;
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 11: Layouts Responsivos -->
+				<section>
+					<section>
+						<h2>Patrones de Layout Responsivo</h2>
+					</section>
+					<section>
+						<h3>Stack (Mobile) → Columns (Desktop)</h3>
+						<div class="device-demo">
+							<pre style="margin: 0; font-size: 0.7em;">
+Mobile (< 768px):        Desktop (> 1024px):
+┌────────┐               ┌───┬───┬───┐
+│   1    │               │ 1 │ 2 │ 3 │
+├────────┤               └───┴───┴───┘
+│   2    │
+├────────┤
+│   3    │
+└────────┘
+							</pre>
+						</div>
+					</section>
+					<section>
+						<h3>Sidebar Off-Canvas</h3>
+						<div class="device-demo">
+							<pre style="margin: 0; font-size: 0.7em;">
+Mobile: Sidebar oculto    Desktop: Sidebar visible
+┌────────┐                ┌───┬─────────┐
+│☰ Main  │                │ S │  Main   │
+│        │                │ i │         │
+│        │                │ d │         │
+└────────┘                └───┴─────────┘
+							</pre>
+						</div>
+					</section>
+				</section>
+
+				<!-- Slide 12: Prototipado Responsive -->
+				<section>
+					<section>
+						<h2>Prototipado Responsive</h2>
+					</section>
+					<section>
+						<h3>Artboards en Figma</h3>
+						<ul>
+							<li><strong>Mobile:</strong> 375px (iPhone)</li>
+							<li><strong>Tablet:</strong> 768px (iPad portrait)</li>
+							<li><strong>Desktop:</strong> 1440px (Laptop)</li>
+							<li><strong>Large:</strong> 1920px (Monitor)</li>
+						</ul>
+						<p class="fragment small-text">💡 Tip: Usar <strong>Auto Layout</strong> para componentes fluidos</p>
+					</section>
+					<section>
+						<h3>Testing Responsive</h3>
+						<ul>
+							<li class="fragment"><strong>Chrome DevTools:</strong> Ctrl+Shift+M</li>
+							<li class="fragment"><strong>Dispositivos reales:</strong> Imprescindible</li>
+							<li class="fragment"><strong>BrowserStack:</strong> Testing en múltiples dispositivos</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide 13: Caso EduConnect -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Homepage Responsive</p>
+					</section>
+					<section>
+						<h3>Estrategia Responsive</h3>
+						<ul class="small-text">
+							<li class="fragment"><strong>Mobile (< 768px):</strong> 1 columna, hamburger menu, bottom tabs</li>
+							<li class="fragment"><strong>Tablet (768-1023px):</strong> 2 columnas, top nav visible</li>
+							<li class="fragment"><strong>Desktop (> 1024px):</strong> 3 columnas, sidebar opcional</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Grid de Cursos Responsive</h3>
+						<pre><code data-trim data-noescape class="language-css">
+/* Mobile: 1 columna */
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Desktop: 3 columnas */
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Slide 14: Errores Comunes -->
+				<section>
+					<h2>Errores Comunes en RWD</h2>
+					<ul>
+						<li class="fragment">❌ No testear en dispositivos reales</li>
+						<li class="fragment">❌ Targets de touch muy pequeños (< 44px)</li>
+						<li class="fragment">❌ Texto muy pequeño en mobile (< 16px)</li>
+						<li class="fragment">❌ Horizontal scroll no intencional</li>
+						<li class="fragment">❌ Imágenes que no se adaptan</li>
+						<li class="fragment">❌ Desktop First sin optimización mobile</li>
+					</ul>
+				</section>
+
+				<!-- Slide 15: Mejores Prácticas -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul>
+						<li class="fragment">✅ Mobile First siempre</li>
+						<li class="fragment">✅ Touch targets mínimo 44px</li>
+						<li class="fragment">✅ Texto base 16px+ en mobile</li>
+						<li class="fragment">✅ Testear en dispositivos reales</li>
+						<li class="fragment">✅ Imágenes responsivas (picture, srcset)</li>
+						<li class="fragment">✅ Content-based breakpoints</li>
+						<li class="fragment">✅ Performance en mobile (lazy loading)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 16: Herramientas -->
+				<section>
+					<h2>Herramientas Útiles</h2>
+					<ul>
+						<li class="fragment"><strong>Chrome DevTools:</strong> Testing responsive</li>
+						<li class="fragment"><strong>Responsively App:</strong> Ver múltiples dispositivos</li>
+						<li class="fragment"><strong>Am I Responsive:</strong> Screenshots para presentar</li>
+						<li class="fragment"><strong>Figma Auto Layout:</strong> Prototipos responsive</li>
+						<li class="fragment"><strong>BrowserStack:</strong> Testing real en cloud</li>
+					</ul>
+				</section>
+
+				<!-- Slide 17: Conclusiones -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">📱 <strong>Mobile First:</strong> Diseñar para constraints primero</li>
+						<li class="fragment">🎯 <strong>Content-based breakpoints:</strong> Basados en contenido</li>
+						<li class="fragment">🔲 <strong>Fluid layouts:</strong> auto-fit, minmax</li>
+						<li class="fragment">🖼️ <strong>Flexible media:</strong> picture, srcset, loading lazy</li>
+						<li class="fragment">👆 <strong>Touch-friendly:</strong> 44px mínimo</li>
+						<li class="fragment">🧪 <strong>Testing real:</strong> Dispositivos físicos</li>
+					</ul>
+				</section>
+
+				<!-- Slide 18: Recursos -->
+				<section>
+					<h2>Recursos y Referencias</h2>
+					<ul class="small-text">
+						<li><strong>"Responsive Web Design"</strong> - Ethan Marcotte</li>
+						<li><strong>"Mobile First"</strong> - Luke Wroblewski</li>
+						<li><strong>This Is Responsive</strong> - bradfrost.github.io/this-is-responsive</li>
+						<li><strong>Can I Use</strong> - caniuse.com</li>
+						<li><strong>MDN Web Docs</strong> - Media Queries</li>
+					</ul>
+				</section>
+
+				<!-- Slide 19: Cierre -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Responsive Web Design</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

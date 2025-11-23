@@ -240,14 +240,23 @@
 
         ul.key-points {
             list-style: none;
-            padding-left: 0;
+            padding-left: 0 !important;
+            margin: 0.5em 0;
+        }
+
+        ul.key-points li {
+            position: relative;
+            padding-left: 2em !important;
+            margin: 0.4em 0;
         }
 
         ul.key-points li:before {
             content: "✓ ";
             color: #ffb74d;
             font-weight: bold;
-            margin-right: 0.5em;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .two-column {
@@ -276,20 +285,36 @@
         }
 
         /* Ajustes para evitar corte de contenido */
-        .reveal .slides>section {
-            padding: 20px 40px;
+        .reveal .slides > section {
+            padding: 15px 35px;
+            overflow: visible !important;
+        }
+
+        .reveal .slides > section > * {
+            max-width: 100%;
         }
 
         .reveal ul,
         .reveal ol {
-            font-size: 0.9em;
-            line-height: 1.5;
+            font-size: 0.85em;
+            line-height: 1.4;
+            margin: 0.5em 0;
+            padding-left: 1.5em;
+        }
+
+        .reveal li {
+            margin: 0.3em 0;
+            padding-left: 0.3em;
         }
 
         .reveal p {
-            font-size: 0.9em;
-            line-height: 1.5;
-            margin: 0.5em 0;
+            font-size: 0.85em;
+            line-height: 1.4;
+            margin: 0.4em 0;
+        }
+
+        .reveal li {
+            margin: 0.3em 0;
         }
     </style>
 </head>
@@ -398,30 +423,25 @@
             <!-- Slide 6: Ley de Continuidad -->
             <section>
                 <h2>Ley de Continuidad</h2>
-                <p><strong>Principio:</strong> El ojo humano tiende a seguir líneas, curvas o secuencias, incluso cuando
-                    son interrumpidas.</p>
+                <p style="margin-bottom: 0.8em; font-size: 0.9em;"><strong>Principio:</strong> El ojo humano tiende a seguir líneas, curvas o secuencias, incluso cuando son interrumpidas.</p>
 
-                <div class="visual-example">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 1em;">
-                        <div
-                            style="background: #2ECC71; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                <div class="visual-example" style="padding: 1em; background: rgba(50, 50, 50, 0.95);">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.6em; flex-wrap: nowrap;">
+                        <div style="background: #2ECC71; color: white; padding: 0.6em 1em; border-radius: 8px; font-weight: 600; font-size: 0.95em; white-space: nowrap;">
                             Paso 1</div>
-                        <div style="color: #2ECC71; font-size: 2em;">→</div>
-                        <div
-                            style="background: #2ECC71; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                        <div style="color: #2ECC71; font-size: 1.5em; font-weight: bold;">→</div>
+                        <div style="background: #2ECC71; color: white; padding: 0.6em 1em; border-radius: 8px; font-weight: 600; font-size: 0.95em; white-space: nowrap;">
                             Paso 2</div>
-                        <div style="color: #3498DB; font-size: 2em;">→</div>
-                        <div
-                            style="background: #3498DB; color: white; padding: 1em; border-radius: 8px; font-weight: 600;">
+                        <div style="color: #3498DB; font-size: 1.5em; font-weight: bold;">→</div>
+                        <div style="background: #3498DB; color: white; padding: 0.6em 1em; border-radius: 8px; font-weight: 600; font-size: 0.95em; white-space: nowrap;">
                             Paso 3</div>
-                        <div style="color: #95A5A6; font-size: 2em;">→</div>
-                        <div
-                            style="background: #ECF0F1; color: #7F8C8D; padding: 1em; border-radius: 8px; font-weight: 600;">
+                        <div style="color: #95A5A6; font-size: 1.5em; font-weight: bold;">→</div>
+                        <div style="background: #95A5A6; color: white; padding: 0.6em 1em; border-radius: 8px; font-weight: 600; font-size: 0.95em; white-space: nowrap;">
                             Paso 4</div>
                     </div>
                 </div>
 
-                <ul class="key-points" style="margin-top: 1em;">
+                <ul class="key-points" style="margin-top: 0.8em; font-size: 0.8em;">
                     <li>Diseño de flujos de usuario lineales</li>
                     <li>Líneas de tiempo y procesos secuenciales</li>
                     <li>Barras de progreso y indicadores de paso</li>
@@ -431,19 +451,19 @@
             <!-- Slide 7: Ley del Cierre -->
             <section>
                 <h2>Ley del Cierre</h2>
-                <p><strong>Principio:</strong> El cerebro tiende a completar figuras incompletas o cerrar espacios
+                <p style="margin-bottom: 0.8em;"><strong>Principio:</strong> El cerebro tiende a completar figuras incompletas o cerrar espacios
                     abiertos para crear formas reconocibles.</p>
 
-                <div class="visual-example">
-                    <div style="display: flex; gap: 3em; justify-content: center; align-items: center;">
-                        <div style="font-size: 4em; color: #2C3E50;">☰</div>
-                        <div style="font-size: 4em; color: #2C3E50;">⚙</div>
-                        <div style="font-size: 4em; color: #2C3E50;">⊕</div>
+                <div class="visual-example" style="padding: 1.5em; background: rgba(255, 255, 255, 0.98);">
+                    <div style="display: flex; gap: 2.5em; justify-content: center; align-items: center;">
+                        <div style="font-size: 3.5em; color: #1a1a1a; font-weight: bold;">☰</div>
+                        <div style="font-size: 3.5em; color: #1a1a1a; font-weight: bold;">⚙</div>
+                        <div style="font-size: 3.5em; color: #1a1a1a; font-weight: bold;">⊕</div>
                     </div>
-                    <p class="small-text" style="margin-top: 1em;">Menú • Configuración • Agregar</p>
+                    <p style="margin-top: 1em; color: #2C3E50; font-size: 0.95em; font-weight: 600;">Menú • Configuración • Agregar</p>
                 </div>
 
-                <ul class="key-points" style="margin-top: 1em;">
+                <ul class="key-points" style="margin-top: 0.8em; font-size: 0.85em;">
                     <li>Diseño de iconografía minimalista</li>
                     <li>Uso de contornos parciales en elementos gráficos</li>
                     <li>Indicadores de carga con formas incompletas</li>
@@ -453,29 +473,27 @@
             <!-- Slide 8: Ley Figura-Fondo -->
             <section>
                 <h2>Ley de la Figura-Fondo</h2>
-                <p><strong>Principio:</strong> La capacidad de distinguir un objeto (figura) de su entorno (fondo).</p>
+                <p style="margin-bottom: 0.8em; font-size: 0.9em;"><strong>Principio:</strong> La capacidad de distinguir un objeto (figura) de su entorno (fondo).</p>
 
-                <div class="two-column">
-                    <div class="visual-example" style="background: rgba(0,0,0,0.8); color: white; padding: 3em;">
-                        <div
-                            style="background: white; color: #2C3E50; padding: 2em; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-                            <h4 style="margin-top: 0;">Modal Dialog</h4>
-                            <p>Contenido importante destacado</p>
+                <div class="two-column" style="gap: 1em;">
+                    <div class="visual-example" style="background: rgba(0,0,0,0.85); color: white; padding: 2em;">
+                        <div style="background: #2C3E50; color: white; padding: 1.5em; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5em; font-size: 1em;">MODAL DIALOG</h4>
+                            <p style="margin: 0; font-size: 0.85em;">Contenido importante<br>destacado</p>
                         </div>
                     </div>
                     <div>
-                        <h4>Aplicación en UI:</h4>
-                        <ul style="font-size: 0.9em;">
+                        <h4 style="color: #ffcc80; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); margin-top: 0; margin-bottom: 0.6em;">APLICACIÓN EN UI:</h4>
+                        <ul style="font-size: 0.8em; line-height: 1.5; margin: 0;">
                             <li>Modales con fondos oscurecidos</li>
                             <li>Tarjetas elevadas sobre fondos planos</li>
                             <li>Menús desplegables</li>
                             <li>Estados de enfoque</li>
                         </ul>
-                        <p
-                            style="margin-top: 1em; padding: 1em; background: #FFF3CD; border-radius: 6px; font-size: 0.85em;">
-                            <strong>⚠️ Contraste WCAG:</strong><br>
-                            Mínimo 4.5:1 para texto normal
-                        </p>
+                        <div style="margin-top: 0.8em; padding: 0.8em; background: rgba(255, 243, 205, 0.3); border-radius: 6px; font-size: 0.75em; border: 2px solid #ffb74d;">
+                            <strong style="color: #ffcc80;">⚠️ Contraste WCAG:</strong><br>
+                            <span style="margin-top: 0.3em; display: block;">Mínimo 4.5:1 para texto normal</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -483,28 +501,30 @@
             <!-- Slide 9: Ley de Región Común -->
             <section>
                 <h2>Ley de la Región Común</h2>
-                <p><strong>Principio:</strong> Los elementos contenidos dentro de un mismo límite o región son
+                <p style="margin-bottom: 0.8em;"><strong>Principio:</strong> Los elementos contenidos dentro de un mismo límite o región son
                     percibidos como un grupo cohesivo.</p>
 
-                <div class="visual-example">
+                <div class="visual-example" style="padding: 1.5em;">
                     <div
-                        style="border: 2px solid #3498DB; border-radius: 8px; padding: 1.5em; text-align: left; max-width: 400px; margin: 0 auto;">
-                        <h4 style="color: #3498DB; margin-top: 0;">INFORMACIÓN DEL PRODUCTO</h4>
-                        <p style="margin: 0.5em 0;"><strong>Nombre:</strong> Laptop Pro X</p>
-                        <p style="margin: 0.5em 0;"><strong>Precio:</strong> $1,299</p>
-                        <p style="margin: 0.5em 0;"><strong>Stock:</strong> Disponible</p>
+                        style="border: 3px solid #3498DB; border-radius: 8px; padding: 1.2em; text-align: left; max-width: 450px; margin: 0 auto;">
+                        <h4 style="color: #3498DB; margin-top: 0; font-weight: bold;">INFORMACIÓN DEL PRODUCTO</h4>
+                        <p style="margin: 0.4em 0; color: #2C3E50;"><strong>Nombre:</strong> Laptop Pro X</p>
+                        <p style="margin: 0.4em 0; color: #2C3E50;"><strong>Precio:</strong> $1,299</p>
+                        <p style="margin: 0.4em 0; color: #2C3E50;"><strong>Stock:</strong> Disponible</p>
                         <button
-                            style="background: #2ECC71; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-top: 1em; width: 100%;">Agregar
+                            style="background: #2ECC71; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-top: 0.8em; width: 100%; font-weight: 600; cursor: pointer;">Agregar
                             al carrito</button>
                     </div>
                 </div>
 
-                <ul class="key-points" style="margin-top: 1em;">
+                <ul class="key-points" style="margin-top: 0.8em; font-size: 0.85em;">
                     <li>Tarjetas de contenido (cards)</li>
                     <li>Paneles laterales y sidebars</li>
                     <li>Módulos de información agrupada</li>
                 </ul>
             </section>
+
+                
 
             <!-- Slide 10: Jerarquía Visual -->
             <section>
@@ -557,13 +577,13 @@
                     <div class="level-2">Subtítulo (H2): 36-42px</div>
                     <div class="level-3">Subtítulo Secundario (H3): 24-30px</div>
                     <div class="level-4">Cuerpo de Texto: 16-18px</div>
-                    <div style="font-size: 0.875em; color: #95A5A6;">Texto Secundario: 14px</div>
+                    <div style="font-size: 0.8em; color: rgba(255, 255, 255, 0.75); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Texto Secundario: 14px</div>
                 </div>
-                <p style="margin-top: 1em;"><strong>Ratio recomendado:</strong></p>
-                <ul style="font-size: 0.9em;">
-                    <li>Entre H1 y H2: 1.414 (√2)</li>
-                    <li>Entre H2 y H3: 1.333 (razón áurea aproximada)</li>
-                    <li>Entre H3 y cuerpo: 1.250</li>
+                <p style="margin-top: 0.8em; font-size: 0.9em;"><strong style="color: #ffcc80;">Ratio recomendado:</strong></p>
+                <ul style="font-size: 0.8em; line-height: 1.6;">
+                    <li>Entre H1 y H2: <strong>1.414</strong> (√2)</li>
+                    <li>Entre H2 y H3: <strong>1.333</strong> (razón áurea aproximada)</li>
+                    <li>Entre H3 y cuerpo: <strong>1.250</strong></li>
                 </ul>
             </section>
 
@@ -664,7 +684,7 @@
                     <div class="grid-item" style="grid-column: span 6; opacity: 0.3;" title="48px"></div>
                 </div>
                 <div
-                    style="display: flex; justify-content: space-between; font-size: 0.8em; color: #7F8C8D; margin-top: 0.5em;">
+                    style="display: flex; justify-content: space-between; font-size: 0.75em; color: rgba(255, 255, 255, 0.8); margin-top: 0.5em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
                     <span>8px</span>
                     <span>16px</span>
                     <span>24px</span>
@@ -672,7 +692,7 @@
                     <span>48px</span>
                     <span>64px</span>
                 </div>
-                <ul class="key-points" style="margin-top: 1.5em;">
+                <ul class="key-points" style="margin-top: 1em; font-size: 0.8em;">
                     <li>Micro-espaciado: 8px, 16px (entre elementos relacionados)</li>
                     <li>Macro-espaciado: 32px, 48px, 64px (entre secciones)</li>
                     <li>Consistencia en padding: 12px vertical, 24px horizontal (botones)</li>
@@ -720,35 +740,35 @@
             <!-- Slide 18: Ritmo Visual -->
             <section>
                 <h2>Ritmo Visual</h2>
-                <p><strong>Definición:</strong> Repetición y variación de elementos visuales que crea sensación de
+                <p style="margin-bottom: 0.8em; font-size: 0.9em;"><strong>Definición:</strong> Repetición y variación de elementos visuales que crea sensación de
                     movimiento y flujo.</p>
 
                 <div class="gestalt-grid">
                     <div class="gestalt-item">
-                        <h4>Ritmo Regular</h4>
-                        <div class="rhythm-demo" style="margin-top: 1em;">
-                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
-                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
-                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
-                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
+                        <h4>RITMO REGULAR</h4>
+                        <div class="rhythm-demo" style="margin-top: 0.8em;">
+                            <div class="rhythm-bar" style="width: 35px; height: 55px;"></div>
+                            <div class="rhythm-bar" style="width: 35px; height: 55px;"></div>
+                            <div class="rhythm-bar" style="width: 35px; height: 55px;"></div>
+                            <div class="rhythm-bar" style="width: 35px; height: 55px;"></div>
                         </div>
-                        <p class="small-text">Predecible y ordenado</p>
+                        <p class="small-text" style="margin-top: 0.5em;">Predecible y ordenado</p>
                     </div>
                     <div class="gestalt-item">
-                        <h4>Ritmo Progresivo</h4>
-                        <div class="rhythm-demo" style="margin-top: 1em;">
-                            <div class="rhythm-bar" style="width: 30px; height: 30px;"></div>
-                            <div class="rhythm-bar" style="width: 35px; height: 45px;"></div>
-                            <div class="rhythm-bar" style="width: 40px; height: 60px;"></div>
-                            <div class="rhythm-bar" style="width: 45px; height: 75px;"></div>
+                        <h4>RITMO PROGRESIVO</h4>
+                        <div class="rhythm-demo" style="margin-top: 0.8em;">
+                            <div class="rhythm-bar" style="width: 28px; height: 28px;"></div>
+                            <div class="rhythm-bar" style="width: 32px; height: 42px;"></div>
+                            <div class="rhythm-bar" style="width: 36px; height: 56px;"></div>
+                            <div class="rhythm-bar" style="width: 40px; height: 70px;"></div>
                         </div>
-                        <p class="small-text">Guía el flujo visual</p>
+                        <p class="small-text" style="margin-top: 0.5em;">Guía el flujo visual</p>
                     </div>
                 </div>
 
-                <div style="background: #E8F5E9; padding: 1.5em; border-radius: 8px; margin-top: 1em;">
-                    <strong>Técnica 80/20:</strong>
-                    <p style="margin: 0.5em 0 0 0; font-size: 0.9em;">80% consistencia y repetición + 20% variación e
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 1.2em; border-radius: 8px; margin-top: 0.8em; border: 2px solid #ffb74d;">
+                    <strong style="color: #ffcc80; font-size: 0.95em;">Técnica 80/20:</strong>
+                    <p style="margin: 0.4em 0 0 0; font-size: 0.85em;">80% consistencia y repetición + 20% variación e
                         innovación</p>
                 </div>
             </section>
@@ -853,9 +873,11 @@
             center: false,
             width: 1280,
             height: 720,
-            margin: 0.08,
+            margin: 0.1,
             minScale: 0.2,
-            maxScale: 2.0
+            maxScale: 2.0,
+            autoSlide: 0,
+            autoSlideStoppable: true
         });
     </script>
 </body>
