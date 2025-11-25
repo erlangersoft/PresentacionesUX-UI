@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>2.7 Accesibilidad e Inclusión | Diseño Web UX/UI</title>
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/white.css">
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal section img { border: none; box-shadow: none; }
+			.reveal pre { box-shadow: none; }
+			.reveal code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; }
+			.reveal pre code { background: #2d2d2d; padding: 20px; }
+			.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+			.principle-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin: 20px 0; }
+			.wcag-level { display: inline-block; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin: 5px; }
+			.level-a { background: #ffd700; color: #000; }
+			.level-aa { background: #4CAF50; color: white; }
+			.level-aaa { background: #2196F3; color: white; }
+			.checklist { text-align: left; font-size: 0.85em; }
+			.checklist li { margin: 8px 0; }
+			.good { color: #4CAF50; font-weight: bold; }
+			.bad { color: #f44336; font-weight: bold; }
+			.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+			.tool-card { background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; }
+			.diversity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; font-size: 0.8em; }
+			.diversity-item { background: #e3f2fd; padding: 15px; border-radius: 8px; }
+			.keyboard-key { display: inline-block; background: #333; color: white; padding: 5px 12px; border-radius: 4px; font-family: monospace; margin: 0 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+			.contrast-example { padding: 20px; border-radius: 8px; margin: 10px 0; font-size: 1.2em; }
+			.focus-demo { border: 3px solid #2962FF; outline: 3px solid rgba(41, 98, 255, 0.3); outline-offset: 2px; padding: 15px; border-radius: 8px; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- Portada -->
+				<section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+					<h1 style="color: white;">2.7 Accesibilidad e Inclusión</h1>
+					<h3 style="color: rgba(255,255,255,0.9);">Fundamentos de UI (Lo Visual)</h3>
+					<p style="color: rgba(255,255,255,0.8);">Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Introducción -->
+				<section>
+					<h2>¿Qué es Accesibilidad?</h2>
+					<blockquote style="border-left: 4px solid #667eea; padding-left: 20px; margin: 30px 0;">
+						"Diseñar accesiblemente no es solo cumplir regulaciones; es asegurar que <strong>todas las personas</strong>, independientemente de sus capacidades, puedan usar el producto."
+					</blockquote>
+					<div class="two-columns" style="margin-top: 40px;">
+						<div>
+							<h4>No es solo:</h4>
+							<ul style="font-size: 0.9em;">
+								<li>Cumplir normativas</li>
+								<li>Checkbox en checklist</li>
+								<li>Agregar después</li>
+							</ul>
+						</div>
+						<div>
+							<h4>Es:</h4>
+							<ul style="font-size: 0.9em;">
+								<li>✅ Ética y empatía</li>
+								<li>✅ Mejor UX para todos</li>
+								<li>✅ Mayor alcance de mercado</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Estadísticas -->
+				<section>
+					<h2>¿Por Qué Importa?</h2>
+					<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
+						<div style="background: #e3f2fd; padding: 30px; border-radius: 12px;">
+							<h3 style="color: #1976d2; font-size: 3em; margin: 0;">15%</h3>
+							<p style="font-size: 0.9em; margin-top: 10px;">De la población mundial tiene alguna discapacidad</p>
+						</div>
+						<div style="background: #f3e5f5; padding: 30px; border-radius: 12px;">
+							<h3 style="color: #7b1fa2; font-size: 3em; margin: 0;">1B+</h3>
+							<p style="font-size: 0.9em; margin-top: 10px;">Personas con discapacidad en el mundo</p>
+						</div>
+						<div style="background: #e8f5e9; padding: 30px; border-radius: 12px;">
+							<h3 style="color: #388e3c; font-size: 3em; margin: 0;">8%</h3>
+							<p style="font-size: 0.9em; margin-top: 10px;">Hombres con daltonismo</p>
+						</div>
+						<div style="background: #fff3e0; padding: 30px; border-radius: 12px;">
+							<h3 style="color: #f57c00; font-size: 3em; margin: 0;">100%</h3>
+							<p style="font-size: 0.9em; margin-top: 10px;">Beneficiados con diseño accesible</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- WCAG Introducción -->
+				<section>
+					<h2>WCAG 2.1</h2>
+					<p><strong>Web Content Accessibility Guidelines</strong></p>
+					<p style="font-size: 0.9em;">Estándar internacional para accesibilidad web</p>
+					<div class="principle-card" style="margin-top: 40px;">
+						<h3 style="color: white; margin: 0 0 20px 0;">4 Principios Fundamentales</h3>
+						<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; font-size: 0.9em;">
+							<div>
+								<strong>1️⃣ Perceptible</strong><br>
+								<small>La información debe poder percibirse</small>
+							</div>
+							<div>
+								<strong>2️⃣ Operable</strong><br>
+								<small>Los componentes deben poder operarse</small>
+							</div>
+							<div>
+								<strong>3️⃣ Comprensible</strong><br>
+								<small>La información debe entenderse</small>
+							</div>
+							<div>
+								<strong>4️⃣ Robusto</strong><br>
+								<small>Compatible con tecnologías asistivas</small>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Principio 1: Perceptible -->
+				<section>
+					<section>
+						<h2>Principio 1: Perceptible</h2>
+						<p>La información y componentes de UI deben presentarse de manera que los usuarios puedan <strong>percibirlos</strong></p>
+						<div style="margin-top: 40px; font-size: 0.9em;">
+							<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>1.1 Alternativas de Texto</strong>
+								<p style="margin: 10px 0 0 0;">Proveer texto alternativo para contenido no textual</p>
+							</div>
+							<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>1.2 Medios Tiempo-Dependientes</strong>
+								<p style="margin: 10px 0 0 0;">Alternativas para video y audio</p>
+							</div>
+							<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>1.3 Adaptable</strong>
+								<p style="margin: 10px 0 0 0;">Contenido presentable de diferentes formas</p>
+							</div>
+							<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>1.4 Distinguible</strong>
+								<p style="margin: 10px 0 0 0;">Fácil de ver y oír contenido</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Alternativas de Texto</h3>
+						<div style="text-align: left; font-size: 0.85em;">
+							<pre><code class="html">&lt;!-- ✓ Imágenes informativas --&gt;
+&lt;img src="curso-ux.jpg" 
+     alt="Estudiantes colaborando en proyecto de diseño UX"&gt;
+
+&lt;!-- ✓ Imágenes decorativas --&gt;
+&lt;img src="pattern.svg" 
+     alt="" 
+     aria-hidden="true"&gt;
+
+&lt;!-- ✓ Íconos funcionales --&gt;
+&lt;button aria-label="Buscar"&gt;
+  &lt;svg aria-hidden="true"&gt;&lt;!-- icon --&gt;&lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+						</div>
+						<p style="margin-top: 20px; font-size: 0.85em;">
+							<strong>Regla:</strong> Si puedes transmitir el mismo significado sin la imagen, el alt text es suficiente.
+						</p>
+					</section>
+
+					<section>
+						<h3>Contenido Adaptable</h3>
+						<div class="two-columns">
+							<div>
+								<h4 class="good">✓ Semántico</h4>
+								<pre style="font-size: 0.5em;"><code class="html">&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Intro UX&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Descripción&lt;/h2&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</code></pre>
+							</div>
+							<div>
+								<h4 class="bad">✗ No semántico</h4>
+								<pre style="font-size: 0.5em;"><code class="html">&lt;div&gt;
+  &lt;div class="title"&gt;
+    Intro UX
+  &lt;/div&gt;
+  &lt;div class="desc"&gt;
+    Descripción
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<p style="margin-top: 20px; font-size: 0.85em;">Screen readers usan estructura HTML para navegar</p>
+					</section>
+
+					<section>
+						<h3>Contraste: Distinguible</h3>
+						<div style="margin-top: 40px;">
+							<div class="contrast-example" style="background: white; color: #1A1A1A; border: 2px solid #ddd;">
+								<strong>Ratio 16:1</strong> - Texto principal (AAA) ✓
+							</div>
+							<div class="contrast-example" style="background: white; color: #666;">
+								<strong>Ratio 4.5:1</strong> - Mínimo para texto (AA) ✓
+							</div>
+							<div class="contrast-example" style="background: white; color: #ccc;">
+								<strong>Ratio 1.8:1</strong> - Insuficiente ✗
+							</div>
+						</div>
+						<p style="margin-top: 30px; font-size: 0.85em;">
+							<strong>Requisito WCAG AA:</strong> Texto normal ≥ 4.5:1, Texto grande ≥ 3:1
+						</p>
+					</section>
+
+					<section>
+						<h3>No Usar Solo Color</h3>
+						<div class="two-columns" style="margin-top: 30px;">
+							<div style="background: #ffebee; padding: 20px; border-radius: 8px;">
+								<h4 class="bad">✗ Malo</h4>
+								<p style="font-size: 0.85em;">Campo requerido en <span style="color: red;">rojo</span></p>
+								<p style="font-size: 0.75em; color: #666;">Usuarios daltónicos no distinguen</p>
+							</div>
+							<div style="background: #e8f5e9; padding: 20px; border-radius: 8px;">
+								<h4 class="good">✓ Bueno</h4>
+								<p style="font-size: 0.85em;">Campo requerido <span style="color: red;">*</span></p>
+								<p style="font-size: 0.75em; color: #666;">Color + asterisco + label</p>
+							</div>
+						</div>
+						<pre style="margin-top: 20px; font-size: 0.5em;"><code class="css">.required-field label::after {
+  content: " *";
+  color: red;
+  /* Asterisco visible para daltonismo */
+}</code></pre>
+					</section>
+				</section>
+
+				<!-- Principio 2: Operable -->
+				<section>
+					<section>
+						<h2>Principio 2: Operable</h2>
+						<p>Componentes de UI y navegación deben ser <strong>operables</strong></p>
+						<div style="margin-top: 40px; font-size: 0.9em;">
+							<div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>2.1 Accesible por Teclado</strong>
+								<p style="margin: 10px 0 0 0;">Toda funcionalidad disponible desde teclado</p>
+							</div>
+							<div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>2.2 Tiempo Suficiente</strong>
+								<p style="margin: 10px 0 0 0;">Usuarios tienen tiempo para leer y usar</p>
+							</div>
+							<div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>2.3 Convulsiones</strong>
+								<p style="margin: 10px 0 0 0;">No contenido que cause convulsiones</p>
+							</div>
+							<div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>2.4 Navegable</strong>
+								<p style="margin: 10px 0 0 0;">Ayudar a navegar y encontrar contenido</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Navegación por Teclado</h3>
+						<div style="background: #f5f5f5; padding: 30px; border-radius: 12px; margin: 30px 0;">
+							<h4>Teclas Estándar</h4>
+							<div style="margin: 20px 0; line-height: 2;">
+								<span class="keyboard-key">Tab</span> Navegar adelante<br>
+								<span class="keyboard-key">Shift</span> + <span class="keyboard-key">Tab</span> Navegar atrás<br>
+								<span class="keyboard-key">Enter</span> Activar links/buttons<br>
+								<span class="keyboard-key">Space</span> Activar buttons/checkboxes<br>
+								<span class="keyboard-key">↑ ↓ ← →</span> Navegación en componentes<br>
+								<span class="keyboard-key">Esc</span> Cerrar modales/menús
+							</div>
+						</div>
+						<p style="font-size: 0.85em;"><strong>Prueba:</strong> ¿Puedes usar tu sitio sin mouse?</p>
+					</section>
+
+					<section>
+						<h3>Focus Visible</h3>
+						<div style="margin: 40px 0;">
+							<div class="focus-demo" style="display: inline-block;">
+								<strong>Elemento con focus visible</strong>
+							</div>
+						</div>
+						<pre style="margin-top: 30px;"><code class="css">/* ✓ BUENO: Focus visible */
+:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+/* ✗ MALO: Nunca hacer esto */
+*:focus {
+  outline: none; /* ¡Sin alternativa! */
+}</code></pre>
+						<p style="margin-top: 20px; font-size: 0.85em;">Focus es crítico para usuarios de teclado y screen readers</p>
+					</section>
+
+					<section>
+						<h3>Skip Links</h3>
+						<p style="font-size: 0.9em;">Permiten saltar navegación repetitiva</p>
+						<pre style="margin-top: 20px;"><code class="html">&lt;a href="#main-content" class="skip-link"&gt;
+  Saltar al contenido principal
+&lt;/a&gt;</code></pre>
+						<pre><code class="css">.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--blue-600);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0; /* Aparece al recibir focus */
+}</code></pre>
+					</section>
+
+					<section>
+						<h3>Landmarks ARIA</h3>
+						<p style="font-size: 0.9em;">Estructura la página para navegación rápida</p>
+						<pre style="margin-top: 20px;"><code class="html">&lt;header role="banner"&gt;
+  &lt;!-- Logo, navegación principal --&gt;
+&lt;/header&gt;
+
+&lt;nav role="navigation"&gt;
+  &lt;!-- Menú --&gt;
+&lt;/nav&gt;
+
+&lt;main role="main" id="main-content"&gt;
+  &lt;!-- Contenido principal --&gt;
+&lt;/main&gt;
+
+&lt;aside role="complementary"&gt;
+  &lt;!-- Contenido relacionado --&gt;
+&lt;/aside&gt;
+
+&lt;footer role="contentinfo"&gt;
+  &lt;!-- Footer --&gt;
+&lt;/footer&gt;</code></pre>
+					</section>
+
+					<section>
+						<h3>Evitar Flashes</h3>
+						<div class="two-columns" style="margin-top: 30px;">
+							<div style="background: #ffebee; padding: 20px; border-radius: 8px;">
+								<h4 class="bad">✗ Peligroso</h4>
+								<pre style="font-size: 0.5em;"><code class="css">.bad {
+  animation: flash 0.1s infinite;
+}
+/* Puede causar convulsiones */</code></pre>
+							</div>
+							<div style="background: #e8f5e9; padding: 20px; border-radius: 8px;">
+								<h4 class="good">✓ Seguro</h4>
+								<pre style="font-size: 0.5em;"><code class="css">.safe {
+  transition: opacity 0.3s ease;
+}
+/* Transición suave */</code></pre>
+							</div>
+						</div>
+						<p style="margin-top: 30px; font-size: 0.85em; background: #fff3cd; padding: 15px; border-radius: 8px;">
+							⚠️ <strong>Regla:</strong> No más de 3 flashes por segundo
+						</p>
+					</section>
+				</section>
+
+				<!-- Principio 3: Comprensible -->
+				<section>
+					<section>
+						<h2>Principio 3: Comprensible</h2>
+						<p>Información y operación de UI deben ser <strong>comprensibles</strong></p>
+						<div style="margin-top: 40px; font-size: 0.9em;">
+							<div style="background: #f3e5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>3.1 Legible</strong>
+								<p style="margin: 10px 0 0 0;">Texto legible y comprensible</p>
+							</div>
+							<div style="background: #f3e5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>3.2 Predecible</strong>
+								<p style="margin: 10px 0 0 0;">Páginas operan de manera predecible</p>
+							</div>
+							<div style="background: #f3e5f5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+								<strong>3.3 Asistencia de Input</strong>
+								<p style="margin: 10px 0 0 0;">Ayudar a evitar y corregir errores</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Idioma de Página</h3>
+						<pre><code class="html">&lt;html lang="es"&gt;
+
+&lt;p&gt;El término &lt;span lang="en"&gt;responsive design&lt;/span&gt;...&lt;/p&gt;</code></pre>
+						<p style="margin-top: 30px; font-size: 0.85em;">
+							Screen readers usan <code>lang</code> para pronunciación correcta
+						</p>
+					</section>
+
+					<section>
+						<h3>Labels en Formularios</h3>
+						<pre style="font-size: 0.7em;"><code class="html">&lt;label for="email"&gt;
+  Correo electrónico
+  &lt;span class="required" aria-label="requerido"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;input 
+  type="email" 
+  id="email"
+  aria-required="true"
+  aria-describedby="email-help"
+&gt;
+&lt;span id="email-help"&gt;
+  Usaremos tu email para actualizaciones
+&lt;/span&gt;</code></pre>
+						<p style="margin-top: 20px; font-size: 0.85em;">
+							Cada input debe tener label asociado
+						</p>
+					</section>
+
+					<section>
+						<h3>Errores Claros</h3>
+						<pre style="font-size: 0.7em;"><code class="html">&lt;!-- Identificar error --&gt;
+&lt;input 
+  type="email"
+  aria-invalid="true"
+  aria-describedby="email-error"
+&gt;
+
+&lt;!-- Mensaje de error claro --&gt;
+&lt;div id="email-error" role="alert" class="error"&gt;
+  &lt;svg aria-hidden="true"&gt;&lt;!-- icon --&gt;&lt;/svg&gt;
+  &lt;strong&gt;Error:&lt;/strong&gt; El email debe incluir un @
+&lt;/div&gt;</code></pre>
+						<ul style="font-size: 0.85em; margin-top: 30px;">
+							<li>✅ Identificar campo con error</li>
+							<li>✅ Explicar qué está mal</li>
+							<li>✅ Sugerir cómo corregir</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Principio 4: Robusto -->
+				<section>
+					<h2>Principio 4: Robusto</h2>
+					<p>Contenido debe ser <strong>interpretable</strong> por variedad de user agents</p>
+					<div style="margin-top: 40px;">
+						<div style="background: #e8f5e9; padding: 30px; border-radius: 12px;">
+							<h4>Incluye:</h4>
+							<ul style="text-align: left; font-size: 0.9em;">
+								<li>✅ HTML válido</li>
+								<li>✅ IDs únicos</li>
+								<li>✅ ARIA usado correctamente</li>
+								<li>✅ Compatible con tecnologías asistivas</li>
+							</ul>
+						</div>
+					</div>
+					<pre style="margin-top: 30px; font-size: 0.7em;"><code class="html">&lt;button 
+  aria-expanded="false"
+  aria-controls="menu-dropdown"
+&gt;
+  Menú
+&lt;/button&gt;
+&lt;ul id="menu-dropdown" hidden&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Opción 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+				</section>
+
+				<!-- Niveles de Conformidad -->
+				<section>
+					<section>
+						<h2>Niveles de Conformidad WCAG</h2>
+						<div style="margin-top: 40px;">
+							<div style="background: #ffd700; color: #000; padding: 25px; border-radius: 12px; margin: 15px 0;">
+								<h3 class="level-a" style="display: inline-block;">Nivel A</h3>
+								<p style="margin: 10px 0 0 0; font-size: 0.9em;"><strong>Mínimo:</strong> Requisitos básicos</p>
+								<p style="font-size: 0.8em; margin: 5px 0 0 0;">Alt text, teclado, no solo color</p>
+							</div>
+							<div style="background: #4CAF50; color: white; padding: 25px; border-radius: 12px; margin: 15px 0;">
+								<h3 class="level-aa" style="display: inline-block;">Nivel AA</h3>
+								<p style="margin: 10px 0 0 0; font-size: 0.9em;"><strong>Recomendado:</strong> Objetivo estándar 🎯</p>
+								<p style="font-size: 0.8em; margin: 5px 0 0 0;">Contraste 4.5:1, resize 200%, labels</p>
+							</div>
+							<div style="background: #2196F3; color: white; padding: 25px; border-radius: 12px; margin: 15px 0;">
+								<h3 class="level-aaa" style="display: inline-block;">Nivel AAA</h3>
+								<p style="margin: 10px 0 0 0; font-size: 0.9em;"><strong>Óptimo:</strong> Nivel más alto</p>
+								<p style="font-size: 0.8em; margin: 5px 0 0 0;">Contraste 7:1, sin límites de tiempo</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Meta: WCAG 2.1 AA</h3>
+						<div class="checklist" style="columns: 2; column-gap: 40px; margin-top: 30px;">
+							<div style="break-inside: avoid;">
+								<strong style="color: #667eea;">Perceptible:</strong>
+								<ul style="list-style: none; padding-left: 0;">
+									<li>☑️ Alt text en imágenes</li>
+									<li>☑️ Captions en videos</li>
+									<li>☑️ Contraste texto ≥ 4.5:1</li>
+									<li>☑️ Contraste UI ≥ 3:1</li>
+									<li>☑️ Resize 200% sin pérdida</li>
+								</ul>
+							</div>
+							<div style="break-inside: avoid;">
+								<strong style="color: #667eea;">Operable:</strong>
+								<ul style="list-style: none; padding-left: 0;">
+									<li>☑️ Accesible por teclado</li>
+									<li>☑️ Focus visible</li>
+									<li>☑️ Headings descriptivos</li>
+									<li>☑️ Focus order lógico</li>
+								</ul>
+							</div>
+							<div style="break-inside: avoid;">
+								<strong style="color: #667eea;">Comprensible:</strong>
+								<ul style="list-style: none; padding-left: 0;">
+									<li>☑️ Lang definido</li>
+									<li>☑️ Labels en forms</li>
+									<li>☑️ Errores claros</li>
+									<li>☑️ Navegación consistente</li>
+								</ul>
+							</div>
+							<div style="break-inside: avoid;">
+								<strong style="color: #667eea;">Robusto:</strong>
+								<ul style="list-style: none; padding-left: 0;">
+									<li>☑️ HTML válido</li>
+									<li>☑️ ARIA correcto</li>
+									<li>☑️ Status messages</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- Diseño Inclusivo -->
+				<section>
+					<section>
+						<h2>Diseño Inclusivo</h2>
+						<blockquote style="border-left: 4px solid #667eea; padding-left: 20px; margin: 30px 0;">
+							"Diseño inclusivo considera diversidad de usuarios en <strong>todas</strong> sus dimensiones"
+						</blockquote>
+						<p style="font-size: 0.9em;">Va más allá de accesibilidad técnica</p>
+					</section>
+
+					<section>
+						<h3>Dimensiones de Diversidad</h3>
+						<div class="diversity-grid" style="margin-top: 30px;">
+							<div class="diversity-item">
+								<strong>👁️ Visual</strong>
+								<p style="margin: 10px 0 0 0;">Ceguera, baja visión, daltonismo</p>
+							</div>
+							<div class="diversity-item">
+								<strong>👂 Auditiva</strong>
+								<p style="margin: 10px 0 0 0;">Sordera, hipoacusia</p>
+							</div>
+							<div class="diversity-item">
+								<strong>✋ Motora</strong>
+								<p style="margin: 10px 0 0 0;">Parálisis, temblores, artritis</p>
+							</div>
+							<div class="diversity-item">
+								<strong>🧠 Cognitiva</strong>
+								<p style="margin: 10px 0 0 0;">Dislexia, TDAH, autismo</p>
+							</div>
+							<div class="diversity-item">
+								<strong>🌍 Cultural</strong>
+								<p style="margin: 10px 0 0 0;">Idioma, formatos, costumbres</p>
+							</div>
+							<div class="diversity-item">
+								<strong>📱 Tecnológica</strong>
+								<p style="margin: 10px 0 0 0;">Conectividad, dispositivos</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Principios de Diseño Inclusivo</h3>
+						<div style="font-size: 0.85em; text-align: left;">
+							<div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>1. Equitativo</strong> - Múltiples formas de autenticación
+							</div>
+							<div style="background: #f3e5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>2. Flexible</strong> - Tamaño texto, modo oscuro, atajos configurables
+							</div>
+							<div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>3. Simple e Intuitivo</strong> - Iconos + labels, flujos lineales
+							</div>
+							<div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>4. Información Perceptible</strong> - Contraste, texto grande, feedback multi-sensorial
+							</div>
+							<div style="background: #fce4ec; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>5. Tolerante a Errores</strong> - Confirmaciones, undo, validación, auto-save
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Preferencias de Usuario</h3>
+						<pre><code class="css">/* Respetar preferencias del sistema */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--gray-900);
+    --color-text: var(--gray-50);
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-text: #000;
+    --color-bg: #FFF;
+  }
+}</code></pre>
+					</section>
+				</section>
+
+				<!-- Herramientas -->
+				<section>
+					<section>
+						<h2>Herramientas de Evaluación</h2>
+						<p style="font-size: 0.9em;">Testing automatizado + manual</p>
+					</section>
+
+					<section>
+						<h3>Herramientas Automatizadas</h3>
+						<div class="tool-grid" style="margin-top: 30px;">
+							<div class="tool-card">
+								<h4>🔧 axe DevTools</h4>
+								<p style="font-size: 0.85em; margin: 10px 0 0 0;">
+									Chrome/Firefox extension<br>
+									Escaneo automático de páginas
+								</p>
+							</div>
+							<div class="tool-card">
+								<h4>🌊 WAVE</h4>
+								<p style="font-size: 0.85em; margin: 10px 0 0 0;">
+									WebAIM<br>
+									Evaluación visual en página
+								</p>
+							</div>
+							<div class="tool-card">
+								<h4>💡 Lighthouse</h4>
+								<p style="font-size: 0.85em; margin: 10px 0 0 0;">
+									Chrome DevTools<br>
+									Audit integrado, score 0-100
+								</p>
+							</div>
+							<div class="tool-card">
+								<h4>🤖 Pa11y</h4>
+								<p style="font-size: 0.85em; margin: 10px 0 0 0;">
+									CLI tool<br>
+									Automatizable en CI/CD
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Screen Readers</h3>
+						<div style="margin-top: 30px; font-size: 0.9em;">
+							<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+								<div style="background: #e3f2fd; padding: 20px; border-radius: 8px;">
+									<strong>NVDA</strong><br>
+									<small>Windows - Gratuito</small>
+								</div>
+								<div style="background: #f3e5f5; padding: 20px; border-radius: 8px;">
+									<strong>JAWS</strong><br>
+									<small>Windows - Profesional</small>
+								</div>
+								<div style="background: #e8f5e9; padding: 20px; border-radius: 8px;">
+									<strong>VoiceOver</strong><br>
+									<small>macOS/iOS - Integrado</small>
+								</div>
+								<div style="background: #fff3e0; padding: 20px; border-radius: 8px;">
+									<strong>TalkBack</strong><br>
+									<small>Android - Integrado</small>
+								</div>
+							</div>
+						</div>
+						<p style="margin-top: 30px; font-size: 0.85em; background: #fff3cd; padding: 15px; border-radius: 8px;">
+							⚠️ <strong>Esencial:</strong> Testear con screen reader, no solo herramientas automatizadas
+						</p>
+					</section>
+
+					<section>
+						<h3>Contrast Checkers</h3>
+						<div style="margin-top: 30px;">
+							<img src="img/contrast-checker.png" alt="Ejemplo de contrast checker" style="max-height: 400px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+						</div>
+						<ul style="font-size: 0.85em; margin-top: 20px;">
+							<li>WebAIM Contrast Checker</li>
+							<li>Contrast Ratio (Lea Verou)</li>
+							<li>Colour Contrast Analyser (TPGi)</li>
+							<li>Chrome DevTools (integrado)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Proceso de Testing</h3>
+						<div style="font-size: 0.8em; text-align: left; margin-top: 30px;">
+							<div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>1. Automatizado</strong><br>
+								<code style="font-size: 0.9em;">lighthouse, axe, pa11y</code>
+							</div>
+							<div style="background: #f3e5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>2. Keyboard</strong><br>
+								Desconectar mouse, navegar con Tab
+							</div>
+							<div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>3. Screen Reader</strong><br>
+								NVDA/VoiceOver, escuchar página completa
+							</div>
+							<div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>4. Visual</strong><br>
+								Zoom 200%, simular daltonismo, contraste
+							</div>
+							<div style="background: #ffebee; padding: 15px; border-radius: 8px; margin: 10px 0;">
+								<strong>5. Cognitivo</strong><br>
+								¿Lenguaje claro? ¿Instrucciones paso a paso?
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- Ejemplo Práctico EduConnect -->
+				<section>
+					<section>
+						<h2>Ejemplo: EduConnect Accesible</h2>
+						<p style="font-size: 0.9em;">Aplicando principios WCAG AA</p>
+					</section>
+
+					<section>
+						<h3>Card de Curso Accesible</h3>
+						<pre style="font-size: 0.55em;"><code class="html">&lt;article class="course-card"&gt;
+  &lt;div class="course-image"&gt;
+    &lt;img src="ux-course.jpg" 
+         alt="Estudiantes colaborando en proyecto UX"&gt;
+    &lt;span class="badge"&gt;Diseño UX&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="content"&gt;
+    &lt;h3&gt;Introducción al Diseño UX&lt;/h3&gt;
+    
+    &lt;div class="instructor"&gt;
+      &lt;img src="laura.jpg" alt="" class="avatar"&gt;
+      &lt;span&gt;Laura Gutiérrez&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="rating" aria-label="4.8 de 5 estrellas, 234 valoraciones"&gt;
+      &lt;div aria-hidden="true"&gt;⭐⭐⭐⭐⭐&lt;/div&gt;
+      &lt;span&gt;4.8 (234)&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;ul class="meta" aria-label="Información del curso"&gt;
+      &lt;li&gt;&lt;span aria-hidden="true"&gt;🕐&lt;/span&gt; 8 horas&lt;/li&gt;
+      &lt;li&gt;&lt;span aria-hidden="true"&gt;📊&lt;/span&gt; Principiante&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;button class="btn-primary"&gt;Ver Curso&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+					</section>
+
+					<section>
+						<h3>Formulario Accesible</h3>
+						<pre style="font-size: 0.6em;"><code class="html">&lt;form&gt;
+  &lt;div class="form-field"&gt;
+    &lt;label for="email"&gt;
+      Correo electrónico
+      &lt;span class="required" aria-label="requerido"&gt;*&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input 
+      type="email" 
+      id="email"
+      aria-required="true"
+      aria-describedby="email-help"
+    &gt;
+    &lt;span id="email-help" class="helper"&gt;
+      Te enviaremos confirmación a este correo
+    &lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;button type="submit" class="btn-primary"&gt;
+    Inscribirse al Curso
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+					</section>
+
+					<section>
+						<h3>Navegación Accesible</h3>
+						<pre style="font-size: 0.6em;"><code class="html">&lt;a href="#main-content" class="skip-link"&gt;
+  Saltar al contenido principal
+&lt;/a&gt;
+
+&lt;header role="banner"&gt;
+  &lt;nav role="navigation" aria-label="Navegación principal"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/cursos" aria-current="page"&gt;Cursos&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/mi-aprendizaje"&gt;Mi Aprendizaje&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main role="main" id="main-content"&gt;
+  &lt;h1&gt;Catálogo de Cursos&lt;/h1&gt;
+  &lt;!-- Contenido --&gt;
+&lt;/main&gt;
+
+&lt;footer role="contentinfo"&gt;
+  &lt;!-- Footer --&gt;
+&lt;/footer&gt;</code></pre>
+					</section>
+				</section>
+
+				<!-- Checklist Final -->
+				<section>
+					<h2>Checklist de Lanzamiento</h2>
+					<div class="checklist" style="columns: 2; column-gap: 40px; margin-top: 30px; font-size: 0.75em;">
+						<div style="break-inside: avoid;">
+							<strong>WCAG 2.1 AA:</strong>
+							<ul style="list-style: none; padding-left: 0;">
+								<li>☑️ Contraste ≥ 4.5:1 texto</li>
+								<li>☑️ Contraste ≥ 3:1 UI</li>
+								<li>☑️ Operable por teclado</li>
+								<li>☑️ Focus visible</li>
+								<li>☑️ Alt text en imágenes</li>
+								<li>☑️ Forms con labels</li>
+								<li>☑️ Headings lógicos</li>
+								<li>☑️ HTML semántico</li>
+							</ul>
+						</div>
+						<div style="break-inside: avoid;">
+							<strong>Testing Manual:</strong>
+							<ul style="list-style: none; padding-left: 0;">
+								<li>☑️ NVDA/VoiceOver</li>
+								<li>☑️ Navegación teclado</li>
+								<li>☑️ Daltonismo</li>
+								<li>☑️ Zoom 200%</li>
+								<li>☑️ Lighthouse >90</li>
+							</ul>
+						</div>
+						<div style="break-inside: avoid;">
+							<strong>Documentación:</strong>
+							<ul style="list-style: none; padding-left: 0;">
+								<li>☑️ Statement accesibilidad</li>
+								<li>☑️ Forma reportar problemas</li>
+								<li>☑️ Roadmap mejoras</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Mejores Prácticas -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<div style="font-size: 0.85em; text-align: left; margin-top: 30px;">
+						<div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>✅ Diseñar accesibilidad desde el inicio</strong><br>
+							<small>No es un "después", es fundacional</small>
+						</div>
+						<div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>✅ Testear con usuarios reales</strong><br>
+							<small>Personas con discapacidad son expertos</small>
+						</div>
+						<div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>✅ HTML semántico primero</strong><br>
+							<small>ARIA es complemento, no reemplazo</small>
+						</div>
+						<div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>✅ Documentar decisiones de accesibilidad</strong><br>
+							<small>Comparte conocimiento con el equipo</small>
+						</div>
+						<div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>✅ Mejora continua</strong><br>
+							<small>Accesibilidad es proceso, no meta única</small>
+						</div>
+					</div>
+				</section>
+
+				<!-- Errores Comunes -->
+				<section>
+					<h2>Errores Comunes a Evitar</h2>
+					<div style="font-size: 0.85em; text-align: left; margin-top: 30px;">
+						<div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>❌ "Lo haremos accesible después"</strong><br>
+							<small>Cuesta 10x más. Hazlo desde diseño.</small>
+						</div>
+						<div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>❌ "No tenemos usuarios con discapacidad"</strong><br>
+							<small>Los tienes, simplemente no pueden usar tu producto.</small>
+						</div>
+						<div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>❌ "Accesibilidad arruina el diseño"</strong><br>
+							<small>Falso. Restricción creativa mejora diseño.</small>
+						</div>
+						<div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>❌ "Solo cumplir WCAG automatizado"</strong><br>
+							<small>Testing manual con screen readers es esencial.</small>
+						</div>
+						<div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0;">
+							<strong>❌ <code>outline: none</code> sin alternativa</strong><br>
+							<small>¡Nunca! Focus es crítico para teclado.</small>
+						</div>
+					</div>
+				</section>
+
+				<!-- Recursos -->
+				<section>
+					<h2>Recursos para Profundizar</h2>
+					<div style="font-size: 0.85em; text-align: left; margin-top: 30px;">
+						<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+							<strong>📚 WCAG 2.1</strong><br>
+							<small>w3.org/WAI/WCAG21/quickref/</small>
+						</div>
+						<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+							<strong>🌊 WebAIM</strong><br>
+							<small>webaim.org - Recursos educativos</small>
+						</div>
+						<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+							<strong>♿ A11y Project</strong><br>
+							<small>a11yproject.com - Comunidad</small>
+						</div>
+						<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+							<strong>📖 Inclusive Design Principles</strong><br>
+							<small>inclusivedesignprinciples.org</small>
+						</div>
+						<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+							<strong>🔧 Deque axe</strong><br>
+							<small>deque.com/axe - Testing tools</small>
+						</div>
+					</div>
+				</section>
+
+				<!-- Resumen -->
+				<section>
+					<h2>Resumen</h2>
+					<div style="text-align: left; margin-top: 40px;">
+						<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px;">
+							<h3 style="color: white; margin-top: 0;">Accesibilidad es:</h3>
+							<ul style="font-size: 0.9em; line-height: 1.8;">
+								<li>✅ <strong>Ética:</strong> Todas las personas merecen acceso</li>
+								<li>✅ <strong>Legal:</strong> Muchas jurisdicciones lo requieren</li>
+								<li>✅ <strong>Negocio:</strong> 15% población = mercado significativo</li>
+								<li>✅ <strong>Calidad:</strong> Mejora UX para todos</li>
+							</ul>
+						</div>
+						<div style="background: #f5f5f5; padding: 25px; border-radius: 12px; margin-top: 20px;">
+							<p style="font-size: 0.95em; margin: 0;">
+								<strong>Meta:</strong> WCAG 2.1 AA como mínimo<br>
+								<strong>Testing:</strong> Automatizado + Manual (screen readers)<br>
+								<strong>Mindset:</strong> Diseño inclusivo desde el inicio
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cierre -->
+				<section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+					<h2 style="color: white;">El mejor diseño es invisible</h2>
+					<blockquote style="border-left: 4px solid white; padding-left: 20px; color: rgba(255,255,255,0.9); margin: 40px 0;">
+						"No se nota porque simplemente funciona.<br>
+						Los usuarios logran sus objetivos sin fricción, sin confusión, <strong>sin barreras</strong>."
+					</blockquote>
+					<p style="color: rgba(255,255,255,0.8); margin-top: 60px;">
+						<strong>Diseñar para todos es diseñar mejor para todos.</strong>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				center: true,
+				transition: 'slide',
+				slideNumber: true,
+				width: 1280,
+				height: 720
+			});
+		</script>
+	</body>
+</html>

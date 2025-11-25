@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2.3. Tipografía y Legibilidad</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal section img { border: none; box-shadow: none; background: none; }
+			.reveal .highlight { color: #42affa; font-weight: bold; }
+			.reveal .small-text { font-size: 0.8em; }
+			.reveal .very-small-text { font-size: 0.65em; }
+			.reveal .card { background: rgba(66, 175, 250, 0.1); padding: 20px; border-radius: 8px; margin: 15px 0; }
+			.reveal .font-example { font-size: 48px; line-height: 1.2; margin: 20px 0; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Portada -->
+				<section>
+					<h1>2.3. Tipografía y Legibilidad</h1>
+					<h3>Fundamentos de UI (Lo Visual)</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Introducción -->
+				<section>
+					<h2>La Tipografía es Fundamental</h2>
+					<p class="fragment">El <span class="highlight">95% del contenido web es texto</span></p>
+					<p class="fragment small-text">Las decisiones tipográficas son críticas para usabilidad y experiencia</p>
+				</section>
+
+				<!-- PARTE 1: ANATOMÍA -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Anatomía Tipográfica</h2>
+					</section>
+
+					<section>
+						<h2>Componentes Principales</h2>
+						<pre class="small-text"><code data-trim>
+     ┌── Cap Height ──┐
+     │    ALTURA      │  ← Altura mayúsculas
+  ───┼────────────────┼─── Baseline
+     │    altura x    │  ← x-height
+  ───┼────────────────┼───
+     └── Descender ───┘  ← Descendentes (g,p,y)
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Términos Clave</h2>
+						<ul class="small-text">
+							<li><strong>Baseline:</strong> Línea donde se asientan las letras</li>
+							<li><strong>Cap Height:</strong> Altura de mayúsculas</li>
+							<li><strong>x-height:</strong> Altura de minúsculas (como "x")</li>
+							<li><strong>Ascender:</strong> Partes que suben (h, b, l)</li>
+							<li><strong>Descender:</strong> Partes que bajan (p, g, y)</li>
+							<li><strong>Counter:</strong> Espacio blanco interno</li>
+							<li><strong>Serif:</strong> Remates decorativos</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>x-height y Legibilidad</h2>
+						<div class="card">
+							<p class="small-text"><strong>Mayor x-height = Mayor legibilidad en pantalla</strong></p>
+							<div class="font-example">
+								<p style="font-family: Times, serif;">altura</p>
+								<p class="very-small-text">x-height bajo</p>
+							</div>
+							<div class="font-example">
+								<p style="font-family: Arial, sans-serif;">altura</p>
+								<p class="very-small-text">x-height alto ✓</p>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 2: CLASIFICACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Clasificación de Fuentes</h2>
+					</section>
+
+					<section>
+						<h2>1. Serif (Con Remates)</h2>
+						<div class="font-example" style="font-family: Georgia, serif;">
+							Tipografía Ag
+						</div>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Remates decorativos, contraste en trazos</li>
+							<li><strong>Uso:</strong> Texto largo impreso, sensación tradicional</li>
+							<li><strong>Digital:</strong> Georgia, Merriweather, Lora</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>2. Sans-Serif (Sin Remates)</h2>
+						<div class="font-example" style="font-family: Arial, sans-serif;">
+							Tipografía Ag
+						</div>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Sin decoración, formas simples</li>
+							<li><strong>Uso:</strong> Interfaces digitales, moderna y limpia</li>
+							<li><strong>Digital:</strong> Inter, Roboto, SF Pro, Segoe UI</li>
+						</ul>
+						<p class="fragment highlight small-text">✓ Preferida para UI/UX</p>
+					</section>
+
+					<section>
+						<h2>3. Monospace (Ancho Fijo)</h2>
+						<div class="font-example" style="font-family: 'Courier New', monospace;">
+							Código {x}
+						</div>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Todos los caracteres mismo ancho</li>
+							<li><strong>Uso:</strong> Código fuente, terminales, datos tabulares</li>
+							<li><strong>Digital:</strong> Fira Code, JetBrains Mono, Consolas</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Criterios de Selección para UI</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>Qué buscar</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Legibilidad</td>
+									<td>x-height generoso, counters abiertos</td>
+								</tr>
+								<tr>
+									<td>Distinción</td>
+									<td>I, l, 1, O, 0 diferenciables</td>
+								</tr>
+								<tr>
+									<td>Versatilidad</td>
+									<td>Múltiples pesos (Light-Bold)</td>
+								</tr>
+								<tr>
+									<td>Performance</td>
+									<td>Tamaño archivo razonable</td>
+								</tr>
+								<tr>
+									<td>Licencia</td>
+									<td>Uso web permitido</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Google Fonts Recomendadas</h2>
+						<div class="card">
+							<p class="small-text"><strong>Sans-Serif:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Inter:</strong> Moderna, optimizada UI, variable font</li>
+								<li><strong>Roboto:</strong> Amigable, versátil, familia extensa</li>
+								<li><strong>Open Sans:</strong> Neutral, altamente legible</li>
+							</ul>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>Monospace:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Fira Code:</strong> Ligatures para código</li>
+								<li><strong>JetBrains Mono:</strong> Optimizada programación</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 3: JERARQUÍA -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Jerarquía Tipográfica</h2>
+					</section>
+
+					<section>
+						<h2>Elementos de Jerarquía</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Tamaño:</strong> Más grande = más importante</li>
+							<li class="fragment"><strong>Peso:</strong> Light (300) → Bold (700)</li>
+							<li class="fragment"><strong>Color:</strong> Contraste para énfasis</li>
+							<li class="fragment"><strong>Espaciado:</strong> Letter-spacing, line-height</li>
+							<li class="fragment"><strong>Caso:</strong> UPPERCASE, Sentence case</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Escalas Modulares</h2>
+						<p class="small-text">Progresión matemática basada en un ratio</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Ratio</th>
+									<th>Nombre</th>
+									<th>Valor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Minor Third</td>
+									<td>Ratio conservador</td>
+									<td>1.200</td>
+								</tr>
+								<tr class="highlight">
+									<td>Major Third</td>
+									<td>Ratio equilibrado ✓</td>
+									<td>1.250</td>
+								</tr>
+								<tr>
+									<td>Perfect Fourth</td>
+									<td>Ratio dramático</td>
+									<td>1.333</td>
+								</tr>
+								<tr>
+									<td>Golden Ratio</td>
+									<td>Ratio clásico</td>
+									<td>1.618</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Escala EduConnect (Ratio 1.25)</h2>
+						<pre class="very-small-text"><code data-trim>
+Base: 16px (1rem)
+
+Escala hacia arriba:
+16px × 1.25 = 20px
+20px × 1.25 = 25px
+25px × 1.25 = 32px
+32px × 1.25 = 40px
+40px × 1.25 = 50px
+50px × 1.25 = 64px
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Sistema Tipográfico Completo</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Clase</th>
+									<th>Tamaño</th>
+									<th>Peso</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>display-lg</td>
+									<td>64px</td>
+									<td>700</td>
+									<td>Landing pages, hero</td>
+								</tr>
+								<tr>
+									<td>h1</td>
+									<td>32px</td>
+									<td>700</td>
+									<td>Títulos de página</td>
+								</tr>
+								<tr>
+									<td>h2</td>
+									<td>25px</td>
+									<td>600</td>
+									<td>Secciones mayores</td>
+								</tr>
+								<tr>
+									<td>h3</td>
+									<td>20px</td>
+									<td>600</td>
+									<td>Subsecciones</td>
+								</tr>
+								<tr class="highlight">
+									<td>body</td>
+									<td>16px</td>
+									<td>400</td>
+									<td>Texto contenido (BASE)</td>
+								</tr>
+								<tr>
+									<td>body-sm</td>
+									<td>14px</td>
+									<td>400</td>
+									<td>Texto secundario</td>
+								</tr>
+								<tr>
+									<td>caption</td>
+									<td>13px</td>
+									<td>400</td>
+									<td>Metadata</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Ejemplo de Jerarquía</h2>
+						<div style="text-align: left; padding: 20px;">
+							<h1 style="font-size: 32px; margin: 0;">Introducción al Diseño UX</h1>
+							<p style="font-size: 13px; color: #999; margin: 10px 0;">8 horas · Principiante · 1,234 estudiantes</p>
+							<h2 style="font-size: 25px; margin: 20px 0 10px;">Qué aprenderás</h2>
+							<p style="font-size: 16px; margin: 0;">Este curso te introducirá a los fundamentos del diseño de experiencia de usuario...</p>
+							<h3 style="font-size: 20px; margin: 20px 0 10px;">Módulo 1: Fundamentos</h3>
+							<ul style="font-size: 14px;">
+								<li>Introducción al UX</li>
+								<li>Diseño centrado en el usuario</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 4: ESPACIADO -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Espaciado y Legibilidad</h2>
+					</section>
+
+					<section>
+						<h2>Line Height (Interlineado)</h2>
+						<p class="small-text">Espacio vertical entre líneas</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Contexto</th>
+									<th>Line Height</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Texto de cuerpo</td>
+									<td>1.5 - 1.75</td>
+								</tr>
+								<tr>
+									<td>Títulos</td>
+									<td>1.1 - 1.3</td>
+								</tr>
+								<tr>
+									<td>UI compacto</td>
+									<td>1.3 - 1.4</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">💡 Muy ajustado (< 1.3) = difícil leer<br>💡 Muy espacioso (> 2.0) = líneas desconectadas</p>
+					</section>
+
+					<section>
+						<h2>Letter Spacing (Tracking)</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tamaño</th>
+									<th>Letter Spacing</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Texto grande (headers)</td>
+									<td>-0.02em a -0.01em (negativo)</td>
+								</tr>
+								<tr>
+									<td>Texto normal</td>
+									<td>0 (natural)</td>
+								</tr>
+								<tr>
+									<td>Texto pequeño</td>
+									<td>0.01em a 0.02em (positivo)</td>
+								</tr>
+								<tr>
+									<td>UPPERCASE</td>
+									<td>0.05em a 0.1em (espacioso)</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Measure (Longitud de Línea)</h2>
+						<div class="card">
+							<p class="small-text"><strong>Regla de oro:</strong></p>
+							<p class="highlight">45-75 caracteres por línea</p>
+							<p class="small-text">(Óptimo: ~65 caracteres)</p>
+						</div>
+						<ul class="small-text fragment">
+							<li>Muy corta (< 40): Lectura entrecortada</li>
+							<li>Muy larga (> 90): Difícil encontrar siguiente línea</li>
+						</ul>
+						<pre class="fragment small-text"><code data-trim data-noescape class="language-css">
+.article-content {
+  max-width: 65ch;  /* 65 caracteres */
+  margin: 0 auto;
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 5: BUENAS PRÁCTICAS -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Buenas Prácticas</h2>
+					</section>
+
+					<section>
+						<h2>Tamaños Mínimos</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Contexto</th>
+									<th>Tamaño Mínimo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Desktop - Texto cuerpo</td>
+									<td>16px</td>
+								</tr>
+								<tr>
+									<td>Mobile - Texto cuerpo</td>
+									<td>16px (evita zoom iOS)</td>
+								</tr>
+								<tr>
+									<td>Mínimo absoluto</td>
+									<td>14px</td>
+								</tr>
+								<tr>
+									<td>Legal/footnotes</td>
+									<td>13px mínimo</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Contraste Texto-Fondo</h2>
+						<ul class="small-text">
+							<li class="fragment">✓ Negro/gris oscuro sobre blanco: 12:1+</li>
+							<li class="fragment">✓ Gris 700 sobre blanco: 7:1 (AA)</li>
+							<li class="fragment">✗ Gris claro sobre blanco: < 4.5:1</li>
+							<li class="fragment">✗ Texto gris sobre fondo gris</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Evitar All-Caps en Texto Largo</h2>
+						<div class="card">
+							<p class="small-text">✓ <span style="font-size: 12px; letter-spacing: 0.1em;">OVERLINE SECTION LABELS</span></p>
+							<p class="very-small-text">(Corto, metadata - ACEPTABLE)</p>
+						</div>
+						<div class="card fragment">
+							<p class="small-text">✗ PÁRRAFOS ENTEROS EN MAYÚSCULAS SON DIFÍCILES DE LEER</p>
+							<p class="very-small-text">(Reduce velocidad lectura ~10-15%)</p>
+						</div>
+					</section>
+
+					<section>
+						<h2>Responsive Typography</h2>
+						<pre class="small-text"><code data-trim data-noescape class="language-css">
+/* Escala fluida con clamp() */
+.text-h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  /* min: 28px, preferido: 5%, max: 48px */
+}
+
+/* Media queries tradicionales */
+@media (max-width: 768px) {
+  .text-body {
+    font-size: 16px;     /* No reducir */
+    line-height: 1.6;    /* Más espacioso */
+  }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Fallback Fonts</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+body {
+  font-family: 
+    'Inter',              /* Principal */
+    -apple-system,        /* San Francisco */
+    BlinkMacSystemFont,   /* macOS */
+    'Segoe UI',           /* Windows */
+    'Roboto',             /* Android */
+    'Helvetica Neue',     /* Legacy */
+    Arial,                /* Universal */
+    sans-serif;           /* Generic */
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Performance Web Fonts</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<!-- Preload critical fonts -->
+<link rel="preload" 
+      href="/fonts/inter-var.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin>
+
+<!-- Font display swap -->
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-var.woff2') format('woff2');
+    font-display: swap;  /* Muestra fallback */
+  }
+</style>
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- CASO PRÁCTICO -->
+				<section>
+					<h2>Caso: EduConnect</h2>
+					<table class="very-small-text">
+						<thead>
+							<tr>
+								<th>Decisión</th>
+								<th>Razón</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Fuente: Inter</td>
+								<td>Variable font, x-height generoso, optimizada UI</td>
+							</tr>
+							<tr>
+								<td>Base: 16px</td>
+								<td>Legible sin zoom, estándar web</td>
+							</tr>
+							<tr>
+								<td>Ratio: 1.25</td>
+								<td>Major Third - equilibrado</td>
+							</tr>
+							<tr>
+								<td>Line-height: 1.5</td>
+								<td>Lectura cómoda, aireado</td>
+							</tr>
+							<tr>
+								<td>Max-width: 65ch</td>
+								<td>Longitud óptima de línea</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- CHECKLIST -->
+				<section>
+					<h2>Checklist de Legibilidad</h2>
+					<ul class="very-small-text">
+						<li>□ Tamaño ≥ 16px para texto de cuerpo</li>
+						<li>□ Line-height 1.5-1.75 para párrafos</li>
+						<li>□ Longitud línea 45-75 caracteres</li>
+						<li>□ Contraste ≥ 4.5:1 (WCAG AA)</li>
+						<li>□ x-height generoso</li>
+						<li>□ Fuente optimizada para pantalla</li>
+						<li>□ Fallback fonts definidos</li>
+						<li>□ Font-display: swap</li>
+						<li>□ No all-caps en texto largo</li>
+						<li>□ Alineación izquierda para texto largo</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">📖 Tipografía es 95% del contenido web</li>
+						<li class="fragment">🎯 Sans-serif preferida para UI digital</li>
+						<li class="fragment">📐 Escalas modulares crean jerarquía coherente</li>
+						<li class="fragment">📏 Line-height y measure son críticos</li>
+						<li class="fragment">♿ Contraste mínimo 4.5:1 (WCAG AA)</li>
+						<li class="fragment">📱 16px mínimo en mobile (evita zoom)</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Tipografía y Legibilidad</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

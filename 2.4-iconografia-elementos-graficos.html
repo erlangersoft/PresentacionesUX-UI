@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2.4. Iconografía y Elementos Gráficos</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal section img { border: none; box-shadow: none; background: none; }
+			.reveal .highlight { color: #42affa; font-weight: bold; }
+			.reveal .small-text { font-size: 0.8em; }
+			.reveal .very-small-text { font-size: 0.65em; }
+			.reveal .card { background: rgba(66, 175, 250, 0.1); padding: 20px; border-radius: 8px; margin: 15px 0; }
+			.icon-demo { font-size: 48px; margin: 20px; display: inline-block; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Portada -->
+				<section>
+					<h1>2.4. Iconografía y Elementos Gráficos</h1>
+					<h3>Fundamentos de UI (Lo Visual)</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Introducción -->
+				<section>
+					<h2>Poder de los Íconos</h2>
+					<ul>
+						<li class="fragment">🌍 <strong>Universales:</strong> Superan barreras de idioma</li>
+						<li class="fragment">⚡ <strong>Instantáneos:</strong> Comunicación en <1 segundo</li>
+						<li class="fragment">🧠 <strong>Menos carga cognitiva:</strong> Imagen > palabras</li>
+						<li class="fragment">📱 <strong>Compactos:</strong> Críticos en mobile</li>
+					</ul>
+				</section>
+
+				<!-- PARTE 1: SISTEMAS -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Sistemas de Íconos</h2>
+					</section>
+
+					<section>
+						<h2>5 Estilos de Íconos</h2>
+					</section>
+
+					<section>
+						<h2>1. Outline (Contorno)</h2>
+						<div class="icon-demo">☰ 🔍 ❤</div>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Líneas sin relleno, ligeros</li>
+							<li><strong>Uso:</strong> Navegación principal, UI minimalista</li>
+							<li><strong>Pros:</strong> Versátiles, funcionan en cualquier fondo</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>2. Filled (Relleno Sólido)</h2>
+						<div class="icon-demo">■ ● ♥</div>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Formas rellenas, mayor peso visual</li>
+							<li><strong>Uso:</strong> Estados activos/seleccionados</li>
+							<li><strong>Pros:</strong> Alta visibilidad, fácil reconocer</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>3. Dual-Tone (Dos Tonos)</h2>
+						<ul class="small-text">
+							<li><strong>Características:</strong> Relleno + contorno, dos opacidades</li>
+							<li><strong>Uso:</strong> Diferenciación visual, ilustraciones</li>
+							<li><strong>Pros:</strong> Más expresivo que outline</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>4. Round vs 5. Sharp</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Round (Redondeado)</th>
+									<th>Sharp (Angular)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Terminaciones curvas</td>
+									<td>Terminaciones cuadradas</td>
+								</tr>
+								<tr>
+									<td>Amigable, suave</td>
+									<td>Moderno, técnico</td>
+								</tr>
+								<tr>
+									<td>Material Design</td>
+									<td>Diseños corporativos</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Reglas de Consistencia</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Regla</th>
+									<th>Especificación</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Grid System</strong></td>
+									<td>24x24px (estándar)</td>
+								</tr>
+								<tr>
+									<td><strong>Stroke Width</strong></td>
+									<td>2px consistente</td>
+								</tr>
+								<tr>
+									<td><strong>Corner Radius</strong></td>
+									<td>2px en redondeos</td>
+								</tr>
+								<tr>
+									<td><strong>Safe Area</strong></td>
+									<td>2px padding interno</td>
+								</tr>
+								<tr>
+									<td><strong>Optical Alignment</strong></td>
+									<td>Visual, no matemático</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Grid de 24x24px</h2>
+						<pre class="small-text"><code data-trim>
+┌────────────────────┐
+│ ██████████████████ │ ← 24px total
+│ ██ ░░░░░░░░░░░░ ██ │ ← 2px padding
+│ ██ ░  ÍCONO   ░ ██ │ ← 20px área dibujo
+│ ██ ░░░░░░░░░░░░ ██ │
+│ ██████████████████ │
+└────────────────────┘
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Librería: Heroicons ✓</h2>
+						<div class="card">
+							<p class="small-text"><strong>Por qué Heroicons:</strong></p>
+							<ul class="small-text">
+								<li>✓ Outline y Solid variants</li>
+								<li>✓ Estilo moderno, limpio</li>
+								<li>✓ MIT License (gratuito)</li>
+								<li>✓ React components</li>
+								<li>✓ Mantenimiento activo</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 2: DISEÑO -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Principios de Diseño</h2>
+					</section>
+
+					<section>
+						<h2>1. Reconocibilidad</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>✓ Universal</th>
+									<th>✗ Ambiguo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>🏠 Casa = Home</td>
+									<td>🎪 Circo = ¿?</td>
+								</tr>
+								<tr>
+									<td>🔍 Lupa = Buscar</td>
+									<td>🧭 Brújula = ¿Explorar?</td>
+								</tr>
+								<tr>
+									<td>❤ Corazón = Favorito</td>
+									<td>⭐ Estrella = ¿Rating/Favorito?</td>
+								</tr>
+								<tr>
+									<td>⚙ Engranaje = Config</td>
+									<td>🔧 Llave = ¿Tools?</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>2. Simplicidad</h2>
+						<div class="card">
+							<p class="highlight">3-5 elementos principales</p>
+							<p class="small-text">Reducir a lo esencial</p>
+						</div>
+						<ul class="small-text">
+							<li>✗ Demasiados detalles = confuso a tamaño pequeño</li>
+							<li>✓ Formas básicas = escalable y claro</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>3. Distinción</h2>
+						<p class="small-text">Íconos deben ser únicos y distinguibles</p>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Problema</th>
+									<th>Solución</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>🔍 Buscar vs 🔎 Zoom (muy similares)</td>
+									<td>🔍 Buscar vs 🔍+ Zoom In (diferenciador)</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>4. Consistencia</h2>
+						<div class="card">
+							<p class="small-text"><strong>✗ Inconsistente:</strong></p>
+							<p class="very-small-text">[Outline] Home  [Filled] Search  [3D] Settings</p>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>✓ Consistente:</strong></p>
+							<p class="very-small-text">[Outline] Home  [Outline] Search  [Outline] Settings</p>
+						</div>
+					</section>
+
+					<section>
+						<h2>Tamaños de Íconos</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tamaño</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>16x16px</td>
+									<td>Inline con texto (muy pequeño)</td>
+								</tr>
+								<tr>
+									<td>20x20px</td>
+									<td>Navegación compacta</td>
+								</tr>
+								<tr class="highlight">
+									<td>24x24px</td>
+									<td>Estándar UI ✓</td>
+								</tr>
+								<tr>
+									<td>32x32px</td>
+									<td>Navegación prominente</td>
+								</tr>
+								<tr>
+									<td>48x48px</td>
+									<td>Feature icons</td>
+								</tr>
+								<tr>
+									<td>64px+</td>
+									<td>Ilustraciones, empty states</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 3: ACCESIBILIDAD -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Accesibilidad</h2>
+					</section>
+
+					<section>
+						<h2>Nunca Solo Íconos</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<!-- ✗ INCORRECTO: Solo ícono -->
+<button>
+  <svg>...</svg>
+</button>
+
+<!-- ✓ CORRECTO: Ícono + Label -->
+<button>
+  <svg>...</svg>
+  <span>Buscar</span>
+</button>
+
+<!-- ✓ ACEPTABLE: Ícono + aria-label -->
+<button aria-label="Buscar">
+  <svg aria-hidden="true">...</svg>
+</button>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Testing de Íconos</h2>
+						<ul class="small-text">
+							<li><strong>Test de reconocimiento:</strong> >80% usuarios identifican sin label</li>
+							<li><strong>Test de distinción:</strong> No confunden similares</li>
+							<li><strong>Test de tamaño:</strong> Legibles al tamaño mínimo</li>
+							<li><strong>Test de contexto:</strong> Funcionan en fondos claros y oscuros</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- PARTE 4: ILUSTRACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Ilustración en UI</h2>
+					</section>
+
+					<section>
+						<h2>Tipos de Ilustración</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Empty States</strong></td>
+									<td>No hay contenido que mostrar</td>
+								</tr>
+								<tr>
+									<td><strong>Onboarding</strong></td>
+									<td>Explicar funcionalidad</td>
+								</tr>
+								<tr>
+									<td><strong>Error States</strong></td>
+									<td>Empatía en errores (404)</td>
+								</tr>
+								<tr>
+									<td><strong>Spot Illustrations</strong></td>
+									<td>Decorativa/informativa</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Empty State Efectivo</h2>
+						<div class="card">
+							<p class="small-text">🎓 [Ilustración de explorador]</p>
+							<h3 style="font-size: 24px;">¡Empieza tu viaje de aprendizaje!</h3>
+							<p class="very-small-text">Explora nuestro catálogo de más de 1000 cursos</p>
+							<p class="small-text" style="margin-top: 10px;">[Explorar Cursos]</p>
+						</div>
+						<p class="fragment small-text">✓ Explica por qué está vacío<br>✓ Guía hacia acción<br>✓ Mantiene engagement</p>
+					</section>
+
+					<section>
+						<h2>Estilos de Ilustración</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Estilo</th>
+									<th>Características</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Flat/Vector</strong></td>
+									<td>Formas simples, colores planos, escalable</td>
+								</tr>
+								<tr>
+									<td><strong>Isométrico</strong></td>
+									<td>3D estilizado, popular en tech/SaaS</td>
+								</tr>
+								<tr>
+									<td><strong>Line Art</strong></td>
+									<td>Solo contornos, minimalista</td>
+								</tr>
+								<tr>
+									<td><strong>Cartoon</strong></td>
+									<td>Personajes expresivos, amigable</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Estilo EduConnect</h2>
+						<div class="card">
+							<p class="highlight">Flat/Vector con Characters</p>
+							<ul class="small-text">
+								<li>Personajes amigables, diversos</li>
+								<li>Paleta de colores de marca</li>
+								<li>Formas orgánicas pero simples</li>
+								<li>Expresivo sin infantilizar</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 5: FOTOGRAFÍA -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Fotografía e Imágenes</h2>
+					</section>
+
+					<section>
+						<h2>Guía Fotográfica EduConnect</h2>
+						<ul class="small-text">
+							<li>📷 <strong>Natural, auténtico</strong> (no stock genérico)</li>
+							<li>🌍 <strong>Diversos</strong> (audiencia global)</li>
+							<li>🎓 <strong>Contexto educativo</strong> (aprendiendo, colaborando)</li>
+							<li>☀️ <strong>Luz natural, colores cálidos</strong></li>
+							<li>📐 <strong>Composición espaciosa</strong> (permite UI overlay)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Aspect Ratios</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Ratio</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>16:9</td>
+									<td>Video, hero images landscape</td>
+								</tr>
+								<tr>
+									<td>4:3</td>
+									<td>Fotos de contenido general</td>
+								</tr>
+								<tr>
+									<td>1:1</td>
+									<td>Avatares, thumbnails cuadrados</td>
+								</tr>
+								<tr>
+									<td>3:2</td>
+									<td>Fotografía estándar</td>
+								</tr>
+								<tr>
+									<td>9:16</td>
+									<td>Vertical, mobile-first, stories</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Optimización</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Formato</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>JPEG</strong></td>
+									<td>Fotografías (compresión con pérdida)</td>
+								</tr>
+								<tr>
+									<td><strong>PNG</strong></td>
+									<td>Gráficos con transparencia</td>
+								</tr>
+								<tr class="highlight">
+									<td><strong>WebP</strong></td>
+									<td>Moderno, mejor compresión ✓</td>
+								</tr>
+								<tr>
+									<td><strong>AVIF</strong></td>
+									<td>Futuro, compresión superior</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Responsive Images</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<img 
+  srcset="
+    curso-320.jpg 320w,
+    curso-640.jpg 640w,
+    curso-1024.jpg 1024w
+  "
+  sizes="(max-width: 768px) 100vw, 50vw"
+  src="curso-640.jpg"
+  alt="Estudiante trabajando en laptop"
+>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Lazy Loading</h2>
+						<pre class="small-text"><code data-trim data-noescape class="language-html">
+<img 
+  src="curso.jpg" 
+  loading="lazy"
+  alt="Descripción del curso"
+>
+						</code></pre>
+						<p class="fragment small-text">✓ Carga solo cuando entra en viewport<br>✓ Mejora performance inicial</p>
+					</section>
+
+					<section>
+						<h2>Tratamiento: Overlay</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.hero-image {
+  position: relative;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6)
+  );
+}
+						</code></pre>
+						<p class="small-text">✓ Legibilidad de texto sobre imagen</p>
+					</section>
+
+					<section>
+						<h2>Alt Text Descriptivo</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<!-- ✓ CORRECTO: Descriptivo -->
+<img 
+  src="ux-course.jpg" 
+  alt="Instructor explicando wireframes en pizarra 
+       a grupo de estudiantes"
+>
+
+<!-- ✗ INCORRECTO: Genérico -->
+<img src="ux-course.jpg" alt="imagen">
+
+<!-- ✓ Decorativa -->
+<img 
+  src="decorative-pattern.svg" 
+  alt=""
+  aria-hidden="true"
+>
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- ÍCONOS VS IMÁGENES -->
+				<section>
+					<h2>Íconos vs Imágenes</h2>
+					<table class="very-small-text">
+						<thead>
+							<tr>
+								<th>Usar Íconos</th>
+								<th>Usar Imágenes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Concepto abstracto (buscar, config)</td>
+								<td>Contenido específico (rostro instructor)</td>
+							</tr>
+							<tr>
+								<td>Escalabilidad perfecta</td>
+								<td>Contexto rico (foto estudiantes)</td>
+							</tr>
+							<tr>
+								<td>Interactivo (hover states)</td>
+								<td>Emoción/atmósfera</td>
+							</tr>
+							<tr>
+								<td>Monocromático</td>
+								<td>Contenido real (no simbólico)</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- BUENAS PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li>✓ Consistencia en estilo de íconos (outline/filled)</li>
+						<li>✓ Grid system de 24x24px con 2px stroke</li>
+						<li>✓ Siempre label o aria-label en íconos interactivos</li>
+						<li>✓ Testing de reconocimiento >80%</li>
+						<li>✓ Ilustraciones con propósito claro</li>
+						<li>✓ Empty states empáticos y accionables</li>
+						<li>✓ Fotografía auténtica y diversa</li>
+						<li>✓ WebP con fallback JPEG</li>
+						<li>✓ Lazy loading en imágenes</li>
+						<li>✓ Alt text descriptivo</li>
+					</ul>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes</h2>
+					<ul class="small-text">
+						<li>✗ Mezclar estilos de íconos (outline + filled inconsistente)</li>
+						<li>✗ Íconos demasiado complejos</li>
+						<li>✗ Botones con solo ícono sin label</li>
+						<li>✗ Metáforas ambiguas o culturalmente específicas</li>
+						<li>✗ Imágenes sin alt text</li>
+						<li>✗ Stock photos genéricas y falsas</li>
+						<li>✗ Ilustraciones solo decorativas</li>
+						<li>✗ No optimizar imágenes (peso excesivo)</li>
+					</ul>
+				</section>
+
+				<!-- HERRAMIENTAS -->
+				<section>
+					<h2>Herramientas</h2>
+					<table class="small-text">
+						<thead>
+							<tr>
+								<th>Herramienta</th>
+								<th>Uso</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Heroicons</td>
+								<td>Librería íconos MIT</td>
+							</tr>
+							<tr>
+								<td>Lucide Icons</td>
+								<td>Fork de Feather Icons</td>
+							</tr>
+							<tr>
+								<td>Material Icons</td>
+								<td>Google icons extensos</td>
+							</tr>
+							<tr>
+								<td>Unsplash</td>
+								<td>Fotografías gratuitas</td>
+							</tr>
+							<tr>
+								<td>TinyPNG</td>
+								<td>Compresión imágenes</td>
+							</tr>
+							<tr>
+								<td>Squoosh</td>
+								<td>Optimización WebP/AVIF</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🌍 Íconos son comunicación universal</li>
+						<li class="fragment">📏 Consistencia: grid 24x24px, 2px stroke</li>
+						<li class="fragment">♿ Nunca solo íconos - siempre label</li>
+						<li class="fragment">🎨 Ilustraciones con propósito claro</li>
+						<li class="fragment">📷 Fotografía auténtica, diversa, educativa</li>
+						<li class="fragment">⚡ Optimización: WebP, lazy loading, alt text</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Iconografía y Elementos Gráficos</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

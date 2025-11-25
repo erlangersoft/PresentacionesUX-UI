@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>4.4. Proyecto Integrador</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .very-small-text {
+				font-size: 0.65em;
+			}
+			.reveal .card {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				margin: 15px 0;
+			}
+			.reveal .phase-box {
+				background: rgba(66, 175, 250, 0.15);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+				text-align: left;
+			}
+			.reveal .timeline-diagram {
+				font-family: 'Courier New', monospace;
+				background: rgba(255, 255, 255, 0.05);
+				padding: 15px;
+				border-radius: 8px;
+				font-size: 0.7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>4.4. Proyecto Integrador</h1>
+					<h3>Aplicaciones Prácticas e Integración</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>El Proyecto como Síntesis</h2>
+					<blockquote class="fragment">
+						"Un proyecto integrador demuestra que no solo conoces las herramientas, sino que sabes cuándo y cómo aplicarlas estratégicamente"
+					</blockquote>
+					<p class="fragment small-text">Integra investigación, diseño visual, estructura web y validación en un <span class="highlight">portafolio profesional</span></p>
+				</section>
+
+				<!-- PARTE 1: ESTRUCTURA DEL PROYECTO -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Estructura del Proyecto</h2>
+						<p>4 Fases - 8 Semanas</p>
+					</section>
+
+					<!-- Slide: Timeline General -->
+					<section>
+						<h2>Timeline del Proyecto</h2>
+						<div class="timeline-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+SEMANA 1-2: DISCOVERY (Descubrimiento)
+├── Research: Usuarios, contexto, competencia
+├── Deliverables: Personas, Journey Maps, HMW
+└── Output: Insights clave documentados
+
+SEMANA 3-4: DEFINITION (Definición Visual)
+├── Diseño: Moodboard, color, tipografía, componentes
+├── Deliverables: Design System básico, accesibilidad
+└── Output: Identidad visual consistente
+
+SEMANA 5-6: STRUCTURE (Estructura y Prototipado)
+├── Arquitectura: Wireframes, IA, responsive, prototipo
+├── Deliverables: High-fi prototype, especificaciones
+└── Output: Prototipo interactivo completo
+
+SEMANA 7-8: VALIDATION (Validación y Entrega)
+├── Testing: Plan, ejecución, análisis, iteraciones
+├── Deliverables: Reporte, caso de estudio, presentación
+└── Output: Proyecto documentado y defendido
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Fase 1 Discovery -->
+					<section>
+						<h2>Fase 1: Discovery (2 semanas)</h2>
+						<div class="phase-box small-text">
+							<p><strong>Objetivo:</strong> Entender el problema y los usuarios</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Actividad</th>
+									<th>Método</th>
+									<th>Entregable</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Research secundario</td>
+									<td>Desk research, análisis competencia</td>
+									<td>Competitive analysis (tabla)</td>
+								</tr>
+								<tr>
+									<td>Research primario</td>
+									<td>Entrevistas (5-8 usuarios)</td>
+									<td>Transcripciones, affinity map</td>
+								</tr>
+								<tr>
+									<td>Síntesis</td>
+									<td>Agrupar hallazgos</td>
+									<td>2 Personas, Journey Map</td>
+								</tr>
+								<tr>
+									<td>Ideación</td>
+									<td>HMW statements</td>
+									<td>3-5 principios de diseño</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Fase 2 Definition -->
+					<section>
+						<h2>Fase 2: Definition (2 semanas)</h2>
+						<div class="phase-box small-text">
+							<p><strong>Objetivo:</strong> Definir identidad visual y componentes</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Actividad</th>
+									<th>Método</th>
+									<th>Entregable</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Exploración visual</td>
+									<td>Moodboard, referencias</td>
+									<td>Moodboard (10-15 imágenes)</td>
+								</tr>
+								<tr>
+									<td>Sistema de color</td>
+									<td>Paleta + contraste WCAG</td>
+									<td>Color palette con ratios</td>
+								</tr>
+								<tr>
+									<td>Tipografía</td>
+									<td>Type scale, pesos, uso</td>
+									<td>Typography system</td>
+								</tr>
+								<tr>
+									<td>Iconografía</td>
+									<td>Estilo consistente</td>
+									<td>Icon library (20+ iconos)</td>
+								</tr>
+								<tr>
+									<td>Componentes base</td>
+									<td>Atomic Design</td>
+									<td>Component library (Figma)</td>
+								</tr>
+								<tr>
+									<td>Accesibilidad</td>
+									<td>Contrast checker, focus states</td>
+									<td>Accessibility checklist</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Fase 3 Structure -->
+					<section>
+						<h2>Fase 3: Structure (2 semanas)</h2>
+						<div class="phase-box small-text">
+							<p><strong>Objetivo:</strong> Construir arquitectura y prototipo</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Actividad</th>
+									<th>Método</th>
+									<th>Entregable</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Wireframes</td>
+									<td>Low-fi → Mid-fi</td>
+									<td>Wireframes de flujos clave</td>
+								</tr>
+								<tr>
+									<td>Arquitectura</td>
+									<td>Sitemap, user flows</td>
+									<td>IA documentada con flujos</td>
+								</tr>
+								<tr>
+									<td>Diseño responsive</td>
+									<td>Desktop (1440), Mobile (375)</td>
+									<td>Diseños adaptados 2 breakpoints</td>
+								</tr>
+								<tr>
+									<td>Prototipo</td>
+									<td>High-fi con Smart Animate</td>
+									<td>Prototipo interactivo (3 flujos)</td>
+								</tr>
+								<tr>
+									<td>Especificaciones</td>
+									<td>Redlines, Dev Mode</td>
+									<td>Specs para handoff</td>
+								</tr>
+								<tr>
+									<td>Microinteracciones</td>
+									<td>Estados hover, loading, error</td>
+									<td>Estados documentados</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Fase 4 Validation -->
+					<section>
+						<h2>Fase 4: Validation (2 semanas)</h2>
+						<div class="phase-box small-text">
+							<p><strong>Objetivo:</strong> Validar con usuarios y documentar</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Actividad</th>
+									<th>Método</th>
+									<th>Entregable</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Plan de testing</td>
+									<td>Objetivos, tareas, métricas</td>
+									<td>Test plan (documento)</td>
+								</tr>
+								<tr>
+									<td>Ejecución</td>
+									<td>5-8 usuarios, Maze/moderado</td>
+									<td>Datos de testing</td>
+								</tr>
+								<tr>
+									<td>Análisis</td>
+									<td>TSR, Time, SUS, hallazgos</td>
+									<td>Findings report</td>
+								</tr>
+								<tr>
+									<td>Iteraciones</td>
+									<td>Rediseñar puntos críticos</td>
+									<td>Versión iterada</td>
+								</tr>
+								<tr>
+									<td>Caso de estudio</td>
+									<td>Storytelling del proyecto</td>
+									<td>Case study (PDF/Web)</td>
+								</tr>
+								<tr>
+									<td>Presentación</td>
+									<td>Slides + demo</td>
+									<td>Presentación 15-20 min</td>
+								</tr>
+								<tr>
+									<td>Handoff</td>
+									<td>Archivos organizados</td>
+									<td>Figma file + assets</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 2: EVALUACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Criterios de Evaluación</h2>
+						<p>Rúbrica de 80 Puntos</p>
+					</section>
+
+					<!-- Slide: Rúbrica General -->
+					<section>
+						<h2>Distribución de Puntos</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Categoría</th>
+									<th>Peso</th>
+									<th>Puntos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>1. Research y UX</strong></td>
+									<td>20%</td>
+									<td>16 pts</td>
+								</tr>
+								<tr>
+									<td><strong>2. Diseño Visual (UI)</strong></td>
+									<td>25%</td>
+									<td>20 pts</td>
+								</tr>
+								<tr>
+									<td><strong>3. Usabilidad y Estructura</strong></td>
+									<td>25%</td>
+									<td>20 pts</td>
+								</tr>
+								<tr>
+									<td><strong>4. Documentación</strong></td>
+									<td>15%</td>
+									<td>12 pts</td>
+								</tr>
+								<tr>
+									<td><strong>5. Presentación</strong></td>
+									<td>15%</td>
+									<td>12 pts</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text"><strong>Total:</strong> 80 puntos (100%)</p>
+					</section>
+
+					<!-- Slide: Rúbrica Research -->
+					<section>
+						<h2>1. Research y UX (16 pts)</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>1-2 pts</th>
+									<th>3-4 pts</th>
+									<th>5-6 pts</th>
+									<th>7-8 pts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Personas</strong></td>
+									<td>Genéricas</td>
+									<td>Con datos básicos</td>
+									<td>Detalladas, basadas en research</td>
+									<td>+ Goals, frustrations, quotes</td>
+								</tr>
+								<tr>
+									<td><strong>Journey Map</strong></td>
+									<td>Incompleto</td>
+									<td>Fases básicas</td>
+									<td>Touchpoints, emociones</td>
+									<td>+ Oportunidades identificadas</td>
+								</tr>
+								<tr>
+									<td><strong>Principios</strong></td>
+									<td>Vagos</td>
+									<td>3 principios</td>
+									<td>Derivados de insights</td>
+									<td>+ Vinculados al diseño</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Rúbrica UI -->
+					<section>
+						<h2>2. Diseño Visual - UI (20 pts)</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>1-2 pts</th>
+									<th>3-4 pts</th>
+									<th>5-6 pts</th>
+									<th>7-8 pts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Sistema Color</strong></td>
+									<td>Colores sin criterio</td>
+									<td>Paleta básica</td>
+									<td>Semantic colors, grays</td>
+									<td>+ WCAG AAA, variables</td>
+								</tr>
+								<tr>
+									<td><strong>Tipografía</strong></td>
+									<td>1 tamaño</td>
+									<td>Scale básico</td>
+									<td>Type scale + pesos</td>
+									<td>+ Jerarquía clara, legibilidad</td>
+								</tr>
+								<tr>
+									<td><strong>Componentes</strong></td>
+									<td>Sin consistencia</td>
+									<td>Componentes reutilizables</td>
+									<td>Library organizada</td>
+									<td>+ Variantes, documentación</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Rúbrica Usabilidad -->
+					<section>
+						<h2>3. Usabilidad y Estructura (20 pts)</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>1-2 pts</th>
+									<th>3-4 pts</th>
+									<th>5-6 pts</th>
+									<th>7-8 pts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>IA y Flujos</strong></td>
+									<td>Confusa</td>
+									<td>Sitemap básico</td>
+									<td>User flows documentados</td>
+									<td>+ Flujos alternativos, errores</td>
+								</tr>
+								<tr>
+									<td><strong>Responsive</strong></td>
+									<td>Solo desktop</td>
+									<td>Mobile adaptado</td>
+									<td>2 breakpoints bien resueltos</td>
+									<td>+ Touch targets, navegación</td>
+								</tr>
+								<tr>
+									<td><strong>Testing</strong></td>
+									<td>Sin testing</td>
+									<td>Test informal</td>
+									<td>5+ usuarios, métricas</td>
+									<td>+ Iteraciones documentadas</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Rúbrica Documentación -->
+					<section>
+						<h2>4. Documentación (12 pts)</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>1-2 pts</th>
+									<th>3-4 pts</th>
+									<th>5-6 pts</th>
+									<th>7-8 pts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Caso Estudio</strong></td>
+									<td>Screenshots sin contexto</td>
+									<td>Proyecto descrito</td>
+									<td>Storytelling completo</td>
+									<td>+ Métricas, impacto, learnings</td>
+								</tr>
+								<tr>
+									<td><strong>Organización</strong></td>
+									<td>Archivos desorganizados</td>
+									<td>Estructura básica</td>
+									<td>Páginas nombradas, agrupadas</td>
+									<td>+ Handoff ready, annotations</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Rúbrica Presentación -->
+					<section>
+						<h2>5. Presentación (12 pts)</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Criterio</th>
+									<th>1-2 pts</th>
+									<th>3-4 pts</th>
+									<th>5-6 pts</th>
+									<th>7-8 pts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Storytelling</strong></td>
+									<td>Solo mostrar diseño</td>
+									<td>Problema → Solución</td>
+									<td>Journey completo documentado</td>
+									<td>+ Decisiones justificadas</td>
+								</tr>
+								<tr>
+									<td><strong>Demo</strong></td>
+									<td>Prototipo con bugs</td>
+									<td>Prototipo funcional</td>
+									<td>3 flujos bien demostrados</td>
+									<td>+ Explicación de interacciones</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 3: CASO DE ESTUDIO -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Estructura del Caso de Estudio</h2>
+						<p>Storytelling Profesional</p>
+					</section>
+
+					<!-- Slide: Estructura Case Study -->
+					<section>
+						<h2>Anatomía de un Caso de Estudio</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>1. Executive Summary</strong> (hero + síntesis)</li>
+							<li class="fragment"><strong>2. Context & Problem</strong> (background, objetivos)</li>
+							<li class="fragment"><strong>3. Discovery</strong> (research, personas, insights)</li>
+							<li class="fragment"><strong>4. Ideation</strong> (principios, wireframes, decisiones)</li>
+							<li class="fragment"><strong>5. Final Design</strong> (UI, sistema, prototipo)</li>
+							<li class="fragment"><strong>6. Validation</strong> (testing, hallazgos, iteraciones)</li>
+							<li class="fragment"><strong>7. Impact & Results</strong> (métricas, testimonios)</li>
+							<li class="fragment"><strong>8. Learnings</strong> (qué funcionó, qué cambiaría)</li>
+						</ol>
+					</section>
+
+					<!-- Slide: 1. Executive Summary -->
+					<section>
+						<h2>1. Executive Summary</h2>
+						<div class="card">
+							<p class="small-text"><strong>Componentes:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Hero image:</strong> Screenshot impactante del diseño final</li>
+								<li><strong>Título:</strong> Nombre del proyecto + tagline</li>
+								<li><strong>Overview (2-3 líneas):</strong> Qué es, para quién, qué problema resuelve</li>
+								<li><strong>Role:</strong> UX/UI Designer, solo o equipo</li>
+								<li><strong>Duration:</strong> Timeline del proyecto</li>
+								<li><strong>Tools:</strong> Figma, Maze, etc.</li>
+							</ul>
+						</div>
+						<p class="fragment small-text">Objetivo: Captar atención en 10 segundos</p>
+					</section>
+
+					<!-- Slide: 2. Context -->
+					<section>
+						<h2>2. Context & Problem</h2>
+						<div class="phase-box small-text">
+							<p><strong>Background:</strong> Contexto del negocio o necesidad</p>
+							<p class="very-small-text">"EduConnect es una startup que ofrece cursos en línea, pero enfrenta 78% de abandono en onboarding..."</p>
+						</div>
+						<div class="phase-box small-text fragment">
+							<p><strong>Objectives:</strong> Qué se buscaba lograr (específico)</p>
+							<ul class="very-small-text">
+								<li>Reducir abandono en onboarding a <30%</li>
+								<li>Mejorar SUS score a >75</li>
+							</ul>
+						</div>
+						<div class="phase-box small-text fragment">
+							<p><strong>Constraints:</strong> Limitaciones (tiempo, tech, recursos)</p>
+							<p class="very-small-text">"8 semanas, equipo de 1, sin acceso a developers"</p>
+						</div>
+					</section>
+
+					<!-- Slide: 3. Discovery -->
+					<section>
+						<h2>3. Discovery Process</h2>
+						<div class="card small-text">
+							<p><strong>Incluir:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Metodología:</strong> Entrevistas a 8 usuarios, competitive analysis de 5 competidores</li>
+								<li><strong>Findings clave:</strong> 3-4 insights principales con evidencia</li>
+								<li><strong>Personas:</strong> 2 personas con foto, goals, frustrations</li>
+								<li><strong>Journey Map:</strong> Visualización del journey actual (pain points)</li>
+							</ul>
+						</div>
+						<p class="fragment small-text">💡 Mostrar proceso, no solo resultados</p>
+					</section>
+
+					<!-- Slide: 4. Ideation -->
+					<section>
+						<h2>4. Ideation & Concept</h2>
+						<div class="phase-box small-text">
+							<p><strong>Cómo los insights informaron el diseño:</strong></p>
+							<p class="very-small-text">"El insight 'usuarios abandonan sin ver progreso' derivó en el principio 'Progreso Visible', implementado como progress bar en onboarding"</p>
+						</div>
+						<div class="card small-text fragment">
+							<p><strong>Mostrar:</strong></p>
+							<ul class="very-small-text">
+								<li>Alternativas exploradas (sketches, wireframes)</li>
+								<li>Decisiones clave con justificación</li>
+								<li>Sitemap y user flows finales</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: 5. Final Design -->
+					<section>
+						<h2>5. Final Design</h2>
+						<div class="card small-text">
+							<p><strong>Presentar:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Visual solution:</strong> Screenshots de pantallas clave con annotations</li>
+								<li><strong>Design System:</strong> Color palette, typography, key components</li>
+								<li><strong>Flujos principales:</strong> Mostrar 2-3 flujos con contexto</li>
+								<li><strong>Responsive:</strong> Desktop vs Mobile lado a lado</li>
+								<li><strong>Detalles:</strong> Microinteracciones, estados, accesibilidad</li>
+							</ul>
+						</div>
+						<p class="fragment small-text">💡 Cada decisión debe conectar con insights previos</p>
+					</section>
+
+					<!-- Slide: 6. Validation -->
+					<section>
+						<h2>6. Validation</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Aspecto</th>
+									<th>Qué incluir</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Metodología</strong></td>
+									<td>Tipo de test, # usuarios, herramienta</td>
+								</tr>
+								<tr>
+									<td><strong>Findings</strong></td>
+									<td>2-3 problemas detectados con severidad</td>
+								</tr>
+								<tr>
+									<td><strong>Iteraciones</strong></td>
+									<td>Antes/Después de cambios clave</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">Ejemplo: "Test 1 reveló confusión en botón → Cambió label → Test 2 TSR mejoró 40%"</p>
+					</section>
+
+					<!-- Slide: 7. Impact -->
+					<section>
+						<h2>7. Impact & Results</h2>
+						<div class="card small-text">
+							<p><strong>Métricas (cuantitativas):</strong></p>
+							<ul class="very-small-text">
+								<li>Abandono onboarding: 78% → 31% <span class="highlight">(-47%)</span></li>
+								<li>SUS Score: 52 → 78 <span class="highlight">(+26 pts)</span></li>
+								<li>Time on Task: 3m 45s → 1m 28s <span class="highlight">(-61%)</span></li>
+							</ul>
+						</div>
+						<div class="card small-text fragment">
+							<p><strong>Impacto de negocio:</strong></p>
+							<p class="very-small-text">"47% más usuarios completan onboarding = +2,300 usuarios activos mensuales estimados"</p>
+						</div>
+						<div class="card small-text fragment">
+							<p><strong>User feedback:</strong></p>
+							<p class="very-small-text">"Ahora es mucho más claro cuántos pasos faltan" - Usuario en testing</p>
+						</div>
+					</section>
+
+					<!-- Slide: 8. Learnings -->
+					<section>
+						<h2>8. Learnings & Next Steps</h2>
+						<div class="phase-box small-text">
+							<p><strong>What worked:</strong></p>
+							<ul class="very-small-text">
+								<li>Testing temprano detectó problemas antes de high-fi</li>
+								<li>Progress bar fue la feature más valorada</li>
+							</ul>
+						</div>
+						<div class="phase-box small-text fragment">
+							<p><strong>What I'd change:</strong></p>
+							<ul class="very-small-text">
+								<li>Más usuarios en research inicial (solo 5)</li>
+								<li>Explorar más alternativas de IA antes de decidir</li>
+							</ul>
+						</div>
+						<div class="phase-box small-text fragment">
+							<p><strong>Future improvements:</strong></p>
+							<ul class="very-small-text">
+								<li>Onboarding personalizado según tipo de usuario</li>
+								<li>Testing de accesibilidad con screen readers</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- PARTE 4: PRESENTACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Presentación y Defensa</h2>
+						<p>15-20 Minutos</p>
+					</section>
+
+					<!-- Slide: Estructura Presentación -->
+					<section>
+						<h2>Estructura de la Presentación</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Sección</th>
+									<th>Duración</th>
+									<th>Contenido</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Intro</strong></td>
+									<td>2 min</td>
+									<td>Problema, objetivos, scope</td>
+								</tr>
+								<tr>
+									<td><strong>Research</strong></td>
+									<td>3 min</td>
+									<td>Insights, personas, journey</td>
+								</tr>
+								<tr>
+									<td><strong>Design</strong></td>
+									<td>5 min</td>
+									<td>Decisiones clave, design system</td>
+								</tr>
+								<tr>
+									<td><strong>Demo</strong></td>
+									<td>4 min</td>
+									<td>Prototipo en acción (3 flujos)</td>
+								</tr>
+								<tr>
+									<td><strong>Validation</strong></td>
+									<td>3 min</td>
+									<td>Testing, iteraciones, resultados</td>
+								</tr>
+								<tr>
+									<td><strong>Conclusión</strong></td>
+									<td>2 min</td>
+									<td>Impacto, learnings, next steps</td>
+								</tr>
+								<tr>
+									<td><strong>Q&A</strong></td>
+									<td>5 min</td>
+									<td>Preguntas del panel</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Storytelling Tips -->
+					<section>
+						<h2>Storytelling en Presentación</h2>
+						<ul class="small-text">
+							<li class="fragment">📖 <strong>Narrativa:</strong> Problema → Journey → Solución → Impacto</li>
+							<li class="fragment">🎯 <strong>Enfoque:</strong> "Por qué" antes de "qué" o "cómo"</li>
+							<li class="fragment">🔗 <strong>Conexión:</strong> Cada decisión vinculada a insights</li>
+							<li class="fragment">📊 <strong>Datos:</strong> Métricas concretas (no "mejoró", sino "+47%")</li>
+							<li class="fragment">👤 <strong>Usuario al centro:</strong> Usar quotes, mostrar empatía</li>
+							<li class="fragment">⏱️ <strong>Timing:</strong> Practicar para no exceder 20 min</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Demo del Prototipo -->
+					<section>
+						<h2>Demo del Prototipo</h2>
+						<div class="card small-text">
+							<p><strong>Mejores prácticas:</strong></p>
+							<ul class="very-small-text">
+								<li>✅ Preparar prototipo en pestañas (no buscar en vivo)</li>
+								<li>✅ Narrar mientras haces clic: "El usuario ve esto... hace clic aquí... la app responde con..."</li>
+								<li>✅ Mostrar 3 flujos: 1 completo + 2 highlights</li>
+								<li>✅ Destacar microinteracciones: "Noten la animación de loading..."</li>
+								<li>✅ Mostrar responsive: Desktop → Mobile</li>
+								<li>❌ No disculparse por "detalles faltantes"</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: Preguntas Frecuentes -->
+					<section>
+						<h2>Preguntas Frecuentes del Panel</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>"¿Por qué elegiste esta solución?"</strong><br><span class="very-small-text">→ Conectar con insight específico</span></li>
+							<li class="fragment"><strong>"¿Qué harías diferente?"</strong><br><span class="very-small-text">→ Mostrar reflexión crítica</span></li>
+							<li class="fragment"><strong>"¿Cómo medirías éxito en producción?"</strong><br><span class="very-small-text">→ Mencionar analytics, A/B testing</span></li>
+							<li class="fragment"><strong>"¿Consideraste accesibilidad?"</strong><br><span class="very-small-text">→ Mencionar WCAG, testing con usuarios</span></li>
+							<li class="fragment"><strong>"¿Cómo colaborarías con developers?"</strong><br><span class="very-small-text">→ Handoff, design tokens, sesiones de QA</span></li>
+						</ul>
+					</section>
+
+					<!-- Slide: Checklist Pre-Presentación -->
+					<section>
+						<h2>Checklist Pre-Presentación</h2>
+						<ul class="small-text">
+							<li class="fragment">☑️ Prototipo funcional sin bugs</li>
+							<li class="fragment">☑️ Slides con imágenes de alta calidad</li>
+							<li class="fragment">☑️ Demo preparada (pestañas abiertas)</li>
+							<li class="fragment">☑️ Timing practicado (15-20 min)</li>
+							<li class="fragment">☑️ Backup PDF de caso de estudio</li>
+							<li class="fragment">☑️ Métricas verificadas (no inventar)</li>
+							<li class="fragment">☑️ Ejemplos de iteraciones listos</li>
+							<li class="fragment">☑️ Respuestas ensayadas a preguntas comunes</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- PARTE 5: HANDOFF Y PORTFOLIO -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Handoff y Portfolio</h2>
+						<p>Entrega Profesional</p>
+					</section>
+
+					<!-- Slide: Handoff Completo -->
+					<section>
+						<h2>Documentación de Handoff</h2>
+						<div class="card small-text">
+							<p><strong>Archivos a entregar:</strong></p>
+							<ol class="very-small-text">
+								<li><strong>Figma file organizado:</strong>
+									<ul>
+										<li>Cover page con información del proyecto</li>
+										<li>Design System (tokens, components)</li>
+										<li>Screens (desktop, mobile)</li>
+										<li>Flows documentados</li>
+										<li>Specs y annotations</li>
+									</ul>
+								</li>
+								<li><strong>Assets exportados:</strong> Iconos (SVG), imágenes optimizadas</li>
+								<li><strong>Caso de estudio:</strong> PDF o link a web</li>
+								<li><strong>Reporte de testing:</strong> Hallazgos y métricas</li>
+								<li><strong>Prototipo compartido:</strong> Link con permisos de viewer</li>
+							</ol>
+						</div>
+					</section>
+
+					<!-- Slide: Portfolio Guidelines -->
+					<section>
+						<h2>Publicar en Portfolio</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Plataformas:</strong> Behance, Dribbble, personal website</li>
+							<li class="fragment"><strong>Portada impactante:</strong> Hero image + título + tagline</li>
+							<li class="fragment"><strong>Storytelling visual:</strong> Combinar texto + imágenes</li>
+							<li class="fragment"><strong>Prototipos embebidos:</strong> Figma embed o video demo</li>
+							<li class="fragment"><strong>Resultados destacados:</strong> Métricas en callouts</li>
+							<li class="fragment"><strong>SEO:</strong> Título descriptivo, tags relevantes</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Ejemplo Cover Portfolio -->
+					<section>
+						<h2>Ejemplo: Cover de Caso de Estudio</h2>
+						<div class="card very-small-text">
+							<h3 style="color: #42affa;">EduConnect: Reducing Onboarding Abandonment by 47%</h3>
+							<p><em>Redesigning the onboarding experience for an online learning platform</em></p>
+							<p><strong>Role:</strong> UX/UI Designer (Solo project)</p>
+							<p><strong>Duration:</strong> 8 weeks (2024)</p>
+							<p><strong>Tools:</strong> Figma, Maze, Miro</p>
+							<p><strong>Overview:</strong> EduConnect faced 78% user abandonment during onboarding. Through user research, iterative design, and usability testing, I redesigned the onboarding flow, reducing abandonment to 31% and increasing the SUS score from 52 to 78.</p>
+							<p><strong>Key Results:</strong></p>
+							<ul>
+								<li>-47% abandonment rate</li>
+								<li>+26 SUS score improvement</li>
+								<li>-61% time to complete onboarding</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- CASO EDUCONNECT COMPLETO -->
+				<section>
+					<section>
+						<h2>EduConnect: Caso Completo</h2>
+						<p>Ejemplo Integrado</p>
+					</section>
+
+					<!-- Slide: Timeline EduConnect -->
+					<section>
+						<h2>Timeline del Proyecto</h2>
+						<div class="timeline-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+SEMANA 1-2: DISCOVERY
+├── Entrevistas a 8 usuarios (actuales y potenciales)
+├── Competitive analysis (Coursera, Udemy, Duolingo, Khan Academy)
+├── Output: 2 Personas, Journey Map, 3 Principios de diseño
+
+SEMANA 3-4: DEFINITION
+├── Moodboard (referencias de ed-tech, colores cálidos/accesibles)
+├── Color palette (Primary: #4A90E2, Secondary: #F5A623, WCAG AAA)
+├── Typography: Inter (UI), Merriweather (content)
+├── Component library (20 componentes base)
+
+SEMANA 5-6: STRUCTURE
+├── Sitemap (5 secciones principales)
+├── Wireframes low-fi → mid-fi (onboarding, dashboard, course detail)
+├── High-fi prototype (3 flujos: onboarding, browse, enroll)
+├── Responsive design (Desktop 1440px, Mobile 375px)
+
+SEMANA 7-8: VALIDATION
+├── Test plan (objetivo: TSR >80%, Time <2min)
+├── Testing con Maze (10 usuarios)
+├── Iteración basada en hallazgos
+├── Re-test (8 usuarios) → Objetivos alcanzados
+├── Case study + Presentación
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Insights Clave -->
+					<section>
+						<h2>Insights Clave de Research</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>"No sé cuánto falta"</strong><br><span class="very-small-text">→ Principio: Progreso Visible → Progress bar</span></li>
+							<li class="fragment"><strong>"Demasiados pasos, me canso"</strong><br><span class="very-small-text">→ Principio: Simplicidad → Reducir de 5 a 3 pasos</span></li>
+							<li class="fragment"><strong>"No leo instrucciones largas"</strong><br><span class="very-small-text">→ Principio: Claridad Inmediata → Tooltips contextuales</span></li>
+						</ol>
+					</section>
+
+					<!-- Slide: Resultados Finales -->
+					<section>
+						<h2>Resultados Finales: EduConnect</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Métrica</th>
+									<th>Antes</th>
+									<th>Después</th>
+									<th>Mejora</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Abandono</td>
+									<td>78%</td>
+									<td>31%</td>
+									<td style="color: #44ff44;">-47%</td>
+								</tr>
+								<tr>
+									<td>Time on Task</td>
+									<td>3m 45s</td>
+									<td>1m 28s</td>
+									<td style="color: #44ff44;">-61%</td>
+								</tr>
+								<tr>
+									<td>SUS Score</td>
+									<td>52</td>
+									<td>78</td>
+									<td style="color: #44ff44;">+26 pts</td>
+								</tr>
+								<tr>
+									<td>TSR</td>
+									<td>22%</td>
+									<td>83%</td>
+									<td style="color: #44ff44;">+61%</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">Impacto estimado: +2,300 usuarios activos mensuales</p>
+					</section>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes en Proyectos</h2>
+					<ul class="small-text">
+						<li class="fragment">❌ Empezar diseñando sin research</li>
+						<li class="fragment">❌ Caso de estudio sin métricas (solo screenshots)</li>
+						<li class="fragment">❌ No iterar después de testing</li>
+						<li class="fragment">❌ Presentación enfocada en proceso, no en impacto</li>
+						<li class="fragment">❌ Prototipo con bugs o incompleto</li>
+						<li class="fragment">❌ No conectar decisiones de diseño con insights</li>
+					</ul>
+				</section>
+
+				<!-- MEJORES PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li class="fragment">✅ Research primero, diseño después</li>
+						<li class="fragment">✅ Documentar decisiones desde el inicio</li>
+						<li class="fragment">✅ Testing con usuarios reales (no compañeros)</li>
+						<li class="fragment">✅ Métricas antes/después para mostrar impacto</li>
+						<li class="fragment">✅ Caso de estudio con storytelling claro</li>
+						<li class="fragment">✅ Presentación practicada y cronometrada</li>
+						<li class="fragment">✅ Handoff organizado y profesional</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos y Referencias</h2>
+					<ul class="small-text">
+						<li><strong>Case Study Club</strong> - casestudy.club (ejemplos)</li>
+						<li><strong>Bestfolios</strong> - bestfolios.com (portfolios inspiración)</li>
+						<li><strong>"Articulating Design Decisions"</strong> - Tom Greever</li>
+						<li><strong>Nielsen Norman Group</strong> - Artículos sobre case studies</li>
+						<li><strong>Behance</strong> - behance.net/search/projects?field=ux</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">📅 <strong>4 Fases:</strong> Discovery → Definition → Structure → Validation</li>
+						<li class="fragment">📊 <strong>Evaluación:</strong> 5 categorías (Research, UI, Usabilidad, Documentación, Presentación)</li>
+						<li class="fragment">📖 <strong>Caso Estudio:</strong> 8 secciones con storytelling</li>
+						<li class="fragment">🎤 <strong>Presentación:</strong> 15-20 min, demo + métricas</li>
+						<li class="fragment">📦 <strong>Handoff:</strong> Archivos organizados, portfolio ready</li>
+						<li class="fragment">🎯 <strong>Impacto:</strong> Conectar diseño con resultados medibles</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¡Éxito en tu Proyecto!</h1>
+					<p class="small-text">Recuerda: No estás diseñando interfaces,<br>estás resolviendo problemas de usuarios reales</p>
+					<p class="very-small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

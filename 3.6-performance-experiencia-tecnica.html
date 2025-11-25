@@ -1,128 +1,139 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>3.6. Performance y Experiencia Técnica</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal.js/dist/reset.css">
-		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+	<title>3.6. Performance y Experiencia Técnica</title>
 
-		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
 
-		<style>
-			.reveal h1, .reveal h2, .reveal h3 {
-				text-transform: none;
-			}
-			.reveal section img {
-				border: none;
-				box-shadow: none;
-				background: none;
-			}
-			.reveal .highlight {
-				color: #42affa;
-				font-weight: bold;
-			}
-			.reveal .small-text {
-				font-size: 0.8em;
-			}
-			.reveal .metric-card {
-				background: rgba(66, 175, 250, 0.1);
-				padding: 15px;
-				border-radius: 8px;
-				margin: 10px 0;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<!-- Slide 1: Portada -->
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+	<style>
+		.reveal h1,
+		.reveal h2,
+		.reveal h3 {
+			text-transform: none;
+		}
+
+		.reveal section img {
+			border: none;
+			box-shadow: none;
+			background: none;
+		}
+
+		.reveal .highlight {
+			color: #42affa;
+			font-weight: bold;
+		}
+
+		.reveal .small-text {
+			font-size: 0.8em;
+		}
+
+		.reveal .metric-card {
+			background: rgba(66, 175, 250, 0.1);
+			padding: 15px;
+			border-radius: 8px;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide 1: Portada -->
+			<section>
+				<h1>3.6. Performance y Experiencia Técnica</h1>
+				<h3>Fundamentos del Diseño Web</h3>
+				<p>UCATEC - Diseño Web UX/UI</p>
+			</section>
+
+			<!-- Slide 2: Performance = UX -->
+			<section>
+				<h2>Performance es UX</h2>
+				<blockquote class="fragment">
+					"Un sitio lento es un sitio con mala UX, sin importar cuán bello sea el diseño"
+				</blockquote>
+				<ul class="fragment">
+					<li>53% abandonan si tarda > 3 segundos</li>
+					<li>1 segundo de retraso = 7% menos conversiones</li>
+					<li>Google penaliza sitios lentos</li>
+				</ul>
+			</section>
+
+			<!-- Slide 3: Core Web Vitals -->
+			<section>
 				<section>
-					<h1>3.6. Performance y Experiencia Técnica</h1>
-					<h3>Fundamentos del Diseño Web</h3>
-					<p>UCATEC - Diseño Web UX/UI</p>
+					<h2>Core Web Vitals</h2>
+					<p>Métricas clave de Google para performance</p>
 				</section>
-
-				<!-- Slide 2: Performance = UX -->
 				<section>
-					<h2>Performance es UX</h2>
-					<blockquote class="fragment">
-						"Un sitio lento es un sitio con mala UX, sin importar cuán bello sea el diseño"
-					</blockquote>
-					<ul class="fragment">
-						<li>53% abandonan si tarda > 3 segundos</li>
-						<li>1 segundo de retraso = 7% menos conversiones</li>
-						<li>Google penaliza sitios lentos</li>
+					<h3>LCP - Largest Contentful Paint</h3>
+					<div class="metric-card">
+						<p><strong>¿Qué mide?</strong> Tiempo hasta elemento principal visible</p>
+						<p><strong>Objetivo:</strong>
+							< 2.5 segundos</p>
+					</div>
+					<p class="small-text fragment">Hero image, bloque de texto principal</p>
+				</section>
+				<section>
+					<h3>FID - First Input Delay</h3>
+					<div class="metric-card">
+						<p><strong>¿Qué mide?</strong> Tiempo hasta responder a interacción</p>
+						<p><strong>Objetivo:</strong>
+							< 100 ms</p>
+					</div>
+					<p class="small-text fragment">Click en botón, tap en link</p>
+				</section>
+				<section>
+					<h3>CLS - Cumulative Layout Shift</h3>
+					<div class="metric-card">
+						<p><strong>¿Qué mide?</strong> Cuánto "salta" el contenido</p>
+						<p><strong>Objetivo:</strong>
+							< 0.1</p>
+					</div>
+					<p class="small-text fragment">Imágenes sin dimensiones, ads que cargan tarde</p>
+				</section>
+			</section>
+
+			<!-- Slide 4: Percibido vs Real -->
+			<section>
+				<section>
+					<h2>Performance Percibida vs Real</h2>
+				</section>
+				<section>
+					<h3>Performance Real</h3>
+					<p>Métricas medibles (TTFB, FCP, LCP)</p>
+					<p class="fragment">Importante, pero no es todo</p>
+				</section>
+				<section>
+					<h3>Performance Percibida</h3>
+					<p>Cómo se <span class="highlight">siente</span> para el usuario</p>
+					<ul class="small-text">
+						<li class="fragment">Feedback inmediato (< 100ms)</li>
+						<li class="fragment">Skeleton screens</li>
+						<li class="fragment">Progress indicators</li>
+						<li class="fragment">Optimistic UI updates</li>
 					</ul>
+					<p class="fragment highlight">Diseño puede hacer que sitio se sienta más rápido</p>
 				</section>
+			</section>
 
-				<!-- Slide 3: Core Web Vitals -->
+			<!-- Slide 5: Lazy Loading -->
+			<section>
 				<section>
-					<section>
-						<h2>Core Web Vitals</h2>
-						<p>Métricas clave de Google para performance</p>
-					</section>
-					<section>
-						<h3>LCP - Largest Contentful Paint</h3>
-						<div class="metric-card">
-							<p><strong>¿Qué mide?</strong> Tiempo hasta elemento principal visible</p>
-							<p><strong>Objetivo:</strong> < 2.5 segundos</p>
-						</div>
-						<p class="small-text fragment">Hero image, bloque de texto principal</p>
-					</section>
-					<section>
-						<h3>FID - First Input Delay</h3>
-						<div class="metric-card">
-							<p><strong>¿Qué mide?</strong> Tiempo hasta responder a interacción</p>
-							<p><strong>Objetivo:</strong> < 100 ms</p>
-						</div>
-						<p class="small-text fragment">Click en botón, tap en link</p>
-					</section>
-					<section>
-						<h3>CLS - Cumulative Layout Shift</h3>
-						<div class="metric-card">
-							<p><strong>¿Qué mide?</strong> Cuánto "salta" el contenido</p>
-							<p><strong>Objetivo:</strong> < 0.1</p>
-						</div>
-						<p class="small-text fragment">Imágenes sin dimensiones, ads que cargan tarde</p>
-					</section>
+					<h2>Lazy Loading</h2>
+					<p>Cargar contenido solo cuando se necesita</p>
 				</section>
-
-				<!-- Slide 4: Percibido vs Real -->
 				<section>
-					<section>
-						<h2>Performance Percibida vs Real</h2>
-					</section>
-					<section>
-						<h3>Performance Real</h3>
-						<p>Métricas medibles (TTFB, FCP, LCP)</p>
-						<p class="fragment">Importante, pero no es todo</p>
-					</section>
-					<section>
-						<h3>Performance Percibida</h3>
-						<p>Cómo se <span class="highlight">siente</span> para el usuario</p>
-						<ul class="small-text">
-							<li class="fragment">Feedback inmediato (< 100ms)</li>
-							<li class="fragment">Skeleton screens</li>
-							<li class="fragment">Progress indicators</li>
-							<li class="fragment">Optimistic UI updates</li>
-						</ul>
-						<p class="fragment highlight">Diseño puede hacer que sitio se sienta más rápido</p>
-					</section>
-				</section>
-
-				<!-- Slide 5: Lazy Loading -->
-				<section>
-					<section>
-						<h2>Lazy Loading</h2>
-						<p>Cargar contenido solo cuando se necesita</p>
-					</section>
-					<section>
-						<h3>Lazy Loading Nativo</h3>
-						<pre><code data-trim data-noescape class="language-html">
+					<h3>Lazy Loading Nativo</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <!-- Solo carga cuando cerca del viewport -->
 <img 
   src="course.jpg" 
@@ -130,12 +141,12 @@
   loading="lazy"
 >
 						</code></pre>
-						<p class="fragment small-text">Soportado por 95%+ de navegadores</p>
-					</section>
-					<section>
-						<h3>Intersection Observer</h3>
-						<p>Más control sobre cuándo cargar</p>
-						<pre><code data-trim data-noescape class="language-javascript">
+					<p class="fragment small-text">Soportado por 95%+ de navegadores</p>
+				</section>
+				<section>
+					<h3>Intersection Observer</h3>
+					<p>Más control sobre cuándo cargar</p>
+					<pre><code data-trim data-noescape class="language-javascript">
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -150,57 +161,57 @@ const observer = new IntersectionObserver((entries) => {
 
 lazyImages.forEach(img => observer.observe(img));
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 6: Optimización de Imágenes -->
+			<!-- Slide 6: Optimización de Imágenes -->
+			<section>
 				<section>
-					<section>
-						<h2>Optimización de Imágenes</h2>
-						<p>Imágenes son 50%+ del peso de un sitio</p>
-					</section>
-					<section>
-						<h3>Formatos Modernos</h3>
-						<table class="small-text">
-							<thead>
-								<tr>
-									<th>Formato</th>
-									<th>Ventaja</th>
-									<th>Soporte</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><strong>WebP</strong></td>
-									<td>25-35% más pequeño</td>
-									<td>95%+</td>
-								</tr>
-								<tr>
-									<td><strong>AVIF</strong></td>
-									<td>50% más pequeño</td>
-									<td>75%</td>
-								</tr>
-								<tr>
-									<td><strong>SVG</strong></td>
-									<td>Escalable, pequeño</td>
-									<td>100%</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Picture con Fallbacks</h3>
-						<pre><code data-trim data-noescape class="language-html">
+					<h2>Optimización de Imágenes</h2>
+					<p>Imágenes son 50%+ del peso de un sitio</p>
+				</section>
+				<section>
+					<h3>Formatos Modernos</h3>
+					<table class="small-text">
+						<thead>
+							<tr>
+								<th>Formato</th>
+								<th>Ventaja</th>
+								<th>Soporte</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>WebP</strong></td>
+								<td>25-35% más pequeño</td>
+								<td>95%+</td>
+							</tr>
+							<tr>
+								<td><strong>AVIF</strong></td>
+								<td>50% más pequeño</td>
+								<td>75%</td>
+							</tr>
+							<tr>
+								<td><strong>SVG</strong></td>
+								<td>Escalable, pequeño</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Picture con Fallbacks</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <picture>
   <source type="image/avif" srcset="hero.avif">
   <source type="image/webp" srcset="hero.webp">
   <img src="hero.jpg" alt="Hero">
 </picture>
 						</code></pre>
-					</section>
-					<section>
-						<h3>Tamaños Apropiados</h3>
-						<pre><code data-trim data-noescape class="language-html">
+				</section>
+				<section>
+					<h3>Tamaños Apropiados</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <img
   src="course-400.jpg"
   srcset="
@@ -216,32 +227,32 @@ lazyImages.forEach(img => observer.observe(img));
   alt="Curso"
 >
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 7: Fonts -->
+			<!-- Slide 7: Fonts -->
+			<section>
 				<section>
-					<section>
-						<h2>Optimización de Fonts</h2>
-					</section>
-					<section>
-						<h3>Font-Display</h3>
-						<pre><code data-trim data-noescape class="language-css">
+					<h2>Optimización de Fonts</h2>
+				</section>
+				<section>
+					<h3>Font-Display</h3>
+					<pre><code data-trim data-noescape class="language-css">
 @font-face {
   font-family: 'Inter';
   src: url('inter.woff2') format('woff2');
   font-display: swap;  /* Usa fallback, swap cuando carga */
 }
 						</code></pre>
-						<ul class="small-text fragment">
-							<li><strong>swap:</strong> Muestra fallback inmediato (recomendado)</li>
-							<li><strong>block:</strong> Texto invisible hasta 3s</li>
-							<li><strong>optional:</strong> Navegador decide</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Preload Fonts Críticos</h3>
-						<pre><code data-trim data-noescape class="language-html">
+					<ul class="small-text fragment">
+						<li><strong>swap:</strong> Muestra fallback inmediato (recomendado)</li>
+						<li><strong>block:</strong> Texto invisible hasta 3s</li>
+						<li><strong>optional:</strong> Navegador decide</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Preload Fonts Críticos</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <link 
   rel="preload" 
   href="inter.woff2" 
@@ -250,37 +261,37 @@ lazyImages.forEach(img => observer.observe(img));
   crossorigin
 >
 						</code></pre>
-					</section>
-					<section>
-						<h3>Variable Fonts</h3>
-						<p>Todo el rango de weights en un archivo</p>
-						<pre><code data-trim data-noescape class="language-css">
+				</section>
+				<section>
+					<h3>Variable Fonts</h3>
+					<p>Todo el rango de weights en un archivo</p>
+					<pre><code data-trim data-noescape class="language-css">
 @font-face {
   font-family: 'Inter Variable';
   src: url('inter-variable.woff2') format('woff2');
   font-weight: 100 900;  /* Todo el rango */
 }
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 8: Skeleton Screens -->
+			<!-- Slide 8: Skeleton Screens -->
+			<section>
 				<section>
-					<section>
-						<h2>Skeleton Screens</h2>
-						<p>Placeholders que imitan estructura</p>
-					</section>
-					<section>
-						<h3>¿Por qué funcionan?</h3>
-						<ul>
-							<li class="fragment">Reducen ansiedad de espera</li>
-							<li class="fragment">Percepción de carga más rápida</li>
-							<li class="fragment">Evitan layout shifts (CLS)</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Skeleton con Shimmer</h3>
-						<pre><code data-trim data-noescape class="language-css">
+					<h2>Skeleton Screens</h2>
+					<p>Placeholders que imitan estructura</p>
+				</section>
+				<section>
+					<h3>¿Por qué funcionan?</h3>
+					<ul>
+						<li class="fragment">Reducen ansiedad de espera</li>
+						<li class="fragment">Percepción de carga más rápida</li>
+						<li class="fragment">Evitan layout shifts (CLS)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Skeleton con Shimmer</h3>
+					<pre><code data-trim data-noescape class="language-css">
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -297,43 +308,43 @@ lazyImages.forEach(img => observer.observe(img));
   100% { background-position: -200% 0; }
 }
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 9: Progressive Disclosure -->
+			<!-- Slide 9: Progressive Disclosure -->
+			<section>
 				<section>
-					<section>
-						<h2>Progressive Disclosure</h2>
-						<p>Mostrar solo lo necesario</p>
-					</section>
-					<section>
-						<h3>Beneficios</h3>
-						<ul>
-							<li class="fragment">Reduce cognitive load</li>
-							<li class="fragment">Mejora performance</li>
-							<li class="fragment">Mejor mobile UX</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Patrones Comunes</h3>
-						<ul>
-							<li class="fragment"><strong>Accordions:</strong> FAQs, specs</li>
-							<li class="fragment"><strong>"Ver más" button:</strong> Listas largas</li>
-							<li class="fragment"><strong>Infinite scroll:</strong> Feeds</li>
-							<li class="fragment"><strong>Tabs:</strong> Agrupar contenido</li>
-						</ul>
-					</section>
+					<h2>Progressive Disclosure</h2>
+					<p>Mostrar solo lo necesario</p>
 				</section>
-
-				<!-- Slide 10: Critical CSS -->
 				<section>
-					<section>
-						<h2>Critical CSS</h2>
-						<p>Inline CSS para above-the-fold</p>
-					</section>
-					<section>
-						<h3>Estrategia</h3>
-						<pre><code data-trim data-noescape class="language-html">
+					<h3>Beneficios</h3>
+					<ul>
+						<li class="fragment">Reduce cognitive load</li>
+						<li class="fragment">Mejora performance</li>
+						<li class="fragment">Mejor mobile UX</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Patrones Comunes</h3>
+					<ul>
+						<li class="fragment"><strong>Accordions:</strong> FAQs, specs</li>
+						<li class="fragment"><strong>"Ver más" button:</strong> Listas largas</li>
+						<li class="fragment"><strong>Infinite scroll:</strong> Feeds</li>
+						<li class="fragment"><strong>Tabs:</strong> Agrupar contenido</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Slide 10: Critical CSS -->
+			<section>
+				<section>
+					<h2>Critical CSS</h2>
+					<p>Inline CSS para above-the-fold</p>
+				</section>
+				<section>
+					<h3>Estrategia</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <head>
   <!-- Critical CSS inline -->
   <style>
@@ -355,28 +366,28 @@ lazyImages.forEach(img => observer.observe(img));
   >
 </head>
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 11: Design Tokens -->
+			<!-- Slide 11: Design Tokens -->
+			<section>
 				<section>
-					<section>
-						<h2>Design Tokens</h2>
-						<p>Single source of truth entre diseño y código</p>
-					</section>
-					<section>
-						<h3>¿Qué son?</h3>
-						<p>Variables de diseño compartidas</p>
-						<ul class="small-text">
-							<li class="fragment">Colores, tipografía, espaciado</li>
-							<li class="fragment">Consistencia garantizada</li>
-							<li class="fragment">Fácil actualización global</li>
-							<li class="fragment">Temas (light/dark) automáticos</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Ejemplo de Tokens</h3>
-						<pre><code data-trim data-noescape class="language-css">
+					<h2>Design Tokens</h2>
+					<p>Single source of truth entre diseño y código</p>
+				</section>
+				<section>
+					<h3>¿Qué son?</h3>
+					<p>Variables de diseño compartidas</p>
+					<ul class="small-text">
+						<li class="fragment">Colores, tipografía, espaciado</li>
+						<li class="fragment">Consistencia garantizada</li>
+						<li class="fragment">Fácil actualización global</li>
+						<li class="fragment">Temas (light/dark) automáticos</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Ejemplo de Tokens</h3>
+					<pre><code data-trim data-noescape class="language-css">
 :root {
   /* Colors */
   --color-primary-500: #2196f3;
@@ -395,10 +406,10 @@ lazyImages.forEach(img => observer.observe(img));
   --transition-fast: 150ms ease;
 }
 						</code></pre>
-					</section>
-					<section>
-						<h3>Uso de Tokens</h3>
-						<pre><code data-trim data-noescape class="language-css">
+				</section>
+				<section>
+					<h3>Uso de Tokens</h3>
+					<pre><code data-trim data-noescape class="language-css">
 .button {
   background: var(--color-primary-500);
   font-size: var(--font-size-base);
@@ -411,77 +422,77 @@ lazyImages.forEach(img => observer.observe(img));
   background: var(--color-primary-700);
 }
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 12: Handoff UI → Dev -->
+			<!-- Slide 12: Handoff UI → Dev -->
+			<section>
 				<section>
-					<section>
-						<h2>Handoff: Diseño → Desarrollo</h2>
-						<p>Transferir diseños eficientemente</p>
-					</section>
-					<section>
-						<h3>Información Esencial</h3>
-						<ol class="small-text">
-							<li class="fragment"><strong>Specs visuales:</strong> Dimensiones, colores, tipografía</li>
-							<li class="fragment"><strong>Estados:</strong> Default, hover, active, disabled, loading</li>
-							<li class="fragment"><strong>Comportamiento:</strong> Animaciones, interacciones</li>
-							<li class="fragment"><strong>Responsive:</strong> Breakpoints, layouts</li>
-							<li class="fragment"><strong>Assets:</strong> Imágenes, iconos exportados</li>
-						</ol>
-					</section>
-					<section>
-						<h3>Herramientas de Handoff</h3>
-						<ul>
-							<li class="fragment"><strong>Figma Dev Mode:</strong> Inspeccionar, CSS code</li>
-							<li class="fragment"><strong>Zeplin:</strong> Specs automáticas, style guide</li>
-							<li class="fragment"><strong>Abstract:</strong> Versionado como Git</li>
-						</ul>
-					</section>
+					<h2>Handoff: Diseño → Desarrollo</h2>
+					<p>Transferir diseños eficientemente</p>
 				</section>
-
-				<!-- Slide 13: Colaboración -->
 				<section>
-					<section>
-						<h2>Colaboración UI/Front-end</h2>
-					</section>
-					<section>
-						<h3>Design Reviews</h3>
-						<ul>
-							<li class="fragment"><strong>Antes:</strong> Validar factibilidad técnica</li>
-							<li class="fragment"><strong>Durante:</strong> Resolver dudas, ajustes</li>
-							<li class="fragment"><strong>QA:</strong> Validar implementación vs diseño</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Temas a Discutir</h3>
-						<ul class="small-text">
-							<li class="fragment">Performance implications del diseño</li>
-							<li class="fragment">¿Animaciones valen la pena?</li>
-							<li class="fragment">Edge cases (contenido largo, sin datos, errores)</li>
-							<li class="fragment">Responsive breakpoints</li>
-							<li class="fragment">Accesibilidad (WCAG)</li>
-						</ul>
-					</section>
+					<h3>Información Esencial</h3>
+					<ol class="small-text">
+						<li class="fragment"><strong>Specs visuales:</strong> Dimensiones, colores, tipografía</li>
+						<li class="fragment"><strong>Estados:</strong> Default, hover, active, disabled, loading</li>
+						<li class="fragment"><strong>Comportamiento:</strong> Animaciones, interacciones</li>
+						<li class="fragment"><strong>Responsive:</strong> Breakpoints, layouts</li>
+						<li class="fragment"><strong>Assets:</strong> Imágenes, iconos exportados</li>
+					</ol>
 				</section>
-
-				<!-- Slide 14: Caso EduConnect -->
 				<section>
-					<section>
-						<h2>Caso Práctico: EduConnect</h2>
-						<p>Optimización de Homepage</p>
-					</section>
-					<section>
-						<h3>Prioridades de Carga</h3>
-						<ol class="small-text">
-							<li class="fragment"><strong>Critical:</strong> Header, Hero, CSS inline</li>
-							<li class="fragment"><strong>Important:</strong> Grid de cursos (lazy load)</li>
-							<li class="fragment"><strong>Deferred:</strong> Footer, modals, chat</li>
-						</ol>
-					</section>
-					<section>
-						<h3>Implementación</h3>
-						<pre><code data-trim data-noescape class="language-html">
+					<h3>Herramientas de Handoff</h3>
+					<ul>
+						<li class="fragment"><strong>Figma Dev Mode:</strong> Inspeccionar, CSS code</li>
+						<li class="fragment"><strong>Zeplin:</strong> Specs automáticas, style guide</li>
+						<li class="fragment"><strong>Abstract:</strong> Versionado como Git</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Slide 13: Colaboración -->
+			<section>
+				<section>
+					<h2>Colaboración UI/Front-end</h2>
+				</section>
+				<section>
+					<h3>Design Reviews</h3>
+					<ul>
+						<li class="fragment"><strong>Antes:</strong> Validar factibilidad técnica</li>
+						<li class="fragment"><strong>Durante:</strong> Resolver dudas, ajustes</li>
+						<li class="fragment"><strong>QA:</strong> Validar implementación vs diseño</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Temas a Discutir</h3>
+					<ul class="small-text">
+						<li class="fragment">Performance implications del diseño</li>
+						<li class="fragment">¿Animaciones valen la pena?</li>
+						<li class="fragment">Edge cases (contenido largo, sin datos, errores)</li>
+						<li class="fragment">Responsive breakpoints</li>
+						<li class="fragment">Accesibilidad (WCAG)</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Slide 14: Caso EduConnect -->
+			<section>
+				<section>
+					<h2>Caso Práctico: EduConnect</h2>
+					<p>Optimización de Homepage</p>
+				</section>
+				<section>
+					<h3>Prioridades de Carga</h3>
+					<ol class="small-text">
+						<li class="fragment"><strong>Critical:</strong> Header, Hero, CSS inline</li>
+						<li class="fragment"><strong>Important:</strong> Grid de cursos (lazy load)</li>
+						<li class="fragment"><strong>Deferred:</strong> Footer, modals, chat</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Implementación</h3>
+					<pre><code data-trim data-noescape class="language-html">
 <!-- Preload hero image -->
 <link rel="preload" as="image" href="hero.webp">
 
@@ -497,97 +508,99 @@ lazyImages.forEach(img => observer.observe(img));
 <!-- Lazy load images -->
 <img src="course.jpg" loading="lazy">
 						</code></pre>
-					</section>
 				</section>
+			</section>
 
-				<!-- Slide 15: Errores Comunes -->
-				<section>
-					<h2>Errores Comunes</h2>
-					<ul>
-						<li class="fragment">❌ Imágenes sin optimizar</li>
-						<li class="fragment">❌ No usar lazy loading</li>
-						<li class="fragment">❌ Cargar todo upfront</li>
-						<li class="fragment">❌ Sin skeleton screens</li>
-						<li class="fragment">❌ Animaciones pesadas</li>
-						<li class="fragment">❌ No testear performance en mobile</li>
-					</ul>
-				</section>
+			<!-- Slide 15: Errores Comunes -->
+			<section>
+				<h2>Errores Comunes</h2>
+				<ul>
+					<li class="fragment">❌ Imágenes sin optimizar</li>
+					<li class="fragment">❌ No usar lazy loading</li>
+					<li class="fragment">❌ Cargar todo upfront</li>
+					<li class="fragment">❌ Sin skeleton screens</li>
+					<li class="fragment">❌ Animaciones pesadas</li>
+					<li class="fragment">❌ No testear performance en mobile</li>
+				</ul>
+			</section>
 
-				<!-- Slide 16: Mejores Prácticas -->
-				<section>
-					<h2>Mejores Prácticas</h2>
-					<ul>
-						<li class="fragment">✅ Optimizar imágenes (WebP, tamaños correctos)</li>
-						<li class="fragment">✅ Lazy loading de imágenes y componentes</li>
-						<li class="fragment">✅ Skeleton screens para cargas > 2s</li>
-						<li class="fragment">✅ Critical CSS inline</li>
-						<li class="fragment">✅ Design tokens para consistencia</li>
-						<li class="fragment">✅ Handoff claro con specs y estados</li>
-						<li class="fragment">✅ Colaboración temprana con developers</li>
-					</ul>
-				</section>
+			<!-- Slide 16: Mejores Prácticas -->
+			<section>
+				<h2>Mejores Prácticas</h2>
+				<ul>
+					<li class="fragment">✅ Optimizar imágenes (WebP, tamaños correctos)</li>
+					<li class="fragment">✅ Lazy loading de imágenes y componentes</li>
+					<li class="fragment">✅ Skeleton screens para cargas > 2s</li>
+					<li class="fragment">✅ Critical CSS inline</li>
+					<li class="fragment">✅ Design tokens para consistencia</li>
+					<li class="fragment">✅ Handoff claro con specs y estados</li>
+					<li class="fragment">✅ Colaboración temprana con developers</li>
+				</ul>
+			</section>
 
-				<!-- Slide 17: Herramientas -->
-				<section>
-					<h2>Herramientas de Performance</h2>
-					<ul>
-						<li class="fragment"><strong>Lighthouse:</strong> Auditoría de performance (Chrome DevTools)</li>
-						<li class="fragment"><strong>PageSpeed Insights:</strong> Análisis online</li>
-						<li class="fragment"><strong>WebPageTest:</strong> Testing detallado</li>
-						<li class="fragment"><strong>Squoosh:</strong> Optimizar imágenes</li>
-						<li class="fragment"><strong>Figma Dev Mode:</strong> Handoff a developers</li>
-					</ul>
-				</section>
+			<!-- Slide 17: Herramientas -->
+			<section>
+				<h2>Herramientas de Performance</h2>
+				<ul>
+					<li class="fragment"><strong>Lighthouse:</strong> Auditoría de performance (Chrome DevTools)</li>
+					<li class="fragment"><strong>PageSpeed Insights:</strong> Análisis online</li>
+					<li class="fragment"><strong>WebPageTest:</strong> Testing detallado</li>
+					<li class="fragment"><strong>Squoosh:</strong> Optimizar imágenes</li>
+					<li class="fragment"><strong>Figma Dev Mode:</strong> Handoff a developers</li>
+				</ul>
+			</section>
 
-				<!-- Slide 18: Conclusiones -->
-				<section>
-					<h2>Conclusiones Clave</h2>
-					<ul>
-						<li class="fragment">⚡ <strong>Performance = UX:</strong> Sitio lento = mala UX</li>
-						<li class="fragment">👁️ <strong>Percibida vs real:</strong> Diseño puede hacer sentir más rápido</li>
-						<li class="fragment">📊 <strong>Core Web Vitals:</strong> LCP, FID, CLS</li>
-						<li class="fragment">🖼️ <strong>Optimizar assets:</strong> WebP, lazy loading</li>
-						<li class="fragment">💀 <strong>Skeleton screens:</strong> Reducen ansiedad</li>
-						<li class="fragment">🎨 <strong>Design tokens:</strong> Single source of truth</li>
-						<li class="fragment">🤝 <strong>Colaboración:</strong> Hablar con developers temprano</li>
-					</ul>
-				</section>
+			<!-- Slide 18: Conclusiones -->
+			<section>
+				<h2>Conclusiones Clave</h2>
+				<ul>
+					<li class="fragment">⚡ <strong>Performance = UX:</strong> Sitio lento = mala UX</li>
+					<li class="fragment">👁️ <strong>Percibida vs real:</strong> Diseño puede hacer sentir más rápido
+					</li>
+					<li class="fragment">📊 <strong>Core Web Vitals:</strong> LCP, FID, CLS</li>
+					<li class="fragment">🖼️ <strong>Optimizar assets:</strong> WebP, lazy loading</li>
+					<li class="fragment">💀 <strong>Skeleton screens:</strong> Reducen ansiedad</li>
+					<li class="fragment">🎨 <strong>Design tokens:</strong> Single source of truth</li>
+					<li class="fragment">🤝 <strong>Colaboración:</strong> Hablar con developers temprano</li>
+				</ul>
+			</section>
 
-				<!-- Slide 19: Recursos -->
-				<section>
-					<h2>Recursos y Referencias</h2>
-					<ul class="small-text">
-						<li><strong>"Designing for Performance"</strong> - Lara Hogan</li>
-						<li><strong>web.dev</strong> - Guías de Core Web Vitals</li>
-						<li><strong>PageSpeed Insights</strong> - pagespeed.web.dev</li>
-						<li><strong>WebPageTest</strong> - webpagetest.org</li>
-						<li><strong>Squoosh</strong> - squoosh.app</li>
-					</ul>
-				</section>
+			<!-- Slide 19: Recursos -->
+			<section>
+				<h2>Recursos y Referencias</h2>
+				<ul class="small-text">
+					<li><strong>"Designing for Performance"</strong> - Lara Hogan</li>
+					<li><strong>web.dev</strong> - Guías de Core Web Vitals</li>
+					<li><strong>PageSpeed Insights</strong> - pagespeed.web.dev</li>
+					<li><strong>WebPageTest</strong> - webpagetest.org</li>
+					<li><strong>Squoosh</strong> - squoosh.app</li>
+				</ul>
+			</section>
 
-				<!-- Slide 20: Cierre -->
-				<section>
-					<h1>¿Preguntas?</h1>
-					<p>Performance y Experiencia Técnica</p>
-					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
-				</section>
+			<!-- Slide 20: Cierre -->
+			<section>
+				<h1>¿Preguntas?</h1>
+				<p>Performance y Experiencia Técnica</p>
+				<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+			</section>
 
-			</div>
 		</div>
+	</div>
 
-		<script src="reveal.js/dist/reveal.js"></script>
-		<script src="reveal.js/plugin/notes/notes.js"></script>
-		<script src="reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="reveal.js/plugin/highlight/highlight.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-				width: 1280,
-				height: 720,
-				margin: 0.04,
-				transition: 'slide'
-			});
-		</script>
-	</body>
+	<script src="reveal.js/dist/reveal.js"></script>
+	<script src="reveal.js/plugin/notes/notes.js"></script>
+	<script src="reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			width: 1280,
+			height: 720,
+			margin: 0.04,
+			transition: 'slide'
+		});
+	</script>
+</body>
+
 </html>

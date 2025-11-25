@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>4.3. Testing de Usabilidad</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .very-small-text {
+				font-size: 0.65em;
+			}
+			.reveal .card {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				margin: 15px 0;
+			}
+			.reveal .method-box {
+				background: rgba(66, 175, 250, 0.15);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+				text-align: left;
+			}
+			.reveal .metric-formula {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 10px;
+				border-radius: 5px;
+				font-family: 'Courier New', monospace;
+				font-size: 0.7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>4.3. Testing de Usabilidad</h1>
+					<h3>Aplicaciones Prácticas e Integración</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>Testing: Validar, no Justificar</h2>
+					<blockquote class="fragment">
+						"No estás testeando el diseño, estás testeando si los usuarios pueden completar sus tareas"
+					</blockquote>
+					<p class="fragment small-text">El testing de usabilidad revela <span class="highlight">problemas reales</span> que los usuarios encuentran al interactuar con nuestros diseños</p>
+				</section>
+
+				<!-- PARTE 1: TIPOS DE TESTING -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Tipos de Testing</h2>
+						<p>Taxonomía y Aplicaciones</p>
+					</section>
+
+					<!-- Slide: Por Moderación -->
+					<section>
+						<h2>Por Moderación</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Descripción</th>
+									<th>Ventajas</th>
+									<th>Desventajas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Moderado</strong></td>
+									<td>Facilitador guía sesión</td>
+									<td>• Profundizar con preguntas<br>• Observar lenguaje corporal<br>• Aclarar dudas</td>
+									<td>• Costoso (tiempo)<br>• Requiere habilidad<br>• Sesgo del moderador</td>
+								</tr>
+								<tr>
+									<td><strong>No moderado</strong></td>
+									<td>Usuario trabaja solo</td>
+									<td>• Rápido y escalable<br>• Menos costoso<br>• Natural (sin presión)</td>
+									<td>• No hay follow-up<br>• Menos insights cualitativos<br>• Problemas técnicos</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Por Ubicación -->
+					<section>
+						<h2>Por Ubicación</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Descripción</th>
+									<th>Cuándo usar</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Presencial</strong></td>
+									<td>En lab o contexto real</td>
+									<td>• Productos físicos<br>• Observar comportamiento<br>• Acceso a contexto</td>
+								</tr>
+								<tr>
+									<td><strong>Remoto Síncrono</strong></td>
+									<td>Videollamada en tiempo real</td>
+									<td>• Participantes dispersos<br>• Moderar y observar<br>• Flexibilidad horaria</td>
+								</tr>
+								<tr>
+									<td><strong>Remoto Asíncrono</strong></td>
+									<td>Plataformas automáticas</td>
+									<td>• Muchos participantes<br>• Presupuesto limitado<br>• Métricas cuantitativas</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Por Formalidad -->
+					<section>
+						<h2>Por Formalidad</h2>
+						<div class="method-box small-text fragment">
+							<h4>Formal</h4>
+							<p class="very-small-text">Lab controlado, protocolo estricto, grabación, observadores</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<h4>Informal</h4>
+							<p class="very-small-text">Prototipo en oficina, compañeros como testers, quick feedback</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<h4>Guerrilla</h4>
+							<p class="very-small-text">Café, biblioteca, parque - preguntar a extraños (5-10 min)</p>
+						</div>
+					</section>
+
+					<!-- Slide: Guerrilla Testing -->
+					<section>
+						<h2>Guerrilla Testing: Protocolo</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Ubicación:</strong> Café con WiFi, horario de tráfico medio</li>
+							<li class="fragment"><strong>Introducción:</strong> "Hola, estoy diseñando una app y necesito 5 minutos de tu tiempo. ¿Te gustaría probarla?"</li>
+							<li class="fragment"><strong>Contexto mínimo:</strong> "Es una app para aprender idiomas"</li>
+							<li class="fragment"><strong>Tarea:</strong> "Intenta registrarte y seleccionar tu primer curso"</li>
+							<li class="fragment"><strong>Observar en silencio:</strong> Solo intervenir si se bloquea</li>
+							<li class="fragment"><strong>Debrief rápido:</strong> "¿Qué fue confuso?" (2 min)</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Matriz de Decisión -->
+					<section>
+						<h2>¿Qué tipo de testing usar?</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Situación</th>
+									<th>Tipo recomendado</th>
+									<th>Razón</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>MVP, validar concepto rápido</td>
+									<td>Guerrilla, no moderado</td>
+									<td>Rápido, barato, suficiente para detectar problemas grandes</td>
+								</tr>
+								<tr>
+									<td>Rediseño, comprender dolor actual</td>
+									<td>Moderado, presencial/remoto</td>
+									<td>Necesitas profundizar en frustraciones</td>
+								</tr>
+								<tr>
+									<td>Pre-lanzamiento, validar métricas</td>
+									<td>No moderado, remoto asíncrono</td>
+									<td>Muchos usuarios, datos cuantitativos</td>
+								</tr>
+								<tr>
+									<td>Mejora continua, iteraciones pequeñas</td>
+									<td>Informal con equipo, A/B testing</td>
+									<td>Rápido, frecuente, bajo costo</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 2: DISEÑO DE ESTUDIO -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Diseño de Estudio de Usabilidad</h2>
+						<p>Metodología y Planificación</p>
+					</section>
+
+					<!-- Slide: Documento de Planificación -->
+					<section>
+						<h2>Documento de Planificación</h2>
+						<div class="card">
+							<p class="small-text"><strong>Template de Planning Document</strong></p>
+							<ol class="very-small-text">
+								<li><strong>Objetivos:</strong> ¿Qué queremos aprender?</li>
+								<li><strong>Hipótesis:</strong> ¿Qué creemos que pasará?</li>
+								<li><strong>Metodología:</strong> Tipo de testing, duración</li>
+								<li><strong>Participantes:</strong> Perfil, cantidad, reclutamiento</li>
+								<li><strong>Tareas:</strong> Escenarios realistas a completar</li>
+								<li><strong>Métricas:</strong> Qué medir, criterios de éxito</li>
+								<li><strong>Logística:</strong> Fechas, herramientas, roles</li>
+							</ol>
+						</div>
+					</section>
+
+					<!-- Slide: Ejemplo Objetivos -->
+					<section>
+						<h2>Ejemplo: Objetivos y Hipótesis</h2>
+						<div class="method-box small-text">
+							<p><strong>Objetivo:</strong> Evaluar si usuarios pueden completar el flujo de onboarding sin abandonar</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Hipótesis:</strong> Los usuarios nuevos podrán completar el onboarding en menos de 2 minutos con una tasa de éxito >80%</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Métricas:</strong></p>
+							<ul class="very-small-text">
+								<li>Task Success Rate (TSR)</li>
+								<li>Time on Task</li>
+								<li>Error Rate</li>
+								<li>SUS Score (post-test)</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: Reclutamiento -->
+					<section>
+						<h2>Reclutamiento de Participantes</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>¿Cuántos?</strong> 5 usuarios detectan ~85% de problemas (Nielsen)</li>
+							<li class="fragment"><strong>Perfil:</strong> Usuarios reales, no expertos en diseño</li>
+							<li class="fragment"><strong>Screening:</strong> Cuestionario previo para filtrar</li>
+							<li class="fragment"><strong>Incentivo:</strong> $20-50 USD o gift cards</li>
+						</ul>
+						<p class="fragment small-text highlight">💡 Para comparar 2 diseños: mínimo 8 usuarios por variante</p>
+					</section>
+
+					<!-- Slide: Tareas y Escenarios -->
+					<section>
+						<h2>Diseño de Tareas</h2>
+						<div class="card">
+							<p class="small-text"><strong>❌ Mala tarea:</strong></p>
+							<p class="very-small-text">"Navega a la sección de cursos y agrega uno al carrito"</p>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>✅ Buena tarea:</strong></p>
+							<p class="very-small-text">"Imagina que quieres aprender francés para un viaje. Encuentra un curso para principiantes y comienza a tomarlo."</p>
+						</div>
+						<p class="fragment small-text"><strong>Diferencia:</strong> Contexto realista, sin indicar pasos específicos</p>
+					</section>
+
+					<!-- Slide: Script de Moderación -->
+					<section>
+						<h2>Script de Moderación (Moderado)</h2>
+						<pre class="very-small-text"><code data-trim data-noescape>
+1. INTRODUCCIÓN (2 min)
+   "Gracias por participar. Estamos testeando un diseño, no a ti.
+   Piensa en voz alta. No hay respuestas correctas.
+   Si tienes dudas, pregunta como lo harías normalmente."
+
+2. CONTEXTO (1 min)
+   "Esta es EduConnect, una plataforma de aprendizaje..."
+
+3. TAREAS (15-20 min)
+   [Por cada tarea]
+   "Escenario: [contexto realista]"
+   [Observar sin intervenir]
+   [Solo ayudar si bloqueado >30 seg]
+
+4. DEBRIEF (5 min)
+   "¿Qué fue más confuso?"
+   "¿Algo que esperabas pero no encontraste?"
+   "En una escala 1-10, ¿qué tan fácil fue?"
+
+5. CUESTIONARIO (3 min)
+   [SUS, SEQ, o custom]
+						</code></pre>
+					</section>
+
+					<!-- Slide: Consentimiento -->
+					<section>
+						<h2>Consentimiento y Ética</h2>
+						<ul class="small-text">
+							<li class="fragment">✅ Pedir consentimiento informado por escrito</li>
+							<li class="fragment">✅ Explicar que pueden abandonar en cualquier momento</li>
+							<li class="fragment">✅ Anonimizar datos en reportes</li>
+							<li class="fragment">✅ Asegurar confidencialidad de grabaciones</li>
+						</ul>
+						<p class="fragment small-text highlight">💡 Si grabas video, pedir consentimiento explícito</p>
+					</section>
+				</section>
+
+				<!-- PARTE 3: HERRAMIENTAS -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Herramientas de Testing</h2>
+						<p>Plataformas y Funcionalidades</p>
+					</section>
+
+					<!-- Slide: Maze -->
+					<section>
+						<h2>Maze: Testing No Moderado</h2>
+						<div class="method-box small-text">
+							<p><strong>Funciones:</strong></p>
+							<ul class="very-small-text">
+								<li>Importar prototipos de Figma/Adobe XD</li>
+								<li>Definir tareas con paths esperados</li>
+								<li>Métricas automáticas: Success rate, Time, Misclicks</li>
+								<li>Heatmaps de clics</li>
+								<li>Preguntas post-task (SEQ, custom)</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Mejor para:</strong> Validar flujos específicos con datos cuantitativos</p>
+					</section>
+
+					<!-- Slide: UserTesting -->
+					<section>
+						<h2>UserTesting: Videos de Usuarios</h2>
+						<div class="method-box small-text">
+							<p><strong>Funciones:</strong></p>
+							<ul class="very-small-text">
+								<li>Panel de usuarios pre-screened</li>
+								<li>Videos de usuarios completando tareas (think-aloud)</li>
+								<li>Transcripciones automáticas</li>
+								<li>Live Conversation (moderado remoto)</li>
+								<li>Filtros demográficos, psicográficos</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Mejor para:</strong> Insights cualitativos profundos, observar frustraciones</p>
+					</section>
+
+					<!-- Slide: Lyssna (UsabilityHub) -->
+					<section>
+						<h2>Lyssna: First Click & Card Sorting</h2>
+						<div class="method-box small-text">
+							<p><strong>Funciones:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>First Click Test:</strong> ¿Dónde harían clic primero?</li>
+								<li><strong>Card Sorting:</strong> Agrupar contenido (open/closed)</li>
+								<li><strong>Tree Test:</strong> Validar arquitectura de información</li>
+								<li><strong>5 Second Test:</strong> Impresión inicial</li>
+								<li><strong>Preference Test:</strong> A vs B</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Mejor para:</strong> Validar información architecture antes de diseñar UI</p>
+					</section>
+
+					<!-- Slide: Hotjar -->
+					<section>
+						<h2>Hotjar: Analítica de Comportamiento</h2>
+						<div class="method-box small-text">
+							<p><strong>Funciones:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Heatmaps:</strong> Dónde hacen clic, scroll</li>
+								<li><strong>Session Recordings:</strong> Grabaciones de sesiones reales</li>
+								<li><strong>Surveys:</strong> Encuestas en contexto</li>
+								<li><strong>Feedback widgets:</strong> Usuarios reportan issues</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Mejor para:</strong> Producto en vivo, identificar problemas en producción</p>
+					</section>
+
+					<!-- Slide: Comparación Herramientas -->
+					<section>
+						<h2>Comparación de Plataformas</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Herramienta</th>
+									<th>Tipo</th>
+									<th>Precio (desde)</th>
+									<th>Ideal para</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Maze</strong></td>
+									<td>No moderado</td>
+									<td>Gratis (1 proyecto)</td>
+									<td>Prototipos, métricas</td>
+								</tr>
+								<tr>
+									<td><strong>UserTesting</strong></td>
+									<td>No moderado + Moderado</td>
+									<td>$49/video</td>
+									<td>Insights cualitativos</td>
+								</tr>
+								<tr>
+									<td><strong>Lyssna</strong></td>
+									<td>Tests específicos</td>
+									<td>Gratis (limitado)</td>
+									<td>IA, first click, card sort</td>
+								</tr>
+								<tr>
+									<td><strong>Hotjar</strong></td>
+									<td>Analytics + Feedback</td>
+									<td>Gratis (35 sesiones/día)</td>
+									<td>Producto en vivo</td>
+								</tr>
+								<tr>
+									<td><strong>Lookback</strong></td>
+									<td>Moderado remoto</td>
+									<td>$99/mes</td>
+									<td>Live interviews</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 4: MÉTRICAS -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Métricas de Usabilidad</h2>
+						<p>Qué Medir y Cómo Interpretarlo</p>
+					</section>
+
+					<!-- Slide: SUS Score -->
+					<section>
+						<h2>System Usability Scale (SUS)</h2>
+						<p class="small-text">Cuestionario post-test de 10 preguntas (escala 1-5)</p>
+						<div class="metric-formula fragment">
+							<pre><code data-trim data-noescape>
+Cálculo:
+1. Preguntas impares: puntaje - 1
+2. Preguntas pares: 5 - puntaje
+3. Sumar todos los resultados
+4. Multiplicar por 2.5
+
+Resultado: 0-100 puntos
+
+Interpretación:
+• <50: Inaceptable (F)
+• 50-70: Pobre (D)
+• 70-85: Aceptable (C-B)
+• >85: Excelente (A)
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Task Success Rate -->
+					<section>
+						<h2>Task Success Rate (TSR)</h2>
+						<p class="small-text">Porcentaje de usuarios que completan la tarea</p>
+						<div class="metric-formula fragment">
+							<pre><code data-trim data-noescape>
+TSR = (Tareas completadas exitosamente / Total de tareas intentadas) × 100
+
+Ejemplo:
+8 de 10 usuarios completaron la tarea
+TSR = (8/10) × 100 = 80%
+
+Criterios:
+• >80%: Excelente
+• 60-80%: Aceptable (mejorar)
+• <60%: Problema crítico (rediseñar)
+							</code></pre>
+						</div>
+						<p class="fragment small-text highlight">💡 Definir "éxito" antes del test (parcial vs completo)</p>
+					</section>
+
+					<!-- Slide: Time on Task -->
+					<section>
+						<h2>Time on Task</h2>
+						<p class="small-text">Tiempo promedio para completar una tarea</p>
+						<div class="metric-formula fragment">
+							<pre><code data-trim data-noescape>
+Promedio = Suma de tiempos / Número de usuarios
+
+Ejemplo:
+Usuario 1: 45 seg
+Usuario 2: 52 seg
+Usuario 3: 38 seg
+Usuario 4: 60 seg
+Usuario 5: 42 seg
+
+Promedio = (45+52+38+60+42) / 5 = 47.4 seg
+
+Benchmarking:
+Comparar con:
+• Versión anterior del diseño
+• Competidores
+• Objetivo definido (ej: <60 seg)
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Error Rate -->
+					<section>
+						<h2>Error Rate</h2>
+						<p class="small-text">Número de errores cometidos durante la tarea</p>
+						<div class="metric-formula fragment">
+							<pre><code data-trim data-noescape>
+Error Rate = (Total de errores / Total de tareas intentadas) × 100
+
+Tipos de errores:
+• Slip: Error de ejecución (click erróneo)
+• Mistake: Error de comprensión (no entiende)
+
+Ejemplo:
+5 usuarios, 3 tareas cada uno = 15 tareas
+Total de errores: 6
+Error Rate = (6/15) × 100 = 40%
+
+Criterios:
+• <10%: Excelente
+• 10-20%: Aceptable
+• >20%: Rediseñar flujo
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: SEQ -->
+					<section>
+						<h2>Single Ease Question (SEQ)</h2>
+						<p class="small-text">Pregunta inmediatamente después de cada tarea</p>
+						<div class="card">
+							<p class="small-text"><strong>Pregunta:</strong></p>
+							<p class="very-small-text">"En general, esta tarea fue:"</p>
+							<p class="very-small-text">1 (Muy difícil) - 7 (Muy fácil)</p>
+						</div>
+						<div class="metric-formula fragment">
+							<pre><code data-trim data-noescape>
+Interpretación:
+• 1-3: Problema grave
+• 4-5: Mejorable
+• 6-7: Usabilidad aceptable
+
+Ventaja: Captura percepción inmediata
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Métricas Cuantitativas vs Cualitativas -->
+					<section>
+						<h2>Cuantitativas vs Cualitativas</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Cuantitativas</th>
+									<th>Cualitativas</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>• Task Success Rate<br>• Time on Task<br>• Error Rate<br>• SUS/SEQ scores</td>
+									<td>• Think-aloud commentary<br>• Observaciones<br>• Frustraciones<br>• Preguntas del usuario</td>
+								</tr>
+								<tr>
+									<td><strong>Responden:</strong> "¿Qué tanto?"</td>
+									<td><strong>Responden:</strong> "¿Por qué?"</td>
+								</tr>
+								<tr>
+									<td><strong>Uso:</strong> Benchmarking, comparar versiones</td>
+									<td><strong>Uso:</strong> Entender problemas, generar soluciones</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">💡 Combinar ambas para insights completos</p>
+					</section>
+				</section>
+
+				<!-- PARTE 5: ANÁLISIS E ITERACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Análisis e Iteración</h2>
+						<p>De Hallazgos a Acciones</p>
+					</section>
+
+					<!-- Slide: Análisis de Resultados -->
+					<section>
+						<h2>Proceso de Análisis</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Consolidar datos:</strong> Crear matriz (usuario × tarea)</li>
+							<li class="fragment"><strong>Calcular métricas:</strong> TSR, Time, Errors, SUS</li>
+							<li class="fragment"><strong>Identificar patrones:</strong> ¿Problema recurrente?</li>
+							<li class="fragment"><strong>Clasificar severidad:</strong> Crítico / Alto / Medio / Bajo</li>
+							<li class="fragment"><strong>Priorizar:</strong> Severidad × Frecuencia</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Matriz de Severidad -->
+					<section>
+						<h2>Clasificación de Severidad</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Definición</th>
+									<th>Ejemplo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong style="color: #ff4444;">Crítico</strong></td>
+									<td>Bloquea completar tarea</td>
+									<td>Botón de pago no funciona</td>
+								</tr>
+								<tr>
+									<td><strong style="color: #ff9944;">Alto</strong></td>
+									<td>Causa frustración o errores</td>
+									<td>Label ambiguo, confunde usuarios</td>
+								</tr>
+								<tr>
+									<td><strong style="color: #ffdd44;">Medio</strong></td>
+									<td>Lentifica, no impide</td>
+									<td>Navegación poco clara</td>
+								</tr>
+								<tr>
+									<td><strong style="color: #44ff44;">Bajo</strong></td>
+									<td>Estético, no afecta tarea</td>
+									<td>Icono poco consistente</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Reporte de Hallazgos -->
+					<section>
+						<h2>Estructura del Reporte</h2>
+						<ol class="small-text">
+							<li><strong>Executive Summary:</strong> Hallazgos clave, recomendaciones (1 página)</li>
+							<li><strong>Metodología:</strong> Tipo de test, participantes, tareas</li>
+							<li><strong>Métricas:</strong> TSR, Time, SUS (gráficas)</li>
+							<li><strong>Hallazgos:</strong> Por severidad, con evidencia (screenshots, quotes)</li>
+							<li><strong>Recomendaciones:</strong> Específicas, con wireframes si aplica</li>
+							<li><strong>Apéndice:</strong> Raw data, screener, script</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Ejemplo Hallazgo -->
+					<section>
+						<h2>Ejemplo: Hallazgo Documentado</h2>
+						<div class="card small-text">
+							<p><strong>Problema #1: Label "Comenzar Ahora" ambiguo</strong></p>
+							<p class="very-small-text"><strong>Severidad:</strong> <span style="color: #ff9944;">Alta</span></p>
+							<p class="very-small-text"><strong>Frecuencia:</strong> 7 de 10 usuarios</p>
+							<p class="very-small-text"><strong>Descripción:</strong> El botón "Comenzar Ahora" en la pantalla de bienvenida no deja claro si inicia el curso o lleva a más información.</p>
+							<p class="very-small-text"><strong>Evidencia:</strong> "No sé si esto me va a registrar o solo mostrar más detalles" (P3, P5, P7)</p>
+							<p class="very-small-text"><strong>Impacto:</strong> TSR: 30% - 7 usuarios dudaron >10 seg antes de hacer clic</p>
+							<p class="very-small-text"><strong>Recomendación:</strong> Cambiar label a "Ver Cursos Disponibles" y agregar CTA secundario "¿Nuevo aquí? Regístrate"</p>
+						</div>
+					</section>
+
+					<!-- Slide: Iteración -->
+					<section>
+						<h2>Ciclo de Iteración</h2>
+						<pre class="small-text"><code data-trim data-noescape>
+┌─────────────────────────────────────┐
+│  1. DISEÑAR                         │
+│     └─ Prototipo basado en research │
+└──────────────┬──────────────────────┘
+               ↓
+┌─────────────────────────────────────┐
+│  2. TESTEAR                         │
+│     └─ Con 5-10 usuarios            │
+└──────────────┬──────────────────────┘
+               ↓
+┌─────────────────────────────────────┐
+│  3. ANALIZAR                        │
+│     └─ Identificar problemas        │
+└──────────────┬──────────────────────┘
+               ↓
+┌─────────────────────────────────────┐
+│  4. ITERAR                          │
+│     └─ Rediseñar puntos críticos    │
+└──────────────┬──────────────────────┘
+               ↓
+               └──────────→ (Repetir)
+						</code></pre>
+						<p class="fragment small-text">Iterar hasta TSR >80% y SUS >70</p>
+					</section>
+				</section>
+
+				<!-- CASO EDUCONNECT -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Testing del Onboarding</p>
+					</section>
+
+					<!-- Slide: Plan de Testing -->
+					<section>
+						<h2>EduConnect: Plan de Testing</h2>
+						<div class="method-box small-text">
+							<p><strong>Objetivo:</strong> Validar que usuarios nuevos completan onboarding sin abandonar</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Método:</strong> No moderado, remoto asíncrono (Maze)</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Participantes:</strong> 10 usuarios, perfil: nunca usaron la app, interés en aprender</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Tarea:</strong> "Imagina que quieres aprender francés. Regístrate y configura tu perfil para comenzar."</p>
+						</div>
+						<div class="method-box small-text fragment">
+							<p><strong>Métricas:</strong> TSR, Time on Task, Misclick Rate, SEQ</p>
+						</div>
+					</section>
+
+					<!-- Slide: Resultados Primera Iteración -->
+					<section>
+						<h2>Resultados: Primera Iteración</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Métrica</th>
+									<th>Resultado</th>
+									<th>Objetivo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Task Success Rate</td>
+									<td style="color: #ff4444;">22%</td>
+									<td>>80%</td>
+								</tr>
+								<tr>
+									<td>Time on Task</td>
+									<td style="color: #ff9944;">3m 45s</td>
+									<td><2m</td>
+								</tr>
+								<tr>
+									<td>Misclick Rate</td>
+									<td style="color: #ff4444;">65%</td>
+									<td><20%</td>
+								</tr>
+								<tr>
+									<td>SEQ (promedio)</td>
+									<td style="color: #ff4444;">3.2/7</td>
+									<td>>5</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">🔴 Problemas críticos detectados</p>
+					</section>
+
+					<!-- Slide: Hallazgos EduConnect -->
+					<section>
+						<h2>Hallazgos Principales</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>5 pantallas de onboarding</strong> → Usuarios abandonan en paso 3</li>
+							<li class="fragment"><strong>Sin indicador de progreso</strong> → "¿Cuánto falta?"</li>
+							<li class="fragment"><strong>Instrucciones largas</strong> → Usuarios no leen, hacen clic sin entender</li>
+							<li class="fragment"><strong>Formulario de intereses sin "Omitir"</strong> → Usuarios no saben si es obligatorio</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Iteraciones -->
+					<section>
+						<h2>Iteraciones Aplicadas</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Problema</th>
+									<th>Solución</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>5 pantallas largas</td>
+									<td>Reducir a 3 pasos esenciales</td>
+								</tr>
+								<tr>
+									<td>Sin indicador de progreso</td>
+									<td>Agregar progress bar (1/3, 2/3, 3/3)</td>
+								</tr>
+								<tr>
+									<td>Instrucciones largas</td>
+									<td>Tooltips contextuales en lugar de párrafos</td>
+								</tr>
+								<tr>
+									<td>Sin opción de omitir</td>
+									<td>Botón "Omitir por ahora" visible</td>
+								</tr>
+								<tr>
+									<td>Formulario intimidante</td>
+									<td>Selección visual con checkboxes grandes + iconos</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Resultados Segunda Iteración -->
+					<section>
+						<h2>Resultados: Segunda Iteración</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Métrica</th>
+									<th>Antes</th>
+									<th>Después</th>
+									<th>Cambio</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Task Success Rate</td>
+									<td style="color: #ff4444;">22%</td>
+									<td style="color: #44ff44;">83%</td>
+									<td>+61%</td>
+								</tr>
+								<tr>
+									<td>Time on Task</td>
+									<td style="color: #ff9944;">3m 45s</td>
+									<td style="color: #44ff44;">1m 28s</td>
+									<td>-61%</td>
+								</tr>
+								<tr>
+									<td>Misclick Rate</td>
+									<td style="color: #ff4444;">65%</td>
+									<td style="color: #44ff44;">18%</td>
+									<td>-47%</td>
+								</tr>
+								<tr>
+									<td>SEQ (promedio)</td>
+									<td style="color: #ff4444;">3.2/7</td>
+									<td style="color: #44ff44;">6.1/7</td>
+									<td>+2.9</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">✅ Objetivos alcanzados</p>
+					</section>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes en Testing</h2>
+					<ul class="small-text">
+						<li class="fragment">❌ Testear con compañeros de diseño (no son usuarios reales)</li>
+						<li class="fragment">❌ Preguntar "¿Te gusta?" (opinión ≠ usabilidad)</li>
+						<li class="fragment">❌ Guiar demasiado al usuario durante el test</li>
+						<li class="fragment">❌ No definir criterios de éxito antes del test</li>
+						<li class="fragment">❌ Testear solo una vez (no iterar)</li>
+						<li class="fragment">❌ Ignorar hallazgos cualitativos (solo métricas)</li>
+					</ul>
+				</section>
+
+				<!-- MEJORES PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li class="fragment">✅ Testear temprano y frecuentemente</li>
+						<li class="fragment">✅ 5 usuarios son suficientes para detectar problemas mayores</li>
+						<li class="fragment">✅ Combinar métricas cuantitativas y cualitativas</li>
+						<li class="fragment">✅ Documentar con evidencia (screenshots, quotes)</li>
+						<li class="fragment">✅ Priorizar por severidad × frecuencia</li>
+						<li class="fragment">✅ Iterar y re-testear después de cambios</li>
+						<li class="fragment">✅ Compartir hallazgos con todo el equipo</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos y Aprendizaje</h2>
+					<ul class="small-text">
+						<li><strong>Nielsen Norman Group</strong> - nngroup.com/articles</li>
+						<li><strong>"Don't Make Me Think"</strong> - Steve Krug</li>
+						<li><strong>"Measuring the User Experience"</strong> - Tullis & Albert</li>
+						<li><strong>Maze Academy</strong> - maze.co/guides</li>
+						<li><strong>User Interviews</strong> - userinterviews.com/blog</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🔍 <strong>Tipos:</strong> Elegir método según fase y recursos</li>
+						<li class="fragment">📋 <strong>Planificación:</strong> Objetivos, hipótesis, tareas claras</li>
+						<li class="fragment">🛠️ <strong>Herramientas:</strong> Maze, UserTesting, Lyssna, Hotjar</li>
+						<li class="fragment">📊 <strong>Métricas:</strong> TSR, Time, Errors, SUS/SEQ</li>
+						<li class="fragment">🔄 <strong>Iteración:</strong> Testear → Analizar → Iterar → Re-testear</li>
+						<li class="fragment">✅ <strong>Evidencia:</strong> Decisiones basadas en datos, no suposiciones</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Testing de Usabilidad</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

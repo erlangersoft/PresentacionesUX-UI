@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2.2. Teoría del Color</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .very-small-text {
+				font-size: 0.65em;
+			}
+			.reveal .card {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				margin: 15px 0;
+			}
+			.reveal .color-box {
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				border-radius: 8px;
+				margin: 5px;
+				vertical-align: middle;
+			}
+			.reveal .color-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+				gap: 10px;
+				margin: 20px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>2.2. Teoría del Color</h1>
+					<h3>Fundamentos de UI (Lo Visual)</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>El Color es Más que Estética</h2>
+					<blockquote class="fragment">
+						"En la percepción visual, un color casi nunca se ve tal como es realmente, como es físicamente. Esto hace del color el medio más relativo en el arte." - Josef Albers
+					</blockquote>
+					<p class="fragment small-text">El color establece <span class="highlight">jerarquías, transmite significados, evoca emociones</span> y determina la accesibilidad</p>
+				</section>
+
+				<!-- PARTE 1: MODELOS DE COLOR -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Modelos de Color</h2>
+						<p>RGB, HSL, HSB</p>
+					</section>
+
+					<!-- Slide: RGB -->
+					<section>
+						<h2>Modelo RGB (Aditivo)</h2>
+						<p class="small-text">Basado en emisión de luz en pantallas</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Canales primarios:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>R</strong> (Red): 0-255</li>
+								<li><strong>G</strong> (Green): 0-255</li>
+								<li><strong>B</strong> (Blue): 0-255</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<span class="color-box" style="background: rgb(255,0,0);"></span>
+							<span class="color-box" style="background: rgb(0,255,0);"></span>
+							<span class="color-box" style="background: rgb(0,0,255);"></span>
+							<span class="color-box" style="background: rgb(255,255,255);"></span>
+							<span class="color-box" style="background: rgb(0,0,0);"></span>
+						</div>
+						<p class="fragment small-text">Máximo (255,255,255) = Blanco | Mínimo (0,0,0) = Negro</p>
+					</section>
+
+					<!-- Slide: RGB Formatos -->
+					<section>
+						<h2>Formatos RGB</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Formato</th>
+									<th>Ejemplo</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Decimal</td>
+									<td><code>rgb(76, 175, 80)</code></td>
+									<td>CSS, código</td>
+								</tr>
+								<tr>
+									<td>Hexadecimal</td>
+									<td><code>#4CAF50</code></td>
+									<td>Diseño, desarrollo</td>
+								</tr>
+								<tr>
+									<td>Hex abreviado</td>
+									<td><code>#F00</code> = <code>#FF0000</code></td>
+									<td>Valores idénticos</td>
+								</tr>
+								<tr>
+									<td>Con transparencia</td>
+									<td><code>rgba(76, 175, 80, 0.8)</code></td>
+									<td>Overlays, sombras</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: HSL -->
+					<section>
+						<h2>Modelo HSL (Perceptual)</h2>
+						<p class="small-text">Organizado según percepción humana</p>
+						<div class="card fragment">
+							<ul class="very-small-text">
+								<li><strong>H</strong> (Hue - Tono): 0-360° en rueda cromática
+									<br>0°/360° = Rojo, 120° = Verde, 240° = Azul
+								</li>
+								<li><strong>S</strong> (Saturation - Saturación): 0-100%
+									<br>0% = Gris, 100% = Color puro
+								</li>
+								<li><strong>L</strong> (Lightness - Luminosidad): 0-100%
+									<br>0% = Negro, 50% = Color verdadero, 100% = Blanco
+								</li>
+							</ul>
+						</div>
+						<pre class="fragment"><code data-trim data-noescape class="language-css">
+/* Sintaxis CSS */
+background-color: hsl(122, 50%, 50%);
+background-color: hsla(122, 50%, 50%, 0.8); /* Con alpha */
+						</code></pre>
+					</section>
+
+					<!-- Slide: HSL Ventajas -->
+					<section>
+						<h2>Ventajas de HSL</h2>
+						<ul class="small-text">
+							<li class="fragment">✅ <strong>Intuitivo:</strong> "Quiero un azul más claro" → aumentar L</li>
+							<li class="fragment">✅ <strong>Variaciones sistemáticas:</strong> Paletas con H fijo, variando S/L</li>
+							<li class="fragment">✅ <strong>Accesibilidad:</strong> Ajustar contraste modificando L</li>
+							<li class="fragment">✅ <strong>Armonías cromáticas:</strong> H en intervalos predecibles</li>
+						</ul>
+						<div class="fragment card">
+							<p class="very-small-text"><strong>Ejemplo: Variaciones de azul</strong></p>
+							<div>
+								<span class="color-box" style="background: hsl(240, 100%, 20%);"></span>
+								<span class="color-box" style="background: hsl(240, 100%, 40%);"></span>
+								<span class="color-box" style="background: hsl(240, 100%, 60%);"></span>
+								<span class="color-box" style="background: hsl(240, 100%, 80%);"></span>
+							</div>
+							<p class="very-small-text">H fijo (240°), S fija (100%), L variable (20%, 40%, 60%, 80%)</p>
+						</div>
+					</section>
+
+					<!-- Slide: HSB -->
+					<section>
+						<h2>Modelo HSB/HSV</h2>
+						<p class="small-text">Usado en herramientas de diseño (Figma, Sketch)</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Componente</th>
+									<th>HSL</th>
+									<th>HSB</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Hue</td>
+									<td>0-360°</td>
+									<td>0-360°</td>
+								</tr>
+								<tr>
+									<td>Saturation</td>
+									<td>0-100%</td>
+									<td>0-100%</td>
+								</tr>
+								<tr>
+									<td>Tercero</td>
+									<td><strong>Lightness</strong><br>50% = color verdadero<br>100% = blanco siempre</td>
+									<td><strong>Brightness</strong><br>100% = color puro o blanco<br>0% = negro siempre</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">💡 HSB no tiene sintaxis CSS, se convierte a RGB</p>
+					</section>
+
+					<!-- Slide: Comparación Modelos -->
+					<section>
+						<h2>¿Cuándo Usar Cada Modelo?</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Modelo</th>
+									<th>Mejor para</th>
+									<th>Ejemplo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>RGB</strong></td>
+									<td>Código, especificaciones técnicas</td>
+									<td>Design tokens, CSS, documentación</td>
+								</tr>
+								<tr>
+									<td><strong>HSL</strong></td>
+									<td>Generación de paletas, variaciones</td>
+									<td>Sistemas de tokens escalables, temas</td>
+								</tr>
+								<tr>
+									<td><strong>HSB</strong></td>
+									<td>Selección visual en herramientas</td>
+									<td>Figma color picker, exploración</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 2: PSICOLOGÍA DEL COLOR -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Psicología del Color</h2>
+						<p>Emociones y Significados Culturales</p>
+					</section>
+
+					<!-- Slide: Psicología Intro -->
+					<section>
+						<h2>Color y Emoción</h2>
+						<p class="small-text">Los colores evocan respuestas emocionales y comportamientos</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Factores que influyen:</strong></p>
+							<ul class="very-small-text">
+								<li>Biología: Respuestas evolutivas (rojo = peligro)</li>
+								<li>Cultura: Significados aprendidos socialmente</li>
+								<li>Contexto: Mismo color, diferentes interpretaciones según uso</li>
+								<li>Experiencia personal: Asociaciones individuales</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: Colores Cálidos -->
+					<section>
+						<h2>Colores Cálidos</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Color</th>
+									<th>Emociones</th>
+									<th>Asociaciones</th>
+									<th>Uso en UI</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="color-box" style="background: #FF0000;"></span><br>Rojo</td>
+									<td>Pasión, urgencia, peligro, energía</td>
+									<td>Amor, advertencia, acción</td>
+									<td>Errores, CTAs urgentes, notificaciones</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #FF9800;"></span><br>Naranja</td>
+									<td>Entusiasmo, creatividad, calidez</td>
+									<td>Juventud, accesibilidad, confianza</td>
+									<td>CTAs secundarios, destacados</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #FFEB3B;"></span><br>Amarillo</td>
+									<td>Optimismo, alegría, precaución</td>
+									<td>Felicidad, advertencia, claridad</td>
+									<td>Alertas, highlights, info secundaria</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Colores Fríos -->
+					<section>
+						<h2>Colores Fríos</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Color</th>
+									<th>Emociones</th>
+									<th>Asociaciones</th>
+									<th>Uso en UI</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="color-box" style="background: #2196F3;"></span><br>Azul</td>
+									<td>Confianza, calma, profesionalidad</td>
+									<td>Tecnología, seguridad, estabilidad</td>
+									<td>CTAs principales, brands corporativos</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #4CAF50;"></span><br>Verde</td>
+									<td>Crecimiento, naturaleza, éxito</td>
+									<td>Salud, dinero, confirmación</td>
+									<td>Mensajes de éxito, go/proceed</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #9C27B0;"></span><br>Púrpura</td>
+									<td>Creatividad, lujo, espiritualidad</td>
+									<td>Realeza, innovación, misterio</td>
+									<td>Brands premium, creatividad</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Colores Neutros -->
+					<section>
+						<h2>Colores Neutros</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Color</th>
+									<th>Significado</th>
+									<th>Uso en UI</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="color-box" style="background: #000000;"></span> Negro</td>
+									<td>Elegancia, poder, sofisticación</td>
+									<td>Textos, fondos, luxury brands</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #FFFFFF; border: 1px solid #666;"></span> Blanco</td>
+									<td>Pureza, simplicidad, minimalismo</td>
+									<td>Fondos, espacios negativos</td>
+								</tr>
+								<tr>
+									<td><span class="color-box" style="background: #757575;"></span> Gris</td>
+									<td>Neutralidad, balance, profesionalidad</td>
+									<td>Textos secundarios, divisores, disabled</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Variaciones Culturales -->
+					<section>
+						<h2>Significados Culturales</h2>
+						<p class="small-text">El mismo color puede tener interpretaciones opuestas</p>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Color</th>
+									<th>Occidente</th>
+									<th>China/Asia</th>
+									<th>Medio Oriente</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Blanco</td>
+									<td>Pureza, bodas</td>
+									<td>Luto, muerte</td>
+									<td>Pureza</td>
+								</tr>
+								<tr>
+									<td>Rojo</td>
+									<td>Pasión, peligro</td>
+									<td>Suerte, celebración</td>
+									<td>Peligro, precaución</td>
+								</tr>
+								<tr>
+									<td>Verde</td>
+									<td>Naturaleza, go</td>
+									<td>Infidelidad</td>
+									<td>Islam, fertilidad</td>
+								</tr>
+								<tr>
+									<td>Amarillo</td>
+									<td>Felicidad</td>
+									<td>Realeza, poder</td>
+									<td>Prosperidad</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">💡 Productos globales: investigar contexto cultural</p>
+					</section>
+				</section>
+
+				<!-- PARTE 3: ARMONÍAS CROMÁTICAS -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Armonías Cromáticas</h2>
+						<p>Combinaciones que Funcionan</p>
+					</section>
+
+					<!-- Slide: Rueda Cromática -->
+					<section>
+						<h2>La Rueda Cromática</h2>
+						<p class="small-text">Base para todas las armonías</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Estructura:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Primarios:</strong> Rojo (0°), Amarillo (60°), Azul (240°)</li>
+								<li><strong>Secundarios:</strong> Naranja (30°), Verde (120°), Púrpura (270°)</li>
+								<li><strong>Terciarios:</strong> Mezcla de primarios + secundarios</li>
+							</ul>
+						</div>
+						<p class="fragment small-text">Las armonías se basan en <span class="highlight">relaciones geométricas</span> en la rueda</p>
+					</section>
+
+					<!-- Slide: Complementarios -->
+					<section>
+						<h2>Complementarios</h2>
+						<p class="small-text">Colores opuestos en la rueda (180° de distancia)</p>
+						<div class="card">
+							<div class="color-grid">
+								<div>
+									<span class="color-box" style="background: hsl(0, 100%, 50%);"></span>
+									<span class="color-box" style="background: hsl(180, 100%, 50%);"></span>
+									<p class="very-small-text">Rojo - Cian</p>
+								</div>
+								<div>
+									<span class="color-box" style="background: hsl(240, 100%, 50%);"></span>
+									<span class="color-box" style="background: hsl(60, 100%, 50%);"></span>
+									<p class="very-small-text">Azul - Amarillo</p>
+								</div>
+								<div>
+									<span class="color-box" style="background: hsl(270, 100%, 50%);"></span>
+									<span class="color-box" style="background: hsl(90, 100%, 50%);"></span>
+									<p class="very-small-text">Púrpura - Verde lima</p>
+								</div>
+							</div>
+						</div>
+						<ul class="fragment small-text">
+							<li><strong>Efecto:</strong> Máximo contraste, vibración visual</li>
+							<li><strong>Uso:</strong> CTAs que destacan, acentos</li>
+							<li><strong>Precaución:</strong> Saturación alta puede cansar</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Análogos -->
+					<section>
+						<h2>Análogos</h2>
+						<p class="small-text">Colores adyacentes en la rueda (30°-60° de distancia)</p>
+						<div class="card">
+							<div class="color-grid">
+								<div>
+									<span class="color-box" style="background: hsl(200, 70%, 50%);"></span>
+									<span class="color-box" style="background: hsl(220, 70%, 50%);"></span>
+									<span class="color-box" style="background: hsl(240, 70%, 50%);"></span>
+									<p class="very-small-text">Familia de azules</p>
+								</div>
+								<div>
+									<span class="color-box" style="background: hsl(20, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(40, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(60, 80%, 55%);"></span>
+									<p class="very-small-text">Familia cálida</p>
+								</div>
+							</div>
+						</div>
+						<ul class="fragment small-text">
+							<li><strong>Efecto:</strong> Armonía natural, cohesión</li>
+							<li><strong>Uso:</strong> Paletas principales, gradientes</li>
+							<li><strong>Ventaja:</strong> Fácil de usar, difícil equivocarse</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Tríada -->
+					<section>
+						<h2>Tríada</h2>
+						<p class="small-text">3 colores equidistantes (120° de separación)</p>
+						<div class="card">
+							<div class="color-grid">
+								<div>
+									<span class="color-box" style="background: hsl(0, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(120, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(240, 80%, 55%);"></span>
+									<p class="very-small-text">Rojo - Verde - Azul</p>
+								</div>
+								<div>
+									<span class="color-box" style="background: hsl(30, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(150, 80%, 55%);"></span>
+									<span class="color-box" style="background: hsl(270, 80%, 55%);"></span>
+									<p class="very-small-text">Naranja - Verde azulado - Púrpura</p>
+								</div>
+							</div>
+						</div>
+						<ul class="fragment small-text">
+							<li><strong>Efecto:</strong> Balance vibrante, energético</li>
+							<li><strong>Uso:</strong> Marcas juveniles, interfaces coloridas</li>
+							<li><strong>Consejo:</strong> Usar uno dominante, otros como acentos</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Monocromático -->
+					<section>
+						<h2>Monocromático</h2>
+						<p class="small-text">Un solo tono (H fijo), variando saturación y luminosidad</p>
+						<div class="card">
+							<div>
+								<span class="color-box" style="background: hsl(220, 90%, 20%);"></span>
+								<span class="color-box" style="background: hsl(220, 90%, 35%);"></span>
+								<span class="color-box" style="background: hsl(220, 90%, 50%);"></span>
+								<span class="color-box" style="background: hsl(220, 90%, 65%);"></span>
+								<span class="color-box" style="background: hsl(220, 90%, 80%);"></span>
+								<p class="very-small-text">H: 220° (azul), S: 90%, L: 20%-80%</p>
+							</div>
+						</div>
+						<ul class="fragment small-text">
+							<li><strong>Efecto:</strong> Elegante, cohesivo, sofisticado</li>
+							<li><strong>Uso:</strong> Interfaces profesionales, jerarquía clara</li>
+							<li><strong>Ventaja:</strong> Fácil generar paletas escalables</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- PARTE 4: PALETAS FUNCIONALES -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Paletas Funcionales</h2>
+						<p>Sistemas de Color para UI</p>
+					</section>
+
+					<!-- Slide: Anatomía de Paleta -->
+					<section>
+						<h2>Anatomía de una Paleta UI</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Categoría</th>
+									<th>Propósito</th>
+									<th>Cantidad</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Primary</strong></td>
+									<td>Identidad de marca, CTAs principales</td>
+									<td>1 color base + 5-9 tonos</td>
+								</tr>
+								<tr>
+									<td><strong>Secondary</strong></td>
+									<td>Acentos, acciones secundarias</td>
+									<td>1 color base + 5-9 tonos</td>
+								</tr>
+								<tr>
+									<td><strong>Semantic</strong></td>
+									<td>Estados: success, error, warning, info</td>
+									<td>4 colores × 5-9 tonos c/u</td>
+								</tr>
+								<tr>
+									<td><strong>Neutrals (Grays)</strong></td>
+									<td>Textos, fondos, bordes</td>
+									<td>9-11 tonos (del blanco al negro)</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Escala de Grises -->
+					<section>
+						<h2>Escala de Grises</h2>
+						<p class="small-text">Fundamento de cualquier paleta</p>
+						<div class="card">
+							<div style="display: flex; justify-content: space-between;">
+								<span class="color-box" style="background: hsl(0, 0%, 100%); border: 1px solid #666;"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 90%);"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 70%);"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 50%);"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 30%);"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 10%);"></span>
+								<span class="color-box" style="background: hsl(0, 0%, 0%);"></span>
+							</div>
+							<p class="very-small-text">100 → 90 → 70 → 50 → 30 → 10 → 0 (Lightness)</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Tono</th>
+									<th>Uso típico</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>100 (Blanco)</td><td>Fondos principales</td></tr>
+								<tr><td>90-95</td><td>Fondos secundarios, cards</td></tr>
+								<tr><td>70-80</td><td>Bordes, divisores</td></tr>
+								<tr><td>50-60</td><td>Texto secundario, placeholders</td></tr>
+								<tr><td>20-30</td><td>Texto principal</td></tr>
+								<tr><td>0-10 (Negro)</td><td>Texto en fondos claros, headers</td></tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Colores Semánticos -->
+					<section>
+						<h2>Colores Semánticos</h2>
+						<p class="small-text">Comunicar estados y feedback</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Estado</th>
+									<th>Color</th>
+									<th>Significado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Success</strong></td>
+									<td><span class="color-box" style="background: #4CAF50;"></span></td>
+									<td>Acción completada, confirmación</td>
+								</tr>
+								<tr>
+									<td><strong>Error</strong></td>
+									<td><span class="color-box" style="background: #F44336;"></span></td>
+									<td>Problema, fallo, acción destructiva</td>
+								</tr>
+								<tr>
+									<td><strong>Warning</strong></td>
+									<td><span class="color-box" style="background: #FF9800;"></span></td>
+									<td>Precaución, atención requerida</td>
+								</tr>
+								<tr>
+									<td><strong>Info</strong></td>
+									<td><span class="color-box" style="background: #2196F3;"></span></td>
+									<td>Información neutral, ayuda</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">💡 Evitar depender solo del color (accesibilidad): usar iconos + texto</p>
+					</section>
+
+					<!-- Slide: Nomenclatura -->
+					<section>
+						<h2>Nomenclatura de Tokens</h2>
+						<p class="small-text">Sistema de nombres consistente</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+/* Escala numérica (Material Design) */
+--color-primary-50:  hsl(220, 90%, 95%);  /* Más claro */
+--color-primary-100: hsl(220, 90%, 90%);
+--color-primary-200: hsl(220, 90%, 80%);
+--color-primary-300: hsl(220, 90%, 70%);
+--color-primary-400: hsl(220, 90%, 60%);
+--color-primary-500: hsl(220, 90%, 50%);  /* Base */
+--color-primary-600: hsl(220, 90%, 40%);
+--color-primary-700: hsl(220, 90%, 30%);
+--color-primary-800: hsl(220, 90%, 20%);
+--color-primary-900: hsl(220, 90%, 10%);  /* Más oscuro */
+
+/* Semántica (Tailwind) */
+--color-blue-lightest: hsl(220, 90%, 95%);
+--color-blue-lighter:  hsl(220, 90%, 80%);
+--color-blue-light:    hsl(220, 90%, 60%);
+--color-blue:          hsl(220, 90%, 50%);
+--color-blue-dark:     hsl(220, 90%, 30%);
+--color-blue-darker:   hsl(220, 90%, 20%);
+--color-blue-darkest:  hsl(220, 90%, 10%);
+						</code></pre>
+					</section>
+
+					<!-- Slide: Generación de Paletas -->
+					<section>
+						<h2>Técnica: Generar Paleta desde Base</h2>
+						<p class="small-text">Algoritmo con HSL</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-javascript">
+// Color base
+const baseHue = 220;
+const baseSat = 90;
+
+// Generar escala de luminosidad
+const palette = {
+  50:  `hsl(${baseHue}, ${baseSat}%, 95%)`,
+  100: `hsl(${baseHue}, ${baseSat}%, 90%)`,
+  200: `hsl(${baseHue}, ${baseSat}%, 80%)`,
+  300: `hsl(${baseHue}, ${baseSat}%, 70%)`,
+  400: `hsl(${baseHue}, ${baseSat}%, 60%)`,
+  500: `hsl(${baseHue}, ${baseSat}%, 50%)`, // Base
+  600: `hsl(${baseHue}, ${baseSat}%, 40%)`,
+  700: `hsl(${baseHue}, ${baseSat}%, 30%)`,
+  800: `hsl(${baseHue}, ${baseSat}%, 20%)`,
+  900: `hsl(${baseHue}, ${baseSat}%, 10%)`
+};
+						</code></pre>
+						<p class="fragment small-text">Herramientas: <strong>Coolors.co, Adobe Color, Material Design Palette Generator</strong></p>
+					</section>
+				</section>
+
+				<!-- PARTE 5: ACCESIBILIDAD -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Color y Accesibilidad</h2>
+						<p>WCAG y Ratios de Contraste</p>
+					</section>
+
+					<!-- Slide: WCAG Intro -->
+					<section>
+						<h2>WCAG: Contraste de Color</h2>
+						<p class="small-text">Web Content Accessibility Guidelines</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Texto Normal</th>
+									<th>Texto Grande</th>
+									<th>UI Components</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>AA</strong><br>(Mínimo)</td>
+									<td>4.5:1</td>
+									<td>3:1</td>
+									<td>3:1</td>
+								</tr>
+								<tr>
+									<td><strong>AAA</strong><br>(Mejorado)</td>
+									<td>7:1</td>
+									<td>4.5:1</td>
+									<td>—</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text"><strong>Texto grande:</strong> ≥18pt (24px) o ≥14pt (18.5px) negrita</p>
+					</section>
+
+					<!-- Slide: Ejemplos Contraste -->
+					<section>
+						<h2>Ejemplos de Contraste</h2>
+						<div class="card">
+							<p class="small-text"><strong>✅ Pasa AA (4.5:1)</strong></p>
+							<div style="background: #FFFFFF; color: #595959; padding: 15px; border-radius: 5px; margin: 10px 0;">
+								<p style="margin: 0;">Texto gris oscuro sobre blanco (Ratio: 7:1)</p>
+							</div>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>❌ No pasa AA (2.8:1)</strong></p>
+							<div style="background: #FFFFFF; color: #999999; padding: 15px; border-radius: 5px; margin: 10px 0;">
+								<p style="margin: 0;">Texto gris claro sobre blanco (Ratio: 2.8:1)</p>
+							</div>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>✅ Pasa AAA (11:1)</strong></p>
+							<div style="background: #FFFFFF; color: #212121; padding: 15px; border-radius: 5px; margin: 10px 0;">
+								<p style="margin: 0;">Texto casi negro sobre blanco (Ratio: 11:1)</p>
+							</div>
+						</div>
+					</section>
+
+					<!-- Slide: Herramientas -->
+					<section>
+						<h2>Herramientas de Verificación</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>WebAIM Contrast Checker</strong><br>
+								<span class="very-small-text">webaim.org/resources/contrastchecker</span>
+							</li>
+							<li class="fragment"><strong>Figma Plugins:</strong>
+								<ul class="very-small-text">
+									<li>Stark - Suite completa de accesibilidad</li>
+									<li>Contrast - Verificación rápida</li>
+									<li>A11y - Color Contrast Checker</li>
+								</ul>
+							</li>
+							<li class="fragment"><strong>Chrome DevTools:</strong><br>
+								<span class="very-small-text">Inspect element → Mostrar ratio de contraste</span>
+							</li>
+							<li class="fragment"><strong>Coolors Contrast Checker</strong><br>
+								<span class="very-small-text">coolors.co/contrast-checker</span>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Slide: No Solo Contraste -->
+					<section>
+						<h2>Más Allá del Contraste</h2>
+						<ul class="small-text">
+							<li class="fragment">🎨 <strong>No dependas solo del color</strong><br>
+								<span class="very-small-text">❌ "Campos en rojo son requeridos"<br>
+								✅ "Campos marcados con * son requeridos"</span>
+							</li>
+							<li class="fragment">👁️ <strong>Daltonismo:</strong> 8% hombres, 0.5% mujeres<br>
+								<span class="very-small-text">Evitar rojo-verde como única distinción<br>
+								Herramienta: Sim Daltonism (Mac), Color Oracle</span>
+							</li>
+							<li class="fragment">🌓 <strong>Dark Mode:</strong> Invertir luminosidad, no saturación<br>
+								<span class="very-small-text">Reducir brillo de blancos (usar grises 90-95%)<br>
+								Mantener ratios de contraste</span>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- CASO PRÁCTICO -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Sistema de Color Completo</p>
+					</section>
+
+					<!-- Slide: Paleta EduConnect -->
+					<section>
+						<h2>EduConnect: Paleta de Color</h2>
+						<div class="card">
+							<p class="small-text"><strong>Primary (Azul Confianza):</strong></p>
+							<div style="display: flex; justify-content: space-between;">
+								<span class="color-box" style="background: hsl(210, 80%, 95%);"></span>
+								<span class="color-box" style="background: hsl(210, 80%, 80%);"></span>
+								<span class="color-box" style="background: hsl(210, 80%, 60%);"></span>
+								<span class="color-box" style="background: hsl(210, 80%, 50%);"></span>
+								<span class="color-box" style="background: hsl(210, 80%, 30%);"></span>
+							</div>
+							<p class="very-small-text">H: 210°, S: 80%, L: 95%→50%→30%</p>
+						</div>
+						<div class="card fragment">
+							<p class="small-text"><strong>Secondary (Naranja Energía):</strong></p>
+							<div style="display: flex; justify-content: space-between;">
+								<span class="color-box" style="background: hsl(30, 90%, 95%);"></span>
+								<span class="color-box" style="background: hsl(30, 90%, 80%);"></span>
+								<span class="color-box" style="background: hsl(30, 90%, 60%);"></span>
+								<span class="color-box" style="background: hsl(30, 90%, 50%);"></span>
+								<span class="color-box" style="background: hsl(30, 90%, 30%);"></span>
+							</div>
+							<p class="very-small-text">H: 30°, S: 90%, L: 95%→50%→30%</p>
+						</div>
+						<p class="fragment small-text">Armonía: <strong>Complementaria dividida</strong> (Azul + Naranja)</p>
+					</section>
+
+					<!-- Slide: Uso en UI -->
+					<section>
+						<h2>Aplicación en UI</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Elemento</th>
+									<th>Color</th>
+									<th>Razón</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>CTA Principal</td>
+									<td>Primary-500 (Azul)</td>
+									<td>Identidad de marca, confianza</td>
+								</tr>
+								<tr>
+									<td>CTA Secundario</td>
+									<td>Secondary-500 (Naranja)</td>
+									<td>Contraste visual, acento cálido</td>
+								</tr>
+								<tr>
+									<td>Links</td>
+									<td>Primary-600</td>
+									<td>Estándar web, AAA en blanco</td>
+								</tr>
+								<tr>
+									<td>Success (completar curso)</td>
+									<td>Green-500</td>
+									<td>Universal, celebración</td>
+								</tr>
+								<tr>
+									<td>Textos</td>
+									<td>Gray-800 (principal)<br>Gray-600 (secundario)</td>
+									<td>Contraste AAA y AA</td>
+								</tr>
+								<tr>
+									<td>Fondos</td>
+									<td>White, Gray-50</td>
+									<td>Claridad, minimalismo</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Verificación -->
+					<section>
+						<h2>Verificación de Accesibilidad</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Combinación</th>
+									<th>Ratio</th>
+									<th>Nivel</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Primary-500 sobre blanco</td>
+									<td>4.8:1</td>
+									<td>✅ AA (texto normal)</td>
+								</tr>
+								<tr>
+									<td>Primary-600 sobre blanco</td>
+									<td>7.2:1</td>
+									<td>✅ AAA (texto normal)</td>
+								</tr>
+								<tr>
+									<td>Gray-800 sobre blanco</td>
+									<td>11.5:1</td>
+									<td>✅ AAA (texto normal)</td>
+								</tr>
+								<tr>
+									<td>Blanco sobre Primary-500</td>
+									<td>4.8:1</td>
+									<td>✅ AA (botones)</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">Todas las combinaciones cumplen WCAG 2.1 AA mínimo</p>
+					</section>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes</h2>
+					<ul class="small-text">
+						<li class="fragment">❌ Usar demasiados colores (más de 4-5 principales)</li>
+						<li class="fragment">❌ No verificar contraste antes de implementar</li>
+						<li class="fragment">❌ Ignorar contexto cultural en productos globales</li>
+						<li class="fragment">❌ Colores semánticos inconsistentes (rojo para éxito)</li>
+						<li class="fragment">❌ No considerar dark mode desde el inicio</li>
+						<li class="fragment">❌ Depender solo del color para transmitir información</li>
+					</ul>
+				</section>
+
+				<!-- MEJORES PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li class="fragment">✅ Empezar con escala de grises, luego agregar color</li>
+						<li class="fragment">✅ Usar HSL para paletas escalables</li>
+						<li class="fragment">✅ Limitar paleta: 1-2 primarios + semánticos + grises</li>
+						<li class="fragment">✅ Documentar significado de cada color</li>
+						<li class="fragment">✅ Verificar contraste con herramientas desde diseño</li>
+						<li class="fragment">✅ Probar con simuladores de daltonismo</li>
+						<li class="fragment">✅ Establecer tokens de color reutilizables</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos y Herramientas</h2>
+					<ul class="small-text">
+						<li><strong>Coolors.co</strong> - Generador de paletas</li>
+						<li><strong>Adobe Color</strong> - Armonías cromáticas</li>
+						<li><strong>Material Design Palette</strong> - Sistema completo</li>
+						<li><strong>WebAIM Contrast Checker</strong> - Verificación WCAG</li>
+						<li><strong>"Interaction of Color"</strong> - Josef Albers</li>
+						<li><strong>Refactoring UI</strong> - Prácticas de color en UI</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🎨 <strong>Modelos:</strong> RGB técnico, HSL intuitivo, HSB visual</li>
+						<li class="fragment">🧠 <strong>Psicología:</strong> Color evoca emociones y varía culturalmente</li>
+						<li class="fragment">🎭 <strong>Armonías:</strong> Complementarios, análogos, tríada, monocromático</li>
+						<li class="fragment">🛠️ <strong>Paletas:</strong> Primary, secondary, semánticos, grises</li>
+						<li class="fragment">♿ <strong>Accesibilidad:</strong> WCAG AA (4.5:1), AAA (7:1)</li>
+						<li class="fragment">✅ <strong>Práctica:</strong> Verificar contraste, documentar, sistematizar</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Teoría del Color</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

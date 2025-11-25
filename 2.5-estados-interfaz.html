@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2.5. Estados de Interfaz</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal section img { border: none; box-shadow: none; background: none; }
+			.reveal .highlight { color: #42affa; font-weight: bold; }
+			.reveal .small-text { font-size: 0.8em; }
+			.reveal .very-small-text { font-size: 0.65em; }
+			.reveal .card { background: rgba(66, 175, 250, 0.1); padding: 20px; border-radius: 8px; margin: 15px 0; }
+			
+			.button-demo {
+				display: inline-block;
+				padding: 12px 24px;
+				border-radius: 8px;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+			
+			.button-default { background: #0066CC; color: white; }
+			.button-hover { background: #0052A3; box-shadow: 0 4px 12px rgba(0,102,204,0.3); transform: translateY(-2px); }
+			.button-disabled { background: #E0E0E0; color: #999; cursor: not-allowed; opacity: 0.5; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Portada -->
+				<section>
+					<h1>2.5. Estados de Interfaz</h1>
+					<h3>Fundamentos de UI (Lo Visual)</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Introducción -->
+				<section>
+					<h2>Por Qué Importan los Estados</h2>
+					<ul>
+						<li class="fragment">💬 <strong>Comunicación:</strong> Indican qué está pasando</li>
+						<li class="fragment">🎯 <strong>Guía:</strong> Qué es interactivo, qué no</li>
+						<li class="fragment">♿ <strong>Accesibilidad:</strong> Crítico para teclado/screen readers</li>
+						<li class="fragment">⚡ <strong>Feedback:</strong> Respuesta inmediata a acciones</li>
+					</ul>
+				</section>
+
+				<!-- PARTE 1: ESTADOS COMPONENTES -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>7 Estados Fundamentales</h2>
+					</section>
+
+					<section>
+						<h2>1. Default (Reposo)</h2>
+						<div class="button-demo button-default">Inscribirse</div>
+						<p class="small-text fragment">Estado inicial sin interacción</p>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-css">
+.button {
+  background: #0066CC;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>2. Hover (Cursor Encima)</h2>
+						<div class="button-demo button-hover">Inscribirse</div>
+						<p class="small-text fragment">Indica que el elemento es interactivo</p>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-css">
+.button:hover {
+  background: #0052A3;  /* Más oscuro */
+  box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+  transform: translateY(-2px);  /* Levitación */
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>3. Active/Pressed</h2>
+						<p class="small-text">Feedback inmediato al hacer clic</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.button:active {
+  background: #003D7A;
+  transform: translateY(0);  /* "Se hunde" */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+						</code></pre>
+						<p class="fragment small-text">✓ Sensación táctil incluso en digital</p>
+					</section>
+
+					<section>
+						<h2>4. Focus (Foco del Teclado)</h2>
+						<div class="card">
+							<p class="highlight">CRÍTICO para accesibilidad</p>
+						</div>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+/* Mejor: solo focus visible */
+.button:focus-visible {
+  outline: 3px solid #42AFFA;
+  outline-offset: 2px;
+}
+						</code></pre>
+						<p class="fragment small-text">🎯 Mínimo 3px outline claramente visible</p>
+					</section>
+
+					<section>
+						<h2>5. Disabled (Deshabilitado)</h2>
+						<div class="button-demo button-disabled">No disponible</div>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-css">
+.button:disabled {
+  background: #E0E0E0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+						</code></pre>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-html">
+<button disabled>No disponible</button>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>6. Loading (Cargando)</h2>
+						<p class="small-text">Acción en proceso</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.button--loading {
+  color: transparent;  /* Oculta texto */
+}
+
+.button--loading::after {
+  content: '';
+  width: 16px; height: 16px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>7. Selected/Active</h2>
+						<p class="small-text">Estado persistente (ej: tab actual)</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.tab--active {
+  background: white;
+  color: #0066CC;
+  border-bottom: 3px solid #0066CC;
+  font-weight: 600;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Matriz de Estados: Botón EduConnect</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Estado</th>
+									<th>Background</th>
+									<th>Transform</th>
+									<th>Outline</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Default</td>
+									<td>#0066CC</td>
+									<td>none</td>
+									<td>none</td>
+								</tr>
+								<tr>
+									<td>Hover</td>
+									<td>#0052A3</td>
+									<td>translateY(-2px)</td>
+									<td>none</td>
+								</tr>
+								<tr>
+									<td>Active</td>
+									<td>#003D7A</td>
+									<td>translateY(0)</td>
+									<td>none</td>
+								</tr>
+								<tr class="highlight">
+									<td>Focus</td>
+									<td>#0066CC</td>
+									<td>none</td>
+									<td>3px solid #42AFFA</td>
+								</tr>
+								<tr>
+									<td>Disabled</td>
+									<td>#E0E0E0</td>
+									<td>none</td>
+									<td>none</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 2: VALIDACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Estados de Validación</h2>
+					</section>
+
+					<section>
+						<h2>4 Estados de Formularios</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Estado</th>
+									<th>Visual</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Default</td>
+									<td>Border gris #D0D0D0</td>
+								</tr>
+								<tr>
+									<td>Focus</td>
+									<td>Border azul + glow</td>
+								</tr>
+								<tr>
+									<td>Valid</td>
+									<td>Border verde + checkmark</td>
+								</tr>
+								<tr>
+									<td>Error</td>
+									<td>Border rojo + mensaje</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Estado: Error</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<div class="form-field">
+  <label for="email">Email</label>
+  <input 
+    id="email" 
+    type="email" 
+    class="input input--error"
+    aria-invalid="true"
+    aria-describedby="email-error"
+  >
+  <p id="email-error" class="error-message">
+    <svg>...</svg>
+    El email debe contener un @
+  </p>
+</div>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Principios de Mensajes de Error</h2>
+						<ul class="small-text">
+							<li class="fragment">✓ <strong>Específico:</strong> "Email debe contener @" no "Error"</li>
+							<li class="fragment">✓ <strong>Constructivo:</strong> Cómo corregir, no solo qué está mal</li>
+							<li class="fragment">✓ <strong>Próximo:</strong> Justo debajo del campo</li>
+							<li class="fragment">✓ <strong>Multi-canal:</strong> Color + ícono + texto</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Timing de Validación</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Método</th>
+									<th>Pro/Contra</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Real-time (mientras escribe)</td>
+									<td>✗ Frustrante, error antes de terminar</td>
+								</tr>
+								<tr class="highlight">
+									<td>On Blur (al salir del campo)</td>
+									<td>✓ Balance feedback/paciencia</td>
+								</tr>
+								<tr>
+									<td>On Submit</td>
+									<td>✓ Para validaciones complejas</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 3: AFFORDANCES -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Affordances y Feedback</h2>
+					</section>
+
+					<section>
+						<h2>Qué son Affordances</h2>
+						<div class="card">
+							<p class="small-text">Características que sugieren cómo usar un elemento</p>
+						</div>
+						<ul class="small-text fragment">
+							<li>Botones deben <strong>parecer presionables</strong></li>
+							<li>Links deben <strong>distinguirse</strong></li>
+							<li>Inputs deben <strong>invitar a escribir</strong></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Buen Affordance: Botón</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+/* ✓ BUEN affordance */
+.button {
+  background: #0066CC;
+  border-radius: 8px;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* ✗ MAL affordance */
+.button-bad {
+  background: transparent;
+  border: none;
+  text-decoration: underline;  /* Parece link */
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Microinteracciones</h2>
+						<p class="small-text">Feedback inmediato en acciones</p>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.favorite-btn:active {
+  animation: heartbeat 0.3s ease;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.favorite-btn.active svg {
+  fill: #EF4444;  /* Corazón rojo */
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Toast Notifications</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.toast {
+  position: fixed;
+  top: 20px; right: 20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+.toast--success { border-left: 4px solid #10B981; }
+.toast--error { border-left: 4px solid #EF4444; }
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 4: LOADING -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Indicadores de Progreso</h2>
+					</section>
+
+					<section>
+						<h2>Tipos de Loading</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Cuándo Usar</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Spinner</strong></td>
+									<td>< 2 segundos, acción puntual</td>
+								</tr>
+								<tr>
+									<td><strong>Progress Bar</strong></td>
+									<td>Proceso conocido (upload)</td>
+								</tr>
+								<tr>
+									<td><strong>Skeleton Screen</strong></td>
+									<td>Carga inicial de página</td>
+								</tr>
+								<tr>
+									<td><strong>Text placeholder</strong></td>
+									<td>"Cargando..."</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Progress Bar (Determinado)</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<div class="progress-bar">
+  <div class="progress-bar__fill" style="width: 60%;">
+    60%
+  </div>
+</div>
+						</code></pre>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 8px;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0066CC, #42AFFA);
+  transition: width 0.3s ease;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Spinner</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0,102,204,0.1);
+  border-top-color: #0066CC;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Skeleton Screens</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #E0E0E0 25%,
+    #F0F0F0 50%,
+    #E0E0E0 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Mejores Prácticas Loading</h2>
+						<ul class="small-text">
+							<li>✓ Mostrar inmediatamente si tarda >100ms</li>
+							<li>✓ No spinners eternos (>2s usar skeleton)</li>
+							<li>✓ Contexto: "Guardando cambios..." no solo spinner</li>
+							<li>✓ Permitir cancelar operaciones largas</li>
+							<li>✓ Accesibilidad: <code>role="status"</code> o <code>aria-live="polite"</code></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Loading Accesible</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-html">
+<div role="status" aria-live="polite">
+  <div class="spinner"></div>
+  <p>Cargando cursos...</p>
+</div>
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- BUENAS PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="very-small-text">
+						<li>✓ Todos los botones tienen hover/focus/active/disabled</li>
+						<li>✓ Focus visible CLARAMENTE distinguible (≥3px outline)</li>
+						<li>✓ Errores específicos y constructivos</li>
+						<li>✓ Loading states si operación tarda >100ms</li>
+						<li>✓ Skeleton screens para carga de contenido</li>
+						<li>✓ Feedback inmediato en interacciones</li>
+						<li>✓ Colores de estado NO son el único indicador (+ ícono + texto)</li>
+						<li>✓ Estados accesibles (aria-invalid, aria-busy, role="status")</li>
+						<li>✓ Microinteracciones sutiles pero perceptibles</li>
+						<li>✓ Validación on-blur, no real-time</li>
+					</ul>
+				</section>
+
+				<!-- CHECKLIST -->
+				<section>
+					<h2>Checklist de Estados</h2>
+					<ul class="very-small-text">
+						<li>□ Todos los botones tienen estados hover/focus/active/disabled</li>
+						<li>□ Focus visible ≥3px outline claramente distinguible</li>
+						<li>□ Errores de formulario específicos y constructivos</li>
+						<li>□ Loading states para operaciones >100ms</li>
+						<li>□ Skeleton screens para cargas de contenido</li>
+						<li>□ Feedback inmediato en interacciones</li>
+						<li>□ Colores + iconos + texto (no solo color)</li>
+						<li>□ Estados son accesibles (ARIA)</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🎯 7 estados fundamentales para todo componente</li>
+						<li class="fragment">♿ Focus visible es CRÍTICO para accesibilidad</li>
+						<li class="fragment">✍️ Errores específicos, constructivos, próximos</li>
+						<li class="fragment">⏳ Loading >100ms necesita indicador</li>
+						<li class="fragment">💬 Feedback inmediato con microinteracciones</li>
+						<li class="fragment">🌈 Multi-canal: color + ícono + texto</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Estados de Interfaz</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

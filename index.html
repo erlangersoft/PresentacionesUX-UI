@@ -12,107 +12,295 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             padding: 2rem;
+            position: relative;
+        }
+
+        /* Efecto de partículas en el fondo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
         }
 
         .logo {
             max-width: 300px;
             height: auto;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            color: #42affa;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
             opacity: 0.9;
+            margin-top: 0.25rem;
         }
 
         main {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
         }
 
         .module {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .module:nth-child(1) { animation-delay: 0.1s; }
+        .module:nth-child(2) { animation-delay: 0.2s; }
+        .module:nth-child(3) { animation-delay: 0.3s; }
+        .module:nth-child(4) { animation-delay: 0.4s; }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .module-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .module-title {
-            color: #2a5298;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
-            font-weight: 600;
+            color: #1e3c72;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
         }
 
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
         }
 
         .topic-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover::before {
+            transform: scaleX(1);
         }
 
         .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
             border-color: #667eea;
         }
 
         .topic-number {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
         }
 
         .topic-link {
             color: #1e3c72;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.1rem;
             display: block;
+            line-height: 1.4;
+            transition: color 0.3s ease;
         }
 
-        .topic-link:hover {
+        .topic-card:hover .topic-link {
             color: #667eea;
         }
 
-        footer {
-            background: #f8f9fa;
-            padding: 2rem;
-            text-align: center;
-            color: #666;
+        .topic-description {
+            color: #6b7280;
             font-size: 0.9rem;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            width: 24px;
+            height: 24px;
+            color: #667eea;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .topic-card:hover .arrow-icon {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        footer {
+            background: #1e3c72;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #42affa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -121,23 +309,49 @@
             }
 
             header {
-                padding: 2rem 1rem;
+                padding: 2.5rem 1.5rem;
             }
 
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
             }
 
             .logo {
-                max-width: 200px;
+                max-width: 220px;
+            }
+
+            .stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
             }
 
             main {
-                padding: 2rem 1rem;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .module-title {
+                font-size: 1.4rem;
             }
 
             .topics-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .module-header {
+                gap: 0.75rem;
+            }
+
+            .module-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -148,96 +362,240 @@
             <img src="img/logo_ucatec.png" alt="Universidad UCATEC" class="logo">
             <h1>Fundamentos del Diseño Web y UX/UI</h1>
             <p class="subtitle">Navegación de Presentaciones del Curso</p>
+            <!--
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Módulos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">Temas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Completo</span>
+                </div>
+            </div>
+            -->
         </header>
 
         <main>
             <section class="module">
-                <h2 class="module-title">1. Fundamentos de UX (La Estrategia)</h2>
+                <div class="module-header">
+                    <div class="module-icon">1</div>
+                    <h2 class="module-title">Fundamentos de UX (La Estrategia)</h2>
+                </div>
                 <div class="topics-grid">
                     <div class="topic-card">
                         <div class="topic-number">1.1</div>
                         <a href="1.1-introduccion-ux-design.html" class="topic-link">Introducción al UX Design</a>
+                        <p class="topic-description">Qué es UX, importancia y principios fundamentales</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">1.2</div>
                         <a href="1.2-diseno-centrado-usuario.html" class="topic-link">Diseño Centrado en el Usuario (DCU)</a>
+                        <p class="topic-description">Metodología y proceso iterativo de diseño</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">1.3</div>
                         <a href="1.3-investigacion-usuarios.html" class="topic-link">Investigación de Usuarios</a>
+                        <p class="topic-description">Métodos, herramientas y análisis de datos</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">1.4</div>
                         <a href="1.4-arquitectura-informacion.html" class="topic-link">Arquitectura de la Información</a>
+                        <p class="topic-description">Organización, estructura y navegación</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                 </div>
             </section>
 
             <section class="module">
-                <h2 class="module-title">2. Fundamentos de UI (Lo Visual)</h2>
+                <div class="module-header">
+                    <div class="module-icon">2</div>
+                    <h2 class="module-title">Fundamentos de UI (Lo Visual)</h2>
+                </div>
                 <div class="topics-grid">
                     <div class="topic-card">
                         <div class="topic-number">2.1</div>
-                        <a href="2.1-principios-diseno-visual.html" class="topic-link">Principios del Diseño Visual</a>
+                        <a href="2.1-Fundamentos-del-Diseño-Visual.html" class="topic-link">Fundamentos del Diseño Visual</a>
+                        <p class="topic-description">Principios: Contraste, Jerarquía, Balance, Proximidad</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">2.2</div>
-                        <a href="2.2-tipografia-legibilidad.html" class="topic-link">Tipografía y Legibilidad</a>
+                        <a href="2.2-teoria-del-color.html" class="topic-link">Teoría del Color</a>
+                        <p class="topic-description">Psicología del color, paletas y accesibilidad</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">2.3</div>
-                        <a href="2.3-sistemas-diseno.html" class="topic-link">Sistemas de Diseño</a>
+                        <a href="2.3-tipografia-legibilidad.html" class="topic-link">Tipografía y Legibilidad</a>
+                        <p class="topic-description">Anatomía, clasificación y sistema tipográfico</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">2.4</div>
-                        <a href="2.4-accesibilidad-inclusion.html" class="topic-link">Accesibilidad e Inclusión</a>
+                        <a href="2.4-iconografia-elementos-graficos.html" class="topic-link">Iconografía y Elementos Gráficos</a>
+                        <p class="topic-description">Sistemas de íconos, ilustraciones y optimización</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.5</div>
+                        <a href="2.5-estados-interfaz.html" class="topic-link">Estados de Interfaz</a>
+                        <p class="topic-description">Estados de componentes, validación y feedback</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.6</div>
+                        <a href="2.6-sistemas-diseno.html" class="topic-link">Sistemas de Diseño</a>
+                        <p class="topic-description">Design systems, atomic design y design tokens</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">2.7</div>
+                        <a href="2.7-accesibilidad-e-inclusion.html" class="topic-link">Accesibilidad e Inclusión</a>
+                        <p class="topic-description">WCAG 2.1, navegación por teclado y diseño inclusivo</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                 </div>
             </section>
 
             <section class="module">
-                <h2 class="module-title">3. Fundamentos del Diseño Web (La Estructura)</h2>
+                <div class="module-header">
+                    <div class="module-icon">3</div>
+                    <h2 class="module-title">Fundamentos del Diseño Web (La Estructura)</h2>
+                </div>
                 <div class="topics-grid">
                     <div class="topic-card">
                         <div class="topic-number">3.1</div>
-                        <a href="3.1-diseno-web-maquetacion.html" class="topic-link">Diseño Web y Maquetación</a>
+                        <a href="3.1-prototipado-wireframing.html" class="topic-link">Prototipado y Wireframing</a>
+                        <p class="topic-description">Del sketch al prototipo interactivo</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">3.2</div>
-                        <a href="3.2-usabilidad-navegacion.html" class="topic-link">Usabilidad y Navegación</a>
+                        <a href="3.2-diseno-web-maquetacion.html" class="topic-link">Diseño Web y Maquetación</a>
+                        <p class="topic-description">Layouts, grid systems y composición visual</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">3.3</div>
-                        <a href="3.3-responsive-web-design.html" class="topic-link">Responsive Web Design</a>
+                        <a href="3.3-usabilidad-navegacion.html" class="topic-link">Usabilidad y Navegación</a>
+                        <p class="topic-description">Principios de Jakob Nielsen y patrones de navegación</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">3.4</div>
-                        <a href="3.4-performance-experiencia-tecnica.html" class="topic-link">Performance y Experiencia Técnica</a>
+                        <a href="3.4-diseno-interaccion.html" class="topic-link">Diseño de Interacción</a>
+                        <p class="topic-description">Microinteracciones, animaciones y feedback</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">3.5</div>
+                        <a href="3.5-responsive-web-design.html" class="topic-link">Responsive Web Design</a>
+                        <p class="topic-description">Mobile-first, breakpoints y adaptabilidad</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">3.6</div>
+                        <a href="3.6-performance-experiencia-tecnica.html" class="topic-link">Performance y Experiencia Técnica</a>
+                        <p class="topic-description">Optimización, Core Web Vitals y SEO técnico</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                 </div>
             </section>
 
             <section class="module">
-                <h2 class="module-title">4. Aplicaciones Prácticas</h2>
+                <div class="module-header">
+                    <div class="module-icon">4</div>
+                    <h2 class="module-title">Aplicaciones Prácticas e Integración</h2>
+                </div>
                 <div class="topics-grid">
                     <div class="topic-card">
                         <div class="topic-number">4.1</div>
                         <a href="4.1-integracion-ux-ui.html" class="topic-link">Integración UX + UI</a>
+                        <p class="topic-description">Uniendo estrategia y diseño visual</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">4.2</div>
                         <a href="4.2-herramientas-profesionales.html" class="topic-link">Herramientas Profesionales</a>
+                        <p class="topic-description">Figma, prototipado, testing y colaboración</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                     <div class="topic-card">
                         <div class="topic-number">4.3</div>
                         <a href="4.3-testing-usabilidad.html" class="topic-link">Testing de Usabilidad</a>
+                        <p class="topic-description">Metodologías, análisis y mejora continua</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-number">4.4</div>
+                        <a href="4.4-proyecto-integrador.html" class="topic-link">Proyecto Integrador</a>
+                        <p class="topic-description">Aplicación práctica de todos los conceptos</p>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2024 Universidad UCATEC - Fundamentos del Diseño Web y UX/UI</p>
+            <div class="footer-content">
+                <p>&copy; 2024 Universidad UCATEC - Fundamentos del Diseño Web y UX/UI</p>
+                <p style="margin-top: 0.5rem; opacity: 0.85;">Diseño Web, Experiencia de Usuario e Interfaz de Usuario</p>
+                <div class="footer-links">
+                    <a href="https://ucatec.edu.ec" target="_blank">Universidad UCATEC</a>
+                    <a href="README.md">Documentación</a>
+                    <a href="docs/Estructura de Temas.md">Estructura del Curso</a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>4.2. Herramientas Profesionales</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .very-small-text {
+				font-size: 0.65em;
+			}
+			.reveal .card {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				margin: 15px 0;
+			}
+			.reveal .tool-box {
+				background: rgba(66, 175, 250, 0.15);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+				text-align: left;
+			}
+			.reveal .hierarchy-diagram {
+				font-family: 'Courier New', monospace;
+				background: rgba(255, 255, 255, 0.05);
+				padding: 15px;
+				border-radius: 8px;
+				font-size: 0.7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>4.2. Herramientas Profesionales</h1>
+					<h3>Aplicaciones Prácticas e Integración</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>Las Herramientas son Medios, no Fines</h2>
+					<blockquote class="fragment">
+						"Un diseñador competente selecciona herramientas de manera estratégica según las necesidades del proyecto"
+					</blockquote>
+					<p class="fragment small-text">Esta sesión cubre las herramientas más relevantes de la industria, con énfasis en <span class="highlight">Figma</span> como plataforma central</p>
+				</section>
+
+				<!-- PARTE 1: FIGMA AVANZADO -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Figma Avanzado</h2>
+						<p>Componentes, Variantes y Auto-layout</p>
+					</section>
+
+					<!-- Slide: Arquitectura de Componentes -->
+					<section>
+						<h2>Arquitectura de Componentes</h2>
+						<p class="small-text">Jerarquía basada en Atomic Design</p>
+						<div class="hierarchy-diagram very-small-text fragment">
+							<pre><code data-trim data-noescape>
+ÁTOMOS (Primitivos)
+└── Elementos indivisibles
+    • Iconos, Colores, Tipografía, Espaciados
+
+MOLÉCULAS (Componentes base)
+└── Combinación de átomos
+    • Input field (label + campo + helper)
+    • Button (contenedor + texto + icono)
+
+ORGANISMOS (Componentes compuestos)
+└── Combinación de moléculas
+    • Card (imagen + título + descripción + CTA)
+    • Navigation bar (logo + links + acciones)
+
+TEMPLATES (Layouts)
+└── Estructuras de página
+    • Dashboard layout, Detail page layout
+
+PÁGINAS (Instancias finales)
+└── Templates con contenido real
+    • Home - Dashboard, Perfil - Configuración
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Sistema de Variantes -->
+					<section>
+						<h2>Sistema de Variantes</h2>
+						<p class="small-text">Agrupar estados y versiones de un componente</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Ejemplo: Button</strong></p>
+							<table class="very-small-text">
+								<thead>
+									<tr>
+										<th>Propiedad</th>
+										<th>Valores</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Type</td>
+										<td>Primary, Secondary, Tertiary, Danger</td>
+									</tr>
+									<tr>
+										<td>Size</td>
+										<td>Small (32px), Medium (40px), Large (48px)</td>
+									</tr>
+									<tr>
+										<td>State</td>
+										<td>Default, Hover, Active, Disabled, Loading</td>
+									</tr>
+									<tr>
+										<td>Icon</td>
+										<td>None, Left, Right, Only</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="very-small-text fragment">Total: 4 × 3 × 5 × 4 = <span class="highlight">240 combinaciones</span></p>
+						</div>
+					</section>
+
+					<!-- Slide: Mejores Prácticas Variantes -->
+					<section>
+						<h2>Mejores Prácticas de Variantes</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Nombrar semánticamente:</strong> Type en lugar de Color</li>
+							<li class="fragment"><strong>Ordenar lógicamente:</strong> De más común a menos común</li>
+							<li class="fragment"><strong>Documentar defaults:</strong> Primer valor = más usado</li>
+							<li class="fragment"><strong>Limitar complejidad:</strong> Máximo 4-5 propiedades</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Auto-layout -->
+					<section>
+						<h2>Auto-layout: Diseños Responsivos</h2>
+						<p class="small-text">Sistema para crear diseños que se adaptan al contenido</p>
+						<div class="hierarchy-diagram very-small-text fragment">
+							<pre><code data-trim data-noescape>
+DIRECCIÓN
+├── Horizontal (→)
+├── Vertical (↓)
+└── Wrap (→↓)
+
+ALINEACIÓN
+├── Eje principal: distribución (Start, Center, End, Space-between)
+└── Eje cruzado: alineación (Top, Center, Bottom)
+
+SPACING
+├── Gap: Espacio entre elementos
+├── Padding: Espacio interno (T, R, B, L)
+└── Auto: Distribución equitativa
+
+SIZING
+├── Fixed: Tamaño fijo en píxeles
+├── Hug: Se ajusta al contenido
+└── Fill: Ocupa espacio disponible
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Patrón Card -->
+					<section>
+						<h2>Patrón: Card con Auto-layout</h2>
+						<pre class="very-small-text"><code data-trim data-noescape>
+┌───────────────────────────────────┐
+│ [Frame: Auto-layout vertical]     │
+│ ├── Padding: 16px                 │
+│ ├── Gap: 12px                     │
+│ ├── Width: Fill container         │
+│ ├── Height: Hug contents          │
+│ │                                 │
+│ │  ┌─────────────────────────┐   │
+│ │  │ Imagen (Fixed height)    │   │
+│ │  └─────────────────────────┘   │
+│ │  ┌─────────────────────────┐   │
+│ │  │ Título (Hug)            │   │
+│ │  └─────────────────────────┘   │
+│ │  ┌─────────────────────────┐   │
+│ │  │ Descripción (Hug)       │   │
+│ │  │ Puede ser multilínea    │   │
+│ │  └─────────────────────────┘   │
+│ │  ┌─────────────────────────┐   │
+│ │  │ [Botón] (Fixed)         │   │
+│ │  └─────────────────────────┘   │
+│ └─────────────────────────────────┘
+└───────────────────────────────────┘
+						</code></pre>
+						<p class="fragment small-text">Ventaja: Agregar/quitar contenido ajusta automáticamente</p>
+					</section>
+
+					<!-- Slide: Component Properties -->
+					<section>
+						<h2>Component Properties</h2>
+						<p class="small-text">Exponer controles sin crear variantes</p>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Uso</th>
+									<th>Ejemplo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Boolean</strong></td>
+									<td>Mostrar/ocultar</td>
+									<td>showIcon: true/false</td>
+								</tr>
+								<tr>
+									<td><strong>Instance Swap</strong></td>
+									<td>Intercambiar</td>
+									<td>icon: arrow-right</td>
+								</tr>
+								<tr>
+									<td><strong>Text</strong></td>
+									<td>Editar texto</td>
+									<td>label: "Continuar"</td>
+								</tr>
+								<tr>
+									<td><strong>Variant</strong></td>
+									<td>Cambiar variante</td>
+									<td>state: default, hover</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Naming Convention -->
+					<section>
+						<h2>Convención de Nomenclatura</h2>
+						<p class="small-text">Estructura para organizar componentes</p>
+						<pre class="fragment"><code data-trim data-noescape class="language-plaintext">
+[Categoría]/[Nombre]/[Variante]
+
+Ejemplos:
+• Buttons/Primary/Large
+• Forms/Input/Default
+• Navigation/Menu/Mobile
+• Cards/Course/Horizontal
+• Icons/24/Arrow-Right
+
+Beneficios:
+✅ Búsqueda rápida
+✅ Organización automática
+✅ Escalabilidad
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 2: PROTOTIPADO INTERACTIVO -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Prototipado Interactivo</h2>
+						<p>Smart Animate, Variables y Lógica</p>
+					</section>
+
+					<!-- Slide: Smart Animate -->
+					<section>
+						<h2>Smart Animate</h2>
+						<p class="small-text">Anima cambios entre frames automáticamente</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Detecta y anima:</strong></p>
+							<ul class="very-small-text">
+								<li>Cambios de posición (move)</li>
+								<li>Cambios de tamaño (scale)</li>
+								<li>Cambios de opacidad (fade)</li>
+								<li>Cambios de color (morph)</li>
+								<li>Cambios de rotación (rotate)</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Requisito:</strong> Elementos deben tener el <span class="highlight">mismo nombre</span> en ambos frames</p>
+					</section>
+
+					<!-- Slide: Ejemplo Smart Animate -->
+					<section>
+						<h2>Ejemplo: Expandir Card</h2>
+						<pre class="very-small-text"><code data-trim data-noescape>
+Frame 1: Card cerrado                Frame 2: Card expandido
+┌──────────────────┐                 ┌──────────────────────────┐
+│ Título (nombre)  │                 │ Título (nombre)          │
+│ [Ver más]        │  →  Smart  →    │                          │
+└──────────────────┘     Animate     │ Descripción completa...  │
+                                      │ Más contenido visible... │
+                                      │ [Ver menos]              │
+                                      └──────────────────────────┘
+
+Setup:
+1. Frame 1: Card con height: 100px
+2. Frame 2: Card con height: 300px (mismo nombre)
+3. Connection: On click → Navigate to Frame 2 → Smart Animate
+4. Duration: 300ms, Easing: Ease out
+						</code></pre>
+					</section>
+
+					<!-- Slide: Variables en Figma -->
+					<section>
+						<h2>Variables (Figma Variables)</h2>
+						<p class="small-text">Estados dinámicos y temas</p>
+						<div class="tool-box small-text fragment">
+							<p><strong>Tipos de variables:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>Color:</strong> Temas light/dark</li>
+								<li><strong>Number:</strong> Contadores, valores dinámicos</li>
+								<li><strong>String:</strong> Textos cambiantes</li>
+								<li><strong>Boolean:</strong> Estados on/off</li>
+							</ul>
+						</div>
+						<p class="fragment small-text">Uso: <code>Mode → Light / Dark</code> cambia todos los colores vinculados</p>
+					</section>
+
+					<!-- Slide: Conditional Logic -->
+					<section>
+						<h2>Lógica Condicional en Prototipos</h2>
+						<p class="small-text">Usar variables para crear flujos dinámicos</p>
+						<pre class="very-small-text fragment"><code data-trim data-noescape>
+Ejemplo: Formulario con validación
+
+Variable: formValid (Boolean) = false
+
+Campo Email:
+  On change → If email matches pattern → Set formValid = true
+  
+Botón Submit:
+  If formValid = true → Navigate to Success
+  If formValid = false → Show error message
+						</code></pre>
+						<p class="fragment small-text highlight">💡 Permite prototipos más realistas sin código</p>
+					</section>
+
+					<!-- Slide: Interactions Avanzadas -->
+					<section>
+						<h2>Interacciones Avanzadas</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Trigger</th>
+									<th>Action</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>On click</td>
+									<td>Navigate to</td>
+									<td>Navegación básica</td>
+								</tr>
+								<tr>
+									<td>On hover</td>
+									<td>Change to</td>
+									<td>Estados hover</td>
+								</tr>
+								<tr>
+									<td>After delay</td>
+									<td>Open overlay</td>
+									<td>Tooltips, modals</td>
+								</tr>
+								<tr>
+									<td>Mouse enter</td>
+									<td>Set variable</td>
+									<td>Estados dinámicos</td>
+								</tr>
+								<tr>
+									<td>Key press</td>
+									<td>Close overlay</td>
+									<td>Atajos de teclado</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Overlay Modal -->
+					<section>
+						<h2>Patrón: Modal con Overlay</h2>
+						<pre class="very-small-text"><code data-trim data-noescape>
+Setup:
+1. Crear frame "Modal" con backdrop semi-transparente
+2. Configurar como overlay:
+   - Position: Center
+   - Close when clicking outside: Yes
+   - Add background behind overlay: Yes
+   - Background color: rgba(0,0,0,0.5)
+
+3. Botón trigger:
+   On click → Open overlay → Modal
+   Animation: Dissolve, 200ms
+
+4. Botón close en modal:
+   On click → Close overlay
+   Animation: Dissolve, 200ms
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 3: COLABORACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Herramientas de Colaboración</h2>
+						<p>FigJam, Miro, Whimsical</p>
+					</section>
+
+					<!-- Slide: FigJam -->
+					<section>
+						<h2>FigJam: Brainstorming en Figma</h2>
+						<div class="tool-box small-text">
+							<p><strong>Funciones principales:</strong></p>
+							<ul class="very-small-text">
+								<li>Sticky notes ilimitados</li>
+								<li>Diagramas de flujo</li>
+								<li>Voting (votar ideas)</li>
+								<li>Templates (retrospectivas, user story mapping)</li>
+								<li>Audio chat integrado</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Workshops remotos, ideación, síntesis de investigación</p>
+					</section>
+
+					<!-- Slide: Miro -->
+					<section>
+						<h2>Miro: Pizarra Infinita</h2>
+						<div class="tool-box small-text">
+							<p><strong>Fortalezas:</strong></p>
+							<ul class="very-small-text">
+								<li>Templates especializados (Customer Journey, Empathy Map)</li>
+								<li>Integraciones (Jira, Slack, Google Drive)</li>
+								<li>Voting y timer para facilitación</li>
+								<li>Presentación en modo Frames</li>
+								<li>Colaboración asíncrona</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Workshops grandes, investigación UX, design sprints</p>
+					</section>
+
+					<!-- Slide: Whimsical -->
+					<section>
+						<h2>Whimsical: Diagramas Rápidos</h2>
+						<div class="tool-box small-text">
+							<p><strong>Funciones:</strong></p>
+							<ul class="very-small-text">
+								<li>Flowcharts con auto-routing</li>
+								<li>Wireframes low-fi rápidos</li>
+								<li>Mind maps</li>
+								<li>Docs con diagramas embebidos</li>
+							</ul>
+						</div>
+						<p class="fragment small-text"><strong>Cuándo usar:</strong> Documentar flujos, wireframes iniciales, mapas mentales</p>
+					</section>
+
+					<!-- Slide: Comparación -->
+					<section>
+						<h2>FigJam vs Miro vs Whimsical</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Herramienta</th>
+									<th>Mejor para</th>
+									<th>Integración</th>
+									<th>Precio</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>FigJam</strong></td>
+									<td>Equipos que usan Figma</td>
+									<td>Nativa con Figma</td>
+									<td>Gratis (limitado)</td>
+								</tr>
+								<tr>
+									<td><strong>Miro</strong></td>
+									<td>Workshops complejos</td>
+									<td>Muchas integraciones</td>
+									<td>Gratis (3 boards)</td>
+								</tr>
+								<tr>
+									<td><strong>Whimsical</strong></td>
+									<td>Documentación rápida</td>
+									<td>Embeds, exports</td>
+									<td>Gratis (4 boards)</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 4: PLUGINS -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Plugins Esenciales de Figma</h2>
+						<p>Productividad y Accesibilidad</p>
+					</section>
+
+					<!-- Slide: Plugins de Contenido -->
+					<section>
+						<h2>Plugins de Contenido</h2>
+						<div class="tool-box small-text fragment">
+							<h4>📸 Unsplash</h4>
+							<p class="very-small-text">Imágenes de stock directamente en Figma</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>📝 Content Reel</h4>
+							<p class="very-small-text">Generar nombres, emails, avatares realistas</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>🎭 Avatars</h4>
+							<p class="very-small-text">Avatares de usuario ilustrados o fotos</p>
+						</div>
+					</section>
+
+					<!-- Slide: Plugins de Accesibilidad -->
+					<section>
+						<h2>Plugins de Accesibilidad</h2>
+						<div class="tool-box small-text fragment">
+							<h4>♿ Stark</h4>
+							<p class="very-small-text">Verificar contraste de colores (WCAG), simular daltonismo</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>🔍 Contrast</h4>
+							<p class="very-small-text">Checker de contraste simple y rápido</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>📏 A11y - Focus Orderer</h4>
+							<p class="very-small-text">Definir orden de foco para teclado</p>
+						</div>
+					</section>
+
+					<!-- Slide: Plugins de Productividad -->
+					<section>
+						<h2>Plugins de Productividad</h2>
+						<div class="tool-box small-text fragment">
+							<h4>🔄 Similayer</h4>
+							<p class="very-small-text">Seleccionar capas similares por estilo</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>📐 Autoflow</h4>
+							<p class="very-small-text">Crear flechas de flujo automáticamente</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>🎨 Remove BG</h4>
+							<p class="very-small-text">Remover fondos de imágenes con IA</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>📊 Chart</h4>
+							<p class="very-small-text">Crear gráficos y visualizaciones de datos</p>
+						</div>
+					</section>
+
+					<!-- Slide: Plugins de Handoff -->
+					<section>
+						<h2>Plugins de Handoff</h2>
+						<div class="tool-box small-text fragment">
+							<h4>💻 Anima</h4>
+							<p class="very-small-text">Exportar a código HTML/CSS/React</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>📱 Figmotion</h4>
+							<p class="very-small-text">Crear animaciones avanzadas con timeline</p>
+						</div>
+						<div class="tool-box small-text fragment">
+							<h4>🔧 Design Tokens</h4>
+							<p class="very-small-text">Exportar tokens a JSON para desarrollo</p>
+						</div>
+					</section>
+
+					<!-- Slide: Plugin Recomendado -->
+					<section>
+						<h2>Top 5 Plugins Imprescindibles</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Stark</strong> - Accesibilidad</li>
+							<li class="fragment"><strong>Content Reel</strong> - Contenido realista</li>
+							<li class="fragment"><strong>Autoflow</strong> - Diagramas de flujo</li>
+							<li class="fragment"><strong>Unsplash</strong> - Imágenes</li>
+							<li class="fragment"><strong>Similayer</strong> - Edición masiva</li>
+						</ol>
+					</section>
+				</section>
+
+				<!-- PARTE 5: ORGANIZACIÓN -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Organización y Versionado</h2>
+						<p>Files, Pages y Version History</p>
+					</section>
+
+					<!-- Slide: Estructura de Files -->
+					<section>
+						<h2>Estructura de Archivos Figma</h2>
+						<div class="hierarchy-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+PROYECTO EDUCONNECT/
+│
+├── 📁 01 - Research
+│   ├── 📄 Personas & Journey Maps
+│   ├── 📄 Competitive Analysis
+│   └── 📄 User Interviews Synthesis
+│
+├── 📁 02 - Design System
+│   ├── 📄 Tokens (Colors, Typography, Spacing)
+│   ├── 📄 Components Library
+│   └── 📄 Documentation
+│
+├── 📁 03 - Wireframes
+│   ├── 📄 Low-Fi Sketches
+│   └── 📄 Mid-Fi Wireframes
+│
+├── 📁 04 - UI Design
+│   ├── 📄 Desktop (1440px)
+│   ├── 📄 Tablet (768px)
+│   └── 📄 Mobile (375px)
+│
+└── 📁 05 - Prototypes
+    ├── 📄 User Testing v1
+    └── 📄 Final Prototype
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Páginas -->
+					<section>
+						<h2>Organización de Pages</h2>
+						<p class="small-text">Dentro de cada archivo</p>
+						<pre class="very-small-text fragment"><code data-trim data-noescape>
+File: UI Design - Desktop
+
+Pages:
+├── 📄 Cover (título, info del proyecto)
+├── 📄 Flows (user flows documentados)
+├── 📄 Screens (todas las pantallas)
+│   ├── Section: Onboarding
+│   ├── Section: Dashboard
+│   └── Section: Course Detail
+├── 📄 Components (componentes locales)
+├── 📄 Specs (redlines y annotations)
+└── 📄 Archive (versiones antiguas)
+						</code></pre>
+						<p class="fragment small-text">Usar emojis para identificar rápidamente</p>
+					</section>
+
+					<!-- Slide: Version History -->
+					<section>
+						<h2>Version History</h2>
+						<p class="small-text">Figma guarda versiones automáticamente</p>
+						<ul class="small-text fragment">
+							<li><strong>Auto-save:</strong> Cada cambio se guarda instantáneamente</li>
+							<li><strong>Version snapshots:</strong> Guardar hitos manualmente</li>
+							<li><strong>Restore:</strong> Volver a versión anterior</li>
+							<li><strong>Branching:</strong> (Profesional) Crear ramas como Git</li>
+						</ul>
+						<div class="card fragment">
+							<p class="very-small-text"><strong>Convención de nombres:</strong></p>
+							<p class="very-small-text">v1.0 - Initial Design (2024-01-15)</p>
+							<p class="very-small-text">v1.1 - Post User Testing (2024-01-22)</p>
+							<p class="very-small-text">v2.0 - Final Approved (2024-02-01)</p>
+						</div>
+					</section>
+
+					<!-- Slide: Branching -->
+					<section>
+						<h2>Branching (Plan Profesional)</h2>
+						<p class="small-text">Trabajar en paralelo sin afectar archivo principal</p>
+						<div class="hierarchy-diagram very-small-text fragment">
+							<pre><code data-trim data-noescape>
+main (producción)
+  │
+  ├─── feature/new-dashboard
+  │      └─── (diseñador A trabaja aquí)
+  │
+  ├─── feature/dark-mode
+  │      └─── (diseñador B trabaja aquí)
+  │
+  └─── Merge → Review → Merge to main
+							</code></pre>
+						</div>
+						<p class="fragment small-text">Similar a Git, pero visual</p>
+					</section>
+
+					<!-- Slide: Comentarios -->
+					<section>
+						<h2>Comentarios y Feedback</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>@menciones:</strong> Notificar a miembros del equipo</li>
+							<li class="fragment"><strong>Resolved:</strong> Marcar comentarios como resueltos</li>
+							<li class="fragment"><strong>Threads:</strong> Hilos de conversación</li>
+							<li class="fragment"><strong>Viewer links:</strong> Compartir con stakeholders sin acceso de edición</li>
+						</ul>
+						<p class="fragment small-text highlight">💡 Comentarios quedan vinculados a elementos específicos</p>
+					</section>
+				</section>
+
+				<!-- CASO EDUCONNECT -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Estructura del Design System</p>
+					</section>
+
+					<!-- Slide: Design System Structure -->
+					<section>
+						<h2>EduConnect: Design System</h2>
+						<div class="hierarchy-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+File: EduConnect - Design System
+
+📄 Tokens
+   ├── Colors (Primary, Secondary, Semantic, Grays)
+   ├── Typography (Font families, sizes, weights)
+   ├── Spacing (8pt grid: 8, 16, 24, 32...)
+   ├── Shadows (Elevation levels)
+   └── Radius (Border radius scale)
+
+📄 Components
+   ├── Buttons (12 variantes)
+   ├── Forms (Input, Select, Checkbox, Radio)
+   ├── Cards (Course, Instructor, Review)
+   ├── Navigation (Header, Sidebar, Footer)
+   └── Feedback (Toast, Modal, Alert)
+
+📄 Patterns
+   ├── Layouts (Dashboard, Detail, List)
+   └── Templates (Empty states, Loading, Error)
+
+📄 Documentation
+   └── Usage guidelines, Do's & Don'ts
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Configuración Prototipo -->
+					<section>
+						<h2>Configuración del Prototipo</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Flow</th>
+									<th>Starting Frame</th>
+									<th>Device</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Onboarding</td>
+									<td>Welcome Screen</td>
+									<td>iPhone 14 Pro</td>
+								</tr>
+								<tr>
+									<td>Dashboard</td>
+									<td>Home - Dashboard</td>
+									<td>Desktop (1440px)</td>
+								</tr>
+								<tr>
+									<td>Course Enrollment</td>
+									<td>Course Detail</td>
+									<td>Desktop (1440px)</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">Configurar múltiples flows para testing específico</p>
+					</section>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes con Herramientas</h2>
+					<ul class="small-text">
+						<li class="fragment">❌ Crear componentes sin planificar arquitectura</li>
+						<li class="fragment">❌ No usar auto-layout (layouts estáticos)</li>
+						<li class="fragment">❌ Variantes con nomenclatura inconsistente</li>
+						<li class="fragment">❌ Archivos desorganizados, sin estructura</li>
+						<li class="fragment">❌ No guardar version snapshots en hitos</li>
+						<li class="fragment">❌ Prototipos sin estados de error/loading</li>
+					</ul>
+				</section>
+
+				<!-- MEJORES PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li class="fragment">✅ Planificar arquitectura de componentes (Atomic Design)</li>
+						<li class="fragment">✅ Usar auto-layout en todos los componentes</li>
+						<li class="fragment">✅ Convención de nomenclatura consistente</li>
+						<li class="fragment">✅ Documentar uso de componentes</li>
+						<li class="fragment">✅ Guardar snapshots de versiones importantes</li>
+						<li class="fragment">✅ Plugins solo los necesarios (performance)</li>
+						<li class="fragment">✅ Compartir Design System en biblioteca compartida</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos y Aprendizaje</h2>
+					<ul class="small-text">
+						<li><strong>Figma Learn</strong> - learn.figma.com (oficial)</li>
+						<li><strong>Figma YouTube</strong> - Config talks</li>
+						<li><strong>Figma Community</strong> - Templates y plugins</li>
+						<li><strong>"Figma for Designers"</strong> - Curso Udemy</li>
+						<li><strong>FigJam templates</strong> - Workshops</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🧩 <strong>Componentes:</strong> Arquitectura escalable con variantes</li>
+						<li class="fragment">📐 <strong>Auto-layout:</strong> Diseños que se adaptan al contenido</li>
+						<li class="fragment">🎬 <strong>Prototipado:</strong> Smart Animate + Variables = realismo</li>
+						<li class="fragment">🤝 <strong>Colaboración:</strong> FigJam/Miro para workshops</li>
+						<li class="fragment">🔌 <strong>Plugins:</strong> Accesibilidad y productividad</li>
+						<li class="fragment">📁 <strong>Organización:</strong> Estructura clara + versionado</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Herramientas Profesionales</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>4.1. Integración UX + UI</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+				background: none;
+			}
+			.reveal .highlight {
+				color: #42affa;
+				font-weight: bold;
+			}
+			.reveal .small-text {
+				font-size: 0.8em;
+			}
+			.reveal .very-small-text {
+				font-size: 0.65em;
+			}
+			.reveal .card {
+				background: rgba(66, 175, 250, 0.1);
+				padding: 20px;
+				border-radius: 8px;
+				margin: 15px 0;
+			}
+			.reveal .process-box {
+				background: rgba(66, 175, 250, 0.15);
+				padding: 15px;
+				border-radius: 8px;
+				margin: 10px 0;
+			}
+			.reveal .flow-diagram {
+				font-family: 'Courier New', monospace;
+				background: rgba(255, 255, 255, 0.05);
+				padding: 15px;
+				border-radius: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Portada -->
+				<section>
+					<h1>4.1. Integración UX + UI</h1>
+					<h3>Aplicaciones Prácticas e Integración</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Slide 2: Introducción -->
+				<section>
+					<h2>La Síntesis de Disciplinas</h2>
+					<blockquote class="fragment">
+						"La integración UX + UI no es la suma de partes, sino la traducción deliberada de insights en decisiones de diseño"
+					</blockquote>
+					<div class="card fragment">
+						<p><strong>UX:</strong> Estrategia centrada en el usuario</p>
+						<p><strong>UI:</strong> Sistema visual coherente</p>
+						<p><strong>Integración:</strong> Experiencias cohesivas y efectivas</p>
+					</div>
+				</section>
+
+				<!-- PARTE 1: METODOLOGÍA DE SÍNTESIS -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>De la Investigación al Diseño</h2>
+						<p>Metodología de síntesis</p>
+					</section>
+
+					<!-- Slide: El Puente -->
+					<section>
+						<h2>El Puente entre Investigación y Visualización</h2>
+						<div class="flow-diagram very-small-text fragment">
+							<pre><code data-trim data-noescape>
+INVESTIGACIÓN UX       SÍNTESIS          DISEÑO UI
+─────────────────  ────────────────  ─────────────────
+
+• User Personas   →  Principios de  →  Sistema de diseño
+• Journey Maps       Diseño             personalizado
+• Pain Points     →  Requerimientos →  Componentes UI
+• Necesidades        funcionales        específicos
+• Contextos       →  Restricciones  →  Adaptaciones
+  de uso             técnicas           contextuales
+• Modelos         →  Arquitectura   →  Patrones de
+  mentales           de información     navegación
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: 5 Fases de Síntesis -->
+					<section>
+						<h2>Metodología de Síntesis en 5 Fases</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Consolidación de hallazgos</strong> - Recopilar artefactos de investigación</li>
+							<li class="fragment"><strong>Derivación de principios</strong> - Crear criterios de decisión</li>
+							<li class="fragment"><strong>Definición de requerimientos</strong> - Traducir necesidades a especificaciones</li>
+							<li class="fragment"><strong>Mapeo de soluciones</strong> - Conectar requerimientos con diseño UI</li>
+							<li class="fragment"><strong>Validación cruzada</strong> - Verificar trazabilidad</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Fase 1 -->
+					<section>
+						<h2>Fase 1: Consolidación de Hallazgos</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Artefacto</th>
+									<th>Propósito</th>
+									<th>Formato</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Matriz de hallazgos</td>
+									<td>Centralizar insights</td>
+									<td>Spreadsheet categorizado</td>
+								</tr>
+								<tr>
+									<td>Mapa de oportunidades</td>
+									<td>Priorizar intervenciones</td>
+									<td>Matriz 2x2 (impacto/esfuerzo)</td>
+								</tr>
+								<tr>
+									<td>Declaraciones HMW</td>
+									<td>Enmarcar desafíos</td>
+									<td>Lista priorizada</td>
+								</tr>
+								<tr>
+									<td>Principios de diseño</td>
+									<td>Guiar decisiones</td>
+									<td>Documento narrativo</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Fase 2 - Principios -->
+					<section>
+						<h2>Fase 2: Principios de Diseño</h2>
+						<div class="process-box small-text">
+							<p><strong>Estructura de un Principio:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>NOMBRE:</strong> Título memorable y accionable</li>
+								<li><strong>ORIGEN:</strong> Hallazgo de investigación que lo fundamenta</li>
+								<li><strong>DECLARACIÓN:</strong> Descripción clara del principio</li>
+								<li><strong>IMPLICACIONES UI:</strong> Decisiones derivadas</li>
+								<li><strong>EJEMPLO:</strong> Aplicación concreta</li>
+								<li><strong>ANTI-PATRÓN:</strong> Qué evitar</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: Fase 3 - Requerimientos -->
+					<section>
+						<h2>Fase 3: Requerimientos de Experiencia</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Funcionales:</strong> Qué debe hacer el sistema</li>
+							<li class="fragment"><strong>Emocionales:</strong> Cómo debe sentirse la experiencia</li>
+							<li class="fragment"><strong>Contextuales:</strong> Dónde y cuándo se usará</li>
+							<li class="fragment"><strong>Accesibilidad:</strong> Quién debe poder usarlo</li>
+							<li class="fragment"><strong>Rendimiento:</strong> Qué tan rápido debe responder</li>
+						</ul>
+					</section>
+
+					<!-- Slide: Fase 4 - Mapeo -->
+					<section>
+						<h2>Fase 4: Mapeo de Soluciones</h2>
+						<div class="flow-diagram small-text">
+							<pre><code data-trim data-noescape>
+REQUERIMIENTO → SOLUCIÓN UI → COMPONENTE → ESPECIFICACIÓN
+
+Ejemplo:
+"El usuario necesita  →  Feedback     →  Barra de    →  Ancho: 100%
+sentir progreso          visual           progreso        Color: #16A085
+constante"               inmediato        animada         Animación: 300ms
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Fase 5 - Validación -->
+					<section>
+						<h2>Fase 5: Validación Cruzada</h2>
+						<p class="small-text">Verificar antes de diseñar:</p>
+						<ul class="small-text">
+							<li class="fragment">✅ Cada hallazgo tiene al menos una respuesta de diseño</li>
+							<li class="fragment">✅ Cada decisión puede trazarse a un hallazgo</li>
+							<li class="fragment">✅ No hay conflictos entre principios</li>
+							<li class="fragment">✅ Restricciones técnicas documentadas</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- PARTE 2: USER FLOWS Y TASK FLOWS -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>User Flows y Task Flows</h2>
+						<p>Documentación del comportamiento</p>
+					</section>
+
+					<!-- Slide: Distinción -->
+					<section>
+						<h2>User Flow vs Task Flow</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>User Flow</th>
+									<th>Task Flow</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Múltiples caminos</td>
+									<td>Camino único</td>
+								</tr>
+								<tr>
+									<td>Puntos de decisión</td>
+									<td>Sin decisiones</td>
+								</tr>
+								<tr>
+									<td>Maneja errores</td>
+									<td>Solo éxito ("happy path")</td>
+								</tr>
+								<tr>
+									<td>Vista holística</td>
+									<td>Vista específica</td>
+								</tr>
+								<tr>
+									<td>Planificación UX</td>
+									<td>Especificación UI</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Símbolos User Flow -->
+					<section>
+						<h2>Notación de User Flows</h2>
+						<div class="flow-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+○        Inicio/Fin (círculo)
+
+┌───┐    Pantalla/Página (rectángulo)
+└───┘
+
+◇        Punto de decisión (diamante)
+
+→        Flujo/Transición (flecha)
+
+─ ─ →    Flujo opcional (flecha punteada)
+
+⟳        Loop/Repetición
+
+▭        Acción del sistema (rectángulo redondeado)
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Ejemplo User Flow -->
+					<section>
+						<h2>Ejemplo: User Flow de Registro</h2>
+						<div class="flow-diagram very-small-text">
+							<pre><code data-trim data-noescape>
+○ Inicio
+  │
+  v
+┌─────────────┐
+│ Landing     │
+└─────────────┘
+  │
+  v
+◇ ¿Tiene cuenta?
+  │         │
+  No        Sí
+  │         │
+  v         v
+┌──────┐  ┌──────┐
+│Regis-│  │Login │
+│tro   │  └──────┘
+└──────┘     │
+  │          │
+  └────┬─────┘
+       v
+   ┌──────┐
+   │Dashboard│
+   └──────┘
+       │
+       v
+     ○ Fin
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- Slide: Task Flow Documentation -->
+					<section>
+						<h2>Documentación de Task Flows</h2>
+						<div class="process-box small-text">
+							<p><strong>TAREA:</strong> Completar perfil de usuario</p>
+							<p><strong>PERSONA:</strong> Nuevo estudiante</p>
+							<p><strong>TRIGGER:</strong> Primer login exitoso</p>
+							<p><strong>RESULTADO:</strong> Perfil 100% completo</p>
+						</div>
+						<table class="very-small-text fragment">
+							<thead>
+								<tr>
+									<th>Paso</th>
+									<th>Acción Usuario</th>
+									<th>Respuesta Sistema</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Click "Completar perfil"</td>
+									<td>Muestra wizard paso 1/3</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Llena datos personales</td>
+									<td>Valida campos en tiempo real</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Click "Siguiente"</td>
+									<td>Avanza a paso 2/3</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Tiempo y Métricas -->
+					<section>
+						<h2>Métricas de Task Flows</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Tiempo estimado:</strong> ¿Cuánto debería tomar?</li>
+							<li class="fragment"><strong>Task Success Rate:</strong> % que completa sin ayuda</li>
+							<li class="fragment"><strong>Error Rate:</strong> Intentos fallidos por paso</li>
+							<li class="fragment"><strong>Time on Task:</strong> Duración real vs estimada</li>
+						</ul>
+						<p class="fragment highlight small-text">💡 Estas métricas se validan en testing de usabilidad</p>
+					</section>
+				</section>
+
+				<!-- PARTE 3: PROTOTIPADO DE ALTA FIDELIDAD -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Prototipado de Alta Fidelidad</h2>
+						<p>Cuando y cómo usarlos</p>
+					</section>
+
+					<!-- Slide: Niveles de Fidelidad -->
+					<section>
+						<h2>Niveles de Fidelidad</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Fidelidad</th>
+									<th>Cuándo usar</th>
+									<th>Tiempo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Low-Fi</strong></td>
+									<td>Explorar conceptos, validar flujos</td>
+									<td>Horas</td>
+								</tr>
+								<tr>
+									<td><strong>Mid-Fi</strong></td>
+									<td>Estructura definida, sin branding</td>
+									<td>Días</td>
+								</tr>
+								<tr>
+									<td><strong>High-Fi</strong></td>
+									<td>Validar diseño final, handoff</td>
+									<td>Semanas</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text highlight">Regla: Usar la menor fidelidad que responda tu pregunta</p>
+					</section>
+
+					<!-- Slide: Cuándo High-Fi -->
+					<section>
+						<h2>¿Cuándo Usar Alta Fidelidad?</h2>
+						<ul class="small-text">
+							<li class="fragment">✅ Testear interacciones específicas</li>
+							<li class="fragment">✅ Validar diseño visual con stakeholders</li>
+							<li class="fragment">✅ Documentación para desarrollo</li>
+							<li class="fragment">✅ Testing con usuarios finales</li>
+							<li class="fragment">✅ Presentaciones a clientes/inversores</li>
+						</ul>
+						<p class="fragment small-text">❌ No uses high-fi para explorar conceptos iniciales</p>
+					</section>
+
+					<!-- Slide: Componentes de High-Fi -->
+					<section>
+						<h2>Componentes de Prototipo High-Fi</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Visual:</strong> Colores, tipografía, imágenes reales</li>
+							<li class="fragment"><strong>Contenido:</strong> Texto real, no lorem ipsum</li>
+							<li class="fragment"><strong>Interacciones:</strong> Botones, formularios, navegación</li>
+							<li class="fragment"><strong>Transiciones:</strong> Animaciones realistas</li>
+							<li class="fragment"><strong>Estados:</strong> Hover, active, disabled, loading</li>
+							<li class="fragment"><strong>Datos:</strong> Casos reales, edge cases</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Herramientas -->
+					<section>
+						<h2>Herramientas de Prototipado</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Herramienta</th>
+									<th>Fortaleza</th>
+									<th>Uso</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Figma</strong></td>
+									<td>Colaboración, Smart Animate</td>
+									<td>General</td>
+								</tr>
+								<tr>
+									<td><strong>Framer</strong></td>
+									<td>Código + diseño, animaciones</td>
+									<td>Prototipos complejos</td>
+								</tr>
+								<tr>
+									<td><strong>ProtoPie</strong></td>
+									<td>Interacciones avanzadas</td>
+									<td>Mobile apps</td>
+								</tr>
+								<tr>
+									<td><strong>Principle</strong></td>
+									<td>Animaciones timeline</td>
+									<td>Motion design</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<!-- Slide: Figma Prototipado -->
+					<section>
+						<h2>Prototipado en Figma</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Hotspots:</strong> Áreas clickeables</li>
+							<li class="fragment"><strong>Connections:</strong> Flujos entre frames</li>
+							<li class="fragment"><strong>Triggers:</strong> On click, on hover, after delay</li>
+							<li class="fragment"><strong>Actions:</strong> Navigate to, Open overlay, Swap</li>
+							<li class="fragment"><strong>Animations:</strong> Instant, Dissolve, Smart Animate</li>
+							<li class="fragment"><strong>Variables:</strong> Estados dinámicos</li>
+						</ul>
+						<p class="fragment small-text highlight">Smart Animate detecta cambios entre frames y anima automáticamente</p>
+					</section>
+
+					<!-- Slide: Best Practices -->
+					<section>
+						<h2>Mejores Prácticas de Prototipado</h2>
+						<ul class="small-text">
+							<li class="fragment">✅ Nombra frames descriptivamente</li>
+							<li class="fragment">✅ Organiza flows en páginas separadas</li>
+							<li class="fragment">✅ Documenta interacciones no obvias</li>
+							<li class="fragment">✅ Incluye estados de carga y error</li>
+							<li class="fragment">✅ Prueba el prototipo antes de testear</li>
+							<li class="fragment">✅ Usa componentes y variantes</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- PARTE 4: ESPECIFICACIONES Y HANDOFF -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Especificaciones de Diseño</h2>
+						<p>Redlines y Handoff</p>
+					</section>
+
+					<!-- Slide: Qué son Redlines -->
+					<section>
+						<h2>Redlines (Especificaciones)</h2>
+						<p class="small-text">Documentación detallada de medidas, espaciados y estilos</p>
+						<div class="card fragment">
+							<p class="small-text"><strong>Incluye:</strong></p>
+							<ul class="very-small-text">
+								<li>Dimensiones de elementos (ancho x alto)</li>
+								<li>Espaciados entre elementos (margins, paddings)</li>
+								<li>Tamaños de fuente, line-height, letter-spacing</li>
+								<li>Colores exactos (hex, RGB, HSL)</li>
+								<li>Radios de borde, sombras, opacidades</li>
+								<li>Estados de componentes</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Slide: Figma Dev Mode -->
+					<section>
+						<h2>Figma Dev Mode</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Inspect:</strong> Ver CSS, iOS, Android code</li>
+							<li class="fragment"><strong>Medidas:</strong> Espaciados automáticos</li>
+							<li class="fragment"><strong>Assets:</strong> Exportar imágenes en múltiples formatos</li>
+							<li class="fragment"><strong>Plugins:</strong> Zeplin, Avocode para workflows específicos</li>
+						</ul>
+						<p class="fragment small-text highlight">Dev Mode es gratuito para desarrolladores</p>
+					</section>
+
+					<!-- Slide: Información de Handoff -->
+					<section>
+						<h2>Información Esencial en Handoff</h2>
+						<ol class="small-text">
+							<li class="fragment"><strong>Specs visuales:</strong> Todo lo de redlines</li>
+							<li class="fragment"><strong>Estados:</strong> Default, hover, active, disabled, loading, error</li>
+							<li class="fragment"><strong>Comportamiento:</strong> Animaciones, transiciones</li>
+							<li class="fragment"><strong>Responsive:</strong> Breakpoints y layouts</li>
+							<li class="fragment"><strong>Assets:</strong> Imágenes, iconos exportados</li>
+							<li class="fragment"><strong>Copy:</strong> Textos finales aprobados</li>
+						</ol>
+					</section>
+
+					<!-- Slide: Design Tokens -->
+					<section>
+						<h2>Design Tokens para Handoff</h2>
+						<p class="small-text">Variables de diseño compartidas entre diseño y código</p>
+						<pre class="fragment"><code data-trim data-noescape class="language-css">
+/* Design Tokens */
+:root {
+  /* Colors */
+  --color-primary-500: #2196f3;
+  --color-primary-700: #1976d2;
+  
+  /* Typography */
+  --font-size-base: 1rem;
+  --font-weight-semibold: 600;
+  
+  /* Spacing (8pt grid) */
+  --space-2: 1rem;
+  --space-4: 2rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+}
+						</code></pre>
+					</section>
+
+					<!-- Slide: Colaboración -->
+					<section>
+						<h2>Colaboración Diseñador-Developer</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Antes:</strong> Validar factibilidad técnica</li>
+							<li class="fragment"><strong>Durante:</strong> Resolución de dudas, ajustes</li>
+							<li class="fragment"><strong>QA:</strong> Validar implementación vs diseño</li>
+						</ul>
+						<div class="card fragment">
+							<p class="small-text"><strong>Temas a discutir:</strong></p>
+							<ul class="very-small-text">
+								<li>Performance implications del diseño</li>
+								<li>¿Animaciones valen la pena?</li>
+								<li>Edge cases (contenido largo, sin datos, errores)</li>
+								<li>Responsive breakpoints</li>
+								<li>Accesibilidad (WCAG)</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- CASO EDUCONNECT -->
+				<section>
+					<section>
+						<h2>Caso Práctico: EduConnect</h2>
+						<p>Aplicando la integración UX + UI</p>
+					</section>
+
+					<!-- Slide: Principios Derivados -->
+					<section>
+						<h2>EduConnect: Principios de Diseño</h2>
+						<div class="process-box small-text">
+							<p><strong>Principio 1: Progreso Visible</strong></p>
+							<p class="very-small-text"><strong>Origen:</strong> Usuarios abandonan cuando no ven avance</p>
+							<p class="very-small-text"><strong>Implicación UI:</strong> Barra de progreso en onboarding, checkmarks en cursos</p>
+						</div>
+						<div class="process-box small-text fragment">
+							<p><strong>Principio 2: Claridad Inmediata</strong></p>
+							<p class="very-small-text"><strong>Origen:</strong> Usuarios no leen instrucciones largas</p>
+							<p class="very-small-text"><strong>Implicación UI:</strong> Tooltips contextuales, iconos descriptivos</p>
+						</div>
+					</section>
+
+					<!-- Slide: Task Flow Onboarding -->
+					<section>
+						<h2>Task Flow: Onboarding</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Paso</th>
+									<th>Acción</th>
+									<th>Respuesta</th>
+									<th>Tiempo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Landing en welcome screen</td>
+									<td>Muestra "Bienvenido + CTA"</td>
+									<td>2s</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Click "Comenzar"</td>
+									<td>Muestra paso 1/3 intereses</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Selecciona 3 intereses</td>
+									<td>Habilita botón "Siguiente"</td>
+									<td>15s</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Click "Siguiente"</td>
+									<td>Avanza a 2/3 nivel</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Selecciona nivel</td>
+									<td>Habilita "Finalizar"</td>
+									<td>5s</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>Click "Finalizar"</td>
+									<td>Redirect a dashboard</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment small-text">Tiempo total estimado: <span class="highlight">~25 segundos</span></p>
+					</section>
+
+					<!-- Slide: Resultados -->
+					<section>
+						<h2>Resultados de Integración</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Antes:</strong> 78% abandono en onboarding</li>
+							<li class="fragment"><strong>Después:</strong> 31% abandono (+47% completación)</li>
+						</ul>
+						<div class="card fragment">
+							<p class="small-text"><strong>¿Qué funcionó?</strong></p>
+							<ul class="very-small-text">
+								<li>Barra de progreso visible (principio "Progreso Visible")</li>
+								<li>3 pasos en lugar de 5 (reducir carga cognitiva)</li>
+								<li>Skippable para usuarios avanzados</li>
+								<li>Animaciones suaves (Smart Animate)</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- ERRORES COMUNES -->
+				<section>
+					<h2>Errores Comunes en Integración</h2>
+					<ul class="small-text">
+						<li class="fragment">❌ Saltar directamente a UI sin investigación</li>
+						<li class="fragment">❌ No documentar el proceso de síntesis</li>
+						<li class="fragment">❌ Crear principios de diseño genéricos</li>
+						<li class="fragment">❌ User flows sin casos de error</li>
+						<li class="fragment">❌ Prototipos sin datos reales</li>
+						<li class="fragment">❌ Handoff sin especificaciones de estados</li>
+					</ul>
+				</section>
+
+				<!-- MEJORES PRÁCTICAS -->
+				<section>
+					<h2>Mejores Prácticas</h2>
+					<ul class="small-text">
+						<li class="fragment">✅ Documentar la trazabilidad (investigación → decisiones)</li>
+						<li class="fragment">✅ Crear principios de diseño específicos del proyecto</li>
+						<li class="fragment">✅ Usar Task Flows para tareas críticas</li>
+						<li class="fragment">✅ Prototipar con contenido real y edge cases</li>
+						<li class="fragment">✅ Incluir todos los estados en handoff</li>
+						<li class="fragment">✅ Colaborar con developers desde el inicio</li>
+					</ul>
+				</section>
+
+				<!-- HERRAMIENTAS -->
+				<section>
+					<h2>Herramientas Recomendadas</h2>
+					<ul class="small-text">
+						<li class="fragment"><strong>Síntesis:</strong> Miro, FigJam (brainstorming)</li>
+						<li class="fragment"><strong>Flowcharts:</strong> Whimsical, Lucidchart</li>
+						<li class="fragment"><strong>Prototipado:</strong> Figma, Framer, ProtoPie</li>
+						<li class="fragment"><strong>Handoff:</strong> Figma Dev Mode, Zeplin</li>
+						<li class="fragment"><strong>Design Tokens:</strong> Style Dictionary, Tokens Studio</li>
+					</ul>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🔄 <strong>Síntesis:</strong> Traducir investigación a decisiones de diseño</li>
+						<li class="fragment">📊 <strong>Documentación:</strong> User Flows para visión holística, Task Flows para especificación</li>
+						<li class="fragment">🎨 <strong>Prototipado:</strong> Usar la fidelidad apropiada según el objetivo</li>
+						<li class="fragment">📐 <strong>Handoff:</strong> Especificaciones completas + colaboración continua</li>
+						<li class="fragment">✅ <strong>Validación:</strong> Cada decisión debe trazarse a un hallazgo</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos y Referencias</h2>
+					<ul class="small-text">
+						<li><strong>"About Face"</strong> - Alan Cooper (interacción)</li>
+						<li><strong>"Articulating Design Decisions"</strong> - Tom Greever</li>
+						<li><strong>Figma Documentation</strong> - figma.com/best-practices</li>
+						<li><strong>Laws of UX</strong> - lawsofux.com</li>
+						<li><strong>Nielsen Norman Group</strong> - Research reports</li>
+					</ul>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Integración UX + UI</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>

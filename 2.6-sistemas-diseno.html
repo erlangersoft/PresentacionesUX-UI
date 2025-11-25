@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2.6. Sistemas de Diseño</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal section img { border: none; box-shadow: none; background: none; }
+			.reveal .highlight { color: #42affa; font-weight: bold; }
+			.reveal .small-text { font-size: 0.8em; }
+			.reveal .very-small-text { font-size: 0.65em; }
+			.reveal .card { background: rgba(66, 175, 250, 0.1); padding: 20px; border-radius: 8px; margin: 15px 0; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Portada -->
+				<section>
+					<h1>2.6. Sistemas de Diseño</h1>
+					<h3>Fundamentos de UI (Lo Visual)</h3>
+					<p>UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+				<!-- Introducción -->
+				<section>
+					<h2>Qué es un Sistema de Diseño</h2>
+					<div class="card fragment">
+						<p class="small-text">Más que una librería de componentes:</p>
+						<p class="highlight">Un lenguaje compartido que alinea diseño, desarrollo y producto</p>
+					</div>
+				</section>
+
+				<!-- PARTE 1: FUNDAMENTOS -->
+				<section>
+					<section>
+						<h1>Parte 1</h1>
+						<h2>Fundamentos</h2>
+					</section>
+
+					<section>
+						<h2>Componentes de un Design System</h2>
+						<pre class="small-text"><code data-trim>
+Design System
+├── Design Tokens
+│   ├── Colores
+│   ├── Tipografía
+│   ├── Espaciado
+│   └── Sombras
+├── Componentes
+│   ├── Átomos
+│   ├── Moléculas
+│   └── Organismos
+├── Patrones
+│   ├── Layouts
+│   ├── Navegación
+│   └── Forms
+└── Guías
+    ├── Principios
+    ├── Uso
+    └── Código
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>6 Beneficios Clave</h2>
+						<ul class="small-text">
+							<li class="fragment"><strong>Consistencia:</strong> Experiencia uniforme en todo el producto</li>
+							<li class="fragment"><strong>Eficiencia:</strong> Reutilización reduce tiempo</li>
+							<li class="fragment"><strong>Escalabilidad:</strong> Fácil mantener y expandir</li>
+							<li class="fragment"><strong>Colaboración:</strong> Lenguaje común entre equipos</li>
+							<li class="fragment"><strong>Calidad:</strong> Componentes testeados y optimizados</li>
+							<li class="fragment"><strong>Onboarding:</strong> Nuevos miembros se integran más rápido</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>4 Niveles de Madurez</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>1. Style Guide</strong></td>
+									<td>Guía de colores, tipografía, logos (estático)</td>
+								</tr>
+								<tr>
+									<td><strong>2. Pattern Library</strong></td>
+									<td>Componentes documentados + código copiable</td>
+								</tr>
+								<tr>
+									<td><strong>3. Design System</strong></td>
+									<td>Librería viva, versionada, con filosofía</td>
+								</tr>
+								<tr class="highlight">
+									<td><strong>4. Living System</strong></td>
+									<td>Automatizado, métricas, evolución continua</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 2: STYLE GUIDE -->
+				<section>
+					<section>
+						<h1>Parte 2</h1>
+						<h2>Style Guides y Patrones</h2>
+					</section>
+
+					<section>
+						<h2>Contenido de una Style Guide</h2>
+						<ul class="small-text">
+							<li><strong>1. Marca:</strong> Logo, variaciones, uso correcto/incorrecto</li>
+							<li><strong>2. Colores:</strong> Paleta, semántica, contraste, código</li>
+							<li><strong>3. Tipografía:</strong> Familias, escala, pesos, line-heights</li>
+							<li><strong>4. Iconografía:</strong> Estilo, tamaños, librería</li>
+							<li><strong>5. Espaciado:</strong> Grid system, escala</li>
+							<li><strong>6. Elevación:</strong> Niveles de sombra</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<p class="small-text">Soluciones reutilizables para problemas comunes</p>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Categoría</th>
+									<th>Ejemplos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Navegación</strong></td>
+									<td>Tabs, Sidebar, Breadcrumbs, Pagination</td>
+								</tr>
+								<tr>
+									<td><strong>Formularios</strong></td>
+									<td>Validación inline, Multi-step, Search</td>
+								</tr>
+								<tr>
+									<td><strong>Contenido</strong></td>
+									<td>Card grids, Lists, Tables, Empty states</td>
+								</tr>
+								<tr>
+									<td><strong>Feedback</strong></td>
+									<td>Toasts, Modals, Alerts, Loading states</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Documentación de Patrón</h2>
+						<pre class="very-small-text"><code data-trim>
+## Patrón: Card de Curso
+
+### Cuándo usar
+- Preview de curso en grids
+- Navegación de catálogo
+
+### Cuándo NO usar
+- Detalles completos → usar página dedicada
+- Listas compactas → usar List Item
+
+### Anatomía
+1. Thumbnail (16:9)
+2. Categoría badge
+3. Título (máx 2 líneas)
+4. Instructor + Rating
+5. Metadata (duración, nivel)
+6. CTA (opcional)
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 3: DISEÑO ATÓMICO -->
+				<section>
+					<section>
+						<h1>Parte 3</h1>
+						<h2>Diseño Atómico</h2>
+						<p class="small-text">Metodología de Brad Frost</p>
+					</section>
+
+					<section>
+						<h2>Los 5 Niveles</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>1. Átomos</strong></td>
+									<td>Elementos básicos indivisibles</td>
+								</tr>
+								<tr>
+									<td><strong>2. Moléculas</strong></td>
+									<td>Combinación de átomos</td>
+								</tr>
+								<tr>
+									<td><strong>3. Organismos</strong></td>
+									<td>Secciones complejas</td>
+								</tr>
+								<tr>
+									<td><strong>4. Templates</strong></td>
+									<td>Estructuras de página</td>
+								</tr>
+								<tr>
+									<td><strong>5. Pages</strong></td>
+									<td>Templates con contenido real</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>1. Átomos</h2>
+						<p class="small-text">Elementos básicos indivisibles</p>
+						<ul class="small-text">
+							<li>Botón</li>
+							<li>Input</li>
+							<li>Label</li>
+							<li>Ícono</li>
+							<li>Color token</li>
+						</ul>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-html">
+<button class="btn btn-primary">
+  Inscribirse
+</button>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>2. Moléculas</h2>
+						<p class="small-text">Combinación de átomos</p>
+						<ul class="small-text">
+							<li>Search bar (input + button)</li>
+							<li>Form field (label + input + error)</li>
+							<li>Rating display (stars + count)</li>
+						</ul>
+						<pre class="fragment very-small-text"><code data-trim data-noescape class="language-html">
+<div class="search-bar">
+  <input type="search" placeholder="Buscar..." />
+  <button class="btn-icon">
+    <svg><!-- icon --></svg>
+  </button>
+</div>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>3. Organismos</h2>
+						<p class="small-text">Secciones complejas</p>
+						<ul class="small-text">
+							<li>Header completo</li>
+							<li>Card de curso</li>
+							<li>Filter panel</li>
+							<li>Comment thread</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>4. Templates & 5. Pages</h2>
+						<p class="small-text"><strong>Templates:</strong> Estructuras de página</p>
+						<ul class="very-small-text">
+							<li>Grid de cursos (3 columnas)</li>
+							<li>Layout de página de curso</li>
+							<li>Dashboard layout</li>
+						</ul>
+						<p class="small-text fragment"><strong>Pages:</strong> Templates con contenido real</p>
+						<ul class="very-small-text fragment">
+							<li>Catálogo de Cursos de EduConnect</li>
+							<li>Curso: "Intro a Python"</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Ventajas del Diseño Atómico</h2>
+						<ul class="small-text">
+							<li class="fragment">📦 <strong>Modularidad:</strong> Componentes reutilizables</li>
+							<li class="fragment">🎯 <strong>Consistencia:</strong> Mismos átomos everywhere</li>
+							<li class="fragment">🔧 <strong>Mantenibilidad:</strong> Cambio en átomo se propaga</li>
+							<li class="fragment">💬 <strong>Colaboración:</strong> Vocabulario compartido</li>
+							<li class="fragment">🧪 <strong>Testing:</strong> Testear átomos, confiar en moléculas</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>EduConnect: Diseño Atómico</h2>
+						<pre class="very-small-text"><code data-trim>
+Átomos:
+- Button (primary, secondary, text, icon)
+- Input (text, email, search)
+- Badge, Avatar, Icon
+
+Moléculas:
+- Form Field, Search Bar
+- Rating Display, Instructor Badge
+
+Organismos:
+- Header, Course Card
+- Filter Panel, Progress Tracker
+
+Templates:
+- Catalog Layout, Course Detail
+
+Pages:
+- Course Catalog "Programación"
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- PARTE 4: TOKENS -->
+				<section>
+					<section>
+						<h1>Parte 4</h1>
+						<h2>Design Tokens</h2>
+					</section>
+
+					<section>
+						<h2>Qué son Design Tokens</h2>
+						<div class="card">
+							<p class="small-text">Variables que almacenan valores de diseño</p>
+							<p class="highlight">Capa de abstracción entre diseño y código</p>
+						</div>
+					</section>
+
+					<section>
+						<h2>3 Niveles de Tokens</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Ejemplo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>1. Global (Primitivos)</strong></td>
+									<td><code>--blue-500: #2962FF</code></td>
+								</tr>
+								<tr>
+									<td><strong>2. Semantic (Alias)</strong></td>
+									<td><code>--color-primary: var(--blue-500)</code></td>
+								</tr>
+								<tr>
+									<td><strong>3. Component</strong></td>
+									<td><code>--button-bg: var(--color-primary)</code></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Categorías de Tokens</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+/* Color */
+--color-primary-500: #2962FF;
+
+/* Typography */
+--font-family-sans: 'Inter', sans-serif;
+--font-size-base: 16px;
+--font-weight-semibold: 600;
+
+/* Spacing */
+--space-4: 16px;
+--space-8: 32px;
+
+/* Border Radius */
+--radius-base: 8px;
+
+/* Shadow */
+--shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Beneficios de Tokens</h2>
+						<ul class="small-text">
+							<li class="fragment">🎯 <strong>Single Source of Truth:</strong> Un cambio se propaga</li>
+							<li class="fragment">✓ <strong>Consistencia:</strong> Imposible usar valores arbitrarios</li>
+							<li class="fragment">🌓 <strong>Theming:</strong> Fácil crear dark mode</li>
+							<li class="fragment">📱 <strong>Multi-plataforma:</strong> CSS, iOS, Android</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Dark Mode con Tokens</h2>
+						<pre class="very-small-text"><code data-trim data-noescape class="language-css">
+:root {
+  --color-bg-primary: white;
+  --color-text-primary: var(--gray-900);
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: var(--gray-900);
+  --color-text-primary: var(--gray-50);
+}
+
+/* Componentes usan tokens semánticos */
+.card {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Herramientas para Tokens</h2>
+						<table class="small-text">
+							<thead>
+								<tr>
+									<th>Herramienta</th>
+									<th>Función</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Style Dictionary</td>
+									<td>Transforma tokens JSON a CSS/SCSS/JS</td>
+								</tr>
+								<tr>
+									<td>Theo</td>
+									<td>Similar a Style Dictionary</td>
+								</tr>
+								<tr>
+									<td>Figma Tokens</td>
+									<td>Sincroniza Figma ↔ código</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<!-- PARTE 5: SISTEMAS POPULARES -->
+				<section>
+					<section>
+						<h1>Parte 5</h1>
+						<h2>Análisis de Sistemas</h2>
+					</section>
+
+					<section>
+						<h2>Material Design (Google)</h2>
+						<div class="card">
+							<p class="small-text"><strong>Filosofía:</strong> Papel y tinta, movimiento con significado</p>
+						</div>
+						<ul class="small-text">
+							<li><strong>Principios:</strong> Material como metáfora, Bold & Graphic, Motion</li>
+							<li><strong>Componentes:</strong> FAB, Cards, Bottom Nav, Snackbar</li>
+							<li><strong>Material You (M3):</strong> Personalización dinámica de color</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Human Interface Guidelines (Apple)</h2>
+						<div class="card">
+							<p class="small-text"><strong>Filosofía:</strong> Claridad, deferencia, profundidad</p>
+						</div>
+						<ul class="small-text">
+							<li><strong>Principios:</strong> Simplicidad ante todo, contenido sobre chrome</li>
+							<li><strong>Componentes:</strong> Tab Bar, Navigation Bar, Sheets, SF Symbols</li>
+							<li><strong>Diseño iOS:</strong> Large Titles, Swipe actions, SF Pro</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Fluent Design (Microsoft)</h2>
+						<div class="card">
+							<p class="small-text"><strong>Filosofía:</strong> Luz, profundidad, movimiento, material, escala</p>
+						</div>
+						<ul class="small-text">
+							<li><strong>Principios:</strong> Coherencia cross-platform, adaptable</li>
+							<li><strong>Componentes:</strong> Acrylic (blur), Reveal, Command Bar</li>
+							<li><strong>Adaptativo:</strong> Móvil → Desktop → Surface Hub</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Comparación</h2>
+						<table class="very-small-text">
+							<thead>
+								<tr>
+									<th>Aspecto</th>
+									<th>Material</th>
+									<th>HIG</th>
+									<th>Fluent</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Plataforma</td>
+									<td>Android, Web</td>
+									<td>iOS, macOS</td>
+									<td>Windows, Web</td>
+								</tr>
+								<tr>
+									<td>Metáfora</td>
+									<td>Papel/tinta</td>
+									<td>Físico</td>
+									<td>Luz/material</td>
+								</tr>
+								<tr>
+									<td>Navegación</td>
+									<td>Bottom nav, FAB</td>
+									<td>Tab bar</td>
+									<td>Command bar</td>
+								</tr>
+								<tr>
+									<td>Elevación</td>
+									<td>Sombras fuertes</td>
+									<td>Sombras sutiles</td>
+									<td>Blur acrílico</td>
+								</tr>
+								<tr>
+									<td>Tipografía</td>
+									<td>Roboto</td>
+									<td>SF Pro</td>
+									<td>Segoe UI</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Aplicación a EduConnect</h2>
+						<div class="card">
+							<p class="small-text"><strong>Sistema híbrido:</strong></p>
+							<ul class="very-small-text">
+								<li><strong>De Material:</strong> Elevación clara, FAB, Bottom nav</li>
+								<li><strong>De HIG:</strong> Claridad tipográfica, espaciado</li>
+								<li><strong>De Fluent:</strong> Adaptabilidad cross-platform</li>
+							</ul>
+						</div>
+						<p class="fragment highlight small-text">Resultado: Optimizado para web sin atarse a una plataforma</p>
+					</section>
+				</section>
+
+				<!-- CONCLUSIONES -->
+				<section>
+					<h2>Conclusiones Clave</h2>
+					<ul>
+						<li class="fragment">🎨 Design System = lenguaje compartido</li>
+						<li class="fragment">⚛️ Diseño Atómico = modularidad y reutilización</li>
+						<li class="fragment">🔑 Tokens = single source of truth</li>
+						<li class="fragment">📚 Patrones = soluciones documentadas</li>
+						<li class="fragment">🌐 Material/HIG/Fluent = aprender de los mejores</li>
+						<li class="fragment">🔧 Living System = nivel 4 de madurez</li>
+					</ul>
+				</section>
+
+				<!-- RECURSOS -->
+				<section>
+					<h2>Recursos</h2>
+					<table class="very-small-text">
+						<thead>
+							<tr>
+								<th>Recurso</th>
+								<th>URL</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Material Design</td>
+								<td>material.io</td>
+							</tr>
+							<tr>
+								<td>Human Interface Guidelines</td>
+								<td>developer.apple.com/design</td>
+							</tr>
+							<tr>
+								<td>Fluent Design</td>
+								<td>fluent2.microsoft.design</td>
+							</tr>
+							<tr>
+								<td>Atomic Design (libro)</td>
+								<td>atomicdesign.bradfrost.com</td>
+							</tr>
+							<tr>
+								<td>Style Dictionary</td>
+								<td>amzn.github.io/style-dictionary</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- CIERRE -->
+				<section>
+					<h1>¿Preguntas?</h1>
+					<p>Sistemas de Diseño</p>
+					<p class="small-text">UCATEC - Diseño Web UX/UI</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				width: 1280,
+				height: 720,
+				margin: 0.04,
+				transition: 'slide'
+			});
+		</script>
+	</body>
+</html>
