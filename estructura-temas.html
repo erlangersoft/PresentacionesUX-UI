@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Temas - Fundamentos del Diseño Web y UX/UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #markdown-content {
+            padding: 3rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Estilos para Markdown renderizado */
+        #markdown-content h1 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        #markdown-content h2 {
+            font-size: 2rem;
+            color: #2a5298;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        #markdown-content h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        #markdown-content h4 {
+            font-size: 1.25rem;
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #markdown-content p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+
+        #markdown-content ul, #markdown-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        #markdown-content li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        #markdown-content strong {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        #markdown-content em {
+            color: #667eea;
+        }
+
+        #markdown-content code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #667eea;
+        }
+
+        #markdown-content pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        #markdown-content pre code {
+            background: none;
+            color: #e2e8f0;
+            padding: 0;
+        }
+
+        #markdown-content blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        #markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #markdown-content th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        #markdown-content td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        #markdown-content tr:hover {
+            background: #f9fafb;
+        }
+
+        #markdown-content a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #markdown-content a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        #markdown-content hr {
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #c33;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .header-title {
+                font-size: 1.2rem;
+            }
+
+            #markdown-content {
+                padding: 1.5rem;
+            }
+
+            #markdown-content h1 {
+                font-size: 1.8rem;
+            }
+
+            #markdown-content h2 {
+                font-size: 1.5rem;
+            }
+
+            #markdown-content h3 {
+                font-size: 1.25rem;
+            }
+
+            #markdown-content table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">Estructura de Temas del Curso</h1>
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al inicio
+            </a>
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Cargando estructura de temas...</p>
+        </div>
+
+        <div id="markdown-content"></div>
+    </div>
+
+    <!-- Marked.js - Librería para parsear Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <script>
+        // Configuración de Marked.js
+        marked.setOptions({
+            breaks: true,
+            gfm: true, // GitHub Flavored Markdown
+            headerIds: true,
+            mangle: false
+        });
+
+        // Función para cargar y renderizar el archivo Markdown
+        async function loadMarkdown() {
+            const loadingElement = document.getElementById('loading');
+            const contentElement = document.getElementById('markdown-content');
+
+            try {
+                // Cargar el archivo Markdown
+                const response = await fetch('docs/Estructura de Temas.md');
+                
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el archivo');
+                }
+
+                const markdown = await response.text();
+                
+                // Convertir Markdown a HTML
+                const html = marked.parse(markdown);
+                
+                // Insertar el HTML en el contenedor
+                contentElement.innerHTML = html;
+                
+                // Ocultar loading
+                loadingElement.style.display = 'none';
+                
+                // Hacer scroll suave a anchors internos
+                contentElement.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A' && e.target.hash) {
+                        e.preventDefault();
+                        const target = document.querySelector(e.target.hash);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error al cargar el Markdown:', error);
+                loadingElement.style.display = 'none';
+                contentElement.innerHTML = `
+                    <div class="error">
+                        <h2>Error al cargar el contenido</h2>
+                        <p>No se pudo cargar la estructura de temas. Por favor, verifica que el archivo "docs/Estructura de Temas.md" existe.</p>
+                        <p><a href="index.html">Volver al inicio</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        // Cargar el Markdown cuando la página esté lista
+        window.addEventListener('DOMContentLoaded', loadMarkdown);
+    </script>
+</body>
+</html>
