@@ -2,33 +2,108 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>2.7 Accesibilidad e Inclusión | Diseño Web UX/UI</title>
-		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/white.css">
+		
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
 		<style>
-			.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+			.reveal h1, .reveal h2, .reveal h3 { 
+				text-transform: none; 
+				color: #1e1e1e;
+			}
 			.reveal section img { border: none; box-shadow: none; }
 			.reveal pre { box-shadow: none; }
-			.reveal code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; }
-			.reveal pre code { background: #2d2d2d; padding: 20px; }
+			.reveal code { background: #f5f5f5; color: #c7254e; padding: 2px 6px; border-radius: 3px; }
+			.reveal pre code { background: #2d2d2d; padding: 20px; color: #e0e0e0; }
+			.reveal p, .reveal li { color: #333; }
+			.reveal strong { color: #1e1e1e; }
+			.reveal blockquote { color: #555; border-left-color: #667eea; }
+			
 			.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 			.principle-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin: 20px 0; }
 			.wcag-level { display: inline-block; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin: 5px; }
 			.level-a { background: #ffd700; color: #000; }
 			.level-aa { background: #4CAF50; color: white; }
 			.level-aaa { background: #2196F3; color: white; }
+			
 			.checklist { text-align: left; font-size: 0.85em; }
-			.checklist li { margin: 8px 0; }
-			.good { color: #4CAF50; font-weight: bold; }
-			.bad { color: #f44336; font-weight: bold; }
+			.checklist li { margin: 8px 0; list-style-type: none; }
+			.checklist ul { list-style-type: none; padding-left: 0; }
+			
+			.good { color: #2e7d32; font-weight: bold; }
+			.bad { color: #c62828; font-weight: bold; }
+			
 			.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-			.tool-card { background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; }
+			.tool-card { 
+				background: #f8f9fa; 
+				padding: 20px; 
+				border-radius: 8px; 
+				border-left: 4px solid #667eea;
+				color: #333;
+			}
+			.tool-card strong { color: #1e1e1e; }
+			
 			.diversity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; font-size: 0.8em; }
-			.diversity-item { background: #e3f2fd; padding: 15px; border-radius: 8px; }
-			.keyboard-key { display: inline-block; background: #333; color: white; padding: 5px 12px; border-radius: 4px; font-family: monospace; margin: 0 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+			.diversity-item { 
+				background: #e3f2fd; 
+				padding: 15px; 
+				border-radius: 8px;
+				color: #1565c0;
+			}
+			.diversity-item strong { color: #0d47a1; }
+			
+			.keyboard-key { 
+				display: inline-block; 
+				background: #424242; 
+				color: white; 
+				padding: 5px 12px; 
+				border-radius: 4px; 
+				font-family: monospace; 
+				margin: 0 3px; 
+				box-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+			}
+			
 			.contrast-example { padding: 20px; border-radius: 8px; margin: 10px 0; font-size: 1.2em; }
-			.focus-demo { border: 3px solid #2962FF; outline: 3px solid rgba(41, 98, 255, 0.3); outline-offset: 2px; padding: 15px; border-radius: 8px; }
+			.focus-demo { 
+				border: 3px solid #2962FF; 
+				outline: 3px solid rgba(41, 98, 255, 0.3); 
+				outline-offset: 2px; 
+				padding: 15px; 
+				border-radius: 8px;
+				color: #333;
+			}
+			
+			/* Fixes para cajas con fondo de color */
+			.reveal section div[style*="background: #e3f2fd"] { color: #0d47a1 !important; }
+			.reveal section div[style*="background: #e3f2fd"] p { color: #1565c0 !important; }
+			.reveal section div[style*="background: #e3f2fd"] strong { color: #0d47a1 !important; }
+			
+			.reveal section div[style*="background: #f3e5f5"] { color: #6a1b9a !important; }
+			.reveal section div[style*="background: #f3e5f5"] p { color: #7b1fa2 !important; }
+			.reveal section div[style*="background: #f3e5f5"] strong { color: #6a1b9a !important; }
+			
+			.reveal section div[style*="background: #e8f5e9"] { color: #1b5e20 !important; }
+			.reveal section div[style*="background: #e8f5e9"] p { color: #2e7d32 !important; }
+			.reveal section div[style*="background: #e8f5e9"] strong { color: #1b5e20 !important; }
+			
+			.reveal section div[style*="background: #fff3e0"] { color: #e65100 !important; }
+			.reveal section div[style*="background: #fff3e0"] p { color: #f57c00 !important; }
+			.reveal section div[style*="background: #fff3e0"] strong { color: #e65100 !important; }
+			
+			.reveal section div[style*="background: #ffebee"] { color: #b71c1c !important; }
+			.reveal section div[style*="background: #ffebee"] p { color: #c62828 !important; }
+			.reveal section div[style*="background: #ffebee"] strong { color: #b71c1c !important; }
+			
+			.reveal section div[style*="background: #f5f5f5"] { color: #333 !important; }
+			.reveal section div[style*="background: #f5f5f5"] p { color: #555 !important; }
+			.reveal section div[style*="background: #f5f5f5"] strong { color: #1e1e1e !important; }
+			
+			.reveal section div[style*="background: #fff3cd"] { color: #856404 !important; }
+			.reveal section div[style*="background: #fff3cd"] p { color: #856404 !important; }
+			.reveal section div[style*="background: #fff3cd"] strong { color: #533f03 !important; }
 		</style>
 	</head>
 	<body>
@@ -973,7 +1048,10 @@
 			</div>
 		</div>
 
-		<script src="reveal.js/js/reveal.js"></script>
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
@@ -981,7 +1059,8 @@
 				transition: 'slide',
 				slideNumber: true,
 				width: 1280,
-				height: 720
+				height: 720,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
 	</body>
